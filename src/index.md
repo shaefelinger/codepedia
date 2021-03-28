@@ -1,6 +1,6 @@
 ---
 home: true
-# heroImage: https://v1.vuepress.vuejs.org/hero.png
+heroImage: https://v1.vuepress.vuejs.org/hero.png
 tagline: My personal code reference...
 actionText: Quick Start →
 actionLink: /html/
