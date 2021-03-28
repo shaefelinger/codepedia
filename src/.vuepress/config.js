@@ -4,7 +4,7 @@ module.exports = {
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
-  title: 'Vuepress Docs Boilerplate',
+  title: 'codepedia.de',
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#description
    */
@@ -59,8 +59,8 @@ module.exports = {
           children: [
             '',
             'basic syntax',
-            'anchor links',
             'head',
+            'anchor links',
           ]
         }
       ],
