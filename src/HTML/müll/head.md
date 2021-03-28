@@ -1,5 +1,8 @@
 
+
+
 # Head
+
 
 ```html
 <head>
@@ -39,60 +42,3 @@
 - [ Tag - w3schools](https://www.w3schools.com/tags/tag_head.asp)
 - [ head - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/head)
 
-------
-
-
-
-
-## Metadata
-
-The `<meta>` tags contain metadata: Data that is not displayed on the page, but is machine parsable. Meta elements typically contain information about:
-
-- page description
-- keywords
-- author of the document
-- last modified or
-- thumbnail image
-
-Metadata is mostly used by search engines or by social media to display snippets with title, description and a thumbnail image.
-
-- [ Tag - w3schools](https://www.w3schools.com/tags/tag_meta.asp)
-- (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta)
-
-------
-
-## Viewport
-
-```html
-<meta name="viewport" content="width=device-width, initial-scale=1.0">  
-```
-
-- [The Viewport - w3schools](https://www.w3schools.com/css/css_rwd_viewport.asp)
-- [Viewport - MDN](https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag)
-
-------
-
-## Link
-
-```html
-<head>
-  <link rel="stylesheet" href="./css/styles.css" type="text/css">
-</head>
-```
-
-- [> Tag - w3schools](https://www.w3schools.com/tags/tag_link.asp)
-- [link - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link)
-
-------
-
-## FavIcon
-
-Fav Icon dem Titel hinzufügen:
-
-```html
-<link rel="icon" href="images/icon.png" type="image/png">
-```
-
-- [Favicon - w3c](https://www.w3.org/2005/10/howto-favicon)
-
-------

@@ -54,15 +54,38 @@ module.exports = {
    
       '/HTML/': [
         {
-          title: 'HTML-Basics',
-          collapsable: true,
+          title: 'HTML',
+          collapsable: false,
+          sidebarDepth: 2,
           children: [
             '',
-            'basic syntax',
-            'head',
-            'anchor links',
+            'forms',
+            'reference links',
+
+            // 'html',
+            // 'basic syntax',
+            // 'head',
+            // 'metadata',
+            // 'viewport',
+            // 'link',
+            // 'favicon',
+            // 'anchor links',
+            // 'text tags',
+            // 'file paths',
+            // 'entities',
+            // 'images',
+            // 'lists',
+            // 'tables',
           ]
-        }
+        },
+        // {
+        //   title: 'Reference-Links',
+        //   collapsable: false,
+        //   children: [
+        //     // '',
+        //     'reference links',
+        //   ]
+        // }
       ],
       '/guide/': [
         {

@@ -1,23 +1,4 @@
-# Document-Structure
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title></title>
-  </head>
-  <body>
-    ...
-  </body>
-</html>
-```
-
-- [HTML elements reference MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
-
-------
-
-## Anchor Links `<a>`
+# Anchor Links `<a>`
 
 ```html
 <a href="https://hamburgcodinschool.com">Where i learned HTML</a>  
@@ -37,13 +18,10 @@ You can also use additional attributes besides a and href:
 - [a-Tag - w3schools](https://www.w3schools.com/tags/tag_a.asp)
 - [a - MDN](https://developer.mozilla.org/de/docs/Web/HTML/Element/a)
 
-------
 
-## Comments
 
-```html
-<!-- Hier kommt der Kommentar rein -->
-```
 
-------
+
+
+
 
