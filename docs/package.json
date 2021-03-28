@@ -1,0 +1,19 @@
+{
+  "name": "testX",
+  "version": "0.0.1",
+  "description": "test",
+  "main": "index.js",
+  "authors": {
+    "name": "steffen",
+    "email": ""
+  },
+  "repository": "/testX",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.5.3"
+  }
+}
