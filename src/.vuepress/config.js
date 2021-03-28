@@ -34,19 +34,36 @@ module.exports = {
     lastUpdated: false,
     nav: [
       {
+        text: 'HTML',
+        link: '/HTML/'
+      },
+      {
         text: 'Guide',
         link: '/guide/',
       },
-      {
-        text: 'Config',
-        link: '/config/'
-      },
+      // {
+      //   text: 'Config',
+      //   link: '/config/'
+      // },
       {
         text: 'VuePress',
         link: 'https://v1.vuepress.vuejs.org'
       }
     ],
     sidebar: {
+   
+      '/HTML/': [
+        {
+          title: 'HTML-Basics',
+          collapsable: true,
+          children: [
+            '',
+            'basic syntax',
+            'anchor links',
+            'head',
+          ]
+        }
+      ],
       '/guide/': [
         {
           title: 'Guide',
