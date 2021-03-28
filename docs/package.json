@@ -1,13 +1,13 @@
 {
-  "name": "testX",
+  "name": "codepedia",
   "version": "0.0.1",
-  "description": "test",
+  "description": "my personal code reference",
   "main": "index.js",
   "authors": {
-    "name": "steffen",
+    "name": "Steffen Häfelinger",
     "email": ""
   },
-  "repository": "/testX",
+  "repository": "/codepedia",
   "scripts": {
     "dev": "vuepress dev src",
     "build": "vuepress build src"

@@ -4,7 +4,7 @@ module.exports = {
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
-  title: 'codepedia.de',
+  title: 'Vuepress Docs Boilerplate',
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#description
    */
@@ -38,27 +38,7 @@ module.exports = {
         link: '/guide/',
       },
       {
-        text: 'HTML',
-        link: '/config/'
-      },
-      {
-        text: 'CSS',
-        link: '/config/'
-      },
-      {
-        text: 'JavaScript',
-        link: '/config/'
-      },
-      {
-        text: 'GIT',
-        link: '/config/'
-      },
-      {
-        text: 'Vue',
-        link: '/config/'
-      },
-      {
-        text: 'Databases',
+        text: 'Config',
         link: '/config/'
       },
       {
@@ -70,24 +50,12 @@ module.exports = {
       '/guide/': [
         {
           title: 'Guide',
-          collapsable: true,
+          collapsable: false,
           children: [
             '',
             'using-vue',
-            'HTML',
           ]
-        },
-        {
-          title: 'Test',
-          collapsable: true,
-          children: [
-            '',
-            'using-vue',
-            'HTML',
-            'test'
-          ]
-        }, 
-
+        }
       ],
     }
   },
