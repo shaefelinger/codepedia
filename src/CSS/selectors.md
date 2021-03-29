@@ -1,8 +1,8 @@
 
 
-## Selectors
+# Selectors
 
-### Selectors & combining Selectors
+## Selectors & combining Selectors
 
 | Selector                                                     | Example                  | Info                                                         | Learn CSS tutorial                                           |
 | ------------------------------------------------------------ | ------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -36,3 +36,83 @@
 |                                                              |                          |                                                              |                                                              |
 | [Child combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Child_combinator) | div > span               | All `<span>` that are **direct children** of`<div>`          | [ Child combinator](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Combinators#Child_combinator) |
 
+
+
+
+
+
+
+
+
+## [Pseudo-Class Selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
+[Pseudo-classes Tutorial](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Pseuso-classes_and_Pseudo-elements#What_is_a_pseudo-class)
+
+| Selector                | Example                                                      | Info                                                         |
+| ----------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| :first-child            | `:first-child`                                               | All **first child** Elements.                                |
+|                         | `p:first-child`                                              | All first child `<p>` elements                               |
+|                         | `div p:first-child`                                          | all first child `<p>` elements that are in a `<div>`         |
+| :only-child             | `span:only-child`                                            | `<span>` elements that are the **only child** of some other element. |
+|                         | `ul li:only-child`                                           | The only `<li>` element that are in a `<ul>`.                |
+| :last-child             | `span:last-child`                                            | All **last child** `<span>` Elements                         |
+|                         | `ul li:last-child`                                           | last `<li>` elements inside of any `<ul>`                    |
+| :nth-child(A)           | `:nth-child(8)`                                              | Every element that is the **8th child** of another element.  |
+|                         | `div p:nth-child(2)`                                         | Second `<p>` in every `<div>`                                |
+| :nth-last-child(A)      | `:nth-last-child(2)`                                         | All second-to-last child elements                            |
+| :first-of-type          | `span:first-of-type`                                         | First `<span>` in any element.                               |
+| :nth-of-type(A)         | `div:nth-of-type(2)`                                         | second instance of a `<div>`                                 |
+|                         | `.example:nth-of-type(odd)`                                  | All odd instances of a the example class.                    |
+| :nth-of-type(An+B)      | `span:nth-of-type(6n+2)`                                     | every 6th instance of a `<span>`, starting from (and including) the second instance. |
+| :only-of-type           | `p span:only-of-type`                                        | `>span<` within any `>p<` if it is the only `>span<` in there. |
+| :last-of-type           | `div:last-of-type`                                           | last `>span<` in every p                                     |
+| :empty                  | `div:empty`                                                  | all empty `>div<` elements                                   |
+| :not(X)                 | `:not(#fancy)`                                               | all elements that do not have `id="fancy"`                   |
+|                         | `div:not(:first-child)`                                      | every `>div<` that is not a first child                      |
+|                         | `:not(.big, .medium)`                                        | all elements that do not have `class="big"` or `class="medium"` |
+| Other Pseudo-Classes... | `:first­-line``:first­-letter``:hover``:active``:focus``:first``:checked`... | [Pseudo-class selectors](https://developer.mozilla.org//en-US/docs/Web/CSS/Pseudo-classes) |
+
+
+
+
+
+
+## [Attribute selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors)
+
+[Attribute Selector Tutorial](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Attribute_selectors)
+
+| Selector                                              | Example                                                      | Info                                                         |
+| ----------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [attribute]                                           | `a[href]`                                                | all `<a>` elements that have a `href="anything"` attribute   |
+|                                                       | `[type]`                                                     | all elements that have a `type="anything"` attribute         |
+|                                                       | `input[disabled]`                                            | all `>input<` elements with the disabled attribute           |
+| [attribute="value"]                                   | `input[type="checkbox"]`                                     | All checkbox input elements                                  |
+| *Attribute Starts With Selector* [attribute^="value"] | `.toy[category^="Swim"]`                                     | Elements with class toy and either `category="Swimwear` or `category="Swimming"` |
+| *Attribute Ends With Selector* [attribute$="value"]   | `img[src$=".jpg"]`                                           | All .jpg images                                              |
+| *Attribute Wildcard Selector* [attribute*="value"]    | `img[src*="/thumbnails/"]`                                   | All image elements that show images from the "thumbnails" folder |
+|                                                       | `[class*="heading"]`                                         | All elements with "heading" in their class, like `class="main-heading"` and `class="sub-heading"` |
+| Other Attribute Selectors...                          | [Attribute selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors) | [Attribute selectors](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Attribute_selectors) |
+
+
+
+
+## [Pseudo-element selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements)
+
+[Pseudo-Element Selector Tutorial](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Pseuso-classes_and_Pseudo-elements#What_is_a_pseudo-element)
+
+| Example               |
+| --------------------- |
+| `p::first-line`   |
+| `::first-letter`|
+| `::after`       |
+| `::before`      |
+| `::placeholder...`    |
+
+<img src="./assets/css selectors evans.jpeg" alt="css selectors evans" style="zoom: 50%;" />
+
+- [CSS Selector Reference - w3schools](https://www.w3schools.com/cssref/css_selectors.asp)
+- [CSS Selector Tester - w3schools](https://www.w3schools.com/cssref/trysel.asp)
+- [CSS Selectors - MDN Webdocs](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
+- [shay howe - Complex Selectors](https://learn.shayhowe.com/advanced-html-css/complex-selectors/)
+- [CSS Dinner-Game - flukeout.github.io/](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
+
+------
