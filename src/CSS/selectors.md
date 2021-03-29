@@ -1,0 +1,38 @@
+
+
+## Selectors
+
+### Selectors & combining Selectors
+
+| Selector                                                     | Example                  | Info                                                         | Learn CSS tutorial                                           |
+| ------------------------------------------------------------ | ------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [Type selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors) | `h1`                     | All `<h1>` - Tags                                            | [Type selectors](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Type_Class_and_ID_Selectors#Type_selectors) |
+|                                                              |                          |                                                              |                                                              |
+| [Class selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors) | `.box`                   | - All Elements with `class="box"`                            | [Class selectors](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Type_Class_and_ID_Selectors#Class_selectors) |
+|                                                              | `ul.important`           | All `<ul>` Elements with `class="important"`                 |                                                              |
+|                                                              | `#big.wide`              | Elements with `id="big"` and `class="wide"`                  |                                                              |
+|                                                              | `li.big.elegant`         | All `<li>` Elements with `class="big"` and `class="elegant"` |                                                              |
+|                                                              |                          |                                                              |                                                              |
+| [ID selector](https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors) | `#unique`                | Elements with `id="unique"`                                  | [ID selectors](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Type_Class_and_ID_Selectors#ID_Selectors) |
+|                                                              |                          |                                                              |                                                              |
+| [Universal selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors) | `*`                      | All Elements selects everything, but cascading is no longer working! - be careful | [Universal selector](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Type_Class_and_ID_Selectors#The_universal_selector) |
+|                                                              |                          |                                                              |                                                              |
+| Comma Combinator                                             | `p, .fun`                | All `<p> `Elements **and** all Elements with `class="fun"`   |                                                              |
+|                                                              | `a, p, div`              | All `<a>`, `<p> `and `<div>` Elements                        |                                                              |
+|                                                              |                          |                                                              |                                                              |
+| [Descendant combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator) | `p strong`               | - All `<strong>` Elements **inside** any `<p>` -             | [Descendant combinator](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Combinators#Descendant_Selector) |
+|                                                              | `#fancy span`            | Any `<span>` inside Element with `id="fancy`                 |                                                              |
+|                                                              | `.box p`                 | Any `<p>` inside Element with `class="box"` -                |                                                              |
+|                                                              | `div *`                  | All elements inside any `<div>`                              |                                                              |
+|                                                              | `ul.fancy *`             | Every element inside all `<ul class="fancy">` elements.      |                                                              |
+|                                                              | `#list li:first-child a` | All `<a>` Elements inside `<li>` that are first-child from `#list` |                                                              |
+|                                                              |                          | *The last element after the spaces is selected - doesn't have to be a direct child* |                                                              |
+|                                                              |                          |                                                              |                                                              |
+| [Adjacent sibling combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_combinator) | `h1 + p`                 | Every `<p>` Element that **directly follows** a `<h1>`       | [Adjacent sibling](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Combinators#Adjacent_sibling) |
+|                                                              | `p + .intro`             | Every element with `class="intro"` that directly follows a `<p>` |                                                              |
+|                                                              |                          |                                                              |                                                              |
+|                                                              |                          |                                                              |                                                              |
+| [General sibling combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/General_sibling_combinator) | p ~ span                 | All `<span>` that **follow** a `<p>`                         | [General sibling](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Combinators#General_sibling) |
+|                                                              |                          |                                                              |                                                              |
+| [Child combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Child_combinator) | div > span               | All `<span>` that are **direct children** of`<div>`          | [ Child combinator](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Combinators#Child_combinator) |
+

@@ -38,9 +38,13 @@ module.exports = {
         link: '/HTML/'
       },
       {
-        text: 'Guide',
-        link: '/guide/',
+        text: 'CSS',
+        link: '/CSS/'
       },
+      // {
+      //   text: 'Guide',
+      //   link: '/guide/',
+      // },
       // {
       //   text: 'Config',
       //   link: '/config/'
@@ -61,21 +65,6 @@ module.exports = {
             '',
             'forms',
             'reference links',
-
-            // 'html',
-            // 'basic syntax',
-            // 'head',
-            // 'metadata',
-            // 'viewport',
-            // 'link',
-            // 'favicon',
-            // 'anchor links',
-            // 'text tags',
-            // 'file paths',
-            // 'entities',
-            // 'images',
-            // 'lists',
-            // 'tables',
           ]
         },
         // {
@@ -87,13 +76,14 @@ module.exports = {
         //   ]
         // }
       ],
-      '/guide/': [
+      '/CSS/': [
         {
-          title: 'Guide',
+          title: 'CSS',
           collapsable: false,
+          sidebarDepth: 2,
           children: [
             '',
-            'using-vue',
+            'selectors',
           ]
         }
       ],
