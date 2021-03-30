@@ -1,11 +1,21 @@
+# CSS Selectors
 
+<img src="./assets/css selectors evans.jpeg" alt="css selectors evans" style="zoom: 50%;" />
 
-# Selectors
+------
+
+- [CSS Selector Reference - w3schools](https://www.w3schools.com/cssref/css_selectors.asp)
+- [CSS Selector Tester - w3schools](https://www.w3schools.com/cssref/trysel.asp)
+- [CSS Selectors - MDN Webdocs](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
+- [shay howe - Complex Selectors](https://learn.shayhowe.com/advanced-html-css/complex-selectors/)
+- [CSS Dinner-Game - flukeout.github.io/](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
+
+------
 
 ## Selectors & combining Selectors
 
 | Selector                                                     | Example                  | Info                                                         | Learn CSS tutorial                                           |
-| ------------------------------------------------------------ | ------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+|:------------------------------------------------------------ |:------------------------ | :------------------------------------------------------------ |:------------------------------------------------------------ |
 | [Type selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors) | `h1`                     | All `<h1>` - Tags                                            | [Type selectors](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Type_Class_and_ID_Selectors#Type_selectors) |
 |                                                              |                          |                                                              |                                                              |
 | [Class selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors) | `.box`                   | - All Elements with `class="box"`                            | [Class selectors](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Type_Class_and_ID_Selectors#Class_selectors) |
@@ -48,7 +58,7 @@
 [Pseudo-classes Tutorial](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Pseuso-classes_and_Pseudo-elements#What_is_a_pseudo-class)
 
 | Selector                | Example                                                      | Info                                                         |
-| ----------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+|:----------------------- |:------------------------------------------------------------ | :------------------------------------------------------------ |
 | :first-child            | `:first-child`                                               | All **first child** Elements.                                |
 |                         | `p:first-child`                                              | All first child `<p>` elements                               |
 |                         | `div p:first-child`                                          | all first child `<p>` elements that are in a `<div>`         |
@@ -81,7 +91,7 @@
 [Attribute Selector Tutorial](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Attribute_selectors)
 
 | Selector                                              | Example                                                      | Info                                                         |
-| ----------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+|:----------------------------------------------------- |:------------------------------------------------------------ | :------------------------------------------------------------ |
 | [attribute]                                           | `a[href]`                                                | all `<a>` elements that have a `href="anything"` attribute   |
 |                                                       | `[type]`                                                     | all elements that have a `type="anything"` attribute         |
 |                                                       | `input[disabled]`                                            | all `>input<` elements with the disabled attribute           |
@@ -107,12 +117,4 @@
 | `::before`      |
 | `::placeholder...`    |
 
-<img src="./assets/css selectors evans.jpeg" alt="css selectors evans" style="zoom: 50%;" />
 
-- [CSS Selector Reference - w3schools](https://www.w3schools.com/cssref/css_selectors.asp)
-- [CSS Selector Tester - w3schools](https://www.w3schools.com/cssref/trysel.asp)
-- [CSS Selectors - MDN Webdocs](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
-- [shay howe - Complex Selectors](https://learn.shayhowe.com/advanced-html-css/complex-selectors/)
-- [CSS Dinner-Game - flukeout.github.io/](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
-
-------

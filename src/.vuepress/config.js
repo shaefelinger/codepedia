@@ -84,6 +84,9 @@ module.exports = {
           children: [
             '',
             'selectors',
+            'color',
+            'units',
+            'typography',
           ]
         }
       ],
