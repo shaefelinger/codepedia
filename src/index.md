@@ -1,7 +1,7 @@
 ---
 home: true
 # heroImage: https://v1.vuepress.vuejs.org/hero.png
-tagline: My litte codeing reference...
+tagline: My little coding reference...
 actionText: Start →
 actionLink: /html/
 # features:
