@@ -39,6 +39,12 @@ also: `color: hsla(34, 100%, 50%, 0.1);`
 | transparent                   | quivalent to rgba(0, 0, 0, 0). |
 
 ------
+
+## Gradients
+
+- [Gradients - w3school](https://www.w3schools.com/css/css3_gradients.asp)
+------
+
 ## Color-Links
 
 - [Color Picker - w3schools](https://www.w3schools.com/colors/colors_picker.asp)
