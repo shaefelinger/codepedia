@@ -212,6 +212,7 @@ module.exports = {
             '',
             'mariadb',
             'mongodb',
+            'mongo and node',
           ]
         },
       ],
