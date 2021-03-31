@@ -54,6 +54,16 @@ module.exports = {
         link: '/GIT/'
       },
       {
+        text: 'Misc.',
+        ariaLabel: 'misc',
+        items: [
+          { text: 'Command Line', link: '/commandline/' },
+          { text: 'VS Code', link: '/vscode/' },
+          { text: 'Markdown', link: '/markdown/' },
+          { text: 'Design', link: '/design/' }
+        ]
+      },
+      {
         text: 'VuePress',
         link: 'https://v1.vuepress.vuejs.org'
       }
@@ -145,6 +155,16 @@ module.exports = {
             '',
             'github',
             'git links',
+          ]
+        },
+      ],
+      '/COMMANDLINE/': [
+        {
+          title: 'Command Line',
+          collapsable: false,
+          sidebarDepth: 2,
+          children: [
+            '',
           ]
         },
       ],
