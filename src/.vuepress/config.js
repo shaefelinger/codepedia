@@ -46,7 +46,7 @@ module.exports = {
         ariaLabel: 'JS Menu',
         items: [
           { text: 'Javascript', link: '/JS/' },
-          { text: 'JS 4 Web', link: '/JS 4web/' }
+          { text: 'JS 4 Web', link: '/JS4web/' }
         ]
       },
       {
@@ -116,6 +116,19 @@ module.exports = {
             'play audio',
             'classes',
             'JS links',
+          ]
+        },
+      ],
+      '/JS4web/': [
+        {
+          title: 'JS 4 web',
+          collapsable: false,
+          sidebarDepth: 2,
+          children: [
+            '',
+            'the dom',
+            'dom manipulation',
+            'browser events',
           ]
         },
       ],
