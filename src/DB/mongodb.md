@@ -848,6 +848,4 @@ https://developer.mongodb.com/how-to/use-atlas-on-heroku/
 - MongoDBCourses: https://university.mongodb.com/
 - MongoDB tutorial: https://www.guru99.com/what-is-mongodb.html 
 - MongoDB Cheat Sheet:https://gist.github.com/bradtraversy/f407d642bdc3b31681bc7e56d95485b6 
-- Mongoose: https://mongoosejs.com/
-- Node with MongoDB Tutorial: ​https://www.youtube.com/watch?v=4yqu8YF29cU
 
