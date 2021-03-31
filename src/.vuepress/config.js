@@ -54,6 +54,10 @@ module.exports = {
         link: '/GIT/'
       },
       {
+        text: 'Databases',
+        link: '/DATABASES/'
+      },
+      {
         text: 'Misc.',
         ariaLabel: 'misc',
         items: [
@@ -162,9 +166,51 @@ module.exports = {
         {
           title: 'Command Line',
           collapsable: false,
+          sidebarDepth: 3,
+          children: [
+            '',
+          ]
+        },
+      ],
+      '/VSCODE/': [
+        {
+          title: 'VS Code',
+          collapsable: false,
+          sidebarDepth: 3,
+          children: [
+            '',
+            'chrome devtools',
+          ]
+        },
+      ],
+      '/DESIGN/': [
+        {
+          title: 'Design',
+          collapsable: false,
           sidebarDepth: 2,
           children: [
             '',
+          ]
+        },
+      ],
+      '/MARKDOWN/': [
+        {
+          title: 'Design',
+          collapsable: false,
+          sidebarDepth: 2,
+          children: [
+            '',
+          ]
+        },
+      ],
+      '/DATABASES/': [
+        {
+          title: 'Databases',
+          collapsable: false,
+          sidebarDepth: 4,
+          children: [
+            '',
+            'MongoDB',
           ]
         },
       ],
