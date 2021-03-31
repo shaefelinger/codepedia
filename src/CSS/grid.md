@@ -100,7 +100,7 @@ Also: `grid-row-gap` and `grid-column-gap`
 
 we can make grid items take up more than one row and one column. In the diagram: Items A, B, C, and E span more than one row
 
-![css gridarea.png](/Users/sh/Dropbox/SH @Coding/_MD CODEPEDIA/assets/CSS Codepedia/css gridarea.png)
+<img src="./assets/css gridarea.png" alt="css gridarea.png" style="zoom: 50%;" />
 
 
 

@@ -63,7 +63,7 @@ In the example above, all divs with the class container are flex containers. If 
 - The size of each item is not changed.
 - Values: *center, flex-start (default), flex-end, space-around (equal space before+after items), space-between (equal space between, no extra space @start/end)*
 
-<img src="file:///Users/sh/Dropbox/SH%20@Coding/@Code/SH%20Codepedia/assets/flex%20justify-content.png" alt="flex justify-content" style="zoom:50%;" />
+<img src="./assets/flex justify-content.png" alt="flex justify-content" style="zoom:50%;" />
 
 ### [`align-items`](https://www.w3schools.com/css/css3_flexbox_container.asp#align-items) 
 
@@ -73,7 +73,7 @@ In the example above, all divs with the class container are flex containers. If 
 
 *\* stretch: elements with a specified height will not stretch; elements with a minimum height or no height specified will stretch).*
 
-<img src="file:///Users/sh/Dropbox/SH%20@Coding/@Code/SH%20Codepedia/assets/flex-align-items.png" alt="flex-align-items" style="zoom: 50%;" />
+<img src="./assets/flex-align-items.png" alt="flex-align-items" style="zoom: 50%;" />
 
 ### [`align-content`](https://www.w3schools.com/css/css3_flexbox_container.asp#align-content) 
 
