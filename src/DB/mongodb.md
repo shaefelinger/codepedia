@@ -1,6 +1,6 @@
-# DB MongoDB
+# MongoDB
 
-### Installation
+## Installation
 
 Install MongoDB Community Edition. It is the non-commercial edition, but has all the features we need.
 

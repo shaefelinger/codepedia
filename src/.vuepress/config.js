@@ -55,7 +55,7 @@ module.exports = {
       },
       {
         text: 'Databases',
-        link: '/DATABASES/'
+        link: '/DB/'
       },
       {
         text: 'Misc.',
@@ -203,14 +203,15 @@ module.exports = {
           ]
         },
       ],
-      '/DATABASES/': [
+      '/DB/': [
         {
           title: 'Databases',
           collapsable: false,
-          sidebarDepth: 4,
+          sidebarDepth: 2,
           children: [
             '',
-            'MongoDB',
+            'mariadb',
+            'mongodb',
           ]
         },
       ],
