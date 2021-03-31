@@ -42,12 +42,16 @@ module.exports = {
         link: '/CSS/'
       },
       {
-        text: 'JS',
+        text: 'Javascript',
         ariaLabel: 'JS Menu',
         items: [
           { text: 'Javascript', link: '/JS/' },
           { text: 'JS 4 Web', link: '/JS4web/' }
         ]
+      },
+      {
+        text: 'GIT',
+        link: '/GIT/'
       },
       {
         text: 'VuePress',
@@ -129,6 +133,18 @@ module.exports = {
             'the dom',
             'dom manipulation',
             'browser events',
+          ]
+        },
+      ],
+      '/GIT/': [
+        {
+          title: 'GIT',
+          collapsable: false,
+          sidebarDepth: 2,
+          children: [
+            '',
+            'github',
+            'git links',
           ]
         },
       ],
