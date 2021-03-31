@@ -41,14 +41,14 @@ module.exports = {
         text: 'CSS',
         link: '/CSS/'
       },
-      // {
-      //   text: 'Guide',
-      //   link: '/guide/',
-      // },
-      // {
-      //   text: 'Config',
-      //   link: '/config/'
-      // },
+      {
+        text: 'JS',
+        ariaLabel: 'JS Menu',
+        items: [
+          { text: 'JS', link: '/JS/' },
+          { text: 'JS 4 Web', link: '/JS 4web/' }
+        ]
+      },
       {
         text: 'VuePress',
         link: 'https://v1.vuepress.vuejs.org'
@@ -67,14 +67,6 @@ module.exports = {
             'reference links',
           ]
         },
-        // {
-        //   title: 'Reference-Links',
-        //   collapsable: false,
-        //   children: [
-        //     // '',
-        //     'reference links',
-        //   ]
-        // }
       ],
       '/CSS/': [
         {
@@ -102,6 +94,22 @@ module.exports = {
             'css_links',
           ]
         }
+      ],
+      '/JS/': [
+        {
+          title: 'Javascript',
+          collapsable: false,
+          sidebarDepth: 2,
+          children: [
+            '',
+            'variables',
+            'operators',
+            'numbers',
+            'strings',
+            'arrays',
+            'conditional statements',
+          ]
+        },
       ],
     }
   },
