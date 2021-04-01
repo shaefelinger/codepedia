@@ -166,7 +166,7 @@ module.exports = {
         {
           title: 'Command Line',
           collapsable: false,
-          sidebarDepth: 3,
+          sidebarDepth: 2,
           children: [
             '',
           ]

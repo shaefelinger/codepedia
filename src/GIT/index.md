@@ -151,49 +151,46 @@ The difference is: if you reset a commit, you remove it; if you revert a commit,
 
 ## Backtracking - more details
 
-### head commit
+#### head commit
 
 The commit you are currently on is known as the HEAD commit. In many cases, the most recently made commit is the HEAD commit.
 
-### `git show HEAD`
+#### See the HEAD commit
 
-To see the HEAD commit
+`git show HEAD`
 
 ------
 
-### `git checkout HEAD filename` 
+#### Discards changes
+
+`git checkout HEAD filename`
+or shorthand: `git checkout -- filename` 
 
 Discards changes in the working directory. To restore the file in your working directory to look exactly as it did when you last made a commit
 
-or shorthand: `git checkout -- filename` 
 
 ------
 
-### add multiple files at once
+#### add multiple files at once
 
-```
-git add filename_1 filename_2
-```
+`git add <filename_1> <filename_2>`
 
 ------
 
-### to unstage a file from the staging area before it is commited 
+#### Unstage a file from the staging area before it is commited 
 
-```
-git reset HEAD filename
-```
+`git reset HEAD filename`
 
 Unstages file changes in the staging area. -> *resets* the file in the staging area to be the same as the HEAD commit.
 
 Notice in the output, “Unstaged changes after reset”:`M  scene-2.txt`		M is short for “modification”
 
 ------
+#### Resets to a previous commit
 
 Git enables you to rewind to the part before you made the wrong turn. You can do this with:
 
-```
-git reset *commit_SHA*
-```
+`git reset *commit_SHA*`
 
 Resets to a previous commit in your commit history. This command works by using the first 7 characters of the SHA of a previous commit. For example, if the SHA of the previous commit is 5d692065cf51a2f50ea8e7b19b5a7ae512f633ba, use:
 
@@ -224,51 +221,60 @@ Keep in mind:
 
 ### Commands
 
-- **Shows** all existing branches, marks the one you are on. Always make sure you are in the branch you want to be in: 
 
-  ```
-  git branch
-  ```
 
-- **Creates** a new branch called “newbranch”. Branch names can’t contain whitespaces: 
+#### Show all branches
 
-  ```
-  git branch newbranch
-  ```
+`git branch`
 
-- **Switches** to the branch called “newbranch”.
-
-  ```
-  git checkout newbranch
-  ```
-
-- **Shorthand** for the two above: creates a new branch called “newbranch” and then switches to it.:
-
-  ```
-  git checkout -b newbranch
-  ```
-
-- **Deletes** the branch “oldbranch”: 
-
-  ```
-  git branch -d oldbranch
-  ```
-
-- If the branch is not fully merged yet, you get an error message. To delete the branch anyway, type: 
-
-  ```
-  git branch -D branchname
-  ```
-
-- **merge** branch into the active branch
-
-  ```
-  git merge <name>
-  ```
+**Shows** all existing branches, marks the one you are on. Always make sure you are in the branch you want to be in
 
 ------
 
-### Merging a branch into master
+#### Create new branch
+
+`git branch <newbranch>`
+
+**Creates** a new branch called “newbranch”. Branch names can’t contain whitespaces 
+
+------
+#### Switch to branch
+
+`git checkout <newbranch>`
+
+------
+
+#### Shorthand: Create new banch and switch
+
+`git checkout -b <newbranch>`
+
+------
+
+#### Delete branch
+
+`git branch -d <oldbranch>`
+
+**Deletes** the branch “oldbranch”: 
+
+------
+
+#### Delete unmerged branch
+
+`git branch -d <oldbranch>`
+
+If the branch is not fully merged yet, you get an error message. To delete the branch anyway
+
+------
+
+#### Merge branch
+
+`git merge <name>`
+
+**merge** branch into the active branch
+
+------
+
+#### Merging a branch into master
 
 1. you need to be on the master branch - `git checkout master`
 2. Then, merge your branch into master - `git merge branchname`
