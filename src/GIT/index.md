@@ -4,7 +4,22 @@ Git works by recording the changes you make to a project, storing those changes,
 
 ------
 
-## Git Workflow
+## Git Basic Commands
+
+| Command                   | Description                                                  |
+| :------------------------ | :----------------------------------------------------------- |
+| `git init`                | Create repository (=Folder with superpower)                  |
+| `git status`              | Show Status                                                  |
+| `git add <Filename>`      | Add File                                                     |
+| `git add .`               | Add all Files                                                |
+| `git diff`                | check differences between the working directory and the staging area |
+| `git commit`              | stores changes (opens vim - close with `:x` )                |
+| `git commit -m "message"` | commit with message                                          |
+| `git log`                 | show log                                                     |
+| `git --help`              | get help                                                     |
+|                           |                                                              |
+
+
 
 ### `git init`
 
@@ -47,6 +62,8 @@ Before doing a commit, you have to collect all your changes -> stage them.
 
 `git add *.txt` - Add all txt-Files
 
+`git add <filename_1> <filename_2>` - add multiple files at once
+
 ------
 
 ### `git diff`
@@ -63,9 +80,7 @@ Before doing a commit, you have to collect all your changes -> stage them.
 
 A *commit* is the last step in our Git workflow. A commit permanently stores changes from the staging area inside the repository.
 
-```
-git commit -m "Complete first line of dialogue"
-```
+`git commit -m "Complete first line of dialogue"`
 
 Standard Conventions for Commit Messages:
 
@@ -93,12 +108,6 @@ If the log is getting too long, git will show a colon :at the end. This means: y
 
 ------
 
-### `git --help`
-
-Get help (read the manual)
-
-------
-
 ### `git reset --soft HEAD~1`
 
 Undo last commit by resetting it.
@@ -109,6 +118,17 @@ Undo last commit by resetting it.
 ------
 
 ## Undoing Changes
+
+| Command                   | Description                                       |
+| ------------------------- | ------------------------------------------------- |
+| `git checkout -- .`       | discard all changes in all modified files         |
+| `git checkout -- <file>`  | reset file                                        |
+| `git reset --soft HEAD~1` | undo the last commit by resetting it              |
+| `git reset --hard HEAD~1` | delete all changes of the last commit permanently |
+| `git reset HEAD .`        | remove all files from the stage                   |
+| `git reset HEAD`          |                                                   |
+
+------
 
 ### `git checkout --`
 
@@ -149,11 +169,15 @@ The difference is: if you reset a commit, you remove it; if you revert a commit,
 
 ------
 
-## Backtracking - more details
+## Backtracking
+
+
 
 #### head commit
 
 The commit you are currently on is known as the HEAD commit. In many cases, the most recently made commit is the HEAD commit.
+
+
 
 #### See the HEAD commit
 
@@ -167,13 +191,6 @@ The commit you are currently on is known as the HEAD commit. In many cases, the 
 or shorthand: `git checkout -- filename` 
 
 Discards changes in the working directory. To restore the file in your working directory to look exactly as it did when you last made a commit
-
-
-------
-
-#### add multiple files at once
-
-`git add <filename_1> <filename_2>`
 
 ------
 
@@ -221,60 +238,21 @@ Keep in mind:
 
 ### Commands
 
+| Command                       | Description                                                |
+| :---------------------------- | :--------------------------------------------------------- |
+| `git branch`                  | **Shows** all existing branches, marks the one you are on. |
+| `git branch <newbranch>`      | **Creates** a new branch                                   |
+| `git checkout -b <newbranch>` | **Shorthand:** Create new branch and switch                |
+| `git branch -d <oldbranch>`   | Delete branch                                              |
+| `git branch -D <oldbranch>`   | Delete unmerged branch                                     |
+| `git merge <name>`            | Merge branch into the active branch                        |
+|                               |                                                            |
 
-
-#### Show all branches
-
-`git branch`
-
-**Shows** all existing branches, marks the one you are on. Always make sure you are in the branch you want to be in
-
-------
-
-#### Create new branch
-
-`git branch <newbranch>`
-
-**Creates** a new branch called “newbranch”. Branch names can’t contain whitespaces 
-
-------
-#### Switch to branch
-
-`git checkout <newbranch>`
+Branch names can’t contain whitespaces
 
 ------
 
-#### Shorthand: Create new banch and switch
-
-`git checkout -b <newbranch>`
-
-------
-
-#### Delete branch
-
-`git branch -d <oldbranch>`
-
-**Deletes** the branch “oldbranch”: 
-
-------
-
-#### Delete unmerged branch
-
-`git branch -d <oldbranch>`
-
-If the branch is not fully merged yet, you get an error message. To delete the branch anyway
-
-------
-
-#### Merge branch
-
-`git merge <name>`
-
-**merge** branch into the active branch
-
-------
-
-#### Merging a branch into master
+#### Workflow: Merging a branch into master
 
 1. you need to be on the master branch - `git checkout master`
 2. Then, merge your branch into master - `git merge branchname`
