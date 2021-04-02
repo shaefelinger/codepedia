@@ -46,7 +46,7 @@ module.exports = {
         ariaLabel: 'JS Menu',
         items: [
           { text: 'Javascript', link: '/JS/' },
-          { text: 'JS 4 Web', link: '/JS4web/' }
+          { text: 'JS for Web', link: '/JS4web/' }
         ]
       },
       {
@@ -64,7 +64,8 @@ module.exports = {
           { text: 'Command Line', link: '/commandline/' },
           { text: 'VS Code', link: '/vscode/' },
           { text: 'Markdown', link: '/markdown/' },
-          { text: 'Design', link: '/design/' }
+          { text: 'Design', link: '/design/' },
+          { text: 'VuePress', link: 'https://v1.vuepress.vuejs.org/' }
         ]
       },
       {
@@ -72,8 +73,8 @@ module.exports = {
         link: '/NODE/'
       },
       {
-        text: 'VuePress',
-        link: 'https://v1.vuepress.vuejs.org'
+        text: 'About',
+        link: '/ABOUT/'
       }
     ],
     sidebar: {
@@ -143,7 +144,7 @@ module.exports = {
       ],
       '/JS4web/': [
         {
-          title: 'JS 4 web',
+          title: 'JS for web',
           collapsable: false,
           sidebarDepth: 2,
           children: [
@@ -232,6 +233,16 @@ module.exports = {
           ]
         },
       ],
+      // '/ABOUT/': [
+      //   {
+      //     title: 'About',
+      //     collapsable: false,
+      //     sidebarDepth: 2,
+      //     children: [
+      //       '',
+      //     ]
+      //   },
+      // ],
       
     }
   },
