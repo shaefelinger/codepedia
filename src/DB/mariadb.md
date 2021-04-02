@@ -259,52 +259,6 @@ https://www.codecademy.com/articles/sql-commands
 
 `# comment in SQL`
 
-------
-
-
-## MongoDB Atlas and Compass
-
-MongoDB provides a cloud database called **Atlas**.
-
-**Compass** is giving you a GUI (Graphical User Interface) that makes it a bit easier to work with the database.
-
-Queries in Compass
-
-- sort
-
-- {title: 1}
-
-- ### QuerySelectors 
-
-
-https://docs.mongodb.com/manual/reference/operator/query/
-
-
-
-> immer closing brackets gleich mitschreiben -> gefahr zu vergessen
-
-### Mehrere Queries: Implicit and-Statement
-
-```
-{"year" : { $lt : 1925 }, "imdb.rating": { $gt: 8}  } 
-```
-
-## 
-
-------
-
-## Heroku & Atlas
-
-https://devcenter.heroku.com/articles/preparing-a-codebase-for-heroku-deployment
-
-
-
-------
-
-Atlas -> Heroku
-
-https://developer.mongodb.com/how-to/use-atlas-on-heroku/
-
 
 ------
 

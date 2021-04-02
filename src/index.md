@@ -4,12 +4,12 @@ home: true
 tagline: My little coding reference...
 actionText: Start →
 actionLink: /html/
-# features:
-# - title: Feature 1 Title
+features:
+# - title: null
 #   details: Feature 1 Description
-# - title: Feature 2 Title
+# - title: work in progress...
 #   details: Feature 2 Description
-# - title: Feature 3 Title
+# - title: null
 #   details: Feature 3 Description
 footer: Made by Steffen Häfelinger with ❤️
 ---
