@@ -68,6 +68,10 @@ module.exports = {
         ]
       },
       {
+        text: 'Node',
+        link: '/NODE/'
+      },
+      {
         text: 'VuePress',
         link: 'https://v1.vuepress.vuejs.org'
       }
@@ -195,7 +199,7 @@ module.exports = {
       ],
       '/MARKDOWN/': [
         {
-          title: 'Design',
+          title: 'Markdown',
           collapsable: false,
           sidebarDepth: 2,
           children: [
@@ -213,6 +217,18 @@ module.exports = {
             'mariadb',
             'mongodb',
             'mongo and node',
+          ]
+        },
+      ],
+      '/NODE/': [
+        {
+          title: 'Node',
+          collapsable: false,
+          sidebarDepth: 2,
+          children: [
+            '',
+            'express',
+            'links',
           ]
         },
       ],
