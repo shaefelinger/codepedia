@@ -1,7 +1,7 @@
 ---
 home: true
 # heroImage: https://v1.vuepress.vuejs.org/hero.png
-tagline: My little coding reference...
+tagline: My personal coding reference...
 actionText: Start →
 actionLink: /html/
 features:
@@ -11,5 +11,5 @@ features:
 #   details: Feature 2 Description
 # - title: null
 #   details: Feature 3 Description
-footer: Made by Steffen Häfelinger with ❤️
+footer: Made by functionfactory.de
 ---
