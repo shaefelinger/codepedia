@@ -33,19 +33,15 @@ control-c -> quit
 
 ------
 
-## User Fuck
+## Create User Example
 
 admin 12345678
-
-
 
 ```
 CREATE USER 'admin'@'localhost' IDENTIFIED BY '12345678';
 
 GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' WITH GRANT OPTION;
 ```
-
-
 
 
 
