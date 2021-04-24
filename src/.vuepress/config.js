@@ -58,6 +58,13 @@ module.exports = {
         link: '/DB/'
       },
       {
+        text: 'Vue',
+        items: [
+          { text: 'Vue', link: '/VUE/'},
+          { text: 'VuePress', link: 'https://v1.vuepress.vuejs.org/' }
+        ]
+      },
+      {
         text: 'Misc.',
         ariaLabel: 'misc',
         items: [
@@ -65,7 +72,6 @@ module.exports = {
           { text: 'VS Code', link: '/vscode/' },
           { text: 'Markdown', link: '/markdown/' },
           { text: 'Design', link: '/design/' },
-          { text: 'VuePress', link: 'https://v1.vuepress.vuejs.org/' }
         ]
       },
       {
@@ -218,6 +224,17 @@ module.exports = {
             'mariadb',
             'mongodb',
             'mongo and node',
+          ]
+        },
+      ],
+      '/VUE/': [
+        {
+          title: 'VUE',
+          collapsable: false,
+          sidebarDepth: 2,
+          children: [
+            '',
+            'vue links',
           ]
         },
       ],
