@@ -1,6 +1,6 @@
 # The command line
 
-## What is Bash?
+## Bash
 
 **Bash**, or the **B**ourne-**A**gain **SH**ell
 
