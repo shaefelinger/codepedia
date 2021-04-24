@@ -119,6 +119,10 @@ Here's some extra ones to know!
 - `input:text|email|password|date|number|submit|button`
 - `btn`
 
+`lorem`->tab in vs-code creates LopremIpsum!
+
+`lorem20`-> tab defines lenght of loremipsum
+
 ------
 
 ## Linting
@@ -199,6 +203,12 @@ npx install-peerdeps --dev eslint-config-airbnb
     }
 }
 ```
+
+
+
+------
+
+## Tips & Tricks
 
 
 
