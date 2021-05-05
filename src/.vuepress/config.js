@@ -18,7 +18,10 @@ module.exports = {
   head: [
     ['meta', { name: 'theme-color', content: '#3eaf7c' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
-    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }]
+    [
+      'meta',
+      { name: 'apple-mobile-web-app-status-bar-style', content: 'black' },
+    ],
   ],
 
   /**
@@ -35,34 +38,35 @@ module.exports = {
     nav: [
       {
         text: 'HTML',
-        link: '/HTML/'
+        link: '/HTML/',
       },
       {
         text: 'CSS',
-        link: '/CSS/'
+        link: '/CSS/',
       },
       {
         text: 'Javascript',
         ariaLabel: 'JS Menu',
         items: [
           { text: 'Javascript', link: '/JS/' },
-          { text: 'JS for Web', link: '/JS4web/' }
-        ]
+          { text: 'JS for Web', link: '/JS4web/' },
+          { text: 'JQuery', link: '/jquery/' },
+        ],
       },
       {
         text: 'GIT',
-        link: '/GIT/'
+        link: '/GIT/',
       },
       {
         text: 'Databases',
-        link: '/DB/'
+        link: '/DB/',
       },
       {
         text: 'Vue',
         items: [
-          { text: 'Vue', link: '/VUE/'},
-          { text: 'VuePress', link: 'https://v1.vuepress.vuejs.org/' }
-        ]
+          { text: 'Vue', link: '/VUE/' },
+          { text: 'VuePress', link: 'https://v1.vuepress.vuejs.org/' },
+        ],
       },
       {
         text: 'Misc.',
@@ -72,29 +76,24 @@ module.exports = {
           { text: 'VS Code', link: '/vscode/' },
           { text: 'Markdown', link: '/markdown/' },
           { text: 'Design', link: '/design/' },
-        ]
+        ],
       },
       {
         text: 'Node',
-        link: '/NODE/'
+        link: '/NODE/',
       },
       {
         text: 'About',
-        link: '/ABOUT/'
-      }
+        link: '/ABOUT/',
+      },
     ],
     sidebar: {
-   
       '/HTML/': [
         {
           title: 'HTML',
           collapsable: false,
           sidebarDepth: 2,
-          children: [
-            '',
-            'forms',
-            'reference links',
-          ]
+          children: ['', 'forms', 'reference links'],
         },
       ],
       '/CSS/': [
@@ -121,8 +120,8 @@ module.exports = {
             'animation',
             'css_div',
             'css_links',
-          ]
-        }
+          ],
+        },
       ],
       '/JS/': [
         {
@@ -145,7 +144,7 @@ module.exports = {
             'play audio',
             'classes',
             'JS links',
-          ]
+          ],
         },
       ],
       '/JS4web/': [
@@ -153,12 +152,15 @@ module.exports = {
           title: 'JS for web',
           collapsable: false,
           sidebarDepth: 2,
-          children: [
-            '',
-            'the dom',
-            'dom manipulation',
-            'browser events',
-          ]
+          children: ['', 'the dom', 'dom manipulation', 'browser events'],
+        },
+      ],
+      '/JQUERY/': [
+        {
+          title: 'jQuery',
+          collapsable: false,
+          sidebarDepth: 2,
+          children: [''],
         },
       ],
       '/GIT/': [
@@ -166,21 +168,16 @@ module.exports = {
           title: 'GIT',
           collapsable: false,
           sidebarDepth: 2,
-          children: [
-            '',
-            'github',
-            'git links',
-          ]
+          children: ['', 'github', 'git links'],
         },
       ],
+
       '/COMMANDLINE/': [
         {
           title: 'Command Line',
           collapsable: false,
           sidebarDepth: 2,
-          children: [
-            '',
-          ]
+          children: [''],
         },
       ],
       '/VSCODE/': [
@@ -188,10 +185,7 @@ module.exports = {
           title: 'VS Code',
           collapsable: false,
           sidebarDepth: 3,
-          children: [
-            '',
-            'chrome devtools',
-          ]
+          children: ['', 'chrome devtools'],
         },
       ],
       '/DESIGN/': [
@@ -199,9 +193,7 @@ module.exports = {
           title: 'Design',
           collapsable: false,
           sidebarDepth: 2,
-          children: [
-            '',
-          ]
+          children: [''],
         },
       ],
       '/MARKDOWN/': [
@@ -209,9 +201,7 @@ module.exports = {
           title: 'Markdown',
           collapsable: false,
           sidebarDepth: 2,
-          children: [
-            '',
-          ]
+          children: [''],
         },
       ],
       '/DB/': [
@@ -219,12 +209,7 @@ module.exports = {
           title: 'Databases',
           collapsable: false,
           sidebarDepth: 2,
-          children: [
-            '',
-            'mariadb',
-            'mongodb',
-            'mongo and node',
-          ]
+          children: ['', 'mariadb', 'mongodb', 'mongo and node'],
         },
       ],
       '/VUE/': [
@@ -232,10 +217,7 @@ module.exports = {
           title: 'VUE',
           collapsable: false,
           sidebarDepth: 2,
-          children: [
-            '',
-            'vue links',
-          ]
+          children: ['', 'vue links'],
         },
       ],
       '/NODE/': [
@@ -243,11 +225,7 @@ module.exports = {
           title: 'Node',
           collapsable: false,
           sidebarDepth: 2,
-          children: [
-            '',
-            'express',
-            'links',
-          ]
+          children: ['', 'express', 'links'],
         },
       ],
       // '/ABOUT/': [
@@ -260,15 +238,11 @@ module.exports = {
       //     ]
       //   },
       // ],
-      
-    }
+    },
   },
 
   /**
    * Apply plugins，ref：https://v1.vuepress.vuejs.org/zh/plugin/
    */
-  plugins: [
-    '@vuepress/plugin-back-to-top',
-    '@vuepress/plugin-medium-zoom',
-  ]
+  plugins: ['@vuepress/plugin-back-to-top', '@vuepress/plugin-medium-zoom'],
 }

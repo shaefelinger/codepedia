@@ -295,3 +295,7 @@ Delete **all of Git’s special markings** including the words HEAD and fencing.
 
 In Git, branches are usually a means to an end. You create them to work on a new project feature, but the end goal is to merge that feature into the master branch. After the branch has been integrated into master, it has served its purpose and can be deleted.
 
+------
+
+### Git stash
+

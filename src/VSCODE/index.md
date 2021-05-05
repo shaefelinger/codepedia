@@ -33,6 +33,8 @@
 
 ## Emmet
 
+https://docs.emmet.io/  
+
 Snippet then tab or enter
 
 ### Base Elements
@@ -210,6 +212,16 @@ npx install-peerdeps --dev eslint-config-airbnb
 
 ## Tips & Tricks
 
+https://eslint.org/docs/rules/
+
+https://github.com/vuejs/eslint-plugin-vue
+
+------
+
+## Commands
+
+`command-p`  -> open file
+
 
 
 ------
@@ -234,3 +246,4 @@ https://www.youtube.com/watch?v=LdF2RcelRg0
 
 
 ------
+
