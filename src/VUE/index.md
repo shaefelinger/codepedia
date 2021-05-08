@@ -329,10 +329,12 @@ watch: {
 
 ------
 
-### Filters
+### Filters 
+
+> only Vue2
 
 ```js
-	filters: {
+filters: {
     messageLowercase(value) {
       return value.toLowerCase()
     }
