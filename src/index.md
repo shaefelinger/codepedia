@@ -11,5 +11,5 @@ features:
 #   details: Feature 2 Description
 # - title: null
 #   details: Feature 3 Description
-footer: Made by functionfactory.de
+footer: Made by Steffen Häfelinger / functionfactory.de
 ---

@@ -2,7 +2,7 @@
 
 This are notes i took for myself from the moment i started learning to code.
 
-Still a mess and still work in progress... 😉
+It is and will always be work in progress... 😉
 
 ## This Material comes from:
 

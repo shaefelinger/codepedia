@@ -2,7 +2,7 @@
 
 ## div. Tipps und Infos
 
-- Multiplizieren ist für Rechner einfache als dividieren: *0.5 ist besser als /2
+- Multiplizieren ist für Rechner einfache als dividieren: \*0.5 ist besser als /2
 - verschachtelte If-Statements möglichst vermeiden
 - Convention für Boolean: `isCondition`
 - Convention for Names (From the Google Closure Library Style Guide):
@@ -16,13 +16,14 @@
   SYMBOLIC_CONSTANTS_LIKE_THIS;
   ```
 
-------
+---
+
 ## Referenz-links
 
 - [MDN JS Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [w3schools JS Tutorial](https://www.w3schools.com/js/default.asp)
 - [devdocs](https://devdocs.io/html/)
-- [Handout Learn 2 Code - Hamburg Coding School](files/Handout - Learn to Code 2020-08.pdf)
+- [Handout Learn 2 Code - Hamburg Coding School](https://hamburgcodingschool.com/resources/handout-learn-to-code-hamburg-coding-school.pdf)
 - [Handout Javascript for Web - Hamburg Coding School](files/Handout - JavaScript for Web.pdf)
 - [Principles of Writing Consistent, Idiomatic JavaScript](https://github.com/rwaldron/idiomatic.js)
 
@@ -30,8 +31,6 @@
 
 - [codepen.io](https://codepen.io)
 - [repl.it](https://repl.it)
-
-
 
 ## Places to practice coding
 

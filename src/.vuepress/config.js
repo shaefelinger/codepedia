@@ -31,6 +31,8 @@ module.exports = {
    */
   theme: 'thindark',
   themeConfig: {
+    displayAllHeaders: false, // Default: false
+    searchPlaceholder: 'Search...',
     repo: '',
     editLinks: false,
     docsDir: '',

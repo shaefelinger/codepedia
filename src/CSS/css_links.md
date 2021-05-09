@@ -10,9 +10,10 @@
 - [Stanford CSS Cheatsheet](https://web.stanford.edu/group/csp/cs21/csscheatsheet.pdf)
 - [CSS htmlcheatsheet.com](https://htmlcheatsheet.com/css/)
 - [CSS cheatography](https://cheatography.com/davechild/cheat-sheets/css2/)
-- [Handout HTML Hamburg Coding School](/files/Handout-HTML&CSS.pdf)
 - [Shay Howe - Learn to Code Advanced HTML & CSS](https://learn.shayhowe.com/advanced-html-css/)
 - [MDN - CSS Layout Cookbook](https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_cookbook)
+  <!-- - [Handout HTML Hamburg Coding School](/files/Handout-HTML&CSS.pdf) -->
+- [Handout HTML/CSS Hamburg Coding School](https://hamburgcodingschool.com/resources/handout-html-css-hamburg-coding-school.pdf)
 
 ## Diverse Links
 
@@ -21,10 +22,3 @@
 - [HTML/CSS Kurs A.Löhn](https://github.com/loehx/html-css-2020-1)
 - [cssfontstack.com](https://www.cssfontstack.com)
 - [http://smacss.com/](http://smacss.com/)
-
-
-
-
-
-
-

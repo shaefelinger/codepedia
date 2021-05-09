@@ -10,7 +10,7 @@
 
 [Video: Quick wins with GIT?](https://git-scm.com/video/what-is-git)
 
-------
+---
 
 ## Referenz-Links
 
@@ -22,9 +22,9 @@
 - [GIT Cheat sheet - github](https://training.github.com/downloads/github-git-cheat-sheet.pdf)
 - [GIT Cheat sheet - github education](files/git-cheat-sheet-education.pdf)
 - [Udacity - GIT course](https://www.udacity.com/course/version-control-with-git--ud123)
-- [GIT Handout Hamburg Coding School](files/Handout-Git&GitHub.pdf)
+- [GIT Handout Hamburg Coding School](https://hamburgcodingschool.com/resources/handout-git-github-hamburg-coding-school.pdf)
 
-------
+---
 
 - [github.com](https://github.com/)
 - [gitlab.com/](https://about.gitlab.com/)
@@ -32,7 +32,7 @@
 - [Mastering GIT - thoughtbot](https://thoughtbot.com/upcase/mastering-git)
 - [Video - Git Version Control in VS Code](https://code.visualstudio.com/docs/introvideos/versioncontrol)
 
-------
+---
 
 ## Diverse Links
 
@@ -46,4 +46,4 @@
 
 - [Bitbucket](https://bitbucket.org/)
 
-- [Introduction to github](https://lab.github.com/githubtraining/introduction-to-github	)
+- [Introduction to github](https://lab.github.com/githubtraining/introduction-to-github)
