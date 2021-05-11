@@ -214,13 +214,9 @@ vue ui
 
 ---
 
-## Data-binding
+## DELETE FROM HERE...
 
-```
-{{output}}
-```
 
--> bound to data-object "output"
 
 ---
 

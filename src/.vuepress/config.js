@@ -220,7 +220,13 @@ module.exports = {
           title: 'VUE',
           collapsable: false,
           sidebarDepth: 2,
-          children: ['', 'project-structure', 'optimizing vscode', 'vue links'],
+          children: [
+            '',
+            'project-structure',
+            'optimizing vscode',
+            'data-binding',
+            'vue links',
+          ],
         },
       ],
       '/NODE/': [
