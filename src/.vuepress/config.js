@@ -225,6 +225,8 @@ module.exports = {
             'optimizing vscode',
             'project-structure',
             'data-binding',
+            'conditional-rendering',
+            'list-rendering',
             'vue links',
             'vue-lager',
           ],

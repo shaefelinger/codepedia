@@ -47,43 +47,7 @@ connects data-object to input-element
 
 ---
 
-### `v-show()`
 
-- true/false
-- faster then `v-if`
-
-### `v-if` / `v-else`
-
-removes the element from the domtree if false
-
----
-
-## Loop
-
-### `v-for`
-
-repeats for each data
-
-```html
-<div v-for="player in players" :key="player">{{player.Name}}</div>
-```
-
-`:` is shorthand for `v-bind`
-
-```html
-html
-<div v-for="character in characterList" vbind:key="character.char_id">
-  {{character.char_id}} {{character.name}} {{character.nickname}}
-</div>
-```
-
-`key:`
-
-- to keep frontend-ui in sync
-
-- has to bound to one of the unique-identifiers. (use id, if available).
-
-- can be the whole object,
 
 ---
 

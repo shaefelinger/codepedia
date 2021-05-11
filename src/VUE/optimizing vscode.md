@@ -1,4 +1,4 @@
-# Optimizing VS Code
+# VS Code Vue
 
 [Vuemastery optimizing VScode](https://www.vuemastery.com/blog/vs-code-for-vuejs-developers/)
 
