@@ -24,7 +24,7 @@ Inside the double curly braces  JavaScript expressions are used
 
 ```js
 {{ product + '?'}}
-{{ firstName + ' ' + lastNamre}}
+{{ firstName + ' ' + lastName}}
 {{ message.split('').reverse().join('') }}
 ```
 
