@@ -1,4 +1,4 @@
-const { description } = require('../../package')
+const { description } = require('../../package');
 
 module.exports = {
   /**
@@ -153,7 +153,7 @@ module.exports = {
       '/JS4web/': [
         {
           title: 'JS for web',
-          collapsable: false,
+          collapsable: true,
           sidebarDepth: 2,
           children: ['', 'the dom', 'dom manipulation', 'browser events'],
         },
@@ -220,7 +220,7 @@ module.exports = {
           title: 'VUE',
           collapsable: false,
           sidebarDepth: 2,
-          children: ['', 'vue links'],
+          children: ['', 'project-structure', 'optimizing vscode', 'vue links'],
         },
       ],
       '/NODE/': [
@@ -248,4 +248,4 @@ module.exports = {
    * Apply plugins，ref：https://v1.vuepress.vuejs.org/zh/plugin/
    */
   plugins: ['@vuepress/plugin-back-to-top', '@vuepress/plugin-medium-zoom'],
-}
+};

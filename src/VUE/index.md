@@ -1,106 +1,178 @@
-## 	VUE Overview
-
-
-
-## Adding vue
+# Adding vue
 
 4 ways to add vue
 
-1. script-tag 
+1. script-tag
 2. npm i
 3. vue cli
-4. vite -> alternative. new approach
+4. vite -> alternative. new approach https://vitejs.dev/guide/
 
-https://vitejs.dev/guide/
+---
 
-
-
-#### in HTML script tag
+## Add Vue in Script tag
 
 -> for small or simple apps. or to add vue to an existing project
 
+### vue2
+
+`index.html`
+
 ```html
- <head>
-  
+<head>
+  ...
+  <!-- production version, optimized for size and speed -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<div id="app">
+  // vue goes here
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+```
+
+or
+
+```html
+<!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+```
+
+##### Create Vue instance:
+
+`main.js`
+
+```js
+const app = new Vue({ options });
+```
+
+##### Plugging in to an Element on the DOM
+
+```js
+el: '#app';
+```
+
+Activating Vue on the div with the id of `app` = mounting-point.
+
+Everything inside that div is controlled by Vue
+
+```js
+const app = new Vue({
+  el: '#app',
+  //  the whole option api goes here...
+  data: {
+    product: 'Socks',
+    // ...
+  },
+});
+```
+
+---
+
+### vue3
+
+https://github.com/Code-Pop/Intro-to-Vue-3
+
+`index.html`
+
+```html
+<head>
  ...
-  
-   <script src="https://unpkg.com/vue@next"></script>
- </head>
- <body id="app" >
-    ... everything inside gets rendered by vue
-    
-   <script src="app.js"></script>
-	</body>
+    <!-- Import Vue.js -->
+    <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Product goes here</h1>
+    </div>
+
+    <!-- Import App -->
+    <script src="./main.js"></script>
+     <!-- Mount App -->
+    <script>
+      const mountedApp = app.mount('#app')
+    </script>
+  </body>
 </html>
 ```
 
-::: tip or for vue2:
+##### create app
 
-```html
-<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-```
-
-:::
-
-
-
-##### Starting Point in `app.js`:
-
-`const app = Vue.createApp();`
-
-(new in Vue3) -> create new Vue-Application
+`main.js`
 
 ```js
-const app = Vue.createApp({
-    data() {
-        return {
-            output: "no output yet",
-            player: username,
-        }
-    },
-  	methods: {
-      //
-    }
-});
+const app = Vue.createApp({ optionsObject });
+```
 
+##### mount app
+
+```js
+// main.js
 app.mount('#app');
 ```
 
-
+or
 
 ```html
-  <div id="app">
+// index.html
+<script>
+  const mountedApp = app.mount('#app');
+</script>
 ```
 
-= mounting-point.
+```js
+const app = Vue.createApp({
+  data() {
+    return {
+      // ...
+    };
+  },
+});
+app.mount('#app');
+```
 
-everything inside the `#app`-id  is handled by view.
+> ist the same as: ( using the ES6-shorthand)
+>
+> ```js
+> data: function() {
+> 	return {
+> 		  // ...
+> 	}
+> }
+> ```
 
-vue turns everything into **template-language**
+---
 
-
-
-------
-
-##### V-Cloak -CSS
+### V-Cloak -CSS
 
 ```html
- <style>
-        [v-cloak] {
-            display: none;
-        }
-    </style>
+<style>
+  [v-cloak] {
+    display: none;
+  }
+</style>
 ```
 
 -> no Curly-Braces before Vue is running
 
+---
 
+## Vue CLI
 
-------
+https://cli.vuejs.org/
 
-### Vue-CLI
+CLI stands for Command Line Interface
 
-Helps setting up project, and has dev-server and helps build project (folder-dist) 
+- **select which libraries the project will be using** -> automatically plugs them into the project.
+- **Configures Webpack** -> all of the JavaScript files, CSS, and dependencies get properly bundled together, minified and optimized.
+
+- **Development-Server**. Server running locally on the Developement-Machine - uses http:-protocol (just opening an html-file uses the File-Protocol file://)
+- **Hot Module Replacement (HMR)** -> changes appear instantly in the browser when the project is saved
+
+#### Installing the CLI
+
+```
+npm i -g @vue/cli
+```
 
 #### create project
 
@@ -110,7 +182,7 @@ vue create projectname
 
 ->cd ito folder
 
-vue is using webpack. configuring webpack sucks... 
+vue is using webpack. configuring webpack sucks...
 
 #### start dev server
 
@@ -118,11 +190,29 @@ vue is using webpack. configuring webpack sucks...
 npm run serve
 ```
 
+### build project
 
+```
+npm run build
+```
 
+-> creates /dist- folder
 
+---
 
-------
+## Vue UI
+
+graphical alternative to the CLI:
+
+```
+vue ui
+```
+
+---
+
+###
+
+---
 
 ## Data-binding
 
@@ -132,9 +222,7 @@ npm run serve
 
 -> bound to data-object "output"
 
-
-
-------
+---
 
 ## Directives
 
@@ -142,7 +230,7 @@ npm run serve
 
 attaches event-handler to event -> all browser events
 
-`v-on:click="changeOutput"` 
+`v-on:click="changeOutput"`
 
 `@` is shorthand for `v-on`
 
@@ -156,20 +244,20 @@ Use `.this` to access the vue object
 
 ```js
 const app = Vue.createApp({
-    data() {
-        return {
-            output: "no output yet",
-        }
+  data() {
+    return {
+      output: 'no output yet',
+    };
+  },
+  methods: {
+    changeOutput() {
+      this.output = 'the button has been clicked';
     },
-    methods: {
-        changeOutput() {
-            this.output = "the button has been clicked";
-        }
-    }
+  },
 });
 ```
 
-------
+---
 
 ### `v-model`
 
@@ -177,19 +265,18 @@ const app = Vue.createApp({
 
 connects data-object to input-element
 
+---
 
-------
-
-### `v-show()` 
+### `v-show()`
 
 - true/false
 - faster then `v-if`
 
-### `v-if`  / `v-else`  
+### `v-if` / `v-else`
 
 removes the element from the domtree if false
 
-------
+---
 
 ## Loop
 
@@ -205,26 +292,25 @@ repeats for each data
 
 ```html
 html
- <div v-for="character in characterList" vbind:key="character.char_id">
-      {{character.char_id}} {{character.name}} {{character.nickname}}
- </div>
+<div v-for="character in characterList" vbind:key="character.char_id">
+  {{character.char_id}} {{character.name}} {{character.nickname}}
+</div>
 ```
 
-`key:` 
+`key:`
 
-- to keep frontend-ui in sync 
+- to keep frontend-ui in sync
 
-- has to bound to one of the unique-identifiers. (use id, if available). 
+- has to bound to one of the unique-identifiers. (use id, if available).
 
-- can be the whole object, 
+- can be the whole object,
 
+---
 
-
-------
-## Binding class 
+## Binding class
 
 ```vue
-<div v-for="(game,key) in scoreTable" class="m-3 font-bold">{{key}}:
+<div v-for="(game, key) in scoreTable" class="m-3 font-bold">{{key}}:
  	<div v-for="entry in game" :key="game.User" class="m-2 font-normal">
 		{{entry.User}} - {{entry.TryCount}} - 
     <span :class="{ 'text-green-600 font-bold': entry.HasWon}">{{entry.HasWon}}</span>
@@ -234,16 +320,11 @@ html
 
 `:class` -> binding class to the `entry.HasWon`
 
-
-
-------
-
-
-
+---
 
 ## Options-API
 
-is now different in vue3 -> composition-API (more similar to react). 
+is now different in vue3 -> composition-API (more similar to react).
 
 ```js
 <script>
@@ -254,17 +335,17 @@ is now different in vue3 -> composition-API (more similar to react).
 </script>
 ```
 
-------
+---
 
 ### Props
 
 Array
 
 ```js
-props: ['prop1', 'prop2']
+props: ['prop1', 'prop2'];
 ```
 
-------
+---
 
 ### Data
 
@@ -278,7 +359,7 @@ Function, that returns an Object!
       message: 'This is Vue.js'
     }
   },
-   
+
 ```
 
 ```js
@@ -287,7 +368,7 @@ data() {}
 data: function() {}
 ```
 
-------
+---
 
 ### Methods
 
@@ -299,7 +380,7 @@ data: function() {}
   },
 ```
 
-------
+---
 
 ### Computed
 
@@ -313,23 +394,23 @@ computed: {
   },
 ```
 
-------
+---
 
 ### Watcher
 
-watch, when values change. 
+watch, when values change.
 
 ```js
-watch: { 
-	firstName (value, oldValue) { 
-    // 
-  } 
+watch: {
+	firstName (value, oldValue) {
+    //
+  }
 },
 ```
 
-------
+---
 
-### Filters 
+### Filters
 
 > only Vue2
 
@@ -341,7 +422,7 @@ filters: {
   },
 ```
 
-------
+---
 
 ### Directives
 
@@ -361,9 +442,7 @@ in template:
 v-autofocus
 ```
 
-
-
-------
+---
 
 ### Components
 
@@ -385,19 +464,15 @@ or like this:
 	}
 ```
 
-
-
-------
+---
 
 ## Livecycle-Hooks
 
 ```js
 mounted() {
   console.log('mounted');
-},	
+},
 ```
-
-
 
 | Hook          | when?                   |
 | ------------- | ----------------------- |
@@ -410,15 +485,13 @@ mounted() {
 | beforeDestroy |                         |
 | destroyed     |                         |
 
-
-
-------
+---
 
 ## Passing data
 
 #### props
 
- -> pass data from main-app to component
+-> pass data from main-app to component
 
 - downwards
 
@@ -428,15 +501,13 @@ ist data from component to main-app
 
 - upwards
 
-------
+---
 
 ## VUEX
 
-vuex is implementation of flux design pattern. everything is in a loop ->  bind your application date in a single store
+vuex is implementation of flux design pattern. everything is in a loop -> bind your application date in a single store
 
-
-
-**state=** one big object, contains everything 
+**state=** one big object, contains everything
 
 **getter**- functions, that read value from state
 
@@ -447,37 +518,36 @@ vuex is implementation of flux design pattern. everything is in a loop ->  bind 
 -> no props, and no events -> it is all done in VUEX
 
 ```js
-import Vue from "vue";
+import Vue from 'vue';
 
 const state = {
   food: [
     {
       id: 1,
-      name: "Burger",
-      description:
-        "A burger is a sandwich...",
-      imageUrl: "https://i.imgur.com/0umadnY.jpg",
-      rating: 4
-    }
-  ]
+      name: 'Burger',
+      description: 'A burger is a sandwich...',
+      imageUrl: 'https://i.imgur.com/0umadnY.jpg',
+      rating: 4,
+    },
+  ],
 };
 
 const mutations = {
   DELETE_FOOD(state, id) {
     Vue.delete(state.foods, id);
-  }
+  },
 };
 
 const actions = {
   deleteFood(context, id) {
-    context.commit("DELETE_TASK", id);
-  }
+    context.commit('DELETE_TASK', id);
+  },
 };
 
 const getters = {
   foods(state) {
     return state.foods;
-  }
+  },
 };
 
 export default {
@@ -485,15 +555,13 @@ export default {
   state,
   mutations,
   actions,
-  getters
+  getters,
 };
 ```
 
-------
+---
 
 ## Routing
-
-
 
 ```
  <router-view />
@@ -505,9 +573,7 @@ is where the links are displayed
 <router-link class="font-bold text-gray-700" to="/">Home</router-link> |
 ```
 
-
-
-special-css-class 
+special-css-class
 
 ```css
 #nav a.router-link-exact-active {
@@ -517,8 +583,6 @@ special-css-class
 
 router also für security - blocking...
 
-
-
 #### History Mode
 
 ```
@@ -527,7 +591,7 @@ history: createWebHistory(process.env.BASE_URL),
 
 no # for navigation
 
-------
+---
 
 ### router has api
 
@@ -535,7 +599,4 @@ no # for navigation
       this.$router.push({ name: 'Profile', params: { char_id } });
 ```
 
-
-
-------
-
+---

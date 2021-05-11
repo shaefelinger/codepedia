@@ -1,34 +1,34 @@
-# jQuery
+## jQuery
 
 ```js
-$('h1').css('color', 'red');
+$('h1').css('color', 'red')
 ```
 
 `$` is short for `jQuery`
 
-cdn-link muss über eigenen script link	- vor dem link
+cdn-link muss über eigenen script link - vor dem link
 
 ```html
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="./index.js"></script>
 ```
 
-------
+---
 
 > check, if iQuery is ready:( when in the `<head>`-tag) -> not needed, when cdn is at bottom of body-tag
 >
 > ```
 > $(document).ready(function(){
-> 
+>
 > })
 > ```
 
-------
+---
 
 ## Selecting Elements with jQuery
 
 ```js
-$("h1")
+$('h1')
 
 // instead of
 
@@ -49,14 +49,14 @@ $('button')
 document.querySelectorAll('button')
 ```
 
-------
+---
 
-## Manipulating Styles 
+## Manipulating Styles
 
 ```js
 // $(element).css(property, value)
 
-$('h1').css('color', 'red');
+$('h1').css('color', 'red')
 ```
 
 2 values set the value of the property
@@ -64,26 +64,26 @@ $('h1').css('color', 'red');
 ### Get Styles
 
 ```js
-console.log($('h1').css('color'));
-console.log($('button').css('font-size'));
+console.log($('h1').css('color'))
+console.log($('button').css('font-size'))
 ```
 
- 1 value reads the value of the property
+1 value reads the value of the property
 
-------
+---
 
 ### Adding/Removing Class to Element
 
 ```js
-$('h1').addClass('big-title');
+$('h1').addClass('big-title')
 
-$('h1').removeClass('big-title');
+$('h1').removeClass('big-title')
 
 // multiple classes:
-$('h1').addClass('big-title margin-50');
+$('h1').addClass('big-title margin-50')
 ```
 
-------
+---
 
 ### hasClass
 
@@ -92,7 +92,7 @@ $('h1').hasClass('margin-50')
 //-> true
 ```
 
-------
+---
 
 ## Manipulating Text
 
@@ -106,30 +106,28 @@ $('h1').text('Halli Hallo')
 $('h1').html('<em>Hey</em> You')
 ```
 
-------
+---
 
 ### Manipulate Attributes
 
 ```js
-$('a').attr('href', 'https://www.yahoo.com');
+$('a').attr('href', 'https://www.yahoo.com')
 
-console.log($('h1').attr('class'));
+console.log($('h1').attr('class'))
 ```
 
-------
+---
 
 ### Adding EventListeners
 
 ```js
 $('h1').click(() => {
-  $('h1').css('color', 'purple');
-});
+  $('h1').css('color', 'purple')
+})
 ```
 
-
-
 ```js
-$('button').click(()=> {
+$('button').click(() => {
   $('h1').css('color', 'purple')
 })
 
@@ -137,33 +135,31 @@ $('button').click(()=> {
 
 for (let i = 0; i < 5; i++) {
   document.querySelectorAll('button')[i].addEventListener('click', () => {
-    document.querySelector('h1').style.color = 'purple';
-  });
+    document.querySelector('h1').style.color = 'purple'
+  })
 }
 ```
 
-
-
 ```js
 $('input').keypress((event) => {
-  console.log(event.key);
-});
+  console.log(event.key)
+})
 
 // also:
 $(document).keypress((event) => {
-  console.log(event.key);
-});
+  console.log(event.key)
+})
 ```
 
-#### `.on` 
+#### `.on`
 
 ```js
 $('h1').on('mouseover', () => {
-  $('h1').css('color', 'red');
-});
+  $('h1').css('color', 'red')
+})
 ```
 
-------
+---
 
 ## Adding and removing Elements
 
@@ -184,40 +180,40 @@ $('h1').append('<button>New</button>')
 $('button').remove()
 ```
 
-------
+---
 
 ## Animation
 
 ```js
 $('button').click(() => {
-  $('h1').hide();
-});
+  $('h1').hide()
+})
 ```
 
 ```js
 $('button').click(() => {
-  $('h1').show();
-});
+  $('h1').show()
+})
 ```
 
 ```js
 $('button').click(() => {
-  $('h1').toggle();
-});
+  $('h1').toggle()
+})
 ```
 
 ```js
 $('button').click(() => {
-  $('h1').fadeOut();
-});
+  $('h1').fadeOut()
+})
 
 $('button').click(() => {
-  $('h1').fadeIn();
-});
+  $('h1').fadeIn()
+})
 
 $('button').click(() => {
-  $('h1').fadeToggle();
-});
+  $('h1').fadeToggle()
+})
 ```
 
 ```
@@ -230,21 +226,24 @@ $('button').click(() => {
 
 ```js
 $('button').click(() => {
-  $('h1').animate({ opacity: 0.5 });
-});
+  $('h1').animate({ opacity: 0.5 })
+})
 
 // -> only numeric values
 
 $('button').click(() => {
-  $('h1').animate({ margin: '20%' });
-});
+  $('h1').animate({ margin: '20%' })
+})
 ```
 
 chaining:
 
 ```js
 $('button').click(() => {
-  $('h1').slideUp().slideDown().animate({ opacity: 0.5 }).animate({ margin: '10px' });
-});
+  $('h1')
+    .slideUp()
+    .slideDown()
+    .animate({ opacity: 0.5 })
+    .animate({ margin: '10px' })
+})
 ```
-
