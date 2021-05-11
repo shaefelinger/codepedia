@@ -222,10 +222,11 @@ module.exports = {
           sidebarDepth: 2,
           children: [
             '',
-            'project-structure',
             'optimizing vscode',
+            'project-structure',
             'data-binding',
             'vue links',
+            'vue-lager',
           ],
         },
       ],

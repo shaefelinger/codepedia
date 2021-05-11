@@ -1,6 +1,14 @@
-# Data-binding
+# Vue Data-Binding
 
-## Expressions - {{  }}
+## Reactivity
+
+Vue is **reactive**. The instance’s data is linked to every place that data is being referenced. 
+
+HTML will be updated to display new values any time that referenced data changes.
+
+------
+
+## Expressions {{}} 
 
 also called **Interpolation Syntax**
 
@@ -14,7 +22,7 @@ Inside the double curly braces  JavaScript expressions are used
 
 ### Other ways to use expressions
 
-```html
+```js
 {{ product + '?'}}
 {{ firstName + ' ' + lastNamre}}
 {{ message.split('').reverse().join('') }}
@@ -22,17 +30,11 @@ Inside the double curly braces  JavaScript expressions are used
 
 or call a method, that is defined under methods:
 
-```vue
+```js
 {{ myMethod() }}
 ```
 
 you can use ternary expression, but no complex code eg. if-statements
-
-------
-
-## Reactivity
-
-Vue is **reactive**.the instance’s data is linked to every place that data is being referenced. So not only can Vue make its data appear within the HTML that references it, but that HTML will be updated to display new values any time that referenced data changes.
 
 ------
 
@@ -42,13 +44,13 @@ Vue is **reactive**.the instance’s data is linked to every place that data is 
 
 ### v-bind-directive
 
-```
+```js
 <img v-bind:src="image-path" >
 ```
 
 shorthand
 
-```
+```js
 <img :src="image-path" >
 ```
 
@@ -60,13 +62,17 @@ Imagine it looking like this: `v-bind:src="{{ image }}"`.
 
 
 
-There are many different HTML attributes, so there are many use cases for `v-bind`. 
+There are many different HTML attributes, so there are many use cases for `v-bind`. For example: 
 
-For example: 
+- binding a description to an `alt` attribute
 
--  binding a description to an `alt` attribute
 - binding a URL to an `href` 
+
 - binding some dynamic styles to a `class` or `style` attribute, 
+
 - disabling and enabling a button
-- ...
+
+- etc...
+
+  
 

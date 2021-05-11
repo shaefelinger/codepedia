@@ -1,6 +1,6 @@
 # Optimizing VS Code
 
-https://www.vuemastery.com/blog/vs-code-for-vuejs-developers/
+[Vuemastery optimizing VScode](https://www.vuemastery.com/blog/vs-code-for-vuejs-developers/)
 
 - #### Vetur
 
@@ -87,4 +87,4 @@ module.exports = {
 
 ### Extensions
 
-- VSCode Snippets
+- Vue VSCode Snippets

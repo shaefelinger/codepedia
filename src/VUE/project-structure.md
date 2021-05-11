@@ -1,4 +1,4 @@
-# Project-structure
+# Vue Project-Structure
 
 ## Structure of the Vue Project
 
