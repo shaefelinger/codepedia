@@ -2,13 +2,17 @@
 
 ## `v-on` directive 
 
+Attaches event-handler to event -> all browser events. Run javascript Inside the string.
+
 ```vue
 <button class="button" v-on:click="logic to run">Add to Cart</button>
 ```
 
-We are telling `v-on` what type of event to listen for: a `click`. Inside the quotes, we place the logic (or method name) we want to run when that event happens.
+We are telling `v-on` what type of event to listen for: a `click`. Inside the quotes,  place the logic (or method name)  to run when that event happens.
 
 If we write `v-on:click="cart += 1"`, we’ll increment the value of cart by `1`, when a click event happens. 
+
+
 
 ### shorthand @
 

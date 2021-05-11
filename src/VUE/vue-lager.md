@@ -4,41 +4,6 @@
 
 ---
 
-## Directives
-
-### `v-on`, `@event`
-
-attaches event-handler to event -> all browser events
-
-`v-on:click="changeOutput"`
-
-`@` is shorthand for `v-on`
-
-```html
-<button @click="changeOutput">click me</button>
-```
-
-Run javascript Inside the string.
-
-Use `.this` to access the vue object
-
-```js
-const app = Vue.createApp({
-  data() {
-    return {
-      output: 'no output yet',
-    };
-  },
-  methods: {
-    changeOutput() {
-      this.output = 'the button has been clicked';
-    },
-  },
-});
-```
-
----
-
 ### `v-model`
 
 ##### two-way-binding
@@ -51,22 +16,11 @@ connects data-object to input-element
 
 ---
 
-## Binding class
 
-```vue
-<div v-for="(game, key) in scoreTable" class="m-3 font-bold">{{key}}:
- 	<div v-for="entry in game" :key="game.User" class="m-2 font-normal">
-		{{entry.User}} - {{entry.TryCount}} - 
-    <span :class="{ 'text-green-600 font-bold': entry.HasWon}">{{entry.HasWon}}</span>
-	</div>
-</div>
-```
-
-`:class` -> binding class to the `entry.HasWon`
 
 ---
 
-## Options-API
+## Options-API -Cheatsheet
 
 is now different in vue3 -> composition-API (more similar to react).
 
@@ -142,7 +96,7 @@ computed: {
 
 ### Watcher
 
-watch, when values change.
+watch if values change.
 
 ```js
 watch: {

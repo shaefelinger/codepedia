@@ -228,6 +228,9 @@ module.exports = {
             'conditional-rendering',
             'list-rendering',
             'events',
+            'dynamic-styling',
+            'advanced-reactivity',
+
             'vue links',
             'vue-lager',
           ],
