@@ -76,3 +76,16 @@ There are many different HTML attributes, so there are many use cases for `v-bin
 
   
 
+## v-html-directive
+
+html-content 
+
+```vue
+<p v-html="myHtmlData"></p>
+```
+
+careful: can introduce security issues!
+
+------
+
+## 

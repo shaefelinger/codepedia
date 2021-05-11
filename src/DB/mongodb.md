@@ -25,10 +25,22 @@ mongod --config /usr/local/etc/mongod.conf
 
 -> Software, Server. Running in background
 
-start server:
+#### start server:
 
 ```
 mongod
+```
+
+https://docs.mongodb.com/manual/tutorial/manage-mongodb-processes/
+
+#### stop server 
+
+```
+./mongo
+
+use admin
+
+db.shutdownServer()
 ```
 
 

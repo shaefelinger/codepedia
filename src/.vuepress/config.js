@@ -227,6 +227,7 @@ module.exports = {
             'data-binding',
             'conditional-rendering',
             'list-rendering',
+            'events',
             'vue links',
             'vue-lager',
           ],
