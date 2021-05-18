@@ -7,6 +7,8 @@
 - [Centering in CSS: A Complete Guide - CSS Tricks](https://css-tricks.com/centering-css-complete-guide/)
 - [Center Anything with CSS - freecodecamp.org](https://www.freecodecamp.org/news/how-to-center-anything-with-css-align-a-div-text-and-more/)
 
+------
+
 ### Perfect Centering with Flexbox:
 
 Set both the `justify-content` and `align-items` properties to center, and the flex item will be perfectly [centered](https://www.w3schools.com/css/tryit.asp?filename=trycss3_flexbox_perfect_center).
@@ -17,12 +19,11 @@ Set both the `justify-content` and `align-items` properties to center, and the f
 
 ### a) Text-Align: Center
 
-Funktioniert bei Text. (`<p>, <h1>, <div>, ...`)
+Working with text (`<p>, <h1>, <div>, ...`)
 
-Oder: das übergeordnete Block-Element (z.B. `<div>`) bekommt `text-align: center;`
-Dann ist alles zentriert
+Or:  assign `text-align: center;` to the parent  block-element (eg `<div>`) -> everything is centered
 
-text-align: center; ist eigentlich content-align;
+Think of `text-align: center;`  as "content-align"
 
 ```css
 .center-children {
@@ -79,12 +80,11 @@ Flexbox is the most modern way to center things
 
 [Codepen - Centering Blocks on Top of Each Other](https://codepen.io/chriscoyier/pen/haCGt)
 
-For Multiple block-level elements that need to be centered horizontally in a row, change the display type. E.g. `inline-block` or Flexbox
+For Multiple block-level elements that need to be centered horizontally in a row, change the display type. Eg. `inline-block` or Flexbox
 
 This also works for multiple block level elements stacked on top of each other
 
-[Codepen -  Centering Row of Blocks
-[](https://codepen.io/chriscoyier/pen/ebing)
+[Codepen -  Centering Row of Blocks](https://codepen.io/chriscoyier/pen/ebing)
 
 ------
 
@@ -107,11 +107,11 @@ a) **Equal padding** above and below them:
 
 a) **Equal padding** on Top & Buttom [a)] can work as well...
 
-b) ...or Perhaps the element the text is in can be a **table cell**, either literally or made to behave like one with CSS. The property handles this, in this case, unlike what it normally does The [`vertical-align`](https://css-tricks.com/what-is-vertical-align/) property handles this, in this case, unlike what it normally does which is handle the alignment of elements aligned on a row
+b) ...or perhaps the element the text is in can be a **table cell**, either literally or made to behave like one with CSS.  The [`vertical-align`](https://css-tricks.com/what-is-vertical-align/) property handles this, in this case, unlike what it normally does which is handle the alignment of elements aligned on a row
 
 [Centering text (kinda) with Padding](https://codepen.io/chriscoyier/pen/ekoFx)
 
-c) If both of these techniques are out, you could employ the **“ghost element”** technique, in which a full-height pseudo-element is placed inside the container and the text is vertically aligned with that.
+c) you could employ the **“ghost element”** technique, in which a full-height pseudo-element is placed inside the container and the text is vertically aligned with that.
 
 ```css
 .ghost-center {
@@ -134,7 +134,7 @@ c) If both of these techniques are out, you could employ the **“ghost element�
 
 ### C.) Block-Level-Element
 
-a) if you do know the height, you can center vertically like: (It’s fairly common to *not* know the height)
+a) if you do know the height, you can center vertically like: (But it’s fairly common to *not* know the height)
 
 ```css
 .parent {

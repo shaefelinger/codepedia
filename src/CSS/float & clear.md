@@ -46,7 +46,7 @@ If an element is taller than the element containing it, and it is floated, it wi
 }  
 ```
 
-ClearFix Helder:
+simple ClearFix:
 
 ```css
 .clearFix {

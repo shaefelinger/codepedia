@@ -19,6 +19,7 @@ The CSS box model is essentially a box that wraps around every HTML element. It 
 How the total size of the box is calculated:
 
 - `box-sizing: content-box` width (height) = width(height) + padding + border. (this is the default).
+
 - `box-sizing: border-box`. include the padding and border in an element's total width and height. Recommended (include in CSS reset)
 
 - [Box sizing - w3schools](https://www.w3schools.com/css/css3_box-sizing.asp)
@@ -27,7 +28,7 @@ How the total size of the box is calculated:
 
 - [Paul Irish - Box Sizing](https://www.paulirish.com/2012/box-sizing-border-box-ftw/)
 
-- Box Sizing - best practice CSS Tricks
+- [Box sizing best practice - CSS Tricks](https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/)
 
   ```css
   html {
