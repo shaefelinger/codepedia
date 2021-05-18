@@ -29,5 +29,3 @@ font-size 750ms ease-in 100ms;
 - [MDN - transition-timing-function](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function)
 - [MDN - animateable properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties)
 - [MDN - using transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions∏)
-
-------

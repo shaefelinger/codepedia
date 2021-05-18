@@ -1,4 +1,4 @@
-# CSS Div
+# CSS misc.
 ## Browser Compatibility
 
 cross-browser-compatibility:
@@ -12,11 +12,9 @@ cross-browser-compatibility:
 
 ## Static site generators etc
 
-templates zb f. head, nav, etc.
+[Hugo](https://gohugo.io)
 
-[gohugo.io](https://gohugo.io)
-
-Jekyll ist zb ne alternative
+Jekyll 
 
 ------
 
@@ -38,14 +36,14 @@ Jekyll ist zb ne alternative
 - [SH reboot](files/SHreboot.css)
 - [sh_sanitize](files/sh_sanitize.css)
 
-- vielleicht eigenen erstellen mit
+- simple reset:
 
 - ```
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   
-  /* evtl: margin: 0; für body */
+  /* evtl: margin: 0; for body */
   	
   ```
 
@@ -109,4 +107,3 @@ in CSS:
 - [unminify.com](https://unminify.com)
 - https://minifier.org/
 
-------
