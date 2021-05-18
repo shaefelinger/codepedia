@@ -7,7 +7,6 @@
 - Floated elements must have a width specified, Otherwise, the element will assume the full width of its containing element, and changing the float value will not yield any visible results.
 - Floated Elements are not in the Document-Flow
 - float only works on elements on the same level (silbings/brothers)
-- text does not dissapear (??..)
 - float implies the use of the block layout, it modifies the computed value of the display values to block (in most cases)
 
 - [Float - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/float)

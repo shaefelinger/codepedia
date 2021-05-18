@@ -65,10 +65,19 @@ box wraps tightly around their content, only taking up the amount of space neces
 -> wird nicht angezeigt (zb ausblenden bei Quiz -> geht aber besser mit `visibility:hidden`)
 
 ------
+## flex
+
+`display: flex;` or `display: inline-flex;`
+
+Define Element as Flex Container
+
+------
+
 ## grid
 
 `display: grid;` or `display: inline-grid;`
 
 Define Element as Grid Container
 
+------
 
