@@ -32,9 +32,9 @@ Direct child element(s) of the grid container automatically become grid items.
 
 ### Creating Columns & Rows
 
-Define the Columns & Rows (Number & Size): `**grid-template: rows / columns;**`
+Define the Columns & Rows (Number & Size): `grid-template: rows / columns;`
 
-Or : `**grid-template-columns**` or `**grid-template-rows**` (By default, the rows are sized to fit evenly inside the grid.)
+Or : `grid-template-columns` or `grid-template-rows` (By default, the rows are sized to fit evenly inside the grid.)
 
 ```css
 grid-template: 200px 300px / 20% 10% 70%;
@@ -189,8 +189,6 @@ When overlapping elements, it is generally easiest to use grid line names and th
 
 This property is declared on grid containers.
 
-(??? If we specify a height for the .card elements, they will not stretch the height of their row even if align-items: stretch; is set)
-
 align-items specifies how individual elements should spread across the column axis
 
 justify-items specifies how individual elements should spread across the row axis
@@ -292,7 +290,3 @@ grid-auto-flow: row dense;
 
 This property is declared on grid containers.
 
-------
-
-
-  
