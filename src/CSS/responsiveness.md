@@ -21,7 +21,7 @@ CSS can detect the size of the current screen and apply different CSS styles
   }
   ```
 
-  The **`only`** keyword is added to indicate that this rule only applies to one media type (screen) and not eg. prin`
+  The **`only`** keyword is added to indicate that this rule only applies to one media type (screen) and not eg. print
 
 - To target by resolution, we can use the `min-resolution` and `max-resolution` media features. in [dots-per-inch](https://en.wikipedia.org/wiki/Dots_per_inch) (dpi) or dots-per-centimeter (dpc)
 
