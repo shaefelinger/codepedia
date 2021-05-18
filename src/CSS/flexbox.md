@@ -19,7 +19,7 @@
 
 In flexbox, the outer box is called the **container**. The inner boxes (the columns) are called the **items**. Any element can be a flex container.
 
-The **flex container** (parent) becomes flexible by setting the display property to flex: `**display:flex**` or `**display:inline-flex**`
+The **flex container** (parent) becomes flexible by setting the display property to flex: `display:flex` or `display:inline-flex`
 
 ```css
 div.container {
@@ -29,11 +29,11 @@ div.container {
 
 In the example above, all divs with the class container are flex containers. If they have children, the children are flex items.
 
-- A div with the declaration `display: flex;` will remain block level — no other elements will appear on the same line as it.
+- A div with the declaration `display: flex;` will remain block level — no other elements will appear on the same line
 - But it will change the behavior of its child elements: Child elements will not begin on new lines.
 - `display: inline-flex` creates flex containers that are also inline elements -> allows multiple flex containers to appear inline with each other.
-- wenn der content nicht passt, dann wächst der parent
-- wenn alle `flex-grow:1` haben, sind alle gleich gross
+- if the content doesn't fit, the parent will grow
+- all elements have the same size, if they all have  `flex-grow:1`   
 - Step 1: make Item as small as possible, Step 2: try to apply grow
 - all flex items shrink proportionally when the flex container is too small.
 - If a `max-width` is set for an element, it will not grow larger than that even if there is more space
@@ -49,7 +49,7 @@ In the example above, all divs with the class container are flex containers. If 
 
 ### [`flex-wrap`](https://www.w3schools.com/css/css3_flexbox_container.asp#flex-wrap) 
 
-- specifies whether the flex items should **wrap or not**. ( shift along the cross axis if the flex container is not large enough)
+- specifies whether the flex items should **wrap or not**. (shift along the cross axis if the flex container is not large enough)
 - Values: *wrap, nowrap (default), wrap-reverse*
 
 ### [`flex-flow`](hhttps://www.w3schools.com/css/css3_flexbox_container.asp#flex-flow) 
