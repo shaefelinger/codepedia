@@ -28,6 +28,10 @@ very close to how computers represent colors internally.
 
 also: `color: hsla(34, 100%, 50%, 0.1);`
 
+------
+
+## Some Color Codes
+
 | some color codes:             |                                |
 | ----------------------------- | ------------------------------ |
 | red                           | #ff0000                        |
@@ -49,6 +53,5 @@ also: `color: hsla(34, 100%, 50%, 0.1);`
 
 - [Color Picker - w3schools](https://www.w3schools.com/colors/colors_picker.asp)
 - [Color - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value)
-- [Paletten - colorhunt.co](https://colorhunt.co/)
+- [Palettes - colorhunt.co](https://colorhunt.co/)
 
-------

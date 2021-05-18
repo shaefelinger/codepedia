@@ -1,17 +1,5 @@
 # CSS Selectors
 
-<img src="./assets/css selectors evans.jpeg" alt="css selectors evans" style="zoom: 50%;" />
-
-------
-
-- [CSS Selector Reference - w3schools](https://www.w3schools.com/cssref/css_selectors.asp)
-- [CSS Selector Tester - w3schools](https://www.w3schools.com/cssref/trysel.asp)
-- [CSS Selectors - MDN Webdocs](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
-- [shay howe - Complex Selectors](https://learn.shayhowe.com/advanced-html-css/complex-selectors/)
-- [CSS Dinner-Game - flukeout.github.io/](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
-
-------
-
 ## Selectors & combining Selectors
 
 | Selector                                                     | Example                  | Info                                                         | Learn CSS tutorial                                           |
@@ -117,4 +105,15 @@
 | `::before`      |
 | `::placeholder...`    |
 
+------
+
+## Selector Links
+
+<img src="./assets/css selectors evans.jpeg" alt="css selectors evans" style="zoom: 50%;" />
+
+- [CSS Selector Reference - w3schools](https://www.w3schools.com/cssref/css_selectors.asp)
+- [CSS Selector Tester - w3schools](https://www.w3schools.com/cssref/trysel.asp)
+- [CSS Selectors - MDN Webdocs](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
+- [shay howe - Complex Selectors](https://learn.shayhowe.com/advanced-html-css/complex-selectors/)
+- [CSS Dinner-Game - flukeout.github.io/](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
 

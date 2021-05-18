@@ -7,9 +7,6 @@
 - [CSS Values and Units - MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units)
 - [When to use rem vs em](https://webdesign.tutsplus.com/tutorials/comprehensive-guide-when-to-use-em-vs-rem--cms-23984)
 - [Understanding the Difference Between CSS Resolution and Device Resolution](https://medium.com/@elad/understanding-the-difference-between-css-resolution-and-device-resolution-28acae23da0b)
-- dynamische font-grösse: (v.a. um die grase abhängig vom parent zu machen)
-- Default Size: 100%=16px, 1em=16px
-- rem ignores parent -> recomendet (aber reagiert auf Änderung der Font-grösse in den chrome-einstellungen)
 
 ------
 
@@ -40,3 +37,8 @@ Pixel values (px) actual size on the screen depends on the screen of the device.
 
 It is good practice to use **em** and **rem** a lot. It helps create good responsive websites. **vw** is also a useful unit, but has to be tested especially on small devices.
 
+------
+
+## Default Size
+
+100%=16px, 1em=16px

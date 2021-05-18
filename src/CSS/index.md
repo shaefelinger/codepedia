@@ -22,9 +22,9 @@
 
 ## Add CSS
 
-### Add CSS: Inline
+### Inline CSS
 
-Im Style-Attribut eines HTML-Tags: `style="css-code;"`
+Inside the `style`-attribute of an HTML-Tags: `style="css-code;"`
 
 ```html
 <p style=”color: grey; font-size: 12px;”>Lorem ipsum</p>
@@ -32,9 +32,9 @@ Im Style-Attribut eines HTML-Tags: `style="css-code;"`
 
 ------
 
-### Add CSS: Internal
+### Internal CSS
 
-Im `<head>`-Part des HTML-Codes mit `<style>`-Tag
+In the  `<head>` of the HTML-Code
 
 ```html
 <!DOCTYPE html>
@@ -61,9 +61,9 @@ Im `<head>`-Part des HTML-Codes mit `<style>`-Tag
 
 ------
 
-### Add CSS: External
+### External CSS
 
-CSS wird in externem File definiert (z.B. styles.css) und über `<link>` im `<head>`-Tag eingebunden.
+Defined in an external file (eg styles.css) and added via `<link>` inside the `<head>`-tag 
 
 ```html
 <!DOCTYPE html>
@@ -82,5 +82,4 @@ CSS wird in externem File definiert (z.B. styles.css) und über `<link>` im `<he
 ```
 
 ------
-
 

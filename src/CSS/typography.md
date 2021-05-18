@@ -141,7 +141,7 @@ in CSS: (on the top of the CSS)
 } 
 ```
 
-We add a format for each file to specify which font to use.
+Add a format for each file to specify which font to use.
 
 - Different browsers support different font types, so providing multiple font file options will support more browsers.
 - As of now .woff2 appears to be the way of the future -> greatly reduced file sizes and improved performance, but many browsers still don’t support it.
@@ -160,9 +160,7 @@ We add a format for each file to specify which font to use.
 - [Text Decoration - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
 - [Text Decoration - w3schools](https://www.w3schools.com/cssref/pr_text_text-decoration.asp)
 
-------
-
-## Div. Font-Links:
+## Font-Links
 
 - [Google Fonts](https://fonts.google.com/)
 - [Fonts - w3schools](https://www.w3schools.com/css/css_font.asp)
@@ -170,5 +168,3 @@ We add a format for each file to specify which font to use.
 - [cssfontstack.com](https://www.cssfontstack.com)
 - [fontsquirrel.com](https://www.fontsquirrel.com)
 - [onlinewebfonts.com/](https://www.onlinewebfonts.com/)
-
-------
