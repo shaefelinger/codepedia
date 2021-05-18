@@ -31,8 +31,8 @@ composit selector usually has higher specificity
 ## Cascading & Inheritance
 
 - All Elements only care about the parent & siblings
-- margin and body werden nicht an die children cascadiert. color hingegen schon
-- links übernehmen nicht die color des parent
+- margin and body are not cascaded to the children. color is cascaded
+- links don't inherit the color of the parent
 
 - [Cascade and Inheritance - MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance)
 - [The “C” in CSS: The Cascade - CSS Tricks](https://css-tricks.com/the-c-in-css-the-cascade/)
