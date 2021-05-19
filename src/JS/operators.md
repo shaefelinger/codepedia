@@ -3,8 +3,8 @@
 ## Mathematical operators
 
 |      | Mathematical operators                                       |
-| ---- |:------------------------------------------------------------ |
-| `+`  | Addition (and also used for concatenating strings) -> Fehlergefahr. Wenn ein Element ein String ist: NaN = not a Number |
+| ---- | :----------------------------------------------------------- |
+| `+`  | Addition (and also used for concatenating strings) -> can cause errors, if an element is a string |
 | `-`  | Subtraction                                                  |
 | `/`  | Division                                                     |
 | `%`  | Modulus (Division Remainder)                                 |
@@ -65,12 +65,12 @@ this is often used to check, if an object exsits.
 Difference when using comparison opreators:
 
 | Truthy & Falsy                         |                                                              |
-|:-------------------------------------- |:------------------------------------------------------------ |
+| :------------------------------------- | :----------------------------------------------------------- |
 | `(false == 0)` `(false === 0)`         | true false                                                   |
 | `(false == '')` `(false === '')`       | true false                                                   |
 | `(0 == '')` `(0 === '')`               | true false                                                   |
 | `(undefined == 0)` `(undefined === 0)` | true false                                                   |
-| `NaN == Nan`                           | false. NaN ist eine nicht definierbare Zahl. 2 NaN können nicht gleich sein |
+| `NaN == Nan`                           | false. NaN is a non defineable Number. 2 NaN can not be equal |
 
 ------
 
@@ -92,7 +92,7 @@ console.log(!excited); // Prints false
 
 ## Typeof Operator
 
-to keep track of the data types of the variables. typeof operator  returns a string of the data type.
+Check the data types of the variables -> returns a string of the data type.
 
 *Syntax: `typeof` is a global operator so can be called on any object, `.length` is an object attribute and can only be called in the context of an existing object instance.*
 
@@ -107,4 +107,3 @@ const unknown3 = true;
 console.log(typeof unknown3); // Output: boolean
 ```
 
-------

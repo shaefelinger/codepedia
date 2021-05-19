@@ -1,26 +1,26 @@
 # Variables
 
-A variable is a container for a value. There are only a few things you can do with variables:
+A variable is a container for a value. You can:
 
 - Create a variable with a descriptive name.
 - Store or update information stored in a variable.
 - Reference or “get” information stored in a variable.
 
-|                        |                                                              |
-| ---------------------- | ------------------------------------------------------------ |
-| `let name`             | declaration. Value: 'undefined'. when using let, a variable with the same name can only be declared once (this is a good thing!) |
-| `name = 'Steffen'`     | attribution                                                  |
-| `let name = 'Steffen'` | initializing                                                 |
+|                    |                                                              |
+| ------------------ | ------------------------------------------------------------ |
+| `let name`         | declaration. Value: '`undefined`'. when using let, a variable with the same name can only be declared once (this is a good thing!) |
+| `name = 'Max'`     | attribution                                                  |
+| `let name = 'Max'` | initializing                                                 |
 
 - `var` - declares/initilizes the variable - pre-ES6
 - `let` - is used in web development, an alternative to `var`, but stricter (prefered)
-- `const` - is used for constants, the content can’t change (must be assigned a value when declared). A common practice when naming constants is to use all uppercase letters, with words separated by an underscore. `const FAV_PET = "Cats";`
-- When JavaScript variables are declared, they have an initial value of undefined. If you do a mathematical operation on an undefined variable your result will be NaN which means "Not a Number". If you concatenate a string with an undefined variable, you will get a literal string of "undefined".
+- `const` - is used for constants, the content can’t change (must be assigned a value when declared). A common practice when naming constants is to use all uppercase letters, with words separated by an underscore. `const FAV_PET = "Dogs";`
+- When JavaScript variables are declared, they have an **initial value** of **undefined**. If you do a mathematical operation on an undefined variable your result will be **NaN** which means "Not a Number". If you concatenate a string with an undefined variable, you will get a literal string of "undefined".
 - Create multiple Variables at once: `let a = 2, b = 3, c = 4;`
 
 ## Hoisting
 
-before any JavaScript code is executed, all variables declared with `var` are "hoisted"
+Before any JavaScript code is executed, all variables declared with `var` are "hoisted"
 
 ## let and const
 

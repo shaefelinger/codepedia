@@ -274,13 +274,23 @@ Most retina displays use double the amount of pixels, so it is a good rule of th
 
 ## SemanticHTML
 
-Den Code strukturieren für bessere Lesbarkeit und SEO:
+Structure the Code for better Readability and SEO:
 
-Z.B. `<header> <footer> <nav> <main> usw.`
+eg. `<header> <footer> <nav> <main> etc.`
 
 - [Semantic Elements - w3schools](https://www.w3schools.com/html/html5_semantic_elements.asp)
 - [Semantic HTML - codecademy](https://www.codecademy.com/learn/learn-html/modules/learn-semantic-html/cheatsheet)
 - [Semantic HTML - interneting is hard](https://www.internetingishard.com/html-and-css/semantic-html/)
+
+Here’s what a typical webpage could include:
+
+- `<header>` as the first element of the page, that can include the logo and the tagline.
+- `<nav>` as a list of links that go to the different pages of the website.
+- `<h1>` as the title of the page.
+- `<article>` as the main content of the page, like a blog post.
+- `<footer>` as the last element of the page, located at the bottom.
+
+<img src="./assets/html-sectioning-elements.png" alt="html-sectioning-elements" style="zoom:50%;" />
 
 ------
 

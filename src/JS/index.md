@@ -31,18 +31,14 @@ Also Avoid:
 
 JavaScript is a non-typed Language. When adding a number and a string, JavaScript will treat the number as a string.
 
-| Type        |  Description                                                 |
-|:----------- |:------------------------------------------------------------ |
+| Type        | Description                                                  |
+| :---------- | :----------------------------------------------------------- |
 | numbers     | JavaScript has only one type of numbers - it doesn't distinguish between integer and float |
-| strings     | Any series of characters like "John Doe". Written inside quotes: ‘...’ (preferred) or “...”. |
+| strings     | Any series of characters like "John Doe". Written inside quotes: ‘...’ (preferred) or “...” |
 | Boolean     | **true** or **false**. Convention for Name: *isCondition*    |
 | arrays      | structure that allows you to store a list of values in one single reference. |
 | objects     | Constructs that have properties. Everything in JavaScript is an object, and can be stored in a variable |
 | *and also:* |                                                              |
 | Null        | represents the intentional absence of a value, and is represented by the keyword null |
 | Undefined   | also represents the absence of a value though it has a different use than null |
-| Symbol      | a newer feature to the language, symbols are unique identifiers, useful in more complex coding. No need to worry about these for now. |
-
-
-
-------
+| Symbol      | a newer feature to the language, symbols are unique identifiers, useful in more complex coding. |
