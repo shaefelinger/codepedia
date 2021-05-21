@@ -2,17 +2,19 @@
 
 ## [Properties & Methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)
 
+::: danger
+❗️Floating point numbers cannot represent all decimals precisely in binary. This can lead to unexpected results, such as `0.1 + 0.2 === 0.3` returning `false` . 
+::: 
+
 ## Rounding
 
 - [`.toFixed(digits)`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed) 
-  - formats a number using fixed-point. `
+  - formats a number using fixed-point. 
   - parameter is optional
-  - ❗️Floating point numbers cannot represent all decimals precisely in binary. This can lead to unexpected results, such as `0.1 + 0.2 === 0.3` returning `false` .
-- `Math.round()`  
-  - -> rauf/runter runden
-- `Math.ceil()`
-- `Math.pow()`
-  - potenz
+- [`Math.round()`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round) -> rounded to the nearest integer
+- [`Math.ceil()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/ceil) -> will round the value up.
+- [`Math.floor()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor) -> will round the value down.
+- `Math.pow`
 
 ------
 
@@ -39,14 +41,17 @@ function random(min, max) {
 }
 ```
 
+or
 
+```js
+random(min, max) => Math.floor(Math.random() * (max + 1 - min)) + min;
+```
 
 ------
 
-## Other Number-Methods
+## [Other Number-Methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
 
 - `Math.sqrt()`
-- `Math.pow`
+- [`Math.pow()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/pow) -> returns the `base` to the `exponent` power
 - `Infinity`, `-Infinity`
 
-------
