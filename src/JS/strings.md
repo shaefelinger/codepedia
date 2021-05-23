@@ -16,7 +16,7 @@ property - contains the length of the string, in UTF-16 code units
 
 return any character inside a string
 
-- But String values are immutable: `str[0]="x"` doesn't work
+- But string values are immutable: `str[0]="x"` doesn't work
 
 ------
 
@@ -31,11 +31,6 @@ checks if a substring is present inside a string
 if(browserType.indexOf('mozilla') === -1) {
   // do stuff with the string if the 'mozilla'
   // substring is NOT contained within it
-}
-
-if(browserType.indexOf('mozilla') !== -1) {
-  // do stuff with the string if the 'mozilla'
-  // substring IS contained within it
 }
 ```
 
