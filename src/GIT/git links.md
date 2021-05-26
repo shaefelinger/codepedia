@@ -31,6 +31,7 @@
 - [Alex Di Liberto - All things Git](https://alexdiliberto.com/talks/all-things-git/#/)
 - [Mastering GIT - thoughtbot](https://thoughtbot.com/upcase/mastering-git)
 - [Video - Git Version Control in VS Code](https://code.visualstudio.com/docs/introvideos/versioncontrol)
+- https://academind.com/tutorials/git-the-basics/
 
 ---
 
