@@ -117,15 +117,15 @@ let str = String(number)
 ## String Concatenation
 
 ```js
-let name = 'Steffen'
-let age = '52'
+let name = 'John'
+let age = '32'
 
 console.log ("Hello, my name is " + name + " and I am " + age + " years old")
 ```
 
 ```js
-let firstName = 'Steffen';
-let lastName = 'Häfelinger'
+let firstName = 'John';
+let lastName = 'Doe'
 
 let fullName = firstName + ' ' + lastName
 
@@ -141,9 +141,9 @@ template literals use backticks ` and ${} to interpolate values into a string
 in template literals `${..}`is called codeblock
 
 ```js
-const myPet = 'armadillo';
-console.log(`I own a pet ${myPet}.`);
-// Output: I own a pet armadillo.
+const myPet = 'cat';
+console.log(`I have a ${myPet}.`);
+// Output: I have a cat.
 ```
 
 ------
