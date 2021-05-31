@@ -127,9 +127,13 @@ You can also use additional attributes besides a and href:
 - [a-Tag - w3schools](https://www.w3schools.com/tags/tag_a.asp)
 - [a - MDN](https://developer.mozilla.org/de/docs/Web/HTML/Element/a)
 
+------
 
+## Download-Link
 
-
+```html
+<a href="/assets/file.pdf" download>Download PDF... </a>
+```
 
 ------
 ## Text Formatting Tags
