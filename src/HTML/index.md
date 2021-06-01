@@ -68,7 +68,7 @@ The `<meta>` tags contain metadata: Data that is not displayed on the page, but 
 Metadata is mostly used by search engines or by social media to display snippets with title, description and a thumbnail image.
 
 - [ Tag - w3schools](https://www.w3schools.com/tags/tag_meta.asp)
-- (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta)
+- [metadata MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta)
 
 ------
 ## Viewport
@@ -325,4 +325,3 @@ The `data-*` attribute is used to store custom data private to the page or appli
 
 [w3-schools - data attribute](https://www.w3schools.com/tags/att_data-.asp)
 
-------
