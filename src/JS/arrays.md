@@ -1,19 +1,19 @@
 # Arrays
 
 - An array is a special variable, which can hold more than one value at a time.
-- Arrays can store any data types (including strings, numbers, and booleans)
+- Arrays can store **any data types** (including strings, numbers, and booleans)
 - Each element in an array has a numbered position known as its index
-- Arrays in JavaScript are zero-indexed, meaning the positions start counting from 0 rather than 1.
+- Arrays in JavaScript are **zero-indexed**, meaning the positions start counting from 0 rather than 1.
 - when you pass an array into a function, if the array is mutated inside the function, that change will be maintained outside the function as well (pass-by-reference)
 - Arrays are objects. the keys are the index-numbers. if the order is important, use arrays, otherwise you can use objects
 - Arrays are saved in the HEAP not in the STACK
-- There shouldn't be any spaces between the array name and the square brackets, like array [0][0] and even this array [0] [0] is not allowed.
+- There shouldn't be any spaces between the array name and the square brackets, like `array [0][0]` and even this `array [0] [0]` is not allowed.
 
 ## Create and modify Arrays
 
 ------
 
-### Array literal - 
+### Array literal 
 
 JavaScript arrays are written with square brackets. Array items are separated by commas.
 
@@ -70,12 +70,12 @@ property - returns the number of items in the array
 - can take a single argument or multiple arguments separated by commas
 
 ```js
-const itemTracker = ['item 0', 'item 1', 'item 2'];
- 
-                    itemTracker.push('item 3', 'item 4');
+const items = ['item 0', 'item 1', 'item 2'];
+
+items.push('item 3', 'item 4');
                      
-                    console.log(itemTracker); 
-                    // Output: ['item 0', 'item 1', 'item 2', 'item 3', 'item 4'];
+console.log(items); 
+// Output: ['item 0', 'item 1', 'item 2', 'item 3', 'item 4'];
 ```
 
 ------
@@ -88,11 +88,11 @@ const itemTracker = ['item 0', 'item 1', 'item 2'];
 - does not take any arguments, it simply removes the last element
 
 ```js
-const newItemTracker = ['item 0', 'item 1', 'item 2'];
+const newItems = ['item 0', 'item 1', 'item 2'];
  
-const removed = newItemTracker.pop();
+const removed = newItems.pop();
  
-console.log(newItemTracker); 
+console.log(newItems); 
 // Output: [ 'item 0', 'item 1' ]
 console.log(removed);
 // Output: item 2
@@ -192,7 +192,7 @@ loops through the array and executes the callback function for each element. The
 - `groceries.forEach(groceryItem => console.log(groceryItem));`
 
 - ```js
-  const fruits = ['mango', 'papaya', 'pineapple', 'apple'];
+  const fruits = ['banana', 'orange', 'pineapple', 'apple'];
   fruits.forEach(element => console.log("I want to eat a " + element));
   ```
 
@@ -212,7 +212,7 @@ loops through the array and executes the callback function for each element. The
   namesArray.forEach(function(name) {
     console.log('Welcome, ' + name + '!');
   }
-  
+  // this is the same:
   namesArray.forEach(name =>  console.log('Welcome, ' + name + '!'));
   ```
 
@@ -240,7 +240,7 @@ returns an array of elements after filtering out certain elements from the origi
 - The callback function should return true or false depending on the element that is passed to it. if true -> element is added to the new array
 
 - ```js
-  const words = ['chair', 'music', 'pillow', 'brick', 'pen', 'door']; 
+  const words = ['house', 'music', 'pillow', 'cat', 'pen', 'door']; 
   
   const shortWords = words.filter(word => word.length < 6);
   ```
@@ -253,8 +253,6 @@ returns an array of elements after filtering out certain elements from the origi
 
 ------
 
-
-
 ### [`.findIndex()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)
 
 returns the index of the first element that evaluates to true in the callback function
@@ -262,8 +260,8 @@ returns the index of the first element that evaluates to true in the callback fu
 - If there is no element in the array that satisfies the condition, it will return -1.
 
 ```js
-const jumbledNums = [123, 25, 78, 5, 9]; 
-const lessThanTen = jumbledNums.findIndex(num => num < 10);
+const numbers = [124 22, 78, 6, 8]; 
+const lessThanTen = numbers.findIndex(num => num < 10);
   
 console.log(lessThanTen); // Output: 3 
 ```
