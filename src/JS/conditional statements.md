@@ -7,8 +7,9 @@ if (condition) {
   // code block A to be executed
 } else {
   // code block B to be executed
-}
-              let age = 22;
+} 
+
+let age = 22;
 
 if (age >= 18) {
   console.log('sure, you can get the car keys!');
@@ -17,7 +18,7 @@ if (age >= 18) {
 }  
 ```
 
-{} sind optional bei else wenn in der selben Zeile...
+## else
 
 ```js
 if (??) {
@@ -31,6 +32,10 @@ if (??) {
 
 You can add any number of else if’s, but there can only be one (single) if and one (single) else. You don’t have to define an else. But if you use it, it has to be at the end.
 
+
+
+{} are optional with `else`if in the same row...
+
 ------
 
 ## short-circuit evaluation
@@ -40,13 +45,13 @@ This code checks if username is defined and assigns a default string if it is no
 ```js
 let defaultName;
 if (username) {
-defaultName = username;
+	defaultName = username;
 } else {
-defaultName = 'Stranger';
+	defaultName = 'Stranger';
 }
 ```
 
-you can use a short-hand for the code above. In a boolean condition, JavaScript assigns the truthy value to a variable if you use the || operator in your assignment:
+You can use a **short-hand** for the code above. In a boolean condition, JavaScript assigns the truthy value to a variable if you use the `||` operator in your assignment:
 
 ```js
 let defaultName = username || 'Stranger';
@@ -58,25 +63,25 @@ let defaultName = username || 'Stranger';
 
 to simplify an if...else statement.
 
-```
+```js
 condition ? expression-if-true : expression-if-false;
 let isNightTime = true;
 if (isNightTime) {
-  console.log('Turn on the lights!');
+  console.log('Lights On!');
 } else {
-  console.log('Turn off the lights!');
+  console.log('Lights Off!');
 }
 ```
 
 Shorthand:
 
 ```js
-isNightTime ? console.log('Turn on the lights!') : console.log('Turn off the lights!');
+isNightTime ? console.log('Lights On!') : console.log('Lights Off!');
 ```
 
-- The condition (true/false) is provided before the ?.
+- The condition (true/false) is provided before the `?`.
 
-- Two expressions follow the ? and are separated by a colon :
+- Two expressions follow the `?` and are separated by a colon `:`
 
 - If the condition evaluates to true, the first expression executes
 
@@ -84,11 +89,15 @@ isNightTime ? console.log('Turn on the lights!') : console.log('Turn off the lig
 
 - [can-ternary-operators-contain-multiple-actions](https://discuss.codecademy.com/t/can-ternary-operators-contain-multiple-actions/428487)
 
-- can also be nested: `return sum > product ? 'sum' : sum < product ? 'product' : 'same';`
+- can also be nested: 
 
-- We can pass the entire ternary as the argument:
+  ```js
+  return sum > product ? 'sum' : sum < product ? 'product' : 'same';
+  ```
 
-- ```js
+- We can pass the entire ternary as the argument: 
+
+  ```js
   console.log(a % 2 === 0 ? `${a} is even.` : `${a} is odd.`);
   ```
 
