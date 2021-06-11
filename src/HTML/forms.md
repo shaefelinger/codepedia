@@ -206,7 +206,7 @@ Every form should define a form action with the `action=”...”` attribute. Th
 
 ------
 
-## Diverse Infos: Form & Input
+## Misc. Infos: Form & Input
 
 - `placeholder=` statt `value=` verschwindet dann beim Eintippen
 - Bei **Client-Side-Verification** überprüft der Browser die eingegebenen Daten, bevor sie zum Server gesendet werden:
@@ -215,5 +215,4 @@ Every form should define a form action with the `action=”...”` attribute. Th
 - `minlengh` und `maxlength` machen das gleiche für ein Textfeld
 - Bei `method="POST"` erscheinen die eingegebenen Daten (im Gegensatz zu `method="GET"`) nicht in der Adresszeile der Browsers. Gut für Logins etc.
 - Mit `pattern=` kann man festlegen, dass die Eingabe einem bestimmten [Pattern](https://html.com/attributes/input-pattern/) entsprechen soll. Sogenannter [regex.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-
 
