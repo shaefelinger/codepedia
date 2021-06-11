@@ -41,9 +41,9 @@ const rectangleArea = function (width, height)  {
 
 ### C) Arrow Functions
 
-ES6 introduced arrow function syntaxremove the need to type out the keyword `function`Instead, you first include the parameters inside the ( ) and then add an arrow => that points to the function body surrounded in { } like this:
-
-
+- ES6 introduced. 
+- removes the need to type out the keyword `function`
+- Instead, you first include the parameters inside the ( ) and then add an arrow => that points to the function body surrounded in { } like this:
 
 ```js
 const rectangleArea = (width, height) => {
@@ -51,6 +51,10 @@ const rectangleArea = (width, height) => {
   return area;
 };
 ```
+
+
+
+
 
 ------
 
@@ -86,15 +90,14 @@ The most condensed form to refactor arrow function syntax is **concise body**.
 Examples:
 
 ```js
-const plantNeedsWater = day => day === 'Wednesday' ? true : false;
+const dayIsWednesday = day => day === 'Wednesday' ? true : false;
 
-const areaOfCircle = radius => Math.PI * radius * radius;
+const circleArea = radius => Math.PI * radius * radius;
 
 const doubler = item => item * 2;
 
-// multiplies the first input value by the second and returns it
 const multiplier = (item, multi) => item * multi;
-multiplier(4, 2); // returns 8
+multiplier(5, 3); // returns 15
 ```
 
 ------
@@ -107,9 +110,10 @@ multiplier(4, 2); // returns 8
 
 **Arguments** are the values that are passed to the function when it is called.
 
-Functions should not be used for input/output. -> recieves parameter - returns output
+- Functions should not be used for input/output -> recieves parameter - returns output
 
-function sollte so einfach wie möglich sein (EINE aufgabe)
+- Function should be as simple as possible (ONE task)
+
 
 <img src="./assets/js_arguments.png" alt="js_arguments.png" style="zoom:67%;" />
 
@@ -117,7 +121,7 @@ function sollte so einfach wie möglich sein (EINE aufgabe)
 
 ## Hoisting
 
-allows access to function declarations before they’re defined.  hoisting isn’t considered good practice
+allows access to function declarations before they’re defined.  Hoisting is NOT considered good practice
 
 - [Hoisting - MDN](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting)
 
@@ -133,7 +137,7 @@ console.log(greetWorld()); // Output: Hello, World!
 
 ## Default Parameters
 
-to have a default/fallback value if no argument passed or if the argument is undefined.
+To have a default/fallback value if no argument passed or if the argument is undefined.
 
 ```js
 function greeting (name = 'stranger') {
@@ -175,3 +179,4 @@ if (a === b) { return true } else { return false };
 // can be simplified as:
 return a === b;  
 ```
+
