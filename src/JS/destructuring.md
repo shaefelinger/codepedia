@@ -82,4 +82,4 @@ const { name: userName, age: userAge } = user;
 // userName = 'John Doe', userAge = 34
 ```
 
-https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/es6/use-destructuring-assignment-to-assign-variables-from-nested-objects 
+[freecodecamp - use destructuring](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/es6/use-destructuring-assignment-to-assign-variables-from-nested-objects )
