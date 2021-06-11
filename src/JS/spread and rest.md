@@ -27,7 +27,7 @@ const vegetables = ["corn", "potatoes", "carrots"];
 const produce = [...fruits, ...vegetables];
 ```
 
-https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/es6/use-the-spread-operator-to-evaluate-arrays-in-place	
+[freecodecamp -spread](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/es6/use-the-spread-operator-to-evaluate-arrays-in-place	)
 
 ------
 
@@ -57,7 +57,7 @@ function printContent(...items) {
 printContent("cheese", "bread", "butter", "milk");
 ```
 
-The result is similar to Array.prototype.slice():
+The result is similar to `Array.prototype.slice()`:
 
 ```js
 const [a, b, ...arr] = [1, 2, 3, 4, 5, 7];
@@ -78,7 +78,7 @@ console.log(howMany("string", null, [1, 2, 3], { })); // You have passed 4 argum
 
 The rest parameter eliminates the need to check the args array and allows us to apply map(), filter() and reduce() on the parameters array.
 
-https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/es6/use-the-rest-parameter-with-function-parameters	
+[freecodecamp - rest](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/es6/use-the-rest-parameter-with-function-parameters	)
 
 ------
 ## Variadic functions
