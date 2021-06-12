@@ -325,5 +325,5 @@ This works with [dynamic imports](https://developer.mozilla.org/en-US/docs/Web/J
 
 the standard in Node.js
 
-https://www.sitepoint.com/understanding-module-exports-exports-node-js/
+[https://www.sitepoint.com/understanding-module-exports-exports-node-js/](https://www.sitepoint.com/understanding-module-exports-exports-node-js/)
 
