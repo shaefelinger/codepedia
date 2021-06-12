@@ -144,6 +144,7 @@ module.exports = {
             'objects',
             'destructuring',
             'spread and rest',
+            'modules',
             'play audio',
             'classes',
             'JS links',
