@@ -266,7 +266,7 @@ import {
 
 
 
-#### Import defaults
+### Import defaults
 
 if you have a default export..
 
