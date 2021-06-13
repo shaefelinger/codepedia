@@ -321,7 +321,74 @@ This works with [dynamic imports](https://developer.mozilla.org/en-US/docs/Web/J
 
 ------
 
-## CommonJS format 
+## Require - Node.js
+
+##### Export
+
+```js
+function requestHandler(req, res) { 
+	// ...
+}
+// or:
+// const requestHandler = (req, res) => {
+//		// ...
+// }
+
+module.exports = requesthandler
+```
+
+
+
+or
+
+```js
+module.exports = {
+	handler: requestHandler,
+	someText: 'Some hard coded text'
+}
+```
+
+or
+
+```js
+module.exports.handler = requestHandler;
+module.exports.someText = 'Some hard coded text'
+```
+
+or shortcut:
+
+```
+exports.handler = requestHandler;
+exports.someText = 'Some hard coded text'
+```
+
+##### Import
+
+use `require` -> node will look for `module.exports`
+
+```js
+const module = require('./module.js')
+```
+
+example:
+
+```js
+const http = require('http')
+
+const routes = require ('./routes,js') // custom module
+
+const server = http.createServer(routes)
+//-> will use the function stored in routes for incoming requests
+
+server.listen(3000)
+
+```
+
+
+
+------
+
+#### CommonJS format 
 
 the standard in Node.js
 
