@@ -195,3 +195,8 @@ let name = readlineSync.question („frage“);
 
 
 ------
+
+## [Modules - require](/JS/modules.html#require-node-js)
+
+
+
