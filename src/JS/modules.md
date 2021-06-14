@@ -329,7 +329,9 @@ This works with [dynamic imports](https://developer.mozilla.org/en-US/docs/Web/J
 function requestHandler(req, res) { 
 	// ...
 }
+
 // or:
+
 // const requestHandler = (req, res) => {
 //		// ...
 // }
@@ -339,7 +341,7 @@ module.exports = requesthandler
 
 
 
-or
+or to use as: `modulename.handler`
 
 ```js
 module.exports = {
@@ -357,9 +359,35 @@ module.exports.someText = 'Some hard coded text'
 
 or shortcut:
 
-```
+```js
 exports.handler = requestHandler;
 exports.someText = 'Some hard coded text'
+```
+
+##### Function directily in the Object:
+
+```js
+module.exports = {
+    circleArea:  (radiusLength) => {
+    return PI * radiusLength * radiusLength
+  },
+    squareArea: function (sideLength) {
+    return sideLength**2
+  }
+}
+```
+
+or
+
+```js
+module.exports = {
+  circleArea (radiusLength) {
+  	return Math.PI * radiusLength * radiusLength
+  },
+  squareArea (sideLength) {
+  	return sideLength**2
+  )
+}
 ```
 
 ##### Import

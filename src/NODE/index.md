@@ -6,12 +6,23 @@
 
 ------
 
+## Check node-version
+
+```
+node -v
+```
+
+------
+
 ## Node REPL
 
 Read - Evaluation - Print - Loop
 
+Playground
+
 ```
 node
+>
 ```
 
 - use JS in the Terminal
@@ -19,12 +30,12 @@ node
 
 ### exit repl
 
-`.exit` or 2x  `ctrl-c` 
+`.exit` or 2x  `ctrl-c`  or `control + d` 
 
 ### multiple lines
 
 - to type multiple lines  type `.editor` while in the REPL. 
-- control + d when you’re ready for the input to be evaluated.
+- `control + d`  when you’re ready for the input to be evaluated.
 
 ------
 
