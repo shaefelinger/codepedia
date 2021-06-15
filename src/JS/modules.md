@@ -321,9 +321,68 @@ This works with [dynamic imports](https://developer.mozilla.org/en-US/docs/Web/J
 
 ------
 
-## Require - Node.js
+## Modules in Node - require
 
-##### Export
+- node [uses CJS module format](https://blog.risingstack.com/node-js-at-scale-module-system-commonjs-require/).
+- CJS imports module synchronously
+- When CJS imports, it will give you a **copy** of the imported object.
+- CJS will not work in the browser. 
+
+[https://www.sitepoint.com/understanding-module-exports-exports-node-js/](https://www.sitepoint.com/understanding-module-exports-exports-node-js/)
+
+### module.exports
+
+To make  functions available to other files, add them as properties to the built-in `module.exports` object:
+
+(This shows 2 ways of exporting functions from a module - Both approaches  store a function within the `module.exports` object. )
+
+```js
+/* converters.js */
+function celsiusToFahrenheit(celsius) {
+  return celsius * (9/5) + 32;
+}
+ 
+module.exports.celsiusToFahrenheit = celsiusToFahrenheit;
+ 
+module.exports.fahrenheitToCelsius = function(fahrenheit) {
+  return (fahrenheit - 32) * (5/9);
+};
+```
+
+or 
+
+```js
+module.exports = celsiusToFahrenheit
+```
+
+`module.exports` is an object that is built-in to the Node.js runtime environment. Other files can now import this object, and make use of these  functions, with the `require()` function.
+
+### require()
+
+The `require()` function accepts a string as an argument. That string provides the [file path](https://www.freecodecamp.org/news/requiring-modules-in-node-js-everything-you-need-to-know-e7fbd119be8/) to the module you would like to import.
+
+```js
+/* water-limits.js */
+const converters = require('./converters.js');
+```
+
+`./` is a relative path indicating that **converters.js** is stored in the same folder as **water-limits.js**. When you use `require()`, the entire `module.exports` object is returned and stored in the variable `converters`. 
+
+All exported methods can be used by `converters.methodName`
+
+### Using Object Destructuring to be more Selective With `require()`
+
+You can use object destructuring to extract only the needed functions.
+
+```js
+/* celsius-to-fahrenheit.js */
+const { celsiusToFahrenheit } = require('./converters.js');
+const fahrenheitValue = celsiusToFahrenheit(input);
+```
+
+-> you can access the function directly 
+
+### Export
 
 ```js
 function requestHandler(req, res) { 
@@ -338,8 +397,6 @@ function requestHandler(req, res) {
 
 module.exports = requesthandler
 ```
-
-
 
 or to use as: `modulename.handler`
 
@@ -364,7 +421,7 @@ exports.handler = requestHandler;
 exports.someText = 'Some hard coded text'
 ```
 
-##### Function directily in the Object:
+#### Function directily in the Object:
 
 ```js
 module.exports = {
@@ -390,7 +447,7 @@ module.exports = {
 }
 ```
 
-##### Import
+### Import
 
 use `require` -> node will look for `module.exports`
 
@@ -419,6 +476,4 @@ server.listen(3000)
 #### CommonJS format 
 
 the standard in Node.js
-
-[https://www.sitepoint.com/understanding-module-exports-exports-node-js/](https://www.sitepoint.com/understanding-module-exports-exports-node-js/)
 
