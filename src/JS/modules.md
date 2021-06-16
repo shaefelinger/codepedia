@@ -1,26 +1,8 @@
 # Modules
 
-[MDN JS Modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
-
-[javascript.info/modules-intro](https://javascript.info/modules-intro)
-
-
-
-[freecodecamp - Modules Beginners guide](https://www.freecodecamp.org/news/javascript-modules-a-beginner-s-guide-783f7d7a5fcc/)
-
-
+## Why use modules?
 
 In complex applications it makes sense to split JavaScript programs up into separate modules that can be imported when needed.  Modern browsers  support module functionality natively.
-
-
-
-node.js uses `require`, modern versions of node can also use `import/export`
-
-
-
-------
-
-## Why use modules?
 
 There are a lot of benefits to using modules:
 
@@ -30,7 +12,7 @@ There are a lot of benefits to using modules:
 
 **3) Reusability**
 
-
+------
 
 ## [What is a module?](https://javascript.info/modules-intro#what-is-a-module)
 
@@ -115,8 +97,6 @@ The module is executed only once. Exports are generated, and then they are share
 
 ## Implementing Modules using ES6 Syntax
 
-------
-
 Syntax for natively implementing modules was only introduced in 2015 with the release of [ECMAScript 6 (ES6)](http://es6-features.org/#ValueExportImport). 
 
 example project structure
@@ -139,7 +119,7 @@ ESM stands for ES Modules.
 - [Tree-shakeable](https://developers.google.com/web/fundamentals/performance/optimizing-javascript/tree-shaking/), due to ES6's [static module structure](https://exploringjs.com/es6/ch_modules.html#static-module-structure)
 - ESM allows bundlers like Rollup to [remove unnecessary code](https://dev.to/bennypowers/you-should-be-using-esm-kn3), allowing sites to ship less codes to get faster load.
 
-## ES6 Named Export Syntax
+### ES6 Named Export Syntax
 
 The name of each exported resource is listed between curly braces and separated by commas
 
@@ -159,159 +139,7 @@ export const changeToFunkyColor = (domElement) => {
 }
 ```
 
-## ES6 Import Syntax
-
-```js
-import { exportedResourceA, exportedResourceB } from '/path/to/module.js';
-```
-
-you must also update the html:
-
-```html
- <script type="module" src="./secret-messages.js"> </script>
-  </body>
-```
-
-add the attribute `type='module'` to the `<script>` element.
-
-
-
-## Renaming Imports to Avoid Naming Collisions
-
-ES6 includes syntax for renaming imported resources by adding in the keyword `as`.
-
-```js
-import { exportedResource as newlyNamedResource } from '/path/to/module'
-```
-
-## Default Exports and Imports
-
-
-
-Every module also has the option to export a single value to represent the entire module called the *default export*.Often, though not always, the default export value is an object containing the entire set of functions and/or data values of a module.
-
-The syntax for exporting a default object looks like this:
-
-```js
-const resources = { 
-  valueA, 
-  valueB 
-}
-export { resources as default };
-```
-
-
-
-the clause `as default` renames the exported object to `default`, a reserved identifier that can only be given to a single exported value.
-
-shorthand syntax:
-
-```js
-const resources = {
-  valueA,
-  valueB
-}
-export default resources;
-```
-
-or of course:
-
-```js
-export default {
-  valueA,
-  valueB
-}
-```
-
-
-
-### Importing default values
-
-```js
-import importedResources from 'module.js';
-```
-
-Notice that the curly braces are gone from the import statement. This syntax is  shorthand for: 
-
-```js
-import { default as importedResources } from 'module.js
-```
-
-if the `default` export is an object, the values inside cannot be extracted until after the object is imported, like so:
-
-```js
-// This will work...
-import resources from 'module.js'
-const { valueA, valueB } = resources;
- 
-// This will not work...
-import { valueA, valueB } from 'module.js'
-```
-
-
-
-Example:
-
-```js
-/* dom-functions.js */
-const toggleHiddenElement = (domElement) => {
-   //...
-}
- 
-const changeToFunkyColor = (domElement) => {
-	//...
-}
- 
-const resources = { 
-  toggleHiddenElement, 
-  changeToFunkyColor
-}
-export default resources;
-```
-
-->
-
-```js
-// secret-messages.js
-import domFunctions from '../modules/dom-functions.js';
- 
-const { toggleHiddenElement, changeToFunkyColor } = domFunctions;
- 
-const buttonElement = document.getElementById('secret-button');
-const pElement = document.getElementById('secret-p');
- 
-buttonElement.addEventListener('click', () => {
-  toggleHiddenElement(pElement);
-  changeToFunkyColor(buttonElement);
-});
-```
-
-
-
-
-
-- Can be called in HTML, just do:
-
-```html
-<script type="module">
-  import {func1} from 'my-lib';
-
-  func1();
-</script>
-```
-
-------
-
-> ab hier checken & kombinieren...
-
-### Export
-
-[MDN export](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export)
-
-There are two types of exports:
-
-1. Named Exports (Zero or more exports per module)
-2. Default Exports (One per module)
+##### Examples
 
 ```js
 // Exporting individual features
@@ -330,8 +158,6 @@ export { variable1 as name1, variable2 as name2, …, nameN };
 export const { name1, name2: bar } = o;
 
 ```
-
-
 
 ```js
 // ninjas.js
@@ -362,40 +188,30 @@ export { myFunction as function1,
          myVariable as variable };
 ```
 
-### Default Export
-
-- -> not importing an object!
-- import can be any name
-- only 1 default export!
+### ES6 Import Syntax
 
 ```js
-// Default exports
-export default expression;
-export default function (…) { … } // also class, function*
-export default function name1(…) { … } // also class, function*
-export { name1 as default, … };
+import { exportedResourceA, exportedResourceB } from '/path/to/module.js';
 ```
 
-```js
-// module "my-module.js"
+you must also update the html: add the attribute `type='module'` to the `<script>` element.
 
-export default function cube(x) {
-  return x * x * x;
-}
+```html
+ <script type="module" src="./secret-messages.js"> </script>
+  </body>
 ```
 
+#### Renaming Imports 
+
+-> to Avoid Naming Collisions
+
+ES6 includes syntax for renaming imported resources by adding in the keyword `as`.
+
 ```js
-import cube from './my-module.js';
-console.log(cube(3)); // 27
+import { exportedResource as newlyNamedResource } from '/path/to/module'
 ```
 
 
-
-------
-
-### Import
-
-[MDN import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
 
 ```js
 // index.js
@@ -457,9 +273,93 @@ import {
 
 
 
-### Import defaults
+------
 
-if you have a default export..
+### Default Exports
+
+Every module also has the option to export a single value to represent the entire module called the *default export*.The default export value can be an object containing the entire set of functions and/or data values of a module.
+
+The syntax for exporting a default object looks like this: the clause `as default` renames the exported object to `default`, a reserved identifier that can only be given to a single exported value.
+
+- import can be any name
+- only 1 default export!
+
+```js
+const resources = { 
+  valueA, 
+  valueB 
+}
+export { resources as default };
+```
+
+shorthand syntax:
+
+```js
+const resources = {
+  valueA,
+  valueB
+}
+export default resources;
+```
+
+or:
+
+```js
+export default {
+  valueA,
+  valueB
+}
+```
+
+
+
+```js
+// Default exports
+export default expression;
+export default function (…) { … } // also class, function*
+export default function name1(…) { … } // also class, function*
+export { name1 as default, … };
+```
+
+```js
+// module "my-module.js"
+
+export default function cube(x) {
+  return x * x * x;
+}
+```
+
+```js
+import cube from './my-module.js';
+console.log(cube(3)); // 27
+```
+
+------
+
+### Default Import
+
+```js
+import importedResources from 'module.js';
+```
+
+Notice that the curly braces are gone from the import statement. This syntax is  shorthand for: 
+
+```js
+import { default as importedResources } from 'module.js
+```
+
+if the `default` export is an object, the values inside cannot be extracted until after the object is imported, like so:
+
+```js
+// This will work...
+import resources from 'module.js'
+const { valueA, valueB } = resources;
+ 
+// This will not work...
+import { valueA, valueB } from 'module.js'
+```
+
+Examples
 
 ```js
 import myDefault from '/modules/my-module.js';
@@ -479,11 +379,57 @@ import myDefault, {foo, bar} from '/modules/my-module.js';
 // specific, named imports
 ```
 
+------
+
+Example:
+
+```js
+/* dom-functions.js */
+const toggleHiddenElement = (domElement) => {
+   //...
+}
+ 
+const changeToFunkyColor = (domElement) => {
+	//...
+}
+ 
+const resources = { 
+  toggleHiddenElement, 
+  changeToFunkyColor
+}
+export default resources;
+```
+
+->
+
+```js
+// secret-messages.js
+import domFunctions from '../modules/dom-functions.js';
+ 
+const { toggleHiddenElement, changeToFunkyColor } = domFunctions;
+ 
+const buttonElement = document.getElementById('secret-button');
+const pElement = document.getElementById('secret-p');
+ 
+buttonElement.addEventListener('click', () => {
+  toggleHiddenElement(pElement);
+  changeToFunkyColor(buttonElement);
+});
+```
 
 
 
+- Can be called in HTML, just do:
 
-#### [Import a module for its side effects only](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#import_a_module_for_its_side_effects_only)
+```html
+<script type="module">
+  import {func1} from 'my-lib';
+
+  func1();
+</script>
+```
+
+### [Import a module for its side effects only](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#import_a_module_for_its_side_effects_only)
 
 Import an entire module for side effects only, without importing anything. This runs the module's global code, but doesn't actually import any values.
 
@@ -502,13 +448,9 @@ This works with [dynamic imports](https://developer.mozilla.org/en-US/docs/Web/J
 })();
 ```
 
-
-
 ------
 
 ### [Dynamic Imports](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#dynamic_imports)
-
-
 
 ------
 
@@ -518,6 +460,7 @@ This works with [dynamic imports](https://developer.mozilla.org/en-US/docs/Web/J
 - CJS imports module synchronously
 - When CJS imports, it will give you a **copy** of the imported object.
 - CJS will not work in the browser. 
+- modern versions of node can also use `import/export`
 
 [https://www.sitepoint.com/understanding-module-exports-exports-node-js/](https://www.sitepoint.com/understanding-module-exports-exports-node-js/)
 
@@ -664,13 +607,19 @@ server.listen(3000)
 
 ## Module-links:
 
+[MDN export](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export)
 
+[MDN import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
 
 [https://dev.to/iggredible/what-the-heck-are-cjs-amd-umd-and-esm-ikm](https://dev.to/iggredible/what-the-heck-are-cjs-amd-umd-and-esm-ikm)
-
-------
 
 [https://blog.risingstack.com/node-js-at-scale-module-system-commonjs-require/](https://blog.risingstack.com/node-js-at-scale-module-system-commonjs-require/)
 
 [https://dev.to/bennypowers/you-should-be-using-esm-kn3](https://dev.to/bennypowers/you-should-be-using-esm-kn3)
+
+[MDN JS Modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
+
+[javascript.info/modules-intro](https://javascript.info/modules-intro)
+
+[freecodecamp - Modules Beginners guide](https://www.freecodecamp.org/news/javascript-modules-a-beginner-s-guide-783f7d7a5fcc/)
 
