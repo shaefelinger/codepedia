@@ -34,7 +34,11 @@ There are a lot of benefits to using modules:
 
 ## [What is a module?](https://javascript.info/modules-intro#what-is-a-module)
 
-A module is just a file. One script is one module. 
+*Modules* are reusable pieces of code in a file that can be exported and then imported for use in another file.
+
+*Modules* are reusable pieces of code in a file that can be exported and then imported for use in another file.
+
+This modular strategy is sometimes called *separation of concerns* 
 
 Modules can load each other and use  `export` and `import` to interchange functionality, call functions of one module from another one:
 
@@ -109,9 +113,196 @@ The module is executed only once. Exports are generated, and then they are share
 
 ------
 
-## Syntax
+## Implementing Modules using ES6 Syntax
 
 ------
+
+Syntax for natively implementing modules was only introduced in 2015 with the release of [ECMAScript 6 (ES6)](http://es6-features.org/#ValueExportImport). 
+
+example project structure
+
+```
+secret-image/
+|-- secret-image.html
+|-- secret-image.js
+secret-messages/
+|-- secret-messages.html
+|-- secret-messages.js
+modules/
+|-- dom-functions.js    <-- new module file
+```
+
+ESM stands for ES Modules.
+
+- Works in [many modern browsers](https://caniuse.com/#feat=es6-module)
+- It has  simple syntax and async
+- [Tree-shakeable](https://developers.google.com/web/fundamentals/performance/optimizing-javascript/tree-shaking/), due to ES6's [static module structure](https://exploringjs.com/es6/ch_modules.html#static-module-structure)
+- ESM allows bundlers like Rollup to [remove unnecessary code](https://dev.to/bennypowers/you-should-be-using-esm-kn3), allowing sites to ship less codes to get faster load.
+
+## ES6 Named Export Syntax
+
+The name of each exported resource is listed between curly braces and separated by commas
+
+```js
+export { resourceToExportA, resourceToExportB, ...}
+```
+
+individual values may be exported as named exports by simply placing the `export` keyword in front of the variable’s declaration.
+
+```js
+export const toggleHiddenElement = (domElement) => {
+  // ...
+}
+ 
+export const changeToFunkyColor = (domElement) => {
+  // ...
+}
+```
+
+## ES6 Import Syntax
+
+```js
+import { exportedResourceA, exportedResourceB } from '/path/to/module.js';
+```
+
+you must also update the html:
+
+```html
+ <script type="module" src="./secret-messages.js"> </script>
+  </body>
+```
+
+add the attribute `type='module'` to the `<script>` element.
+
+
+
+## Renaming Imports to Avoid Naming Collisions
+
+ES6 includes syntax for renaming imported resources by adding in the keyword `as`.
+
+```js
+import { exportedResource as newlyNamedResource } from '/path/to/module'
+```
+
+## Default Exports and Imports
+
+
+
+Every module also has the option to export a single value to represent the entire module called the *default export*.Often, though not always, the default export value is an object containing the entire set of functions and/or data values of a module.
+
+The syntax for exporting a default object looks like this:
+
+```js
+const resources = { 
+  valueA, 
+  valueB 
+}
+export { resources as default };
+```
+
+
+
+the clause `as default` renames the exported object to `default`, a reserved identifier that can only be given to a single exported value.
+
+shorthand syntax:
+
+```js
+const resources = {
+  valueA,
+  valueB
+}
+export default resources;
+```
+
+or of course:
+
+```js
+export default {
+  valueA,
+  valueB
+}
+```
+
+
+
+### Importing default values
+
+```js
+import importedResources from 'module.js';
+```
+
+Notice that the curly braces are gone from the import statement. This syntax is  shorthand for: 
+
+```js
+import { default as importedResources } from 'module.js
+```
+
+if the `default` export is an object, the values inside cannot be extracted until after the object is imported, like so:
+
+```js
+// This will work...
+import resources from 'module.js'
+const { valueA, valueB } = resources;
+ 
+// This will not work...
+import { valueA, valueB } from 'module.js'
+```
+
+
+
+Example:
+
+```js
+/* dom-functions.js */
+const toggleHiddenElement = (domElement) => {
+   //...
+}
+ 
+const changeToFunkyColor = (domElement) => {
+	//...
+}
+ 
+const resources = { 
+  toggleHiddenElement, 
+  changeToFunkyColor
+}
+export default resources;
+```
+
+->
+
+```js
+// secret-messages.js
+import domFunctions from '../modules/dom-functions.js';
+ 
+const { toggleHiddenElement, changeToFunkyColor } = domFunctions;
+ 
+const buttonElement = document.getElementById('secret-button');
+const pElement = document.getElementById('secret-p');
+ 
+buttonElement.addEventListener('click', () => {
+  toggleHiddenElement(pElement);
+  changeToFunkyColor(buttonElement);
+});
+```
+
+
+
+
+
+- Can be called in HTML, just do:
+
+```html
+<script type="module">
+  import {func1} from 'my-lib';
+
+  func1();
+</script>
+```
+
+------
+
+> ab hier checken & kombinieren...
 
 ### Export
 
@@ -469,11 +660,17 @@ server.listen(3000)
 
 ```
 
+------
 
+## Module-links:
+
+
+
+[https://dev.to/iggredible/what-the-heck-are-cjs-amd-umd-and-esm-ikm](https://dev.to/iggredible/what-the-heck-are-cjs-amd-umd-and-esm-ikm)
 
 ------
 
-#### CommonJS format 
+[https://blog.risingstack.com/node-js-at-scale-module-system-commonjs-require/](https://blog.risingstack.com/node-js-at-scale-module-system-commonjs-require/)
 
-the standard in Node.js
+[https://dev.to/bennypowers/you-should-be-using-esm-kn3](https://dev.to/bennypowers/you-should-be-using-esm-kn3)
 
