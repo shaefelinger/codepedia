@@ -90,7 +90,7 @@ main.js:
 <div v-for="variant in variants" :key="variant.id" @mouseover="updateImage(variant.image)">{{ variant.color }}</div>
 ```
 
-```vue
+```js
 methods: {
   ...
   updateImage(variantImage) {
@@ -187,4 +187,5 @@ https://vuejs.org/v2/guide/events.html
 <p>Result: {{ counter }}</p>
 ```
 
-value gets evaluated once, then i doesn't change
+value gets evaluated once, then it doesn't change
+
