@@ -232,6 +232,8 @@ module.exports = {
             'dynamic-styling',
             'advanced-reactivity',
 
+            'vue components',
+            'vue forms',
             'vue links',
             'vue-lager',
           ],
