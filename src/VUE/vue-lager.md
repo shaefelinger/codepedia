@@ -2,19 +2,11 @@
 
 
 
----
-
-### `v-model`
-
-##### two-way-binding
-
-connects data-object to input-element
-
----
 
 
 
----
+
+
 
 
 
@@ -259,43 +251,4 @@ export default {
 
 ---
 
-## Routing
-
-```
- <router-view />
-```
-
-is where the links are displayed
-
-```js
-<router-link class="font-bold text-gray-700" to="/">Home</router-link> |
-```
-
-special-css-class
-
-```css
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-```
-
-router also für security - blocking...
-
-#### History Mode
-
-```
-history: createWebHistory(process.env.BASE_URL),
-```
-
-no # for navigation
-
----
-
-### router has api
-
-```
-      this.$router.push({ name: 'Profile', params: { char_id } });
-```
-
----
 
