@@ -2,14 +2,6 @@
 
 
 
-
-
-
-
-
-
-
-
 ---
 
 ## Options-API -Cheatsheet
@@ -250,5 +242,4 @@ export default {
 ```
 
 ---
-
 
