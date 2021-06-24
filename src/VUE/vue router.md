@@ -219,3 +219,160 @@ this.$router.push({ name: 'Profile', params: { char_id } });
 ---
 
 router also für security - blocking...
+
+------
+
+# Neue Notes...
+
+
+
+### Dynamic Routing 
+
+```js
+routes: [
+        ...
+        {
+          path: '/user/:username',
+          name: 'user',
+          component: User
+        }
+      ]
+```
+
+ `:username` is called a dynamic segment. This tells Vue that anything after `/user/` is to be treated as a dynamic route. When we create the simple template, we can access this parameter like so:
+
+**/pages/user.vue**
+
+```html
+<template>
+	<div class="user">
+		<h1>This is a page for {{ $route.params.username }}</h1>
+	</div>
+</template>
+```
+
+A $route object represents the state of the current active route. It contains data about the route including the params.
+
+https://router.vuejs.org/api/#the-route-object
+
+Also we can link to dynamic routes by placing parameters in our links:
+
+```html
+    <router-link :to="{ name: 'user', params: { username: 'Joe' }  }">Joe</router-link>
+```
+
+## Using Props for Routes
+
+Using `$route.params` in your component limits its flexibility. A more modular way to create your dynamic components is to set `props: true` in your route configuration.
+
+**router.js**
+
+```javascript
+    ...
+    export default new Router({
+      routes: [
+        {
+          path: "/user/:username",
+          name: "user",
+          component: User,
+          props: true
+        }
+      ]
+    });
+```
+
+This will cause the `$route.params` to be sent into your component as a normal prop. Inside our component, we’ll then need to receive this prop:
+
+**User.vue**
+
+```html
+    <template>
+      <div class="user">
+        <h1>{{ username }}</h1>
+      </div>
+    </template>
+    
+    <script>
+    export default {
+      props: ["username"]
+    };
+    </script>
+```
+
+Everything will now work the same, except that our component can now be reused as a child component elsewhere, passing in username as a prop.
+
+```js
+  <router-link :to="{ name: 'EventDetails', params: { id: event.id } }">
+
+```
+
+> direct access in template:
+>
+> ```vue
+> <span>Event #{{ $route.params.id }}</span>
+> ```
+
+
+
+prevent error, if asyc data is not yet loaded:
+
+add `  <div v-if="event">` to the  parent-element
+
+
+
+------
+
+
+
+## History Mode
+
+## The Hash
+
+“Hash mode” is the default mode for Vue2 Router and it uses the URL hash to simulate a full URL so the page isn’t reloaded every time the URL changes.
+
+In order to remove it we need to add some configuration to our **router.js** :
+
+`mode: 'history'`
+
+```javascript
+    ...
+    export default new Router({
+      mode: 'history', // <----
+      routes: [
+       ...
+      ]
+    })
+```
+
+This tells Vue to use the browser `history.pushState` API to change the URL without reloading the page.
+
+Normally when you load up `/about-us` on a server it would look for an `about-us.html` file. On our application no matter what URL is called up, we must load up `index.html` which is where our application is loaded, and then our router will take over and load up the proper page.
+
+This is already the default functionality on our development server, but if we go to deploy our application we’ll need to ensure our server has the proper configuration to serve up our index.html no matter what route is navigated to. The Vue Router documentation has a bunch of [example configurations](https://router.vuejs.org/guide/essentials/history-mode.html#example-server-configurations) showing how to do this.
+
+
+
+## Handling 404s
+
+ you should be aware of is that when we go to an invalid URL, we are no longer given the proper 404 file not found error.
+
+ There are different ways to combat this, one of which is by creating a `/views/FileNotFound.vue` component, which gets loaded if none of the existing paths match. To do this we would place this catch-all route at the bottom of our `routes.js`:
+
+```javascript
+    ...
+    const router = new VueRouter({
+      mode: 'history',
+      routes: [
+        ...
+        { path: '*', component: NotFoundComponent }
+      ]
+```
+
+https://router.vuejs.org/
+
+
+
+------
+
+vue3...
+
