@@ -42,7 +42,7 @@ npm install vue-router@next --save
 
 https://router.vuejs.org/
 
-#### vue2
+### Vue2
 
 ```js
 import Vue from "vue"
@@ -93,7 +93,7 @@ When the browser’s URL ends with `/about`, the `About` component will be rende
 
  it’s a best practice to put the components (AKA pages) that get loaded by Vue Router in the `/views` directory. You then keep the modular (reusable) components in your `/components` directory.
 
-### main.js
+#### main.js
 
 The Router is loaded in `main.js`:
 
@@ -117,7 +117,7 @@ Since we’re using ES6, this is the same as writing:
     ...
 ```
 
-### App.vue
+#### App.vue
 
 ```vue
 <div id="app">
@@ -133,7 +133,76 @@ Since we’re using ES6, this is the same as writing:
 
 ### Vue3
 
+### Router Setup
 
+```js
+// main.js
+
+import { createRouter } from 'vue-router';
+...
+const router = createRouter({
+    /// configuration
+});
+
+```
+
+
+
+```js
+import { createRouter, createWebHistory } from 'vue-router';
+
+const router = createRouter({
+  history: createWebHistory(), // use the build in browser history
+  routes: []
+});
+```
+
+
+
+```
+app.use()
+```
+
+## Registering Routes
+
+in the `routes`-array pass a JS-Object for every route
+
+
+
+example - whole file:
+
+```js
+import { createApp } from 'vue';
+
+import App from './App.vue';
+
+import { createRouter, createWebHistory } from 'vue-router';
+import TeamsList from './components/teams/TeamsList.vue';
+import UsersList from './components/users/UsersList.vue';
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes: [
+    {
+      path: '/teams',
+      component: TeamsList
+    },
+    {
+      path: '/users',
+      component: UsersList
+    }
+  ]
+});
+
+const app = createApp(App);
+
+app.use(router);
+
+app.mount('#app');
+
+```
+
+#### 
 
 
 
@@ -292,16 +361,6 @@ this.$router.push({ name: 'Profile', params: { char_id } });
 
 
 
-
-
-
----
-
-router also für security - blocking...
-
-------
-
-# Neue Notes...
 
 
 
@@ -487,4 +546,14 @@ https://router.vuejs.org/
 vue3...
 
 ------
+
+
+
+---
+
+router also für security - blocking...
+
+------
+
+# Neue Notes...
 
