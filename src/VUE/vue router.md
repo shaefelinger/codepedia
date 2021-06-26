@@ -1,5 +1,9 @@
 # VUE Router
 
+to make SinglePage-Applications work with different URLs.
+
+------
+
 ## Server-Side vs Client-Side Routing
 
 ##### Server-side Routing
@@ -16,11 +20,29 @@ the client is making a request to the server on every URL change.
 
 
 
+------
+
+## Install
+
+```
+npm i vue-router
+```
+
+or (vue 3)
+
+```
+npm install vue-router@next --save
+```
+
+
+
+
+
 ## Vue Router-Setup
 
 https://router.vuejs.org/
 
-vue2
+#### vue2
 
 ```js
 import Vue from "vue"
@@ -109,27 +131,64 @@ Since we’re using ES6, this is the same as writing:
 
 ------
 
+### Vue3
+
+
+
+
+
+------
+
 ## Routing
+
+### `<router-view/>` 
+
+Is a placeholder where the contents of the component will be rendered onto the page.
+
+To let vue know, where to render that component, use the `router-view`-placeholder
 
 ### `<router-link>`
 
 is a component (from the vue-router library) whose job is to link to a specific route.
 
-### `<router-view/>` 
+like a special anker-tag, to load the router-view und update the url 
 
-is a placeholder where the contents of the component will be rendered onto the page.
+```vue
+<router-link to="/about">About</router-link>
+```
 
-## special-css-class
+> under the hood: will render as an a-tag
+
+------
+
+## Styling active Links
+
+active links have the class: `router-link-active`
 
 ```css
-#nav a.router-link-exact-active {
-  color: #42b983;
+a.router-link-active {
+  color: #f1a80a;
+  border-color: #f1a80a;
+  background-color: #1a037e;
 }
 ```
 
+also  `router-link-exact-active`
 
+-> only to the navitem that is **exactly** the path
 
+Theese classes can be changed:
 
+```js
+const router = createRouter({
+  history: createWebHistory(),
+  linkActiveClass: 'router-link-active', // default
+  ....
+```
+
+### 
+
+------
 
 ## Using Named Routes
 
@@ -210,11 +269,31 @@ no # for navigation
 
 ------
 
-## Router-api
+## Programmatic navigation
+
+Navigate from inside js-code, eg. after some code has run.
+
+use `this.$router`
+
+methods:
+
+- `push()` -> add new route to the browser history
+- `back()` / `forward()`
+- ...
 
 ```
 this.$router.push({ name: 'Profile', params: { char_id } });
 ```
+
+------
+
+
+
+
+
+
+
+
 
 ---
 
@@ -239,7 +318,7 @@ routes: [
       ]
 ```
 
- `:username` is called a dynamic segment. This tells Vue that anything after `/user/` is to be treated as a dynamic route. When we create the simple template, we can access this parameter like so:
+ `:username` is called a dynamic segment. Anything after `/user/` is to be treated as a dynamic route. When we create the simple template, we can access this parameter like so:
 
 **/pages/user.vue**
 
@@ -328,9 +407,10 @@ add `  <div v-if="event">` to the  parent-element
 
 ## The Hash
 
-“Hash mode” is the default mode for Vue2 Router and it uses the URL hash to simulate a full URL so the page isn’t reloaded every time the URL changes.
+- “Hash mode” is the default mode for Vue2 Router  
+- uses the URL hash to simulate a full URL so the page isn’t reloaded every time the URL changes.
 
-In order to remove it we need to add some configuration to our **router.js** :
+In order to remove it we need to add some configuration to  **router.js** :
 
 `mode: 'history'`
 
@@ -346,9 +426,15 @@ In order to remove it we need to add some configuration to our **router.js** :
 
 This tells Vue to use the browser `history.pushState` API to change the URL without reloading the page.
 
-Normally when you load up `/about-us` on a server it would look for an `about-us.html` file. On our application no matter what URL is called up, we must load up `index.html` which is where our application is loaded, and then our router will take over and load up the proper page.
+Normally when you load up `/about-us` on a server it would look for an `about-us.html` file. 
 
-This is already the default functionality on our development server, but if we go to deploy our application we’ll need to ensure our server has the proper configuration to serve up our index.html no matter what route is navigated to. The Vue Router documentation has a bunch of [example configurations](https://router.vuejs.org/guide/essentials/history-mode.html#example-server-configurations) showing how to do this.
+On our application no matter what URL is called up, we must load up `index.html` which is where our application is loaded, and then our router will take over and load up the proper page.
+
+This is  the default functionality on our development server, 
+
+but if we go to deploy our application we’ll need to ensure our server has the proper configuration to serve up our index.html no matter what route is navigated to. 
+
+The Vue Router documentation has a bunch of [example configurations](https://router.vuejs.org/guide/essentials/history-mode.html#example-server-configurations) 
 
 
 
