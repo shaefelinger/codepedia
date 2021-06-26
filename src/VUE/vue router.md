@@ -328,13 +328,7 @@ nstead of redirecting the old path we might just want to alias it, meaning just 
 
 ------
 
-## History Mode
 
-```
-history: createWebHistory(process.env.BASE_URL),
-```
-
-no # for navigation
 
 ------
 
@@ -355,12 +349,6 @@ this.$router.push({ name: 'Profile', params: { char_id } });
 ```
 
 ------
-
-
-
-
-
-
 
 
 
@@ -388,7 +376,9 @@ routes: [
 
  `:username` is called a dynamic segment. Anything after `/user/` is to be treated as a dynamic route. 
 
-### Dynamic Paths
+
+
+## Dynamic Paths
 
 use `this.$route`
 
@@ -413,9 +403,7 @@ https://router.vuejs.org/api/#the-route-object
 
 
 
-
-
-
+------
 
 Also we can link to dynamic routes by placing parameters in our links:
 
@@ -488,7 +476,13 @@ Everything will now work the same, but the component can now be reused as a chil
 
 ## History Mode
 
-## The Hash
+```
+history: createWebHistory(process.env.BASE_URL),
+```
+
+no # for navigation
+
+### The Hash
 
 - “Hash mode” is the default mode for Vue2 Router  
 - uses the URL hash to simulate a full URL so the page isn’t reloaded every time the URL changes.
@@ -539,21 +533,9 @@ The Vue Router documentation has a bunch of [example configurations](https://rou
 
 https://router.vuejs.org/
 
-
-
-------
-
-vue3...
-
-------
-
-
-
 ---
 
 router also für security - blocking...
 
 ------
-
-# Neue Notes...
 
