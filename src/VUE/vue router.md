@@ -305,7 +305,16 @@ router also für security - blocking...
 
 
 
-### Dynamic Routing 
+## Passing data with Route Parameter
+
+the order matters: -> `/new` will not work!
+
+```js
+{path: '/teams/:teamId'},
+{path: '/teams/new'},
+```
+
+-> you can access the data inside the component
 
 ```js
 routes: [
@@ -318,7 +327,16 @@ routes: [
       ]
 ```
 
- `:username` is called a dynamic segment. Anything after `/user/` is to be treated as a dynamic route. When we create the simple template, we can access this parameter like so:
+ `:username` is called a dynamic segment. Anything after `/user/` is to be treated as a dynamic route. 
+
+### Dynamic Paths
+
+use `this.$route`
+
+- `this.$route.path`
+- `this.$route.params` -> contains the parameters
+
+access this parameter with `$route.params.name`
 
 **/pages/user.vue**
 
@@ -334,15 +352,27 @@ A $route object represents the state of the current active route. It contains da
 
 https://router.vuejs.org/api/#the-route-object
 
+
+
+
+
+
+
 Also we can link to dynamic routes by placing parameters in our links:
 
 ```html
     <router-link :to="{ name: 'user', params: { username: 'Joe' }  }">Joe</router-link>
 ```
 
+
+
+------
+
 ## Using Props for Routes
 
-Using `$route.params` in your component limits its flexibility. A more modular way to create your dynamic components is to set `props: true` in your route configuration.
+ `$route.params`  limits the flexibility of the component. Usually it is better to pass the params as props
+
+ A more modular way to create  dynamic components is to set `props: true` in your route configuration.
 
 **router.js**
 
@@ -360,7 +390,9 @@ Using `$route.params` in your component limits its flexibility. A more modular w
     });
 ```
 
-This will cause the `$route.params` to be sent into your component as a normal prop. Inside our component, we’ll then need to receive this prop:
+This will cause the `$route.params` to be sent into your component as a normal prop. instead of the `$route.params`. -> you get a prop with the name "username"
+
+Inside the component,  receive this prop:
 
 **User.vue**
 
@@ -378,7 +410,9 @@ This will cause the `$route.params` to be sent into your component as a normal p
     </script>
 ```
 
-Everything will now work the same, except that our component can now be reused as a child component elsewhere, passing in username as a prop.
+Everything will now work the same, but the component can now be reused as a child component elsewhere, passing in username as a prop.
+
+
 
 ```js
   <router-link :to="{ name: 'EventDetails', params: { id: event.id } }">
@@ -391,17 +425,7 @@ Everything will now work the same, except that our component can now be reused a
 > <span>Event #{{ $route.params.id }}</span>
 > ```
 
-
-
-prevent error, if asyc data is not yet loaded:
-
-add `  <div v-if="event">` to the  parent-element
-
-
-
 ------
-
-
 
 ## History Mode
 
