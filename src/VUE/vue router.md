@@ -539,3 +539,407 @@ router also für security - blocking...
 
 ------
 
+## Sort me
+
+### Redirecting
+
+```js
+{
+	path: '/',
+	redirect: '/teams'
+},
+```
+
+or use: (URL doesn't change)
+
+```js
+{
+	path: '/teams',
+	component: TeamsList,
+	alias: '/'
+},
+```
+
+
+
+------
+
+### Catch-All routes
+
+Handle invald routes
+
+at the end:
+
+```js
+{
+	path: '/:notFound(.*)',
+	redirect: '/teams'
+}
+```
+
+> `.*` is a RegEx
+
+or create a "NotFound"-Component...
+
+------
+
+## Nested Routes
+
+Router inside of another router. Add `children` -> takes an array of routes. Load different parts inside a component.
+
+```js
+{
+	path: '/teams',
+		component: TeamsList,
+			children: [
+        {
+          path: ':teamId',
+          component: TeamMembers,
+          props: true
+        },
+      ]
+    },
+```
+
+Top-moset `<router-view>` only shows the root-route
+
+ChildRoute: 
+
+you have to create a `router-view` in the component, where the child components should be displayed.
+
+> `router-link-exact-active` will not be added to the <a>element!
+
+Children can also contain children...
+
+------
+
+## Named Routes
+
+makes it simpler to manage and change the routes
+
+`to` can also take an object instead of a string
+
+add a name property to ths routes in the route-config:
+
+```js
+{
+      name: 'teams',
+      path: '/teams',
+      component: TeamsList,
+      children: [
+        {
+          name: 'team-members',
+          path: ':teamId',
+          component: TeamMembers,
+          props: true
+        }
+      ]
+    },
+```
+
+add params:
+
+```js
+ computed: {
+    teamMembersLink() {
+      return {
+        name: 'team-members',
+        params: {
+          teamId: this.id
+        }
+      };
+    }
+  }
+```
+
+
+
+you can also provide the same kind of object to `this.$router.push()`
+
+------
+
+## Using Query Params
+
+pass extra-information as part of the URL, eg `?sort=asc`
+
+...optional
+
+```js
+ computed: {
+    teamMembersLink() {
+      return {
+        name: 'team-members',
+        params: {
+          teamId: this.id
+        },
+        query: {
+          sort: 'asc'
+        }
+      };
+    }
+  }
+```
+
+-> the query gets automatically added to the url
+
+access in the component with:
+
+```
+this.$route.query
+```
+
+------
+
+## Named router-views
+
+for multiple router-views on the same level
+
+define multiple components per route
+
+
+
+-> give the router-views names (just like named slots)
+
+you can have one unnamed router-view on the same level - this is the default router-view
+
+```vue
+<main>
+    <router-view></router-view>
+  </main>
+  <footer>
+    <router-view name="footer"></router-view>
+  </footer>
+```
+
+
+
+```js
+ {
+      name: 'teams',
+      path: '/teams',
+      components: { default: TeamsList, footer: TeamsFooter },
+      
+    },
+```
+
+------
+
+
+
+### Controlling Scroll behaviour
+
+add to router-config object:
+
+```js
+...,
+scrollBehavior(to, from, savedPosition) {
+    // method gets called, whenever the page changes
+}
+```
+
+ 
+
+`to` and `from` are route-objects (like what you get, when you use `this.$route` inside a component)
+
+`savedPosition` is where the page was scrolled, before the user left the page
+
+scrollBehavior should return an object that describes, where th browser should scroll to (left and top - property)
+
+```js
+ scrollBehavior(to, from, savedPosition) {
+    return { left: 0, top: 0}
+  }
+```
+
+or like this:
+
+```js
+ scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    }
+    return { left: 0, top: 0 };
+  }
+```
+
+if you go back, it uses the savedPosition, otherwise it jums to the top
+
+------
+
+## Navigation Guards
+
+eg for authentications, or to prevent that a user leaves a site where he has unsaved edits in eg a form
+
+Guards = methods, that get called automatically, when a page changes
+
+### `.beforeEach()`
+
+runs before each nav
+
+```js
+router.beforeEach((to, from, next) => {
+  
+}) 
+```
+
+`to` and `from` are route-objects
+
+`next ` is a function that gets celled to eather confirm or cancel the navigation action 
+
+### `next()`
+
+- `next()`  or `next(true)`- confirms/allows the navigation
+
+- `next(false)` cancels the nav
+  - `next('/teams')` or `next({name:'teams'})` calls that route
+
+
+
+
+
+### Set Guard to specific routes
+
+```js
+{
+	path: '/users',
+	components: { default: UsersList, footer: UsersFooter },
+	beforeEnter(to, from, next) {
+		console.log('users before enter');
+		console.log(to, from);
+		next();
+	}
+},
+```
+
+OR 
+
+in the component add
+
+####  `beforeRouteEnter()`
+
+```js
+beforeRouteEnter(to, from, next) {
+    // this will be run, before navigation to thie component is confirmed
+}
+```
+
+order:
+
+global > route config > component
+
+#### `beforeRouteUpdate()`
+
+in components that are reused.
+
+```js
+beforeRouteEnter(to, from, next) {
+    // this will be run,  before the componente is reused with new data
+}
+```
+
+------
+
+### Global "afterEach"-Guard
+
+```js
+router.afterEach( (to,from) => {
+  // this runs after the navigation has been confirmed
+})
+```
+
+eg. to send analytics data to  a server
+
+------
+
+## Route Leave Guards
+
+eg unsaved changes in a form
+
+inside of the component:
+
+```js
+beforeRouteLeave(to, from, next) {
+ //...
+},
+```
+
+eg. check, if the user really wants to leave
+
+```js
+ beforeRouteLeave(to, from, next) {
+    if (this.changesSaved) {
+      next();
+    } else {
+      const userWantsToLeave = confirm('Are you sure?');
+      next(userWantsToLeave);
+    }
+  },
+```
+
+> confirm returns a boolean
+
+------
+
+### Route Metadata
+
+add to route: 
+
+```
+meta:
+```
+
+takes any kind of value, eg an object
+
+eg.
+
+```js
+meta: {needsAuth: true},
+```
+
+-> meta can be accessed with `$route`in the component or in the route guards
+
+example: use global beforeEach to check auth
+
+```js
+router.beforeEach(function(to, from, next) {
+  if (to.meta.needsAuth) {
+		// do something
+    next();
+  } else {
+	  next();    
+  }
+});
+```
+
+------
+
+## Organizing Route-Files
+
+use a `views`(pages/screens) - folder for the components that are loaded through the router
+
+move all routing-logic in a seperate-file:
+
+and export it 
+
+```
+export default router;
+```
+
+in main.js import it:
+
+```js
+import { createApp } from 'vue';
+
+import App from './App.vue';
+import router from '@/router';
+
+const app = createApp(App);
+
+app.use(router);
+
+app.mount('#app');
+```
+
+------
+
+# 
