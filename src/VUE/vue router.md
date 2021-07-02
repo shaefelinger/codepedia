@@ -2,8 +2,6 @@
 
 To make SinglePage-Applications work with different URLs.
 
- https://firebasestorage.googleapis.com/v0/b/vue-mastery.appspot.com/o/flamelink%2Fmedia%2F1.opt.1603835608514.jpg?alt=media&token=3005400a-08eb-4e44-8b55-bfaf0b706e95 
-
 ------
 
 ## Server-Side vs Client-Side Routing
@@ -19,8 +17,6 @@ the client is making a request to the server on every URL change.
 - the webpage is loaded from a single index.html page and  client-side routing to dynamically presents different views, depending on which link is clicked
 
 **Single Page Application** (SPA) is defined as a web app that loads from a single page and dynamically updates that page as the user interacts with the app. For a single page application we need a way to navigate between content (client-side routing).
-
-
 
 ------
 
@@ -39,6 +35,8 @@ npm install vue-router@next --save
 
 
 
+
+------
 
 ## Vue Router-Setup
 
@@ -210,11 +208,11 @@ app.mount('#app');
 
 ------
 
-## Routing
+## Built-in Vue Router Components
 
 ### `<router-view/>` 
 
-Is a placeholder where the contents of the component will be rendered onto the page.
+Is a placeholder where the contents of the  “view” component will be rendered onto the page.
 
 To let vue know, where to render that component, use the `router-view`-placeholder
 
@@ -222,13 +220,29 @@ To let vue know, where to render that component, use the `router-view`-placehold
 
 is a component (from the vue-router library) whose job is to link to a specific route.
 
-like a special anker-tag, to load the router-view und update the url 
+like a special anker-tag, to load the router-view.  The `to` attribute behaves similar to `href`. 
 
 ```vue
 <router-link to="/about">About</router-link>
 ```
 
 > under the hood: will render as an a-tag
+
+
+
+```vue
+<template>
+  <div id="app">
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+    </div>
+    <router-view />
+  </div>
+</template>
+```
+
+
 
 ------
 

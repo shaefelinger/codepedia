@@ -9,6 +9,7 @@
   },
   "repository": "/codepedia",
   "scripts": {
+    "start": "vuepress dev src",
     "serve": "vuepress dev src",
     "build": "vuepress build src"
   },
