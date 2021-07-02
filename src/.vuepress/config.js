@@ -235,6 +235,7 @@ module.exports = {
             'vue components',
             'vue forms',
             'vue router',
+            'vuex',
 
             'vue links',
             'vue-lager',
