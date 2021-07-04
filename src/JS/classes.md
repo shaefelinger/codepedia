@@ -1,6 +1,6 @@
 # Classes
 
-Classes are a tool that developers use to quickly produce similar objects.
+Classes are a tool that developers use to quickly produce similar objects. Create a template of an object.
 
 classes are a great way to reduce duplicate code and debugging time.
 
@@ -38,10 +38,11 @@ class Dog {
 ```
 
 - `Dog` is the name of our class. By convention, we capitalize and CamelCase class names.
+- Inside of the `constructor()` method, we use the `this` keyword.  In  a class, `this` refers to an instance of that class. 
 
 ## Instance
 
- An *instance* is an object that contains the property names and methods of a class, but with unique property values
+An *instance* is an object that contains the property names and methods of a class, but with unique property values
 
 ```js
 class Dog {
@@ -82,6 +83,17 @@ class Dog {
   }
 }
 ```
+
+
+
+- use getter methods for `name` and `behavior`
+-  prepended the property names with underscores (`_name` and `_behavior`), which indicate these properties should not be accessed directly.
+
+------
+
+## Inheritance I
+
+
 
 ------
 
