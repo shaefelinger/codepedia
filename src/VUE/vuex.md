@@ -47,7 +47,7 @@ $store.state
 
 ## Mutation:
 
-To edit the data in the store - never manipulate the state directly!
+To update the data in the store - never manipulate the state directly!
 
 mutations in `create store`-object. has alway access to the state-object
 
@@ -90,7 +90,7 @@ increase(state, payload){
 
 payload can be an object:
 
-```
+```js
 increase(state, payload){
 	state.counter = state.counter + payload.value
 }
@@ -98,7 +98,7 @@ increase(state, payload){
 
 --
 
-```
+```js
  methods: {
     addOne() {
       this.$store.commit('increase', { value: 10 });
@@ -108,7 +108,7 @@ increase(state, payload){
 
 alternatitve way of commiting:
 
-```
+```js
 addOne() {
 	this.$store.commit({
 		type: 'increase', // name of the mutation
@@ -120,7 +120,8 @@ addOne() {
 -> can be complex functions
 
 - NEVER directly access the store
-- always use commit() in the component
+- always use `commit()` in the component
+- good practice: name of mutations in CAPS
 
 ------
 
@@ -159,7 +160,7 @@ export default {
 
 (dont invoke!)
 
-###### getters can depend on another getter:
+##### getters can depend on another getter:
 
 ```js
 normalizedCounter(state, getters) {
@@ -174,7 +175,7 @@ normalizedCounter(state, getters) {
     }
 ```
 
--> state is not used, sothe  convention is:
+-> state is not used, so the  convention is:
 
 ```js
 normalizedCounter(_, getters) {
@@ -182,7 +183,7 @@ normalizedCounter(_, getters) {
 }
 ```
 
-> good practice: name of mutations in CAPS
+
 
 ------
 
@@ -294,6 +295,8 @@ alternative Syntax: (object) -> give the action a different name
 })
 ```
 
+the same alternative syntax also exists for `mapGetters`
+
 ------
 
 ## Vuex-modules
@@ -315,7 +318,7 @@ const counterModule = {
 };
 ```
 
--> im createStore-Object:
+-> in createStore-Object:
 
 ```js
 const store = createStore({
@@ -323,6 +326,8 @@ const store = createStore({
     numbers: counterModule
   },
 ```
+
+add all the Modules you want to add
 
 -> is on the same level as main store
 
@@ -334,23 +339,23 @@ state inside module  is treated as a local state
 
 mutation, actions, etc. are global, the state is local
 
-you can use:
+rootState, rootGetters -> access to the whole state inside a module. You can use:
 
 ```js
 getters: {
-	testAuth(state, getters, rootState, rooteGetters) {
+	testAuth(state, getters, rootState, rootGetters) {
 	return.state.isLoggedIn;
 	}
 }
 ```
 
-rootState, rooteGetters -> access to the whole state
+
 
 ------
 
 ### Namespaced module
 
--> to make sure that names dont clash
+-> to make sure that names don't clash. -> make the entire module local
 
 inside module:
 
