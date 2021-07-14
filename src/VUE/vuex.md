@@ -123,6 +123,16 @@ addOne() {
 - always use `commit()` in the component
 - good practice: name of mutations in CAPS
 
+alternative syntax:
+
+```js
+initialized: (state, data) => {
+	state.initialized = data;
+},
+```
+
+
+
 ------
 
 ## Getters
@@ -181,6 +191,12 @@ normalizedCounter(state, getters) {
 normalizedCounter(_, getters) {
 ...
 }
+```
+
+Short getter-syntax:
+
+```js
+episodes: state => state.episodes
 ```
 
 
