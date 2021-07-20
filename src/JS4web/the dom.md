@@ -1,8 +1,10 @@
 # The DOM 
 
-The DOM stands for "Document Object Model" and is a tree-like structure that is a representation of the HTML document, the relationship between elements, and contains the content and properties of the elements.
+The DOM stands for "Document Object Model" 
 
-Think of the DOM as the link between an HTML web page and scripting languages.
+- tree-like structure that is a representation of the HTML document, the relationship between elements 
+- contains the content and properties of the elements.
+- Think of the DOM as the link between an HTML web page and scripting languages.
 
 - https://www.w3.org/standards/techs/dom#w3c_all The full list of DOM specs
 - [DOM Introduction](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
@@ -23,9 +25,10 @@ There are nine different types of node objects in the DOM tree, eg  [*Element*](
 
 ## The document keyword
 
-The `document` object is provided by the browser and is a representation of the HTML document. This object is *not* provided by the JavaScript language.
+- The `document` object is provided by the browser and is a representation of the HTML document. This object is *not* provided by the JavaScript language.
 
-The `document` keyword grants access to the root of the DOM in JavaScript
+- The `document` keyword grants access to the root of the DOM in JavaScript
+
 
 https://developer.mozilla.org/en-US/docs/Web/API/Document
 
@@ -35,7 +38,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/Document
 
 Every element in the DOM is a **node**. This is represented by a **Node** object.
 
-- A **NodeList object** is a list or collection of nodes extracted from a document .It is an array-*like* collection of objects, but is not an array.
+- A **NodeList object** is a list or collection of nodes extracted from a document .It is an array-*like* collection of objects (but is not an array)
 
 - has a **length** property and an **index**(0, 1, 2, 3, ...) to access each item,
 
@@ -45,15 +48,16 @@ Every element in the DOM is a **node**. This is represented by a **Node** object
 
 - If you want to use an array method, transform it into an array first:
 
- - ```js
-   const divs = document.querySelectorAll('div')
-   divs.forEach(div => {
-   /* ... */
-   }) // this works
-   divs.map(div => { /* ... */ }) // throws exception (an error)
-   // turn NodeList into array first:
-   [...divs].map(div => { /* ... */ })
-   ```
+  ```js
+  const divs = document.querySelectorAll('div')
+  divs.forEach(div => {
+  /* ... */
+  }) // this works
+  divs.map(div => { /* ... */ }) // throws exception (an error)
+  // turn NodeList into array first:
+  [...divs].map(div => { /* ... */ })
+  ```
+
 
 
 ## Node Types
@@ -67,3 +71,4 @@ There are 12 node types. In practice we usually work with 4 of them:
 - **text nodes** - represents textual content in an element or attribute
 
 - **comments** - won’t be shown, but JS can still read it
+
