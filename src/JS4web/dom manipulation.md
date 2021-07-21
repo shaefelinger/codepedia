@@ -2,7 +2,7 @@
 
 ## Selecting Elements
 
-You  have access to all of that element’s properties.This includes the ability to modify the contents of the element as well as its attributes and properties
+You  have access to all of an element’s properties.This includes the ability to modify the contents of the element as well as its attributes and properties
 
 ###   `.querySelector()` and `.querySelectorAll()`
 
