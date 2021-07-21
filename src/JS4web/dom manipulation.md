@@ -8,15 +8,14 @@ You  have access to all of that element’s properties.This includes the ability
 
 - The `querySelector()` method <u>only returns the first element</u> that matches the specified CSS selectors. 
 - To return all the matches, use the `querySelectorAll()` method instead.
-- It returns a **NodeList** object, representing the first element that matches the specified CSS selector(s).  Looks like an Array, but it's not
+  - It returns a **NodeList** object, representing the first element that matches the specified CSS selector(s).  Looks like an Array, but it's not
 - If no matches are found, **null** is returned.
-- static Node-List
 
 Inside the brackets the same rules apply as with any CSS selectors:
 
-**#** for IDs,
- **.​** (dot) for classes,
- **[ ]** for attributes, etc.
+- `#` for IDs
+-  `.​` (dot) for classes
+-  `[ ]` for attributes, etc.
 
 ```js
 // find and return the element with an ID of "header"
@@ -79,17 +78,19 @@ navigation.querySelector(‘li')
 
 ### `.getElementById()` 
 
+Often the best way to select a single element.
+
 ```js
 const footer = document.getElementById('footer');
 ```
 
- Often the best way to select a single element.`'footer'`, not `'#footer'`
+ `'footer'`, not `'#footer'`
 
 https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById
 
+Selecting Multiple Elements At Once: 
 
-
-Selecting Multiple Elements At Once: Beware of the S: getElement**s**By...
+> Beware of the S: getElement**s**By...
 
 ### `.getElementsByClassName()`
 
@@ -103,6 +104,8 @@ https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementsByClassName
 
 ### `.getElementsByTagName()`
 
+-> aktive Node-List:  adapts, when the page-content changes and it is faster than:`querySelectorAll()`  (static Node-List)
+
 ```js
 document.getElementsByTagName('p');
 ```
@@ -111,17 +114,7 @@ Also:`document.getElementByTagName()`
 
 
 
--> liefern aktive Node-List: passt sich an geänderten Seitenihnalt an und faster than:`querySelectroAll()`  (static Node-List)
-
 ------
-
-
-
-
-
-------
-
-
 
 ### Special Accessors
 
@@ -133,14 +126,7 @@ Every Node object has special accessors. These are properties of DOM elements an
 - `element.parentNode`
 - `element.closest('p')` -Traverses all children of the parent in search for a match
 - `.children` - return a list of the element’s children and return `null` if the element has no children.
-
-### naheliegente Knoten (je nach Browser verschiedene Ergebnisse??)
-
-`parentNote`
-
-`previousSibling/nextSibling`
-
-`firstChild/lastChild`
+- `previousSibling/nextSibling`
 
 
 
