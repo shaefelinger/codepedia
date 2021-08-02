@@ -7,43 +7,40 @@
 add to `main.js`:
 
 ```js
-import { createStore } from 'vuex'
+import { createStore } from 'vuex';
 ```
 
 main.js:
 
 ```js
 import { createApp } from 'vue';
-import { createStore } from 'vuex'
+import { createStore } from 'vuex';
 
 import App from './App.vue';
 
 const app = createApp(App);
 const store = createStore({
-    state() {
-        return {
-            counter: 0
-        };
-    }
-})
+  state() {
+    return {
+      counter: 0,
+    };
+  },
+});
 
 app.use(store);
 
 app.mount('#app');
-
 ```
 
 -> store can be used in any component
 
-to use it: 
+to use it:
 
-```jsjs
-$store.state
+```js
+$store.state;
 ```
 
-
-
-------
+---
 
 ## Mutation:
 
@@ -55,17 +52,17 @@ mutations in `create store`-object. has alway access to the state-object
 // main.js
 
 const store = createStore({
-    state() {
-        return {
-            counter: 2
-        };
+  state() {
+    return {
+      counter: 2,
+    };
+  },
+  mutations: {
+    increment(state) {
+      state.counter++;
     },
-    mutations: {
-        increment(state) {
-            state.counter++
-        }
-    }
-})
+  },
+});
 ```
 
 in the component: `commit()` -> name of the mutation-function as a string
@@ -131,9 +128,7 @@ initialized: (state, data) => {
 },
 ```
 
-
-
-------
+---
 
 ## Getters
 
@@ -163,8 +158,8 @@ export default {
   computed: {
     counter() {
       return this.$store.getters.finalCounter;
-    }
-  }
+    },
+  },
 };
 ```
 
@@ -185,7 +180,7 @@ normalizedCounter(state, getters) {
     }
 ```
 
--> state is not used, so the  convention is:
+-> state is not used, so the convention is:
 
 ```js
 normalizedCounter(_, getters) {
@@ -196,14 +191,10 @@ normalizedCounter(_, getters) {
 Short getter-syntax:
 
 ```js
-episodes: state => state.episodes
+episodes: (state) => state.episodes;
 ```
 
-
-
-------
-
-
+---
 
 ## Actions
 
@@ -247,7 +238,7 @@ increase(context, payload) {
 }
 ```
 
-------
+---
 
 ## mapper-helpers
 
@@ -275,8 +266,6 @@ export default {
 </script>
 ```
 
-
-
 ### `mapActions()`
 
 for actions:
@@ -292,12 +281,12 @@ import { mapActions } from 'vuex';
 
 export default {
   methods: {
-      ...mapActions(['increment', 'increase'])
-    // instead of: 
+    ...mapActions(['increment', 'increase']),
+    // instead of:
     // increment() {
     //     this.$store.commit('increment')
     // }
-  }
+  },
 };
 </script>
 ```
@@ -313,7 +302,7 @@ alternative Syntax: (object) -> give the action a different name
 
 the same alternative syntax also exists for `mapGetters`
 
-------
+---
 
 ## Vuex-modules
 
@@ -324,13 +313,11 @@ one for authentication, etc.
 ```js
 const counterModule = {
   state() {
-    return {
-      
-    };
+    return {};
   },
   mutations: {},
   actions: {},
-  getters: {}
+  getters: {},
 };
 ```
 
@@ -347,11 +334,11 @@ add all the Modules you want to add
 
 -> is on the same level as main store
 
-------
+---
 
 ### local state
 
-state inside module  is treated as a local state
+state inside module is treated as a local state
 
 mutation, actions, etc. are global, the state is local
 
@@ -365,9 +352,7 @@ getters: {
 }
 ```
 
-
-
-------
+---
 
 ### Namespaced module
 
@@ -412,7 +397,7 @@ for getters, add namespace as first argument
 ...mapGetters('numbers', ['finalCounter'])
 ```
 
-------
+---
 
 ### Structuring
 
@@ -424,7 +409,7 @@ folder store
 	/actions.js
 	/mutations.js
 	/getters.js
-	
+
 	/counter
 		/actions.js
 		/mutations.js
@@ -433,6 +418,3 @@ folder store
 also possible: put all modules in module folder
 
 -> small maintainable files
-
-
-

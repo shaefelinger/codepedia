@@ -2,13 +2,17 @@
 
 ## Selecting Elements
 
-You  have access to all of an element’s properties.This includes the ability to modify the contents of the element as well as its attributes and properties
+You  have access to all of an element’s properties. You can modify
+
+- the contents of the element 
+- attributes 
+- properties
 
 ###   `.querySelector()` and `.querySelectorAll()`
 
-- The `querySelector()` method <u>only returns the first element</u> that matches the specified CSS selectors. 
-- To return all the matches, use the `querySelectorAll()` method instead.
-  - It returns a **NodeList** object, representing the first element that matches the specified CSS selector(s).  Looks like an Array, but it's not
+-  `querySelector()`  <u>only returns the first element</u> that matches the specified CSS selectors. 
+- To return all the matches, use the `querySelectorAll()` :
+  - It returns a **NodeList** object, representing elements that match the specified CSS selector(s).  Looks like an Array, but it's not
 - If no matches are found, **null** is returned.
 
 Inside the brackets the same rules apply as with any CSS selectors:
@@ -136,20 +140,18 @@ Every Node object has special accessors. These are properties of DOM elements an
 
 ### `.innerHTML`
 
-Each element has an `.innerHTML` property. This property, represents the markup of the element's content. We can use this property to:
+Each element has an `.innerHTML` property. This represents the markup of the element's content. We can use this to:
 
 - get an element's (and all of its descendants!) HTML content
 - set an element's HTML content
 
-It retuns: it looks like a string. Technically, however, what it returns is called a `DOMString`.
-
-The `.innerHTML` property sets or returns the HTML content *inside* the selected element (i.e. between the tags).
+It retuns: it looks like a string. Technically, what it returns is called a **DOMString**.
 
 - https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML
 
 ### `.outerHTML` 
 
-rarely used - Represents the HTML element itself, *as well as its children*.
+rarely used - Represents the **HTML element itself**, *as well as its children*.
 
 ```js
 <h1 id="pick-me">Greetings To <span>All</span>!</h1>
@@ -204,7 +206,7 @@ Passing any text that *looks* like HTML to the `.textContent` property will stil
 
 The `.createElement()` method is a method on the `document` object. It just creates an an empty element with no inner HTML. It doesn't add it to the DOM.
 
-In order to create an element and add it to the web page, you must assign it to be the child of an element that already exists on the DOM. We call this process appending`.appendChild()`
+In order add it to the web page, you must assign it to be the child of an element that already exists on the DOM. We call this process appending`.appendChild()`
 
 ```js
 const div = document.createElement('div')
@@ -278,7 +280,7 @@ The first argument to this method will let us insert the new HTML in one of four
 
 - `afterend` – inserts the HTML text as a following sibling
 
-- ```
+- ```html
   <!-- beforebegin -->
   <p>
       <!-- afterbegin -->
