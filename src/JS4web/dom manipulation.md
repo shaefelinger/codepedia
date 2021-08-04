@@ -256,16 +256,14 @@ document.body.appendChild(myPara);
 
 | method                                                | Description                                                  |
 | ----------------------------------------------------- | ------------------------------------------------------------ |
-| `element.appendChild(newElement)`                     | - nests a new element inside another element. - will move an element from its current position to the new position!- https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild |
+| `element.appendChild(newElement)`                     | nests a new element inside another element. - will move an element from its current position to the new position!- https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild |
 | `document.body.appendChild(newElement)`               | nests a new element inside the body tag                      |
 | `document.insertBefore(newElement, referenceElement)` | puts a new element just before the other element             |
 | `document.replaceChild(newElement, oldElement)`       | replaces one element with another                            |
 
 ###  `.insertAdjacentHTML()`
 
-To insert HTML text anywhere around an element. It needs to be called on a parent element:
-
-It  has to be called with two arguments:
+To insert HTML text anywhere around an element. It needs to be called on a parent element with two arguments:
 
 - the location of the HTML
 - the HTML text that is going to be inserted
