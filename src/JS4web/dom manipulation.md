@@ -317,11 +317,12 @@ mainHeading.insertAdjacentHTML('afterend', htmlTextToAdd);
 
 **Modifying an Element's Style Attribute** 
 
-The `.style` property of a DOM element provides access to the inline style of that HTML tag.. Perfect for setting one style at a time, but it's not great for controlling multiple styles.
+ `.style` provides access to the inline style of that HTML tag. 
 
+- Good for setting one style at a time, but not great for controlling multiple styles.
 
+- does not implement a hyphen such as `background-color`, but rather camel case notation `backgroundColor`.  [MDN reference page](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Properties_Reference)
 
-Unlike CSS, the DOM style property does not implement a hyphen such as `background-color`, but rather camel case notation `backgroundColor`. Check out this [MDN reference page](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Properties_Reference)
 
 ```js
 let blueElement = document.querySelector('.blue');
@@ -334,8 +335,6 @@ blueElement.style.backgroundColor = 'blue';
 document.querySelector('.blue').style.fontFamily = 'Roboto';
 ```
 
-
-
 - [style docs](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style)
 - [Article: Using dynamic styling information](https://developer.mozilla.org/en-US/docs/Web/API/CSS_Object_Model/Using_dynamic_styling_information)
 - [DOM methods to control styling](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference#DOM-CSS_CSSOM)
@@ -346,7 +345,7 @@ document.querySelector('.blue').style.fontFamily = 'Roboto';
 
 **Adding Multiple Styles At Once **
 
-we can use the `.style.cssText` property to set multiple CSS styles at once!
+ use `.style.cssText`  to set multiple CSS styles at once!
 
 ```js
 const mainHeading = document.querySelector('h1');
@@ -354,7 +353,7 @@ const mainHeading = document.querySelector('h1');
 mainHeading.style.cssText = 'color: blue; background-color: orange; font-size: 3.5em';
 ```
 
-you write the CSS styles just as you would in a stylesheet; so you write `font-size` rather than `fontSize`. 
+write the CSS styles just as you would in a stylesheet; so you write `font-size` rather than `fontSize`. 
 
 - https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/cssText
 
@@ -372,7 +371,7 @@ const mainHeading = document.querySelector('h1');
 mainHeading.setAttribute('style', 'color: blue; background-color: orange; font-size: 3.5em;');
 ```
 
-The `setAttribute()` method is not *just* for styling page elements. You can use this method to set *any* attribute for an element. If you want to give an element an ID, you can do that!:
+ not *just* for styling page elements. You can use this method to set *any* attribute for an element. If you want to give an element an ID, you can do that!:
 
 ```js
 const mainHeading = document.querySelector('h1');
@@ -424,9 +423,10 @@ https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/hidden
 
 ###  `.classList` 
 
-Use the `.classList` property more than any other. 
+- `.classList` is by far the most helpful property of the bunch, 
 
-`.classList` is by far the most helpful property of the bunch, and it helps to keep your CSS styling out of your JavaScript code.
+-  helps to keep your CSS styling out of your JavaScript code.
+- Use the `.classList` property more than any other. 
 
 ```js
 const listOfClasses = mainHeading.classList;
@@ -453,7 +453,9 @@ element.classList.contains('another-class')
 
 ### `.className`
 
-This property returns a space-separated string  of all of the element's classes. This isn't the most ideal format, it makes it hard to add or remove individual classes.  -> would have to it convert into array.
+-  returns a space-separated string  of all of the element's classes. 
+
+- This isn't the most ideal format, it makes it hard to add or remove individual classes.  -> would have to it convert into array.
 
 ```
 // store the list of classes in a variable
