@@ -1,7 +1,6 @@
 # Working with Browser Events
 
-
-Most events in the browser take place without being noticed — the events are undetected because there is no event handler associated with the event to execute an action. Event handlers are crucial for creating interactive websites with JavaScript.
+Event handlers are crucial for creating interactive websites with JavaScript.
 
 ### Monitor Events in Chrome
 
@@ -46,12 +45,16 @@ an event listener needs three things:
 ```js
 const mainHeading = document.querySelector('h1');
 
-mainHeading.addEventListener('click', function () {
+mainHeading.addEventListener('click', () => {
   console.log('The heading was clicked!');
 });
 ```
 
-For certain elements, for example form input fields, it can make sense to add **change listeners**. A change listener listens for changes in the text content of an element.
+### change listeners
+
+ A change listener listens for changes in the text content of an element.
+
+for example for form input fields
 
 ```js
 element.addEventListener('change', (event) => {
@@ -59,7 +62,7 @@ element.addEventListener('change', (event) => {
 })  
 ```
 
-Instead of using an anonymous function as the event handler, it’s best practice to create a named event handler function. Your code will remain organized and reusable this way, even if your code gets complex. 
+It’s best practice to create a named event handler function instead of using an anonymous function as the event handler. The code will remain more organized and reusable.
 
 ```js
 function eventHandlerFunction() {
@@ -69,7 +72,8 @@ function eventHandlerFunction() {
 eventTarget.addEventListener('click', eventHandlerFunction);	
 ```
 
-!!! No () after the function-name, or it will be evoked immediately!!!
+> !!! No () after the function-name, or it will be evoked immediately!!!
+>
 
 - [addEventListener](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener) on MDN
 
