@@ -81,13 +81,11 @@ eventTarget.addEventListener('click', eventHandlerFunction);
 
 ### .`onevent`
 
-This `.onevent` property can only register a single event listener
+Event Handlers can also be registered by setting an `.onevent` property on a DOM element (event target).  `.onevent` can only register a single event listener
 
 ```js
 eventTarget.onclick = eventHandlerFunction;
 ```
-
-Event Handlers can also be registered by setting an `.onevent` property on a DOM element (event target). 
 
 The pattern for registering a specific event is to append an element with `.on` followed by the lowercased event type name. 
 
@@ -103,11 +101,9 @@ element.onclick = function() { element.style.backgroundColor = 'blue' };
 
 
 
-
-
 ### `.removeEventListener()`
 
-Because there can be multiple event handler functions associated with a particular event, `.removeEventListener()` needs both the exact event type name and the name of the event handler you want to remove. If `.addEventListener()` was provided an anonymous function, then that event listener cannot be removed.
+`.removeEventListener()` needs both the exact event type name and the name of the event handler you want to remove. If `.addEventListener()` was provided an anonymous function, then that event listener cannot be removed.
 
 Removing An Event Listener -  requires you to pass *the same exact listener function* to it as the one you passed to `.addEventListener()`.
 
@@ -154,7 +150,7 @@ When an event is triggered, the event object can be passed as an argument to the
 
 
 ```js
-document.addEventListener('click', function (event) {  
+document.addEventListener('click', (event) => {  
    console.log('The document was clicked');
    console.log(event);
 });	
@@ -166,7 +162,7 @@ Some Properties:
 
 the [`.target` property](https://developer.mozilla.org/en-US/docs/Web/API/Event/target) to reference the element that the event is registered to.
 
-Gives us direct access to the paragraph element that was clicked. Because we have access to the element directly, we can access its `.textContent`, modify its styles, update the classes it has - we can do anything we want to it!
+Gives  direct access to the paragraph element that was clicked. Because we have access to the element directly, we can access its `.textContent`, modify its styles, update the classes it has - we can do anything we want to it!
 
 ### `.type`
 
