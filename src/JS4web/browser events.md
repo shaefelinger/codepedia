@@ -107,7 +107,7 @@ element.onclick = function() { element.style.backgroundColor = 'blue' };
 
 Removing An Event Listener -  requires you to pass *the same exact listener function* to it as the one you passed to `.addEventListener()`.
 
-This code will successfully add and then remove an event listener:
+This code will add and then remove an event listener:
 
 ```js
 function myEventListeningFunction() {
@@ -121,7 +121,7 @@ document.addEventListener('click', myEventListeningFunction);
 document.removeEventListener('click', myEventListeningFunction);
 ```
 
-that would *not* work (it does *not* remove the event listener):
+this would *not* work (it does *not* remove the event listener):
 
 ```js
 // adds a listener for clicks, to run the `myEventListeningFunction` function
@@ -160,17 +160,17 @@ Some Properties:
 
 ### `.target` 
 
-the [`.target` property](https://developer.mozilla.org/en-US/docs/Web/API/Event/target) to reference the element that the event is registered to.
+ [`.target` property](https://developer.mozilla.org/en-US/docs/Web/API/Event/target) to reference the element that the event is registered to.
 
-Gives  direct access to the paragraph element that was clicked. Because we have access to the element directly, we can access its `.textContent`, modify its styles, update the classes it has - we can do anything we want to it!
+Gives  direct access to the element that was clicked. We can eg. access its `.textContent`, modify its styles, update the classes it has, etc.
 
 ### `.type`
 
-the [`.type` property](https://developer.mozilla.org/en-US/docs/Web/API/Event/type) to access the name of the event.
+ [`.type` property](https://developer.mozilla.org/en-US/docs/Web/API/Event/type) to access the name of the event.
 
 ### `.timeStamp`
 
-the [`.timeStamp` property](https://developer.mozilla.org/en-US/docs/Web/API/Event/timeStamp) to access the number of milliseconds that passed since the document loaded and the event was triggered.
+ [`.timeStamp` property](https://developer.mozilla.org/en-US/docs/Web/API/Event/timeStamp) to access the number of milliseconds that passed since the document loaded and the event was triggered
 
 ```js
 function eventHandlerFunction(event){
@@ -250,7 +250,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent
 
 - `click`
 - `wheel`
-- `mousedown` event is fired when the user presses a mouse button down. This is different from a `click` event because `mousedown` doesn’t need the mouse button to be released to fire.
+- `mousedown` event is fired when the user presses a mouse button down. This is different from a `click` event because `mousedown` doesn’t need the mouse button to be released
 - The `mouseup` event is fired when the user releases the mouse button
 - `mouseover` event is fired when the mouse enters the content of an element.
 - `mouseout` event is fired when the mouse leaves an element.
@@ -274,7 +274,11 @@ There are three different phases during the lifecycle of an event. They are:
 - the **at target** phase
 - and the **bubbling** phase
 
-<img src="https://video.udacity-data.com/topher/2017/December/5a2f0488_ud117-phases-of-event-flow/ud117-phases-of-event-flow.svg" alt="ud117-phases-of-event-flow" style="zoom: 25%;" />There's actually a *third* argument to the `.addEventListener()` method; the *useCapture* argument.
+<img src="https://video.udacity-data.com/topher/2017/December/5a2f0488_ud117-phases-of-event-flow/ud117-phases-of-event-flow.svg" alt="ud117-phases-of-event-flow" style="zoom: 25%;" />
+
+
+
+There's actually a *third* argument to the `.addEventListener()` method; the *useCapture* argument.
 
 By default, when `.addEventListener()` is called with only two arguments, the method defaults to using the bubbling phase.
 
