@@ -6,7 +6,7 @@ $('h1').css('color', 'red')
 
 `$` is short for `jQuery`
 
-cdn-link muss über eigenen script link - vor dem link
+cdn-link needs own script link - before the `index.js` link
 
 ```html
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
