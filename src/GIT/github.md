@@ -208,3 +208,20 @@ SSH ??
 ### .gitignore
 
 [how-to-use-gitignore](https://www.pluralsight.com/guides/how-to-use-gitignore-file)
+
+------
+
+### Change from Password to SSH
+
+check the current remote URL:
+
+```
+$ git remote -v
+```
+
+
+
+```
+git remote set-url origin ***@vs-ssh.visualstudio.com:v3/***/PROJ/PROJ
+```
+
