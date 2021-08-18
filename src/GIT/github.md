@@ -12,7 +12,7 @@ While git is a software, GitHub is a platform to host your git repositories.
 
 > hies sind noch ein paar sachen doppelt
 
-by using *remotes*. A remote is a shared Git repository that allows multiple collaborators to work on the same Git project from different locations.  In order to get your own replica you’ll need to *clone* it with:
+by using *remotes*. A remote is a shared Git repository that allows multiple collaborators to work on the same Git project.  In order to get your own replica you’ll need to *clone* it with:
 
 ```
 git clone remote_location clone_name
@@ -20,7 +20,7 @@ git clone remote_location clone_name
 
 ->is your *local* copy of the Git project. If you commit changes to the project here, they are still only local.
 
-One thing that Git does behind the scenes when you clone is give the remote address the name *origin*, so that you can refer to it more conveniently. In this case, the cloned original remote is *origin*.
+One thing that Git does behind the scenes when you clone is give the remote address the name *origin*, so that you can refer to it. In this case, the cloned original remote is *origin*.
 
 You can see a list of a Git project’s remotes with the command:
 
@@ -34,33 +34,49 @@ git remote -v
 
 ------
 
-A git repository is a project, or the root folder of your project. (created with `it init`)
+A git repository is a project, or the root folder of your project. (created with `git init`)
 
 ### What is a remote? 
 
-A *remote* is a Git repository that lives *outside* your Git project folder. Remotes can live on the web, on a shared network or even in a separate folder on your local computer.
+A *remote* is a Git repository that lives *outside* your Git project folder.
 
-git is made so that many people can work on the same code base. This is realized by having a copy of the repository somewhere on a server, where everyone can access it. This copy is called: remote. Remote is your server where you store your git repository. With that, you synchronize your local repository that is on your laptop.
+Remote is your server where you store your git repository.  Remotes can live on the web, on a shared network or even in a separate folder on your local computer.With that, you synchronize your local repository that is on your laptop.
 
-### `git clone <url of a remote repository>` 
+
+
+### `git clone` 
+
+```
+git clone <url of a remote repository>
+```
 
 Clone repository - create a copy of a remote repository
 
-### `git remote add origin <url to your GitHub repository>` 
+### `add origin` 
+
+```
+git remote add origin <url to your GitHub repository>
+```
 
 Create a remote copy of your repository:
 
 1. Create an empty new repository on GitHub
 2. Upload your local repository to this new GitHub repository
 
-### `git remote showgit remote show` 
+### `show` 
+
+```
+git remote showgit remote show
+```
 
 To see if you have a remote, and what its alias is.
 
 - Remotes have a name,also called an alias, and a URL(the link to the remote)
 - This shows origin. This is the name or alias for our remote server. That’s the default name that every remote repository gets
 
-### `git remote show origin`
+```
+`git remote show origin`
+```
 
 To see what the URL of the remote is
 
