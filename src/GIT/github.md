@@ -187,10 +187,6 @@ git remote -v
 
 ------
 
-SSH ??
-
-------
-
 ### git hub
 
 1. neues repo erzeugen
@@ -234,8 +230,6 @@ check the current remote URL:
 ```
 $ git remote -v
 ```
-
-
 
 ```
 git remote set-url origin ***@vs-ssh.visualstudio.com:v3/***/PROJ/PROJ
