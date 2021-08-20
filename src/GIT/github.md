@@ -155,8 +155,6 @@ Rebasing is a difficult thing. It can be a valuable skill knowing how to use reb
 
 > ab hier codecademy
 
-------
-
 
 
 [**mastering git:**](https://thoughtbot.com/upcase/mastering-git)
@@ -169,13 +167,13 @@ Rebasing is a difficult thing. It can be a valuable skill knowing how to use reb
 
 profile-page
 
-in repositories > new  -  erzeugt ein neues repo
+in repositories > new  -  creates a new  repo
 
 
 
-ititialize with readme etc. only if starting from scratch, otherwiese there can be merge problems... -> besser ohne files initialisieren!!
+ititialize with readme etc. only if starting from scratch, otherwise there can be merge problems... -> better initialise without files!!
 
-readmy
+readme
 
 gitignore
 
