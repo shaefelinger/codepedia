@@ -234,6 +234,8 @@ module.exports = {
 
             'vue components',
             'vue passing data',
+            'vue slots',
+            'vue dynamic components',
             'vue forms',
             'vue router',
             'vuex',

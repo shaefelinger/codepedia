@@ -225,3 +225,82 @@ You can get access to these fallthrough props on a built-in `$attrs` property (e
 https://v3.vuejs.org/guide/component-attrs.html
 
 ---
+
+## Provide & Inject
+
+If data has to travel though a lot of "pass-through-components", you can use Provide-inject.
+
+Provide data in the parent component and pass it directly to any child-component, no matter how deeply nested it is.
+
+use provide & inject only when nescessary. to avoid pass-through-components. It makes the code less understandable. props & custom rvrnts should be the default communication
+
+
+
+If you have to pass date or "grandchild" etc."
+
+Provide in one place and use it in another place -> avoid pass-through-components
+
+Provide in a parent or higher component (not in a neighbour)
+
+
+
+```js
+provide: {
+    topics: [
+      {
+        id: 'basics',
+        title: 'The Basics',
+        description: 'Core Vue basics you have to know',
+        fullText:
+          'Vue is a great framework and it has a couple of key concepts: Data binding, events, components and reactivity - that should tell you something!'
+      },
+    ]
+  },
+```
+
+
+
+Better: use a method, that returns an object -> you can access data from the data-property
+
+```js
+ provide() {
+    return {
+      topics: this.topics
+    };
+  },
+```
+
+inject works like props. 
+
+```js
+inject: ['topics'],
+```
+
+you can also provide methods:
+
+## inject Function
+
+```js
+// child
+<button @click="selectTopic(id)">Learn More</button>
+
+// ...
+export default {
+  inject: ['selectTopic'],
+```
+
+```js
+// parent
+
+ provide() {
+    return {
+         selectTopic: this.activateTopic
+    };
+  },
+   methods: {
+    activateTopic(topicId) {
+      this.activeTopic = this.topics.find(topic => topic.id === topicId);
+    }
+  }
+```
+
