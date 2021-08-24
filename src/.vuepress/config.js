@@ -68,6 +68,8 @@ module.exports = {
         text: 'Vue',
         items: [
           { text: 'Vue', link: '/VUE/' },
+          { text: 'Vue Router', link: '/VUEROUTER/' },
+          { text: 'Vuex', link: '/VUEX/' },
           { text: 'VuePress', link: 'https://v1.vuepress.vuejs.org/' },
         ],
       },
@@ -237,12 +239,34 @@ module.exports = {
             'vue slots',
             'vue dynamic components',
             'vue forms',
-            'vue router',
-            'vuex',
 
             'vue links',
             'vue-lager',
           ],
+        },
+      ],
+      '/VUEROUTER/': [
+        {
+          title: 'VUEROUTER',
+          collapsable: false,
+          sidebarDepth: 2,
+          children: [
+            '',
+            'vue-router-components',
+            'styling-links',
+            'registering-routes',
+            'named-routes',
+            'changing-routes',
+          ],
+          // children: ['',  'navigation-guards'],
+        },
+      ],
+      '/VUEX/': [
+        {
+          title: 'VUEX',
+          collapsable: false,
+          sidebarDepth: 2,
+          children: [''],
         },
       ],
       '/NODE/': [

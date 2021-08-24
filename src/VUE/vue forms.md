@@ -278,10 +278,4 @@ for: Attributes, classes & styles
 />
 ```
 
-------
 
-
-
-
-
-## 
