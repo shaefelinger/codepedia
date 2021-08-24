@@ -88,7 +88,7 @@ send the data with v-bind:
 <product-details :details="details"></product-details>
 ```
 
-##### Props should not be mutated!
+#### Props should not be mutated!
 
 -> unidirectional Data-flow. 
 
@@ -209,7 +209,7 @@ but also to make the content dynamic, to use `v-for`, `v-if`
 
 ------
 
-## Emmiting custom Events 
+## Emit
 
 child => parent
 
