@@ -233,6 +233,7 @@ module.exports = {
             'advanced-reactivity',
 
             'vue components',
+            'vue passing data',
             'vue forms',
             'vue router',
             'vuex',

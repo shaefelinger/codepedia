@@ -1,72 +1,12 @@
-# VUE Components
+# VUE Passing Data
 
-## Components 
-
-Components are the building blocks of an app, Any given web page may be composed of multiple components, and it’s common for components to be “parents” that have child components nested within them.
-
-A component is like a custom HTML-element. -> reuseable Pieces of HTML with connected Data and logic
-
-- Components are used to build UIs by combining them
-- reuse
-- smaller piecesComponente buil "parent-child" relations and use "unidirectional data flows" for communication
-
-> Convention: The Name Should be made up of 2 words
-
-------
-
-## Import Component
-
-1. **Import**: (VSCode Snippet `vimport`) 
-
-   ```js
-   import EventCard from '@/components/EventCard.vue'
-   ```
-
-2. **register** this component as a child component (snippet `vcomponents`) 
-
-   ```js
-   components: {
-   	EventCard
-   }
-   ```
-
-   > because we’re using ES6, this is the same as:
-   >
-   > ```js
-   > components: {
-   > 	EventCard: Eventcard
-   > }
-   > ```
-
-3. use in template 
-
-   ```vue
-   <template>
-   	<EventCard/>
-   </template>
-   ```
-
-------
-
-or
-
-#### Register Component in `main.js`
-
-`main.js`
-
-```js
-app.component('active-element', ActiveElement);
-```
-
-------
-
-## Props 
+## Props
 
 Parent => child
 
 Props = properties. Act like custom HTML-Attributes
 
-each component has its own isolated scope. **Props** are custom attributes for passing data into a component. 
+each component has its own isolated scope. **Props** are custom attributes for passing data into a component.
 
 Props should be defined in advance. (also define type, required etc.)
 
@@ -79,7 +19,7 @@ simplest form: an Array (props as strings) (more for prototyping)
 pass the data via attribute:
 
 ```vue
- <friend-contact name="John Doe"></friend-contact>
+<friend-contact name="John Doe"></friend-contact>
 ```
 
 send the data with v-bind:
@@ -90,7 +30,7 @@ send the data with v-bind:
 
 #### Props should not be mutated!
 
--> unidirectional Data-flow. 
+-> unidirectional Data-flow.
 
 2 ways to handle it:
 
@@ -98,16 +38,10 @@ send the data with v-bind:
 2. Use as initial value: make a copy and change it in the component, but it will not change th original data from the parent!
 
 ```vue
-props: ['isFavorite'],
-data() {
-  return {
-      friendIsFavorite: this.isFavorite,
-  }
+props: ['isFavorite'], data() { return { friendIsFavorite: this.isFavorite, }
 ```
 
-
-
-#### Validating Pro		ps
+#### Validating Pro ps
 
 Using an Array is only ok with very simple projects, prototypes etc
 
@@ -121,35 +55,16 @@ Vue’s props feature has built-in validation, so we can specify things like the
 Use an Object and provide the type:
 
 ```vue
- props: {
-    name: String,
-    phoneNumber: String,
-    emailAddress: String,
-    isFavorite: String
-  }
+props: { name: String, phoneNumber: String, emailAddress: String, isFavorite:
+String }
 ```
 
 or even more detailled: provide an object for every prop
 
 ```vue
-  props: {
-		name: {
-      type: String,
-      required: true,
-    },
-    isPremium: {
-      type: Boolean,
-      required: false,
-    },
-		isFavorite: {
-      type: Boolean,
-      required: false,
-      default: false,
-			validator(value) {
-				// check...
-				// return true or false
-			},
-  }
+props: { name: { type: String, required: true, }, isPremium: { type: Boolean,
+required: false, }, isFavorite: { type: Boolean, required: false, default:
+false, validator(value) { // check... // return true or false }, }
 ```
 
 default can also be a function
@@ -205,21 +120,17 @@ but also to make the content dynamic, to use `v-for`, `v-if`
 </friend-contact>
 ```
 
-
-
-------
+---
 
 ## Emit
 
 child => parent
 
--  props are a way to pass data **down** into a component
--  **up:** emit an event, telling the parent that it happened. 
+- props are a way to pass data **down** into a component
+- **up:** emit an event, telling the parent that it happened.
 
-
-
-- Custom Events are emmited (via $emit) to trigger a method in a parent component
-- they can contain data (eg. data the user has entered, the id of a selected element, etc.)
+* Custom Events are emmited (via \$emit) to trigger a method in a parent component
+* they can contain data (eg. data the user has entered, the id of a selected element, etc.)
 
 > No Neighbour communication!! -> you have to use the parent component
 
@@ -233,15 +144,10 @@ use `this.$emit`
 - convention: use kebap-case
 
 ```vue
-methods: {
-  addToCart() {
-    this.$emit('add-to-cart')
-  }
-  ...
- }
+methods: { addToCart() { this.$emit('add-to-cart') } ... }
 ```
 
-->  listen for that event from within the parent scope,
+-> listen for that event from within the parent scope,
 
 ```vue
 <product-display @add-to-cart="updateCart"></product-display>
@@ -254,12 +160,11 @@ You can add as many arguments as you want: that is data that you pass together w
 the emit can contain data:
 
 ```vue
-addToCart() {
-      this.$emit('add-to-cart', this.variants[this.selectedVariant].id)
-    },
+addToCart() { this.$emit('add-to-cart', this.variants[this.selectedVariant].id)
+},
 ```
 
--> id is the payload	
+-> id is the payload
 
 ```
 // child
@@ -290,7 +195,7 @@ use `emits`-property
 emits: ['toggle-favorite'],
 ```
 
-you can also specify an object: 
+you can also specify an object:
 
 then use a function, that recieves the data you will emit as parameters. and for example add validation in the function
 
@@ -307,7 +212,7 @@ emits: {
   },
 ```
 
-------
+---
 
 ## Prop Fallthrough
 
@@ -319,5 +224,4 @@ You can get access to these fallthrough props on a built-in `$attrs` property (e
 
 https://v3.vuejs.org/guide/component-attrs.html
 
-------
-
+---
