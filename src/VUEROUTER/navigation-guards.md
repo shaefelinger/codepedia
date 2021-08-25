@@ -1,7 +1,5 @@
 # Navigation Guards
 
-
-
 eg for authentications, or to prevent that a user leaves a site where he has unsaved edits in eg a form
 
 Guards = methods, that get called automatically, when a page changes
@@ -11,18 +9,16 @@ Guards = methods, that get called automatically, when a page changes
 runs before each nav
 
 ```js
-router.beforeEach((to, from, next) => {
-  
-}) 
+router.beforeEach((to, from, next) => {});
 ```
 
 `to` and `from` are route-objects
 
-`next ` is a function that gets celled to eather confirm or cancel the navigation action 
+`next` is a function that gets celled to eather confirm or cancel the navigation action
 
 ## `next()`
 
-- `next()`  or `next(true)`- confirms/allows the navigation
+- `next()` or `next(true)`- confirms/allows the navigation
 
 - `next(false)` cancels the nav
   - `next('/teams')` or `next({name:'teams'})` calls that route
@@ -41,11 +37,11 @@ router.beforeEach((to, from, next) => {
 },
 ```
 
-OR 
+OR
 
 in the component add
 
-##  `beforeRouteEnter()`
+## `beforeRouteEnter()`
 
 ```js
 beforeRouteEnter(to, from, next) {
@@ -67,19 +63,19 @@ beforeRouteEnter(to, from, next) {
 }
 ```
 
-------
+---
 
 ## Global "afterEach"-Guard
 
 ```js
-router.afterEach( (to,from) => {
+router.afterEach((to, from) => {
   // this runs after the navigation has been confirmed
-})
+});
 ```
 
-eg. to send analytics data to  a server
+eg. to send analytics data to a server
 
-------
+---
 
 ## Route Leave Guards
 
@@ -107,4 +103,3 @@ eg. check, if the user really wants to leave
 ```
 
 > confirm returns a boolean
-
