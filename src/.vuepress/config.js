@@ -252,11 +252,12 @@ module.exports = {
           sidebarDepth: 2,
           children: [
             '',
-            'vue-router-components',
             'styling-links',
             'registering-routes',
             'named-routes',
+            'vue-router-components',
             'changing-routes',
+            'programmatic-nav',
           ],
           // children: ['',  'navigation-guards'],
         },

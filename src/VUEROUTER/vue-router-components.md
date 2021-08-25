@@ -29,3 +29,37 @@ like a special anker-tag, to load the router-view. The `to` attribute behaves si
   </div>
 </template>
 ```
+
+------
+
+## Named router-views
+
+for multiple router-views on the same level
+
+define multiple components per route
+
+-> give the router-views names (just like named slots)
+
+you can have one unnamed router-view on the same level - this is the default router-view
+
+```vue
+<main>
+    <router-view></router-view>
+  </main>
+<footer>
+    <router-view name="footer"></router-view>
+  </footer>
+```
+
+```js
+ {
+      name: 'teams',
+      path: '/teams',
+      components: { default: TeamsList, footer: TeamsFooter },
+
+    },
+```
+
+---
+
+### 
