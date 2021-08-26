@@ -154,6 +154,43 @@ const router = createRouter({
 app.use()
 ```
 
+------
+
+
+
+```html
+<div id="app"></div>
+<!-- built files will be auto injected -->
+```
+
+`main.js` creates and mounts the app  to that `div` with the id of `#app`.:
+
+```js
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./router";
+
+createApp(App)
+  .use(router)
+  .mount("#app");
+```
+
+Vue Router enables client-side routing so we can navigate around and display different “views” of our app.
+
+#### package.json
+
+Usually Vue CLI already inserted Vue Router as a dependency
+
+```js
+...
+"dependencies": {
+  "core-js": "^3.6.5",
+  "vue": "^3.0.0-0",
+  "vue-router": "^4.0.0-0" 
+},
+..
+```
+
 ---
 
 ## Organizing Route-Files
@@ -184,3 +221,4 @@ app.mount('#app');
 ```
 
 ---
+

@@ -147,4 +147,37 @@ this.$route.query
 
 ---
 
-### 
+## Add a watcher to `$route`
+
+Route Parameters can be tricky
+
+if you are on a page and want to go to a different value, the data is not updated. The component doesn't get destroyed an re-created when the urls changes.
+
+```js
+methods: {
+    loadTeamMembers(route) {
+      const teamId = route.params.teamId;
+      const selectedTeam = this.teams.find(team => team.id === teamId);
+      const members = selectedTeam.members;
+      const selectedMembers = [];
+      for (const member of members) {
+        const selectedUser = this.users.find(user => user.id === member);
+        selectedMembers.push(selectedUser);
+      }
+      this.members = selectedMembers;
+      this.teamName = selectedTeam.name;
+    }
+  },
+
+  created() {
+    this.loadTeamMembers(this.$route);
+  },
+  watch: {
+    $route(newRoute) {
+      this.loadTeamMembers(newRoute);
+    }
+  }
+```
+
+------
+

@@ -39,6 +39,81 @@ app.mount('#app');
 
 ------
 
+## How Vue Router is configured
+
+Inside the router directory, we find the index.js for our router. At the top of this file, we are importing the vue-router library.
+
+```js
+import { createRouter, createWebHistory } from 'vue-router'
+```
+
+```js
+const router = createRouter({
+  history: createWebHistory(process.env.BASE_URL),
+  routes
+})
+
+export default router
+```
+
+And then we import a component we’ll use in our routes:
+
+```jsx
+import Home from '../views/Home.vue'
+```
+
+And then we use this route:
+
+```jsx
+const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    component: Home
+  },
+  {
+    path: '/about',
+    name: 'About',
+    ...// Skipping this part, which we will come back to later
+  }
+]
+```
+
+The `path` indicates the actual route (the URL).`/`, meaning this is the root, the homepage of our application, and what people see when they go to the domain
+
+ `name` allows us to give this route a name so we can use that name throughout our application to refer to this route 
+
+ `component` allows us to specify which component to render at that route. Note that `Home` was imported at the top of the file.
+
+------
+
+##  lazy-load
+
+#####  performance optimization
+
+Route-level code-splitting
+
+esp. if the app is large
+
+```js
+{
+    path: '/about',
+    name: 'About',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  }
+```
+
+It’s  importing the component differently. Rather than importing it at the top of the file like we did with `Home`, we are instead importing it only when the route is actually called.
+
+this will generate a separate `about.js` file, which will only be loaded into someone’s browser once they navigate to `/about`.
+
+The different Pages are stored in the `views`-Folder
+
+------
+
 ## Named Routes
 
 makes it simpler to manage and change the routes

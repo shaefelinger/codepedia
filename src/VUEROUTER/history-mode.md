@@ -37,6 +37,4 @@ but if we go to deploy our application we’ll need to ensure our server has the
 
 The Vue Router documentation has a bunch of [example configurations](https://router.vuejs.org/guide/essentials/history-mode.html#example-server-configurations)
 
----
-
-##
+You can learn more about [History Mode here](https://router.vuejs.org/guide/essentials/history-mode.html#example-server-configurations).
