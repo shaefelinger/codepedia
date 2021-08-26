@@ -239,6 +239,7 @@ module.exports = {
             'vue slots',
             'vue dynamic components',
             'vue forms',
+            'teleporting',
 
             'vue links',
             'vue-lager',
