@@ -399,9 +399,9 @@ for getters, add namespace as first argument
 
 ---
 
-### Structuring
+### Folder Structure
 
-folder store
+Example
 
 ```
 /store
