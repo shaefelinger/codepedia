@@ -2,6 +2,34 @@
 
 1 store per app -> Predictable State-Management
 
+local state = state inside a component (eg input )
+
+global state = affects multiple components or entire app (eg. auth status etc.)
+
+
+
+##### provide/inject
+
+is working, but has problems
+
+------
+
+![max_vuex](../assets/max_vuex.png)
+
+
+
+------
+
+install
+
+```js
+npm i vuex@next
+```
+
+------
+
+
+
 ## Create store
 
 add to `main.js`:
@@ -39,6 +67,20 @@ to use it:
 ```js
 $store.state;
 ```
+
+
+
+`state` is a method that returns an object (like `data`)
+
+```js
+state() {
+        return {
+            
+        }
+    }
+```
+
+
 
 ---
 
@@ -134,6 +176,10 @@ initialized: (state, data) => {
 
 Don't read directliy from store
 
+- getters are like computed proerties inside the store
+- getter has to return a value
+- all getters have 2 arguments: state and other getters
+
 Can have 2 arguments:
 
 - current state
@@ -206,6 +252,8 @@ episodes: (state) => state.episodes;
 
 use `dispatch()` instead of `commit()` - same syntax
 
+pass the context-object!
+
 ```js
 // in createStore
 
@@ -245,6 +293,8 @@ increase(context, payload) {
 ### `mapGetters()`
 
 in computed: just list the getters you want in the component
+
+gives an object full of computed properties
 
 ```js
 <template>

@@ -273,7 +273,7 @@ module.exports = {
           title: 'VUEX',
           collapsable: false,
           sidebarDepth: 2,
-          children: [''],
+          children: ['', 'vuex vue mastery'],
         },
       ],
       '/NODE/': [
