@@ -58,7 +58,7 @@ export default {
 
 
 
-## new
+## VUEX max
 
 1 store per app -> Predictable State-Management
 
