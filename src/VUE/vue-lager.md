@@ -1,7 +1,5 @@
 # SORT ME
 
-
-
 ---
 
 ## Options-API -Cheatsheet
@@ -148,27 +146,6 @@ or like this:
 
 ---
 
-## Livecycle-Hooks
-
-```js
-mounted() {
-  console.log('mounted');
-},
-```
-
-| Hook          | when?                   |
-| ------------- | ----------------------- |
-| beforeCreate  |                         |
-| created       |                         |
-| beforeMount   |                         |
-| mounted       | runs, when vue is ready |
-| beforeUpdate  |                         |
-| updated       |                         |
-| beforeDestroy |                         |
-| destroyed     |                         |
-
----
-
 ## Passing data
 
 #### props
@@ -184,4 +161,3 @@ ist data from component to main-app
 - upwards
 
 ---
-

@@ -233,6 +233,7 @@ module.exports = {
             'events',
             'dynamic-styling',
             'advanced-reactivity',
+            'vue lifecycleHooks',
 
             'vue components',
             'vue passing data',
