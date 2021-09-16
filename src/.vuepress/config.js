@@ -243,7 +243,7 @@ module.exports = {
             'teleporting',
 
             'vue links',
-            'vue-lager',
+            'vue-options-api',
           ],
         },
       ],

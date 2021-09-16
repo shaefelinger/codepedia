@@ -1,8 +1,4 @@
-# SORT ME
-
----
-
-## Options-API -Cheatsheet
+# Vue Options-API-Cheatsheet
 
 is now different in vue3 -> composition-API (more similar to react).
 
@@ -17,7 +13,7 @@ is now different in vue3 -> composition-API (more similar to react).
 
 ---
 
-### Props
+## Props
 
 Array
 
@@ -27,7 +23,7 @@ props: ['prop1', 'prop2'];
 
 ---
 
-### Data
+## Data
 
 is, where the state of the application is
 
@@ -50,7 +46,7 @@ data: function() {}
 
 ---
 
-### Methods
+## Methods
 
 ```js
  methods: {
@@ -62,7 +58,7 @@ data: function() {}
 
 ---
 
-### Computed
+## Computed
 
 -> always recalculates, if something changes
 
@@ -76,7 +72,7 @@ computed: {
 
 ---
 
-### Watcher
+## Watcher
 
 watch if values change.
 
@@ -90,7 +86,7 @@ watch: {
 
 ---
 
-### Filters
+## Filters
 
 > only Vue2
 
@@ -104,7 +100,7 @@ filters: {
 
 ---
 
-### Directives
+## Directives
 
 ```js
 directives: {
@@ -124,7 +120,7 @@ v-autofocus
 
 ---
 
-### Components
+## Components
 
 ```js
 import Component1 from '@/components/Component1'
@@ -144,20 +140,4 @@ or like this:
 	}
 ```
 
----
-
-## Passing data
-
-#### props
-
--> pass data from main-app to component
-
-- downwards
-
-#### custom Events
-
-ist data from component to main-app
-
-- upwards
-
----
+## 

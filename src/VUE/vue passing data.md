@@ -1,5 +1,9 @@
 # VUE Passing Data
 
+**props** -› pass data from main-app to component: downwards
+
+**emit** custom Events -› data from component to main-app: upwards
+
 ## Props
 
 Parent => child
