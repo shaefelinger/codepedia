@@ -8,6 +8,23 @@
 </ul>	
 ```
 
+##### Example
+
+```html
+<button v-on:click="toggleShowBooks">
+	<span v-if="showBooks">Hide Books</span>
+	<span v-else>Show Books</span>
+</button>
+```
+
+```js
+books: [
+	{ title: 'name of the wind', author: 'patrik rothfuss'},
+	{ title: 'the final empire', author: 'brandon sanderson'},
+	{ title: 'the way of kings', author: 'brandon sanderson'},
+],
+```
+
 ## Variations:
 
 ### Using the index:
