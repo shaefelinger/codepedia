@@ -1,6 +1,6 @@
 # Vue Advanced reactivity
 
-Problem with calling methods inside {{}}:
+##### Problem with calling methods inside {{}}:
 
 it gets called everytime anything on the page changes. -> bad performance
 
@@ -8,7 +8,7 @@ it gets called everytime anything on the page changes. -> bad performance
 
 ## Computed Properties
 
-Computed properties provide us a performance improvement. They are like Methods, but only update, when a value changes.
+Computed properties provide a performance improvement. They are like Methods, but only update, when a value changes.
 
 > expexts an Object, where you define methods - just like methods
 
@@ -23,11 +23,12 @@ computed: {
 }
 ```
 
-> naming: the computed property is  used like a data-property, not like a method. so name it as you would name  a data-property
+- naming: the computed property is  used like a data-property, not like a method. so name it as you would name  a data-property
 
-> important: don't call the computed property, just point at it -> write without `()` !
+- important: don't call the computed property, just point at it -> write without `()` !
 
-> computed properties are used to output data, not like a function
+- computed properties are used to output data, not like a function
+
 
 Computed Properties can  watch **multiple properties**
 
@@ -68,7 +69,7 @@ Watcher uses a name used in a data- or computed-property.
   ```js
    watch: {
       name(value) {
-        this.fullname = Value + ' Häfelinger'
+        this.fullname = value + ' Doe'
       },
     },
   ```
@@ -81,7 +82,8 @@ Watcher uses a name used in a data- or computed-property.
   }
   ```
 
-Watchers can only watch **ONE Property**
+- Watchers can only watch **ONE Property**
+
 
 
 

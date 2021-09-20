@@ -2,17 +2,31 @@
 
 ## `v-on` directive 
 
-Attaches event-handler to event -> all browser events. Run javascript Inside the string.
+- By adding `v-on` to an element, we’re essentially giving it an ear that can listen for events. 
+
+- Attaches event-handler to event -> for all all browser events. 
+
+- Run javascript Inside the string.
+
+  ```
+  v-on:click="javascript inside"
+  ```
+
+  
 
 ```vue
 <button class="button" v-on:click="logic to run">Add to Cart</button>
 ```
 
+```vue
+<button v-on:click="age++">Increase age</button>
+```
+
+
+
 We are telling `v-on` what type of event to listen for: a `click`. Inside the quotes,  place the logic (or method name)  to run when that event happens.
 
 If we write `v-on:click="cart += 1"`, we’ll increment the value of cart by `1`, when a click event happens. 
-
-
 
 ### shorthand @
 
@@ -24,15 +38,13 @@ If we write `v-on:click="cart += 1"`, we’ll increment the value of cart by `1`
 
 ### Triggering a method
 
-Often, we need to trigger more complex logic. In those situations, we can add a method name to fire when the event happens.
+add a method name to fire when the event happens.
 
 ```vue
 <button class="button" @click="addToCart">Add to Cart</button>
 ```
 
 add that method to our Vue app’s options object, like so:
-
-> expexts an Object, where you define methods 
 
 ```js
 const app = Vue.createApp({
@@ -52,39 +64,51 @@ const app = Vue.createApp({
 
 added the `methods` option, and inside of that we added the new `addToCart` method,
 
-
-
 you can also use
 
-```vue
+```js
 @click="addToCart()"
 ```
 
 or pass arguments:
 
-```
+```js
 @click="add(5)"
 ```
 
-you can listen for clicks on any object, not just buttons!
+```html
+<div @click="changeTitle('HTML-Title')">clickme</div>
+```
+
+> you can listen for clicks on any object, not just buttons!
 
 ### .this
 
 The difference here is now we’re saying `this.cart` to refer to *this* `cart` in ***this* Vue instance’s** data.
 
-## Understanding v-on
+------
 
-By adding `v-on` to an element, we’re essentially giving it an ear that can listen for events. In this case, we’ve specified that we’re listening for click events
+## Toggle Status
 
-To call the method you can use `@click="method"` or `@click="method()"`. Both is valid
+```js
+@click="showPopup = !showPopup"
+```
 
-
+#### 
 
 ------
 
-## Other Events: Mouseover Events
+## Other Events: Mouse Events
 
-main.js:
+```vue
+<div @mouseover="handleEvent">mouseover</div>
+<div @mouseleave="handleEvent">mouseleave</div>
+<div @dblclick="handleEvent">double click</div>
+```
+
+
+
+### Mouseover
 
 ```vue
 <div v-for="variant in variants" :key="variant.id" @mouseover="updateImage(variant.image)">{{ variant.color }}</div>
@@ -98,6 +122,12 @@ methods: {
   }
 }
 ```
+
+
+
+
+
+
 
 ------
 
@@ -118,6 +148,17 @@ methods: {
 	},
 }
 
+```
+
+##### check type of event:
+
+```js
+methods: {	
+	handleEvent(e) {
+			console.log(e);
+      console.log(e.type);
+  }  
+}
 ```
 
 if you have to pass an argument: and still need access to the Event-Object: use `$event`
@@ -173,10 +214,10 @@ https://vuejs.org/v2/guide/events.html
 
 ### keyboard-modifiers
 
-- @keyup.enter
-- .ctrl
-- .shift
-- .enter
+- `@keyup.enter`
+- `.ctrl`
+- .`shift`
+- .`enter`
 
 ------
 

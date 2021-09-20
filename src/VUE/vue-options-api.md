@@ -1,6 +1,6 @@
 # Vue Options-API-Cheatsheet
 
-is now different in vue3 -> composition-API (more similar to react).
+vue3 also has the composition-API (more similar to react)
 
 ```js
 <script>
@@ -12,6 +12,20 @@ is now different in vue3 -> composition-API (more similar to react).
 ```
 
 ---
+
+## Access variables
+
+use **`this`**
+
+```js
+methods: {
+    changeTitle() {
+      this.title = 'A new Title';
+    },
+  },
+```
+
+------
 
 ## Props
 

@@ -168,13 +168,13 @@ CLI stands for Command Line Interface
 - **Development-Server**. Server running locally on the Developement-Machine - uses http:-protocol (just opening an html-file uses the File-Protocol file://)
 - **Hot Module Replacement (HMR)** -> changes appear instantly in the browser when the project is saved
 
-#### Installing the CLI
+### Installing the CLI
 
 ```
 npm i -g @vue/cli
 ```
 
-#### create project
+### create project
 
 ```
 vue create projectname
@@ -184,7 +184,7 @@ vue create projectname
 
 vue is using webpack. configuring webpack sucks...
 
-#### start dev server
+### start dev server
 
 ```
 npm run serve

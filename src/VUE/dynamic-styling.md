@@ -10,6 +10,8 @@
 
 `:style` and `:class` use a **special syntax** for binding: feed an Object.
 
+Inside of this expression, this style object is all JavaScript. So we have to use camelCased unless we want to use ‘kebab-cased’ in quotes
+
 #### camelCase
 
 *recommended*
@@ -25,8 +27,6 @@ Vue takes that information and converts it into the code:`style="{ borderColor: 
 ```js
 :style="{ 'border-color': 'red'}"
 ```
-
-Inside of this expression, this style object is all JavaScript. So we have to use camelCased unless we want to use ‘kebab-cased’ in quotes
 
 ------
 
@@ -50,10 +50,11 @@ we can bind to an entire style object that lives within our data.
 <div :style="styles"></div>
 
 //// 
-data() { return { 
+data() { 
+	return { 
 		styles: { 
-			color: 'red', 
-			fontSize: '14px' }
+		color: 'red', 
+		fontSize: '14px' }
 	} 
 }
 ```
@@ -78,13 +79,13 @@ nicer syntax
 
 the class 'active' is added, if the condition is true
 
-#### Tailwind-classes
+#### eg: Tailwind-classes
 
 ```vue
 <span :class="{ 'text-green-600 font-bold': entry.HasWon }">...</span>
 ```
 
-#### Ternary Operators
+### Ternary Operators
 
 Use in-line ternary operators to add different classes based upon a condition:
 
@@ -92,7 +93,7 @@ Use in-line ternary operators to add different classes based upon a condition:
 <div :class="{ isActive ? activeClass : '' }"></div>
 ```
 
-#### Classes and computed properties
+### Classes and computed properties
 
 you can use computed properties (esp. for more complicated logic):
 
@@ -108,7 +109,7 @@ you can use computed properties (esp. for more complicated logic):
 <div :class="boxAClasses"></div>
 ```
 
-#### Dynamic Classes - Array Syntax
+### Dynamic Classes - Array Syntax
 
 Alternative: pass an Array. esp for multiple classes
 

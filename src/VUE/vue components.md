@@ -2,27 +2,30 @@
 
 ## Components 
 
-Components are the building blocks of an app, Any given web page may be composed of multiple components, and it’s common for components to be “parents” that have child components nested within them.
+Components are the building blocks It’s common for components to be “parents” that have child components nested within them.
 
 A component is like a custom HTML-element. -> reuseable Pieces of HTML with connected Data and logic
 
 - Components are used to build UIs by combining them
 - reuse
-- smaller piecesComponente buil "parent-child" relations and use "unidirectional data flows" for communication
+- smaller pieces 
+- Components build "parent-child" relations and use "unidirectional data flows" for communication
 
-> Convention: The Name Should be made up of 2 words
+::: tip
+Convention: The Name Should be made up of 2 words
+:::
 
 ## Single File Components
 
-.vue - files
+`.vue` - files
 
 A typical .vue component has three sections: `<template>`, `<script>`, and `<style>`.
 
 Traditionally, these sections are written in HTML, JavaScript and CSS.
 
-You could use Pug, TypeScript and SCSS instead by adding the appropriate `lang` attributes.
+Use Pug, TypeScript and SCSS instead by adding the appropriate `lang` attributes.
 
-```javascript
+```html
     <template lang="pug">
     </template>
     
@@ -33,15 +36,16 @@ You could use Pug, TypeScript and SCSS instead by adding the appropriate `lang` 
     </style>
 ```
 
-You’d just need to make sure you have the proper loaders setup and your Webpack is configured to handle these alternatives. 
-
-For example, if we wanted to use SCSS, we’d need to make sure we install sass-loader and its peer dependency node-sass. We can quickly do this from the command line with:
-
-```
-npm install --save-dev sass-loader node-sass
-```
-
- to figure out what dependencies you’d need for other languages, check out the [Vue Loader docs](https://vue-loader.vuejs.org/guide/pre-processors.html).
+> (Make sure you have the proper loaders setup and your Webpack is configured to handle these alternatives). 
+>
+> For example,  to use SCSS,  make sure to install sass-loader and its peer dependency node-sass:
+>
+> ```
+> npm install --save-dev sass-loader node-sass
+> ```
+>
+> Check out the [Vue Loader docs](https://vue-loader.vuejs.org/guide/pre-processors.html).
+>
 
 ------
 
@@ -69,7 +73,7 @@ npm install --save-dev sass-loader node-sass
    > }
    > ```
 
-3. use in template 
+3. **use** in template 
 
    ```vue
    <template>
@@ -125,6 +129,8 @@ export default {
 
 components-property wants an object with key-value pairs. key= name of the custom tag, value= the component
 
+##### vue automatically translates between PascalCase and kebap-case
+
 You can also write:
 
 ```
@@ -134,8 +140,6 @@ You can also write:
 `TheHeader` can be used in the template as: `the-header`
 
 or as `<TheHeader />` (this can also be self-closing)
-
--> vue automatically translates between PascalCase and kebap-case
 
 Simpler Syntax: (modern JS-Syntax)
 
@@ -147,15 +151,15 @@ components: { TheHeader }
 
 ## Styles
 
-#### `scoped` 
-
-that allows us to *scope* and isolate these styles to just this component. This way, these styles are specific to this component and won’t affect any other part of our application.
+### `scoped` 
 
 CSS is always global
 
 usually you define global CSS in app.vue
 
 -> for components add `scoped`-attribute to the style-tag
+
+*scope* and isolate the styles to just this component. This way, these styles are specific to this component and won’t affect any other part of our application.
 
 ```vue
 <style scoped >
@@ -171,9 +175,10 @@ header {
 > header h1[data-v-9a9f6144] {...}
 > ```
 
-#### Global Styles
+### Global Styles
 
-There are several different ways to handle this. The simplest way is to add styles to the **App.vue** file - the root component of our app.  It’s recommended to only store your global styles in one place to avoid potential conflicts.
+- Several different ways to handle this. The simplest way is to add styles to the **App.vue** file - the root component of our app.  
+- It’s recommended to only store your global styles in one place to avoid potential conflicts.
+- You can also place content in our **App.vue**’s template that you want to be displayed globally across every view of our application.
 
-We can also place content in our **App.vue**’s template that we want to be displayed globally across every view of our application.
 

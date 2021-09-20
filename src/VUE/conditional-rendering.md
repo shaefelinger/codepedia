@@ -27,8 +27,12 @@ chained:
 
 ## `v-show`
 
-Is used for **toggling** an element’s **visibility** instead of adding and removing the element from the DOM entirely, like `v-if` does.
+Is used for **toggling** an element’s **visibility** instead of adding and removing the element from the DOM  (like `v-if` does).
 
 The element is still present in the DOM, but it’s now hidden with an inline style of `display: none;` added to it.
 
 This is a **more performant** option if something is toggling off and on the screen often.
+
+------
+
+#### 

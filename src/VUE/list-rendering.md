@@ -66,8 +66,16 @@ Essential for list items! Each DOM element needs a unique key.
 - Key needs a uniqe value für each element.
   - Usually IDs (don't use index)
   - can be the whole object
+  
 - to keep frontend-ui in sync
+
 - performance improvements
+
+- you can use template literals:
+
+  ```vue
+  <li v-for="(detail, index) in details" :key="`key${index}`">{{detail}}</li>
+  ```
 
 ------
 
