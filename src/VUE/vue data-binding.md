@@ -48,11 +48,21 @@ you can use ternary expression, but no complex code eg. if-statements
 <img v-bind:src="image-path" >
 ```
 
-### shorthand
+### shorthand `:`
 
 ```js
 <img :src="image-path" >
 ```
+
+```html
+<a :href="url">Best Website ever</a>
+```
+
+```html
+<img :src="book.img" :alt="book.title">
+```
+
+
 
 Dynamically bind an attribute to an expression. 
 

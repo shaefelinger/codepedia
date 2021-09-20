@@ -79,11 +79,19 @@ nicer syntax
 
 the class 'active' is added, if the condition is true
 
-#### eg: Tailwind-classes
+##### Examples
+
+```html
+<li v-for="book in books" :class="{ fav: book.isFav }">
+```
+
+-> adds the class "fav" if book.isFav is true
 
 ```vue
-<span :class="{ 'text-green-600 font-bold': entry.HasWon }">...</span>
+<span :class="{ 'text-green-600 font-bold': entry.HasWon }">...</span> 
 ```
+
+
 
 ### Ternary Operators
 

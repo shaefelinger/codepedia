@@ -24,10 +24,9 @@ computed: {
 ```
 
 - naming: the computed property is  used like a data-property, not like a method. so name it as you would name  a data-property
-
 - important: don't call the computed property, just point at it -> write without `()` !
-
 - computed properties are used to output data, not like a function
+- always return a value
 
 
 Computed Properties can  watch **multiple properties**
