@@ -1,6 +1,8 @@
 # VUE Passing Data
 
-**props** -› pass data from main-app to component: downwards
+single source of truth…
+
+**props** -› pass data from parent to child: downwards
 
 **emit** custom Events -› data from component to main-app: upwards
 
@@ -10,7 +12,7 @@ Parent => child
 
 Props = properties. Act like custom HTML-Attributes
 
-each component has its own isolated scope. **Props** are custom attributes for passing data into a component.
+Each component has its own isolated scope. **Props** are custom attributes for passing data into a component.
 
 Props should be defined in advance. (also define type, required etc.)
 
@@ -20,17 +22,77 @@ simplest form: an Array (props as strings) (more for prototyping)
 - props are available just like data: use in template and in script with `.this`
 - make sure to have no name clashes with data- and computed-properties
 
-pass the data via attribute:
+in parent - pass the data via attribute:
 
 ```vue
-<friend-contact name="John Doe"></friend-contact>
+  <Modal header="Sign up now"/>
 ```
 
-send the data with v-bind:
+in child: register the prop (has to be a string)
+
+```js
+  export default {
+      props: ['header'],
+  };
+```
+
+use in child:
 
 ```vue
-<product-details :details="details"></product-details>
+<h1>{{ header }}</h1>
 ```
+
+#### Multiple Props
+
+```vue
+<Modal header="Sign up now !" text="Grab it for half price"/>
+```
+
+```js
+props: ['header', 'text'],
+```
+
+#### Data-Bind
+
+to pass data that is not a string - eg an Array, variables, etc.
+
+In Parent:
+
+```vue
+<Modal :header="header" :text="text"/>
+```
+
+#### Class data-bind
+
+parent:
+
+```vue
+<Modal :header="header" :text="text" theme="sale"/>
+```
+
+child
+
+if condition is true, apply 'sale'
+
+```vue
+<div class="modal" :class="{ sale: theme === 'sale'}">
+```
+
+```js
+export default {
+	props: ['header', 'text', 'theme'],
+};
+```
+
+
+
+
+
+
+
+
+
+
 
 #### Props should not be mutated!
 
@@ -130,17 +192,34 @@ but also to make the content dynamic, to use `v-for`, `v-if`
 
 child => parent
 
-- props are a way to pass data **down** into a component
+Custom_event: fired from a component, can be listened from the parent-component 
+
 - **up:** emit an event, telling the parent that it happened.
+- Give the component the ability to let its parent know an event happened within it.
 
 * Custom Events are emmited (via \$emit) to trigger a method in a parent component
+
+##### emit the event
+
+```js
+methods: {
+	closeModal() {
+		this.$emit('closeModal')
+	}
+}
+```
+
+parent - can listen to the custom event
+
+```vue
+<Modal :header="header" :text="text" theme="sale" @closeModal="toggleModal"/>
+```
+
+the custom event will fire from the child to the parent
+
 * they can contain data (eg. data the user has entered, the id of a selected element, etc.)
 
 > No Neighbour communication!! -> you have to use the parent component
-
-Give the component the ability to let its parent know an event happened within it.
-
-The child-components emits a custom event, that the parent can listen for.
 
 use `this.$emit`
 
@@ -163,21 +242,21 @@ You can add as many arguments as you want: that is data that you pass together w
 
 the emit can contain data:
 
-```vue
+```js
 addToCart() { this.$emit('add-to-cart', this.variants[this.selectedVariant].id)
 },
 ```
 
 -> id is the payload
 
-```
+```js
 // child
 toggleFavorite() {
 	this.$emit('toggle-favorite', this.id);
 },
 ```
 
-```
+```js
 // parent
   methods: {
     toggleFavoriteStatus(friendId) {

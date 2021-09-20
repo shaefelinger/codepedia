@@ -12,7 +12,14 @@ A component is like a custom HTML-element. -> reuseable Pieces of HTML with conn
 - Components build "parent-child" relations and use "unidirectional data flows" for communication
 
 ::: tip
-Convention: The Name Should be made up of 2 words
+Convention: 
+
+- The Name Should be made up of 2 words
+
+- start with capital-letter. 
+- not the same name as a html-tag
+- put in components-folder
+
 :::
 
 ## Single File Components
@@ -73,11 +80,11 @@ Use Pug, TypeScript and SCSS instead by adding the appropriate `lang` attributes
    > }
    > ```
 
-3. **use** in template 
+3. **use** in template (as if it were an HTML-tag)
 
    ```vue
    <template>
-   	<EventCard/>
+   	<EventCard />
    </template>
    ```
 
@@ -153,11 +160,9 @@ components: { TheHeader }
 
 ### `scoped` 
 
-CSS is always global
+CSS is always global  - is applied to all components! (Usually you define global CSS in app.vue)
 
-usually you define global CSS in app.vue
-
--> for components add `scoped`-attribute to the style-tag
+-> To just use it in the component add `scoped`-attribute to the style-tag
 
 *scope* and isolate the styles to just this component. This way, these styles are specific to this component and won’t affect any other part of our application.
 
@@ -172,8 +177,23 @@ header {
 > under the Hood: vue gives the components special data-atributes
 >
 > ```
-> header h1[data-v-9a9f6144] {...}
+> header h1[data-v-9a9f6144] {...}	
 > ```
+>
+> - vue adds data-attribute to html and css-selectors
+>
+> - -> performance-issues
+>
+> - -> sometimes it's better to just write a more specific css-selector !!
+>
+>   ```css
+>   modal h1 {
+>   	...
+>   }
+>   ```
+>
+
+
 
 ### Global Styles
 
@@ -181,4 +201,10 @@ header {
 - It’s recommended to only store your global styles in one place to avoid potential conflicts.
 - You can also place content in our **App.vue**’s template that you want to be displayed globally across every view of our application.
 
+
+Don't scope the root-component. Use global Stylesheet `global.css` in assets folder (or `main.css`). Import in main.js
+
+```js
+import './assets/global.css'
+```
 
