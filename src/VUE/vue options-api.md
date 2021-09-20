@@ -1,4 +1,4 @@
-# Vue Options-API-Cheatsheet
+# Vue Options-API
 
 vue3 also has the composition-API (more similar to react)
 
@@ -41,7 +41,11 @@ props: ['prop1', 'prop2'];
 
 is, where the state of the application is
 
-Function, that returns an Object!
+::: warning
+
+Remember: "A Function, that returns an Object"
+
+:::
 
 ```js
  data() {

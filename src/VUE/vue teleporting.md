@@ -13,4 +13,3 @@
 ```
 
 render directly in the body element (good mostly for semantic reasons)
-

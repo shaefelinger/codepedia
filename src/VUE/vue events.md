@@ -70,7 +70,7 @@ you can also use
 @click="addToCart()"
 ```
 
-or pass arguments:
+### pass arguments
 
 ```js
 @click="add(5)"
@@ -80,11 +80,79 @@ or pass arguments:
 <div @click="changeTitle('HTML-Title')">clickme</div>
 ```
 
-> you can listen for clicks on any object, not just buttons!
+::: tip
+you can listen for clicks on any object, not just buttons!
+:::
 
-### .this
+------
 
-The difference here is now we’re saying `this.cart` to refer to *this* `cart` in ***this* Vue instance’s** data.
+## Native Event Object
+
+`event.target.value`
+
+If an event happens, the called method will automatically get an Object as an argument, that describes the event
+
+```vue
+<input type="text" @input="setName" />
+<p>Your Name: {{name}}</p>
+//...
+
+methods: {
+	setName(event) {
+		this.name = event.target.value
+	},
+}
+
+```
+
+##### check type of event:
+
+```js
+methods: {	
+	handleEvent(e) {
+			console.log(e);
+      console.log(e.type);
+  }  
+}
+```
+
+if you have to pass an argument: and still need access to the Event-Object: use `$event`
+
+```vue
+ <input type="text" @input="setName($event, 'Mustermann')" />
+//...
+methods: { 
+  setName(event, lastName) {
+      this.name = event.target.value + lastName
+    },
+}
+```
+
+Example:
+
+```js
+<div class="box" @mouseover="handleEvent($event, 5)">mouseover</div>
+<div class="box" @mouseleave="handleEvent">mouseleave</div>
+<div class="box" @dblclick="handleEvent">double click</div>
+<div class="box" @mousemove="handleMousemove">position {{ x }} - {{ y }} </div>
+      
+```
+
+```js
+handleEvent(e, data) {
+	console.log(e, e.type);
+	if (data) {
+		console.log(data);
+	}
+},
+handleMousemove(e) {
+	this.x=e.offsetX
+	this.y=e.offsetY
+}  
+```
+
+
+
 
 ------
 
@@ -93,8 +161,6 @@ The difference here is now we’re saying `this.cart` to refer to *this* `cart` 
 ```js
 @click="showPopup = !showPopup"
 ```
-
-#### 
 
 ------
 
@@ -125,53 +191,11 @@ methods: {
 
 
 
-
-
-
-
 ------
 
-## Native Event Object
 
-`event.target.value`
 
-If an event happens, the called method will automatically get an Object as an argument, that describes the event..
 
-```vue
-<input type="text" @input="setName" />
-<p>Your Name: {{name}}</p>
-//...
-
-methods: {
-	setName(event) {
-		this.name = event.target.value
-	},
-}
-
-```
-
-##### check type of event:
-
-```js
-methods: {	
-	handleEvent(e) {
-			console.log(e);
-      console.log(e.type);
-  }  
-}
-```
-
-if you have to pass an argument: and still need access to the Event-Object: use `$event`
-
-```vue
- <input type="text" @input="setName($event, ' Häfelinger')" />
-//...
-methods: { 
-  setName(event, lastName) {
-      this.name = event.target.value + lastName
-    },
-}
-```
 
 ------
 
