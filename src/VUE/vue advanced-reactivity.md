@@ -102,8 +102,6 @@ or to send HTTP_requests, if certain data changes, or set a timer...
 
 ## Methods vs. Computed vs. Watchers
 
-so:
-
 **Methods:** for event- or data-binding. Data-binding: re-executed for every re-render. Use for events or data that needs to be re-evalueted every time
 
 **Computed:** data-binding. only re-evaluated if one of their used values changed. Use for data that depends on other data
