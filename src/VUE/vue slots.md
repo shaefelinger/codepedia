@@ -1,14 +1,42 @@
 # VUE Slots
 
-To use a component as a wrapper (eg a Card) around content. 
+## Slots
 
-Allows to receive HTML-Content (with Vue-Features) from outside of the component.
+To use a component as a wrapper (eg a Card) around content -› pass more complex data to child.
 
-(think: Props=data, slots=html-code)
+- Allows to receive HTML-Content (with Vue-Features) from outside of the component.
 
-The Paredn provides the HTML-Code, that is inside of the slot
+- (think: Props=data, slots=html-code)
+
+- The Parent provides the HTML-Code, that is inside of the slot
+- not self-closing
+
+eg:
+
+parent:
 
 ```vue
+<div v-if="showModal">
+    <Modal theme="sale" @closeModal="toggleModal">
+      <h1>Headline</h1>
+      <p>text</p>
+    </Modal>
+</div>
+```
+
+child: add `<slot>`
+
+```vue
+<div class="modal" :class="{ sale: theme === 'sale'}">
+	<slot></slot>
+</div>
+```
+
+or:
+
+```vue
+// BaseCard.vue
+
 <template>
   <div>
     <slot></slot>
@@ -43,13 +71,30 @@ div {
 
 could be registered globally
 
-### Named Slots
+Example- Modal:
+
+```html
+<div class="backdrop" @click.self="closeModal">
+    <div class="modal " :class="{ sale: theme === 'sale'}">
+        <slot>Default content if no data was passed</slot>
+        <div class="actions">
+            <slot name="links"></slot>
+        </div>
+    </div>
+</div>
+```
+
+
+
+------
+
+## Named Slots
 
 if you use more than one slot in your component, you can add names to the slot:
 
-> you don't have to name all slots, one unnamed slot is ok
-
 -> wrap in `<template >` and add `v-slot:`-directive
+
+> you don't have to name all slots, one unnamed default-slot is ok
 
 child:
 
@@ -67,20 +112,20 @@ child:
 parent:
 
 ```vue
-<base-card>
+<BaseCard >
 	<template v-slot:header>
 		<h3>{{ fullName }}</h3>
 	</template>
 	<p>{{ infoText }}</p>
-</base-card>
+</BaseCard >
 ```
 
 content, that is not in the `<template>` will automatically go to the (unnamed) default-slot.
 
-to make it clear, you can also use `v-slot:default`: (reserved name)
+to make this clear, you can also use `v-slot:default`: (reserved name)
 
 ```vue
-<base-card>
+<BaseCard>
 	<template v-slot:header>
 		<h2>Available Badges</h2>
 	</template>
@@ -94,20 +139,26 @@ to make it clear, you can also use `v-slot:default`: (reserved name)
 			</li>
 		</ul>
 	</template>
-</base-card>
+</BaseCard>
 ```
 
-#### Styling Slots
+### v-slot shorthand ###
+
+`<template #header>` is equal to:
+
+`<template v-slot:header>`
+
+
+
+### Styling Slots
 
 scope
 
-the styling and the data ist not passed to the slot-component, still only available inside of the parent-component (the content is evaluated and stylen before it is sent to the slot-component)
+the styling and the data ist not passed to the slot-component, still only available inside of the parent-component (the content is evaluated and styled before it is sent to the slot-component)
 
+### slot default-content
 
-
-#### slot default-content
-
-you can provide default contetn, that is used, if no content is sent to that slot
+you can provide default content, that is used if no content is sent to that slot
 
 ```vue
 <header>
@@ -117,7 +168,7 @@ you can provide default contetn, that is used, if no content is sent to that slo
 </header>
 ```
 
-#### check, if slot gets data
+### check, if slot gets data
 
 `this.$slots` holds info about the slot data.this component receives 
 
@@ -133,19 +184,9 @@ you can provide default contetn, that is used, if no content is sent to that slo
 </header>
 ```
 
-#### v-slot shorthand #
-
-`<template #header>` is equal to:
-
-`<template v-slot:header>`
-
-
-
-### Scoped Slots
+## Scoped Slots
 
 let you pass data from inside the component where you define the slot to the component, where you define the markup
-
-
 
 ```vue
 <li v-for="goal in goals" :key="goal">
@@ -178,6 +219,3 @@ if you are only using one slot, you can omit the `<template>`
 </CourseGoals>
 ```
 
-------
-
-### 

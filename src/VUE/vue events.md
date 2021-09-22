@@ -236,6 +236,24 @@ https://vuejs.org/v2/guide/events.html
 - `.right` -> only right-click
 - `.left`, `.middle`
 
+only on right-click:
+
+```vue
+<button @click.right="toggleModal">Open Modal</button>
+```
+
+```vue
+<button @click.shift="toggleModal">Open Modal</button>
+```
+
+only on the element itself, not anything inside:
+
+```vue
+<div class="backdrop" @click.self="closeModal">
+```
+
+Also: modify the click on certain conditions. eg shift, alt
+
 ### keyboard-modifiers
 
 - `@keyup.enter`
