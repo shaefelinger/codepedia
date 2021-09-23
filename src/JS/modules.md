@@ -2,15 +2,17 @@
 
 ## Why use modules?
 
-In complex applications it makes sense to split JavaScript programs up into separate modules that can be imported when needed.  Modern browsers  support module functionality natively.
+It makes sense to split JavaScript programs up into separate modules that can be imported when needed.  
 
 There are a lot of benefits to using modules:
 
-**1) Maintainability:** Updating a single module is much easier when the module is decoupled from other pieces of code.
+**1) Maintainability:** Updating a single module is much easier 
 
-**2) Namespacing:** In JavaScript, variables outside the scope of a top-level function are global. Sharing global variables between unrelated code is a big [no-no in development](http://c2.com/cgi/wiki?GlobalVariablesAreBad).  Modules allow us to avoid namespace pollution by creating a private space for our variables.
+**2) Namespacing:** Sharing global variables between unrelated code is a big [no-no in development](http://c2.com/cgi/wiki?GlobalVariablesAreBad).  Modules allow us to avoid namespace pollution by creating a private space for our variables.
 
 **3) Reusability**
+
+Modern browsers  support module functionality natively.
 
 ------
 
@@ -18,9 +20,7 @@ There are a lot of benefits to using modules:
 
 *Modules* are reusable pieces of code in a file that can be exported and then imported for use in another file.
 
-*Modules* are reusable pieces of code in a file that can be exported and then imported for use in another file.
-
-This modular strategy is sometimes called *separation of concerns* 
+-› *separation of concerns* 
 
 Modules can load each other and use  `export` and `import` to interchange functionality, call functions of one module from another one:
 
@@ -40,19 +40,12 @@ export function sayHi(user) {
 // 📁 main.js
 import {sayHi} from './sayHi.js';
 
-alert(sayHi); // function...
 sayHi('John'); // Hello, John!
 ```
 
-##### in HTML
-
-```html
-<script type="module" src="index.js"></script>
-```
+##### Import in HTML
 
 `type="module"  ` is nescessary, otherwise it won't work
-
-Modules support special keywords and features, we must tell the browser that a script should be treated as a module, by using the attribute `<script type="module">`.
 
 ```html
 <script type="module">
@@ -71,15 +64,14 @@ or
 
 ### Module-level scope
 
-Each module has its own top-level scope -> each module has independent variables
+- Each module has its own top-level scope -> each module has independent variables
 
-Modules should `export` what they want to be accessible from outside and `import` what they need. Use import/export instead of relying on global variables.
+- Modules should `export` what they want to be accessible from outside and `import` what they need. 
+- Use import/export instead of relying on global variables.
 
 ##### A module code is evaluated only the first time when imported
 
 If the same module is imported into multiple other modules, its code is executed only once, upon the first import. Then its exports are given to all further importers.
-
-The module is executed only once. Exports are generated, and then they are shared between importers,
 
 ### [In a module, “this” is undefined](https://javascript.info/modules-intro#in-a-module-this-is-undefined)
 
@@ -95,7 +87,7 @@ The module is executed only once. Exports are generated, and then they are share
 
 ------
 
-## Implementing Modules using ES6 Syntax
+## Import-Syntax (ES6)
 
 Syntax for natively implementing modules was only introduced in 2015 with the release of [ECMAScript 6 (ES6)](http://es6-features.org/#ValueExportImport). 
 
@@ -454,7 +446,7 @@ This works with [dynamic imports](https://developer.mozilla.org/en-US/docs/Web/J
 
 ------
 
-## Modules in Node - require
+## require - Syntax
 
 - node [uses CJS module format](https://blog.risingstack.com/node-js-at-scale-module-system-commonjs-require/).
 - CJS imports module synchronously
