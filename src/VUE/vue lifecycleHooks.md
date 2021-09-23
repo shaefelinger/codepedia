@@ -1,6 +1,7 @@
 # Vue Livecycle-Hooks
 
 ```js
+// when component is mounted:
 mounted() {
   console.log('mounted');
 },
@@ -17,3 +18,6 @@ mounted() {
 | beforeDestroy |                         |
 | destroyed     |                         |
 
+https://v3.vuejs.org/guide/composition-api-lifecycle-hooks.html#lifecycle-hooks
+
+https://v3.vuejs.org/guide/instance.html#lifecycle-diagram
