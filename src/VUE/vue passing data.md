@@ -202,6 +202,7 @@ Custom_event: fired from a component, can be listened from the parent-component
 ##### emit the event
 
 ```js
+// child
 methods: {
 	closeModal() {
 		this.$emit('closeModal')
@@ -212,6 +213,7 @@ methods: {
 parent - can listen to the custom event
 
 ```vue
+// parent
 <Modal :header="header" :text="text" theme="sale" @closeModal="toggleModal"/>
 ```
 
