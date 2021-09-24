@@ -87,22 +87,11 @@ If the same module is imported into multiple other modules, its code is executed
 
 ------
 
-## Import-Syntax (ES6)
+## `import/export` - Syntax- (ES6 / ESM)
 
 Syntax for natively implementing modules was only introduced in 2015 with the release of [ECMAScript 6 (ES6)](http://es6-features.org/#ValueExportImport). 
 
-example project structure
 
-```
-secret-image/
-|-- secret-image.html
-|-- secret-image.js
-secret-messages/
-|-- secret-messages.html
-|-- secret-messages.js
-modules/
-|-- dom-functions.js    <-- new module file
-```
 
 ESM stands for ES Modules.
 
@@ -111,74 +100,7 @@ ESM stands for ES Modules.
 - [Tree-shakeable](https://developers.google.com/web/fundamentals/performance/optimizing-javascript/tree-shaking/), due to ES6's [static module structure](https://exploringjs.com/es6/ch_modules.html#static-module-structure)
 - ESM allows bundlers like Rollup to [remove unnecessary code](https://dev.to/bennypowers/you-should-be-using-esm-kn3), allowing sites to ship less codes to get faster load.
 
-### ES6 Named Export Syntax
-
-The name of each exported resource is listed between curly braces and separated by commas
-
-```js
-export { resourceToExportA, resourceToExportB, ...}
-```
-
-individual values may be exported as named exports by simply placing the `export` keyword in front of the variable’s declaration.
-
-```js
-export const toggleHiddenElement = (domElement) => {
-  // ...
-}
- 
-export const changeToFunkyColor = (domElement) => {
-  // ...
-}
-```
-
-##### Examples
-
-```js
-// Exporting individual features
-export let name1, name2, …, nameN; // also var, const
-export let name1 = …, name2 = …, …, nameN; // also var, const
-export function functionName(){...}
-export class ClassName {...}
-
-// Export list
-export { name1, name2, …, nameN };
-
-// Renaming exports
-export { variable1 as name1, variable2 as name2, …, nameN };
-
-// Exporting destructured assignments with renaming
-export const { name1, name2: bar } = o;
-
-```
-
-```js
-// ninjas.js
-export const ninjas = ['shaun', 'yoshi', 'mario', 'peach'];
-
-export const greet = () => {
-  console.log(ninjas[0] + ' says hello');
-};
-```
-
-or:
-
-```js
-// ninjas.js
-const ninjas = ['shaun', 'yoshi', 'mario', 'peach'];
-
-const greet = () => {
-    console.log(ninjas[0] + ' says hello');
-}
-
-export { ninjas, greet }
-```
-
-You can also rename named exports to avoid naming conflicts:
-
-```js
-export { myFunction as function1,
-         myVariable as variable };
-```
+------
 
 ### ES6 Import Syntax
 
@@ -195,15 +117,13 @@ you must also update the html: add the attribute `type='module'` to the `<script
 
 #### Renaming Imports 
 
--> to Avoid Naming Collisions
+-> to Avoid naming Collisions
 
 ES6 includes syntax for renaming imported resources by adding in the keyword `as`.
 
 ```js
 import { exportedResource as newlyNamedResource } from '/path/to/module'
 ```
-
-
 
 ```js
 // index.js
@@ -222,8 +142,6 @@ import * as module from './module.js';
 console.log(module.ninjas);
 module.greet();
 ```
-
-
 
 #### Import entire content
 
@@ -263,15 +181,85 @@ import {
 } from '/modules/my-module.js';
 ```
 
+------
 
+### ES6 Named Export Syntax
+
+The name of each exported resource is listed between curly braces and separated by commas
+
+```js
+export { resourceToExportA, resourceToExportB, ...}
+```
+
+individual values may be exported as named exports by placing the `export` keyword in front of the declaration.
+
+```js
+export const toggleHiddenElement = (domElement) => {
+  // ...
+}
+ 
+export const changeToFunkyColor = (domElement) => {
+  // ...
+}
+```
+
+##### Examples
+
+```js
+// Exporting individual features
+export let name1, name2, nameN; // also var, const
+export function functionName(){...}
+export class ClassName {...}
+
+// Export list
+export { name1, name2 };
+
+// Renaming exports
+export { variable1 as name1, variable2 as name2 };
+
+// Exporting destructured assignments with renaming
+export const { name1, name2: bar } = object;
+```
+
+```js
+// ninjas.js
+export const ninjas = ['shaun', 'yoshi', 'mario', 'peach'];
+
+export const greet = () => {
+  console.log(ninjas[0] + ' says hello');
+};
+```
+
+or:
+
+```js
+// ninjas.js
+const ninjas = ['shaun', 'yoshi', 'mario', 'peach'];
+
+const greet = () => {
+    console.log(ninjas[0] + ' says hello');
+}
+
+export { ninjas, greet }
+```
+
+You can also rename named exports to avoid naming conflicts:
+
+```js
+export { myFunction as function1,
+         myVariable as variable };
+```
 
 ------
 
 ### Default Exports
 
-Every module also has the option to export a single value to represent the entire module called the *default export*.The default export value can be an object containing the entire set of functions and/or data values of a module.
+Every module also has the option to export a single value to represent the entire module called the *default export*. 
 
-The syntax for exporting a default object looks like this: the clause `as default` renames the exported object to `default`, a reserved identifier that can only be given to a single exported value.
+- can be an object containing the entire set of functions and/or data values of a module.
+
+-  syntax :  `as default` renames the exported object to `default`, a reserved identifier that can only be given to a single exported value.
+
 
 - import can be any name
 - only 1 default export!
@@ -303,8 +291,6 @@ export default {
 }
 ```
 
-
-
 ```js
 // Default exports
 export default expression;
@@ -334,7 +320,7 @@ console.log(cube(3)); // 27
 import importedResources from 'module.js';
 ```
 
-Notice that the curly braces are gone from the import statement. This syntax is  shorthand for: 
+Notice that the import statement has no curly braces . This syntax is  shorthand for: 
 
 ```js
 import { default as importedResources } from 'module.js
@@ -411,7 +397,7 @@ buttonElement.addEventListener('click', () => {
 
 
 
-- Can be called in HTML, just do:
+- Can be called in HTML:
 
 ```html
 <script type="module">
@@ -425,13 +411,13 @@ buttonElement.addEventListener('click', () => {
 
 Import an entire module for side effects only, without importing anything. This runs the module's global code, but doesn't actually import any values.
 
-```
+```js
 import '/modules/my-module.js';
 ```
 
 This works with [dynamic imports](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#dynamic_imports) as well:
 
-```
+```js
 (async () => {
   if (somethingIsTrue) {
     // import module for side effects
@@ -446,7 +432,7 @@ This works with [dynamic imports](https://developer.mozilla.org/en-US/docs/Web/J
 
 ------
 
-## require - Syntax
+## `require` - Syntax (Node - CJS)
 
 - node [uses CJS module format](https://blog.risingstack.com/node-js-at-scale-module-system-commonjs-require/).
 - CJS imports module synchronously
@@ -456,11 +442,11 @@ This works with [dynamic imports](https://developer.mozilla.org/en-US/docs/Web/J
 
 [https://www.sitepoint.com/understanding-module-exports-exports-node-js/](https://www.sitepoint.com/understanding-module-exports-exports-node-js/)
 
-### module.exports
+### Export: module.exports
 
 To make  functions available to other files, add them as properties to the built-in `module.exports` object:
 
-(This shows 2 ways of exporting functions from a module - Both approaches  store a function within the `module.exports` object. )
+`module.exports` is an object that is built-in to the Node.js runtime environment. Other files can now import this object, and make use of these  functions, with the `require()` function.
 
 ```js
 /* converters.js */
@@ -481,34 +467,9 @@ or
 module.exports = celsiusToFahrenheit
 ```
 
-`module.exports` is an object that is built-in to the Node.js runtime environment. Other files can now import this object, and make use of these  functions, with the `require()` function.
+------
 
-### require()
 
-The `require()` function accepts a string as an argument. That string provides the [file path](https://www.freecodecamp.org/news/requiring-modules-in-node-js-everything-you-need-to-know-e7fbd119be8/) to the module you would like to import.
-
-```js
-/* water-limits.js */
-const converters = require('./converters.js');
-```
-
-`./` is a relative path indicating that **converters.js** is stored in the same folder as **water-limits.js**. When you use `require()`, the entire `module.exports` object is returned and stored in the variable `converters`. 
-
-All exported methods can be used by `converters.methodName`
-
-### Using Object Destructuring to be more Selective With `require()`
-
-You can use object destructuring to extract only the needed functions.
-
-```js
-/* celsius-to-fahrenheit.js */
-const { celsiusToFahrenheit } = require('./converters.js');
-const fahrenheitValue = celsiusToFahrenheit(input);
-```
-
--> you can access the function directly 
-
-### Export
 
 ```js
 function requestHandler(req, res) { 
@@ -573,15 +534,30 @@ module.exports = {
 }
 ```
 
-### Import
+### 
 
-use `require` -> node will look for `module.exports`
+------
+
+### Import: require()
+
+Use `require` -> node will look for `module.exports`
+
+The `require()` function accepts a string as an argument. That string provides the [file path](https://www.freecodecamp.org/news/requiring-modules-in-node-js-everything-you-need-to-know-e7fbd119be8/) to the module.
+
+```js
+/* water-limits.js */
+const converters = require('./converters.js');
+```
+
+`./` is a relative path indicating that **converters.js** is stored in the same folder as **water-limits.js**. When you use `require()`, the entire `module.exports` object is returned and stored in the variable `converters`. 
+
+All exported methods can be used by `converters.methodName`
+
+##### Examples:
 
 ```js
 const module = require('./module.js')
 ```
-
-example:
 
 ```js
 const http = require('http')
@@ -592,8 +568,19 @@ const server = http.createServer(routes)
 //-> will use the function stored in routes for incoming requests
 
 server.listen(3000)
-
 ```
+
+### Object Destructuring with `require()`
+
+You can use object destructuring to extract only the needed functions.
+
+```js
+/* celsius-to-fahrenheit.js */
+const { celsiusToFahrenheit } = require('./converters.js');
+const fahrenheitValue = celsiusToFahrenheit(input);
+```
+
+-> you can access the function directly 
 
 ------
 
