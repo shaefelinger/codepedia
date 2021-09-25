@@ -57,9 +57,14 @@ module.exports = {
         ],
       },
       {
+        text: 'Node',
+        link: '/NODE/',
+      },
+      {
         text: 'GIT',
         link: '/GIT/',
       },
+
       {
         text: 'Databases',
         link: '/DB/',
@@ -82,10 +87,6 @@ module.exports = {
           { text: 'Markdown', link: '/markdown/' },
           { text: 'Design', link: '/design/' },
         ],
-      },
-      {
-        text: 'Node',
-        link: '/NODE/',
       },
       {
         text: 'About',
