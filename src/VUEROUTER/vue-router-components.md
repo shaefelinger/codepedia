@@ -8,9 +8,9 @@ To let vue know, where to render that component, use the `router-view`-placehold
 
 ### `<router-link>`
 
-is a component (from the vue-router library) whose job is to link to a specific route.
+Is a component (from the vue-router library) whose job is to link to a specific route.
 
-like a special anker-tag, to load the router-view. The `to` attribute behaves similar to `href`.
+Like a special anker-tag, to load the router-view. The `to` attribute behaves similar to `href`.
 
 ```vue
 <router-link to="/about">About</router-link>
@@ -62,4 +62,3 @@ you can have one unnamed router-view on the same level - this is the default rou
 
 ---
 
-### 

@@ -29,6 +29,72 @@ v-model is a combination of `:value` and `@input`
 <input type="text" :value="name" @input="setName"/>
 ```
 
+
+
+
+
+- two-way data binding
+
+```vue
+ <label>EMAIL</label>
+ <input type="email" required v-model="email" />
+```
+
+```vue
+<label>Role:</label>
+    <select v-model="role">
+      <option value="developer">Web Developer</option>
+      <option value="designer">Web Designer</option>
+    </select>
+```
+
+##### checkbox
+
+```vue
+   <div class="terms">
+      <input type="checkbox" require v-model="terms" />
+      <label>Accept terms and conditions</label>
+    </div>
+```
+
+##### multiple checkboxes with same v-model
+
+- adds value to the array
+
+```vue
+<div>
+      <input type="checkbox" value="shaun" v-model="names" />
+      <label>Shaun</label>
+    </div>
+    <div>
+      <input type="checkbox" value="yoshi" v-model="names" />
+      <label>yoshi</label>
+    </div>
+    <div>
+      <input type="checkbox" value="mario" v-model="names" />
+      <label>mario</label>
+    </div>
+```
+
+
+
+##### keyboard
+
+-> access to event
+
+```vue
+<input type="text" v-model="tempSkill" @keyup="addSkill" />
+//
+
+methods: {
+	addSkill(event) {
+		console.log(event);
+	},
+},
+```
+
+
+
 ------
 
 ## v-model-Modifiers
@@ -277,5 +343,4 @@ for: Attributes, classes & styles
     @input="$emit('update:modelValue', $event.target.value)"
 />
 ```
-
 

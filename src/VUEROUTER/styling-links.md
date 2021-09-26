@@ -1,6 +1,6 @@
 # Styling active Links
 
-active links have the class: `router-link-active`
+Active links have the class: `router-link-active`
 
 ```css
 a.router-link-active {
@@ -10,7 +10,7 @@ a.router-link-active {
 }
 ```
 
-also `router-link-exact-active`
+Also: `router-link-exact-active`
 
 -> only to the navitem that is **exactly** the path
 
@@ -22,3 +22,4 @@ const router = createRouter({
   linkActiveClass: 'router-link-active', // default
   ....
 ```
+

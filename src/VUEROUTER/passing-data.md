@@ -42,7 +42,7 @@ access this parameter with `$route.params.name`
 </template>
 ```
 
-A \$route object represents the state of the current active route. It contains data about the route including the params.
+A \`$route` object represents the state of the current active route. It contains data about the route including the params.
 
 https://router.vuejs.org/api/#the-route-object
 
@@ -55,6 +55,44 @@ Also we can link to dynamic routes by placing parameters in our links:
   >Joe</router-link
 >
 ```
+
+##### Example
+
+#### Route Parameters
+
+```vue
+//router:
+{
+    path: '/jobs/:id',
+    name: 'JobDetails',
+    component: JobDetails
+},
+  
+  
+// acces value in view:
+  <p>The Job ID is: {{ $route.params.id}}</p>  
+
+```
+
+or inside component-object:
+
+```js
+export default {
+    data() {
+        return {
+            id: this.$route.params.id
+        }
+    }
+}
+```
+
+```vue
+<p>The Job ID is: {{ id }}</p>  
+```
+
+------
+
+#### 
 
 ---
 

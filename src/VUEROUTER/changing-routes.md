@@ -20,6 +20,10 @@ const router = new VueRouter({
 });
 ```
 
+
+
+
+
 If we’re using named routes then we don’t need to change our `router-link`s at all.
 
 #### Redirecting

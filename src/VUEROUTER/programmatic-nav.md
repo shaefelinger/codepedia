@@ -2,7 +2,11 @@
 
 Navigate from inside js-code, eg. after some code has run.
 
-use `this.$router`
+-> access history. go back & forth / push route to the history
+
+###  `this.$router`  
+
+to access the router(history etc). 
 
 methods:
 
@@ -14,4 +18,29 @@ methods:
 this.$router.push({ name: 'Profile', params: { char_id } });
 ```
 
+
+
+```js
+export default {
+    methods: {
+      redirect() {
+        this.$router.push({ name: 'Home' })
+      },
+      back() {
+        this.$router.go(-1)
+      },
+      forward() {
+        this.$router.go(1)
+      },
+    },
+  };
+```
+
+
+
 ---
+
+### `$route` 
+
+for info about the current route
+

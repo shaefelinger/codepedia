@@ -2,8 +2,6 @@
 
 in the `routes`-array pass a JS-Object for every route
 
-
-
 example - whole file:
 
 ```js
@@ -64,7 +62,7 @@ import Home from '../views/Home.vue'
 
 And then we use this route:
 
-```jsx
+```js
 const routes = [
   {
     path: '/',
@@ -91,9 +89,19 @@ The `path` indicates the actual route (the URL).`/`, meaning this is the root, t
 
 #####  performance optimization
 
-Route-level code-splitting
+Route-level code-splitting - esp. if the app is large
 
-esp. if the app is large
+for big projects -> load later.
+
+```
+{
+	path: 'About',
+	name: 'About',
+	component: () => import('../views/About.vue')
+}
+```
+
+https://next.router.vuejs.org/guide/advanced/lazy-loading.html#grouping-components-in-the-same-chunk
 
 ```js
 {

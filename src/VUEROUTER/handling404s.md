@@ -30,3 +30,13 @@ at the end:
 > `.*` is a RegEx
 
 or create a "NotFound"-Component...
+
+```js
+// catchall 404
+  {
+    path: '/:catchAll(.*)',
+    name: 'NotFound',
+    component: NotFound
+  }
+```
+

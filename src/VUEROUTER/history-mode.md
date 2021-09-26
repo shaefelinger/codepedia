@@ -11,7 +11,9 @@ no # for navigation
 - “Hash mode” is the default mode for Vue2 Router
 - uses the URL hash to simulate a full URL so the page isn’t reloaded every time the URL changes.
 
-In order to remove it we need to add some configuration to **router.js** :
+## History Mode
+
+In order to remove that, add some configuration to **router.js** :
 
 `mode: 'history'`
 
@@ -29,12 +31,10 @@ This tells Vue to use the browser `history.pushState` API to change the URL with
 
 Normally when you load up `/about-us` on a server it would look for an `about-us.html` file.
 
-On our application no matter what URL is called up, we must load up `index.html` which is where our application is loaded, and then our router will take over and load up the proper page.
+No matter what URL is called up, we must load up `index.html` which is where our application is loaded, and then our router will take over and load up the proper page.
 
-This is the default functionality on our development server,
-
-but if we go to deploy our application we’ll need to ensure our server has the proper configuration to serve up our index.html no matter what route is navigated to.
+If you deploy the application you need to ensure the server has the proper configuration to serve up index.html no matter what route is navigated to.
 
 The Vue Router documentation has a bunch of [example configurations](https://router.vuejs.org/guide/essentials/history-mode.html#example-server-configurations)
 
-You can learn more about [History Mode here](https://router.vuejs.org/guide/essentials/history-mode.html#example-server-configurations).
+More about [History Mode here](https://router.vuejs.org/guide/essentials/history-mode.html#example-server-configurations).
