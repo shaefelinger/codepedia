@@ -208,5 +208,12 @@ graphical alternative to the CLI:
 vue ui
 ```
 
+------
 
+## Virtual Dom
 
+Behind the scenes, Vue uses a really cool data structure called a **virtual DOM** to vastly improve speed and responsiveness of Vue apps.
+
+it speeds up app performance. 
+
+-> representation of the dom as a javascript object

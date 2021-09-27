@@ -103,15 +103,16 @@ export default {
 1. send event to the parent and chnge the data there
 2. Use as initial value: make a copy and change it in the component, but it will not change th original data from the parent!
 
-```vue
-props: ['isFavorite'], data() { return { friendIsFavorite: this.isFavorite, }
+```js
+props: ['isFavorite'], 
+data() { return { friendIsFavorite: this.isFavorite, }
 ```
 
-#### Validating Pro ps
+#### Validating Props
 
 Using an Array is only ok with very simple projects, prototypes etc
 
-```
+```js
 props: ['name', 'phoneNumber', 'emailAdress'],
 // This is only OK when prototyping
 ```
@@ -120,17 +121,35 @@ Vue’s props feature has built-in validation, so we can specify things like the
 
 Use an Object and provide the type:
 
-```vue
-props: { name: String, phoneNumber: String, emailAddress: String, isFavorite:
-String }
+```js
+props: { 
+  name: String, 
+  phoneNumber: String,
+  emailAddress: String, 
+  isFavorite: String 
+}
 ```
 
 or even more detailled: provide an object for every prop
 
-```vue
-props: { name: { type: String, required: true, }, isPremium: { type: Boolean,
-required: false, }, isFavorite: { type: Boolean, required: false, default:
-false, validator(value) { // check... // return true or false }, }
+```js
+props: { 
+	name: { 
+		type: String, 
+		required: true, 
+	}, 
+	isPremium: { 
+		type: Boolean,
+		required: false, 
+	}, 
+	isFavorite: { 
+		type: Boolean, 
+		required: false, 
+		default: false, 
+		validator(value) { 
+			// check... // return true or false 
+		}, 
+}
 ```
 
 default can also be a function
@@ -144,7 +163,7 @@ default() {
 
 ```
 
-add a validator check:
+åadd a validator check:
 
 ```
 validator(value) {
