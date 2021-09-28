@@ -284,7 +284,7 @@ module.exports = {
           title: 'Node',
           collapsable: false,
           sidebarDepth: 2,
-          children: ['', 'express', 'links'],
+          children: ['', 'npm', 'express', 'links'],
         },
       ],
       // '/ABOUT/': [

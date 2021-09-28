@@ -1,10 +1,48 @@
 # Node
 
-[nodejs.org](https://nodejs.org)
+## Basics
+
+### What is Node.js?
+
+Node is a a **runtime environment** for executing JavaScript code.
+
+In 2009, **Ryan Dahl** took the V8 JavaScript engine of the Chrome browser and embedded it in a C++ program to be able to run it outside of a browser and called it **Node**.
+
+------
+
+## Node.js Properties and Terms
+
+
+
+##### Single-threaded
+
+Node is single-threaded, which means it uses only one thread.
+
+##### Callback-based
+
+A callback is a function that is passed to another function. It is called if a certain state is reached, e.g. the calculation in the function has a result.
+
+##### Event Loop
+
+This is an infinite loop that is run over and over and over, and what is added to it (events), is executed in the next iteration of the loop.
+
+##### Call Stack
+
+This is a place where Node stores all the functions that need to be run next.
+
+##### Callback Queue
+
+A place where node.js puts all callbacks it encounters
+
+##### Task-Queue
+
+A queue where node.js stores all things that need to be executed before they can be put on the call stack
 
 [Understand the event queue](https://www.youtube.com/watch?v=8aGhZQkoFbQ)
 
 ------
+
+
 
 ## Check node-version
 
@@ -111,47 +149,8 @@ In the section **dependencies **you see all the packages that are included for y
 
 
 
-## NPM - Node package manager
-
-[npmjs.com/](https://www.npmjs.com/)
-
-## Install
-
-Install Packages, usually the install is locally for that project.
-
-```js
-npm i // or exactly the same:
-npm install 
-```
-
-> `--save//`  add dependencies to package.json. No longer needed
-
-> check for vulnerabilities... be careful! imer checken ob viele leute es benutzen!!
 
 
-
-------
-
-## To install something globally:
-
-```js
-npm init -g // global
-```
-
-------
-
-### Install dev dependencies
-
-```
-npm i -D
-```
-
-
-
-### install modules
-
-
-`npm i`  (or `npm install`) - downloads all dependencies (even after deleting the node-modules-folder)
 
 ------
 
