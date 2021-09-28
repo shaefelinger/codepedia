@@ -2,14 +2,12 @@
 
 A middleware is a part of your node.js software that gets executed for every incoming request. -› Plug in functionallity
 
-
-
 `app.use();` -> adds a new middleware
 
 Simplest form:
 
 ```js
-app.use((req, res, next) => {})
+app.use((req, res, next) => {});
 ```
 
 `next` is a function that is passed by express -> go to the next middleware
@@ -26,8 +24,6 @@ app.use((req, res, next) => {
 ```
 
 to finish the request, send a response…
-
-
 
 ##### Example:
 
