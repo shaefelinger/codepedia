@@ -38,7 +38,7 @@ app.use(express.static(__dirname + '/public')); // public-foder
 const port = process.env.PORT || 3000;
 
 // root-folder
-app.get('/', function(req, res) {
+app.get('/', (req, res) => {
   console.log('A request was made to the root');
   res.send('A request was made to the root');
 });
@@ -50,13 +50,13 @@ app.listen(port, () => {
 
 ---
 
-### localhost
+## localhost
 
 `127.0.0.1` oder `localhost` -> the computer itself !!
 
 ---
 
-### stop running app
+## stop running app
 
 ctrl-c
 
@@ -138,8 +138,3 @@ app.get('/about', function(req, res) {
 
 ---
 
-## Response
-
-```js
-res.send('Hello World');
-```

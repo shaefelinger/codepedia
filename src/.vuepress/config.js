@@ -297,7 +297,14 @@ module.exports = {
           title: 'Express',
           collapsable: false,
           sidebarDepth: 2,
-          children: ['', 'middleware'],
+          children: [
+            '',
+            'middleware',
+            'routes',
+            'response',
+            'file path',
+            'static files',
+          ],
         },
       ],
       // '/ABOUT/': [
