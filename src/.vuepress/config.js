@@ -58,7 +58,12 @@ module.exports = {
       },
       {
         text: 'Node',
-        link: '/NODE/',
+        ariaLabel: 'Node',
+
+        items: [
+          { text: 'Node', link: '/NODE/' },
+          { text: 'Express', link: '/EXPRESS/' },
+        ],
       },
       {
         text: 'GIT',
@@ -284,7 +289,15 @@ module.exports = {
           title: 'Node',
           collapsable: false,
           sidebarDepth: 2,
-          children: ['', 'npm', 'nvm', 'express', 'links'],
+          children: ['', 'npm', 'nvm', 'debugging', 'links'],
+        },
+      ],
+      '/EXPRESS/': [
+        {
+          title: 'Express',
+          collapsable: false,
+          sidebarDepth: 2,
+          children: ['', 'middleware'],
         },
       ],
       // '/ABOUT/': [

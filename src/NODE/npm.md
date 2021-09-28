@@ -6,6 +6,8 @@
 
 [npmjs.com/](https://www.npmjs.com/)
 
+NPM is intalled with node
+
 ## init
 
 ```js
@@ -24,9 +26,31 @@ In the section **dependencies **you see all the packages that are included for y
 
 ------
 
+#### Add Scripts
+
+`start` is a special script name
+
+```js
+"scripts": {
+	"start": "node app.js",
+}
+```
+
+->  `npm start` good practice
+
+if you use a non-reserverd name:
+
+`npm run script-name`
+
+------
+
 ## install all project-packages
 
 `npm i`  (or `npm install`) - downloads all dependencies (even after deleting the node-modules-folder)
+
+
+
+You can always delete the node-modules folder and run `npm i` later again
 
 ------
 
@@ -59,5 +83,22 @@ npm i -g package-name// global
 npm i -D package-name
 ```
 
+`--save-dev` od `-D`
 
+------
+
+## Nodemon
+
+```
+npm i -D nodemon
+```
+
+then change the start-script in package.json:
+
+```
+ "scripts": {
+    "start": "nodemon app.js",
+```
+
+You could install `nodemon` globally if you wanted (this is NOT required though - because we can just run it locally)
 
