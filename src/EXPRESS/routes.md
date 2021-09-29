@@ -1,4 +1,4 @@
-# Express Routes
+# Express route handlers
 
 ## Use
 
@@ -16,11 +16,31 @@ https://expressjs.com/en/4x/api.html#app.use
 
 ------
 
-## limit to http-verbs
+## [Creating route handlers](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/Introduction#creating_route_handlers)
+
+This is a (callback) route handler function for HTTP `GET` requests to the site root (`'/'`):
+
+```js
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+});
+```
+
+- The callback function takes a request and a response object as arguments. 
+
+- the method calls `send()` on the response to return the string "Hello World!". This ends the function
+
+- There are a [number of other response methods](https://expressjs.com/en/guide/routing.html#response-methods) for ending the request/response cycle, eg., you could call `res.json()` to send a JSON response or `res.sendFile()` to send a file.
+
+## Other HTTP verbs
 
 `app.get` is the same as `app.use` but only reacts to `get` requests
 
-and `app.post`, `.delete`, `.patch`, `.put`
+
+
+`checkout()`, `copy()`, **`delete()`**, **`get()`**, `head()`, `lock()`, `merge()`, `mkactivity()`, `mkcol()`, `move()`, `m-search()`, `notify()`, `options()`, `patch()`, **`post()`**, `purge()`, **`put()`**, `report()`, `search()`, `subscribe()`, `trace()`, `unlock()`, `unsubscribe()`.
+
+special routing method: `app.all()`, which will be called in response to any HTTP method. Similar to `app.use()`
 
 ------
 
@@ -41,53 +61,4 @@ app.use((req, res, next) => {
 ```
 
 ------
-
-## Express-Router
-
-to split routing code in multiple files:
-
-folder `/routes`
-
-router is like a mini-express-app:
-
-```js
-const express = require('express');
-
-const router = express.Router();
-
-router.get('/add-product', (req, res, next) => {
-  console.log('in the first middleware');
-  res.send(
-    '<form action="/product" method="POST"><input type="text" name="title"><button type="submit">add product</button></form>'
-  );
-});
-
-router.post('/product', (req, res, next) => {
-  console.log(req.body);
-  res.redirect('/');
-});
-
-module.exports = router;
-```
-
-and import in the main app - `app.js`
-
-and put the imported Object in `app.use()` (not calling the function)
-
-```js
-const adminRoutes = require('./routes/admin');
-app.use(adminRoutes)
-```
-
-the Order matters!
-
-------
-
-if all routes in a routes-file start with the same segment, you can add that as a filter in the main app:
-
-```js
-	app.use('/admin', adminRoutes);
-```
-
--> only routes starting with `/admin` will go into the 'adminRoutes'-File
 

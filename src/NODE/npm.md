@@ -1,12 +1,10 @@
 # NPM
 
-
-
-## NPM - Node package manager
+**N**ode **P**ackage **M**anager
 
 [npmjs.com/](https://www.npmjs.com/)
 
-NPM is intalled with node
+NPM is installed with node
 
 ## init
 
