@@ -127,7 +127,7 @@ https://www.npmjs.com/package/nodemon
 
 ------
 
-## HTTP Server
+## HTTP Module
 
 - The Node `http` core module allows for easy creation of *web servers*, computer processes that listen for requests from clients and return responses.
 
@@ -139,4 +139,67 @@ https://www.npmjs.com/package/nodemon
  When we run `http.createServer()` we pass in a custom callback function (often referred to as the `requestListener`). This callback function will be triggered once the server is listening and receives a request.
 
 https://nodejs.org/api/http.html
+
+### http-module
+
+Launch a server, send requests
+
+```js
+http.createServer
+```
+
+takes a **request listener** as an argument
+
+request listener = function that will run for every incoming request
+
+```js
+const http = require('http');
+
+function rqListener(req, res) {
+ // funtion runs on every request
+}
+
+http.createServer(rqListener)
+```
+
+ ore use anonymous function
+
+```js
+const http = require('http');
+
+http.createServer((req, res) => {
+    // funtion runs on every request
+});
+```
+
+this is the createServer-callback
+
+### The server
+
+```js
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+  console.log(req);
+});
+
+server.listen(3000);
+```
+
+------
+
+
+
+------
+
+## `fs` FileSystem
+
+```js
+const fs = require('fs');
+
+fs.writeFileSync('hello.txt', 'Hello from node.js');
+// creates text-file with the content "Hello from node.js"
+```
+
+`fs.writeFileSync('')` writes a file to the filesystem
 

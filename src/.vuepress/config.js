@@ -314,6 +314,7 @@ module.exports = {
             'router',
             'middleware',
             'response',
+            'requests',
             'file path',
             'static files',
             'error handling',
