@@ -10,11 +10,7 @@ create folders
 
 => model and view usually never interact with each other -> presentaion and logic of data is totally seperated
 
-
-
-![Bildschirmfoto 2021-07-03 um 19.15.28](/Users/sh/Dropbox/SH @Coding/_PROJEKTE/Codepedia/src/EXPRESS/assets/Bildschirmfoto 2021-07-03 um 19.15.28.png)
-
-
+![mvc](./assets/mvc.png)
 
 put all the logic in seperate files, eg.
 
@@ -106,10 +102,7 @@ exports.getProducts = (req, res, next) => {
     path: '/',
   });
 };
-
 ```
-
-
 
 - More on MVC: https://developer.mozilla.org/en-US/docs/Glossary/MVC
 
@@ -117,21 +110,14 @@ exports.getProducts = (req, res, next) => {
 
 - https://www.youtube.com/watch?v=pCvZtjoRq1I
 
+![mvc_structure](./assets/mvc_structure.png)
 
+## [Express development environment](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/development_environment#what_is_the_express_development_environment)
 
-![Bildschirmfoto 2021-07-03 um 21.32.30](/Users/sh/Dropbox/SH @Coding/_PROJEKTE/Codepedia/src/EXPRESS/assets/Bildschirmfoto 2021-07-03 um 21.59.40.png)
+A handy tool for creating skeleton _Express_ web apps that follow the [MVC pattern](https://developer.mozilla.org/en-US/docs/Glossary/MVC).
 
-
-
-
-
-## [Express development environment?](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/development_environment#what_is_the_express_development_environment)
-
-A handy tool for creating skeleton *Express* web apps that follow the [MVC pattern](https://developer.mozilla.org/en-US/docs/Glossary/MVC).
-
-The application generator is optional 
+The application generator is optional
 
 [Installing the Express Application Generator](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/development_environment#installing_the_express_application_generator)
 
 https://expressjs.com/en/starter/generator.html
-

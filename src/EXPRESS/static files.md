@@ -1,4 +1,4 @@
-# Express Static Files
+# Static Files - Express
 
 eg CSS, JS, Images,...
 
