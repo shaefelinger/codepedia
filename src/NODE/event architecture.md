@@ -46,9 +46,9 @@ myEmitter.emit('new user', 'Lily Pad'); //newUserListener will be invoked with '
 
 - single threaded
 
-![event_loop](.assets/event_loop.png)
+<img src="./assets/event_loop.png" alt="event_loop" style="zoom: 33%;" />
 
-`process.exit` ends the app
+cl`process.exit` ends the app
 
 #### Event Loop
 
@@ -66,9 +66,8 @@ process.exit refs==0
 
 refs is a counter for the open callbacks
 
-![overview](./assets/overview.png)
-
-![lifecycle](./assets/lifecycle.png)
+<img src="./assets/overview.png" alt="overview" style="zoom: 33%;" />
+<img src="./assets/lifecycle.png" alt="lifecycle" style="zoom: 33%;" />
 
 ---
 
