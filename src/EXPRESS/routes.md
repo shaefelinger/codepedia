@@ -1,5 +1,13 @@
 # route handlers - Express
 
+The HTTP verb is always included in the request
+
+[HTTP-Methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
+
+
+
+[Routing Docs](https://expressjs.com/en/guide/routing.html)
+
 ## Use
 
 `use` always executes -› for middleware
@@ -10,9 +18,7 @@ app.use('/users', (req, res, next) => {
 });
 ```
 
-`app.use` docs: 
-
-https://expressjs.com/en/4x/api.html#app.use
+[app.use docs](https://expressjs.com/en/4x/api.html#app.use)
 
 ------
 
@@ -31,6 +37,28 @@ will serve the string 'Response String'.
 ------
 
 ## [Creating route handlers](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/Introduction#creating_route_handlers)
+
+
+
+#### Get-Request
+
+##### `app.get()` 
+
+to register routes to match `GET` requests.
+
+Express routes (including `app.get()`) usually take two arguments, a path (usually a string), and a callback function to handle the request and send a response.
+
+```js
+app.get('/data', (req, res, next) => {
+  // Here we would send back the some data
+});
+```
+
+The route above will match any `GET` request to `'/data'` and call the callback function, passing in two objects as the first two arguments. These objects represent the request sent to the server and the response that the Express server should eventually send to the client.
+
+If no routes are matched on a client request, the Express server will handle sending a 404 Not Found response to the client.
+
+------
 
 This is a (callback) route handler function for HTTP `GET` requests to the site root (`'/'`):
 
@@ -56,6 +84,24 @@ app.get('/', (req, res) => {
 
 special routing method: `app.all()`, which will be called in response to any HTTP method. Similar to `app.use()`
 
+
+
+##### `.post()`
+
+`POST` routes create new data, their paths do not end with a route parameter, but instead end with the type of resource to be created.
+
+The HTTP status code for a newly-created resource is 201 Created.
+
+
+
+##### `DELETE` 
+
+is the HTTP method verb used to delete resources. Their paths should usually end with a route parameter to indicate which resource to delete.
+
+Servers often send a 204 No Content status code if deletion occurs without error.
+
+
+
 ------
 
 ## 404-page / catch-all route
@@ -75,4 +121,61 @@ app.use((req, res, next) => {
 ```
 
 ------
+
+## Chain Route Handlers
+
+`app.route()`
+
+-> chainable route handlers
+
+```js
+app.route('/book')
+  .get(function (req, res) {
+    res.send('Get a random book')
+  })
+  .post(function (req, res) {
+    res.send('Add a book')
+  })
+  .put(function (req, res) {
+    res.send('Update the book')
+  })
+```
+
+```js
+app.route('/articles')
+  .get((req, res) => {
+    Article.find((err, foundArticles) => {
+      if (!err) {
+        res.send(foundArticles);
+      } else {
+        res.send(err);
+      }
+    });
+  })
+  .post((req, res) => {
+    const newArticle = new Article({
+      title: req.body.title,
+      content: req.body.content,
+    });
+    newArticle.save((err) => {
+      if (!err) {
+        res.send('Succesfully added a new article');
+      } else {
+        res.send(err);
+      }
+    });
+  })
+  .delete((req, res) => {
+    Article.deleteMany((err) => {
+      if (!err) {
+        res.send('Successfully deleted ALL articles.');
+      } else {
+        res.send(err);
+      }
+    });
+  });
+
+```
+
+https://medium.com/@saginadir/native-function-chaining-in-javascript-what-we-can-learn-from-jquery-3b42d5d4a0d
 

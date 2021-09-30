@@ -1,6 +1,14 @@
 # Requests - Express
 
+sort me…
+
 ### Parsing Incoming Requests
+
+### Dynamic Routing
+
+- pass dynamic path segments by adding `:` to the express router path
+- the name afther the `:` is the name by wich you extract the data on `req.params`
+- optional query parameters can be passed `?param=value&b=2` and extracted `req.query.myParam`
 
 
 
@@ -134,3 +142,41 @@ PUT or PATCH (sometimes POST) - Update a resource using the data sent,
 DELETE => Delete a resource.
 
 There are also a couple of other methods which are used to negotiate a connection with the server. Except from GET, all the other methods listed above can have a payload (i.e. the data into the request body). The body-parser middleware works with these methods as well.
+
+------
+
+### Extract dynamic params
+
+```js
+router.get('products/:productId')
+```
+
+-> order of the routes matters! put the specific routes before the dynamic routes
+
+access param =>
+
+```
+  const prodId = req.params.productId;
+```
+
+------
+
+### Using Query Items
+
+query-parameters
+
+```
+...url?edit=true&title=new
+```
+
+-> access:
+
+```
+req.query.parameter
+```
+
+-> the extracted value is always a string! `"true"` instead of `true`
+
+------
+
+## 

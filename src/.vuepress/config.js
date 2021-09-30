@@ -54,6 +54,7 @@ module.exports = {
           { text: 'Javascript', link: '/JS/' },
           { text: 'JS for Web', link: '/JS4web/' },
           { text: 'JQuery', link: '/jquery/' },
+          { text: 'JS Advanced', link: '/JS-ADVANCED/' },
         ],
       },
       {
@@ -171,6 +172,14 @@ module.exports = {
       '/JQUERY/': [
         {
           title: 'jQuery',
+          collapsable: false,
+          sidebarDepth: 2,
+          children: [''],
+        },
+      ],
+      '/JS-ADVANCED/': [
+        {
+          title: 'Advanced Javascript',
           collapsable: false,
           sidebarDepth: 2,
           children: [''],
@@ -322,8 +331,8 @@ module.exports = {
             'routes',
             'router',
             'middleware',
-            'response',
             'requests',
+            'response',
             'file path',
             'static files',
             'error handling',

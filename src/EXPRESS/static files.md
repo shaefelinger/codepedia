@@ -26,6 +26,8 @@ to access it: this is the root-folder you are in
 
 - you can use multiple public folders
 
+https://discuss.codecademy.com/t/what-does-static-public-do/401137
+
 
 ------
 

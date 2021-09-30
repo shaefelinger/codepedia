@@ -125,6 +125,10 @@ You could install `nodemon` globally if you wanted (this is NOT required though 
 
 https://www.npmjs.com/package/nodemon
 
+
+
+type `rs` in Terminal forces nodemon to restart
+
 ------
 
 ## HTTP Module
