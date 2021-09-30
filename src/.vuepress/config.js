@@ -57,8 +57,8 @@ module.exports = {
         ],
       },
       {
-        text: 'Node',
-        ariaLabel: 'Node',
+        text: 'Backend',
+        ariaLabel: 'Backend',
 
         items: [
           { text: 'Node', link: '/NODE/' },
@@ -317,6 +317,7 @@ module.exports = {
             'file path',
             'static files',
             'error handling',
+            'env',
             'links',
           ],
         },

@@ -16,6 +16,20 @@ https://expressjs.com/en/4x/api.html#app.use
 
 ------
 
+In Express, routes takes the following structure: `app.METHOD(PATH, HANDLER)`.
+
+METHOD is an http method in lowercase. PATH is a relative path on the server (it can be a string, or even a regular expression). HANDLER is a function that Express calls when the route is matched. Handlers take the form `function(req, res) {...}`, where req is the request object, and res is the response object.
+
+```js
+function(req, res) {
+  res.send('Response String');
+}
+```
+
+will serve the string 'Response String'.
+
+------
+
 ## [Creating route handlers](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/Introduction#creating_route_handlers)
 
 This is a (callback) route handler function for HTTP `GET` requests to the site root (`'/'`):

@@ -35,6 +35,14 @@ res.redirect('/');
 
 ## Send HTML-Pages
 
-`/views` -folder
-
 use `res.sendFile()`
+
+This method needs an absolute file path. eg. `/views` -folder
+
+```
+absolutePath = __dirname + relativePath/file.ext
+```
+
+------
+
+#### 

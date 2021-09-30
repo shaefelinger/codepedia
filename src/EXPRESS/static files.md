@@ -2,9 +2,13 @@
 
 eg CSS, JS, Images,...
 
-use `/public` folder
+- using the middleware `express.static(path)` (where `path` is the absolute path of the folder)
 
-all the files are not accessable by the uses, but the /public folder is
+- eg. use `/public` folder
+
+
+- all the files are not accessable by the uses, but the /public folder is
+
 
 use
 
@@ -20,7 +24,8 @@ to access it: this is the root-folder you are in
 <link rel="stylesheet" href="/css/main.css" />
 ```
 
-you can use multiple public folders
+- you can use multiple public folders
+
 
 ------
 
