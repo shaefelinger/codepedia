@@ -56,6 +56,8 @@ node -v
 
 Read - Evaluation - Print - Loop
 
+REPLs are processes that **r**ead, **e**valuate, **p**rint, and repeat (**l**oop), and Node.js comes with its own REPL we can access in our terminal with the `node` command.
+
 Playground
 
 ```
@@ -80,6 +82,8 @@ node
 ------
 
 ### Running a Program with Node
+
+We run JavaScript programs with Node in the terminal by typing `node` followed by the file name (if we’re in the same directory) or the absolute path of the file.
 
 ```bash
 $ node myProgram.js

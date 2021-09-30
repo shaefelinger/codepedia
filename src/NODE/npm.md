@@ -2,11 +2,59 @@
 
 **N**ode **P**ackage **M**anager
 
+We can access NPM, a registry of hundreds of thousands of packages of re-usable code from other developers, directly through our terminal.
+
 [npmjs.com/](https://www.npmjs.com/)
 
 NPM is installed with node
 
-## init
+------
+
+## package.json
+
+The `package.json` file is the center of any Node.js project or npm package.
+
+- A single JSON object where information is stored in key-value pairs. 
+- only two required fields; "name" and "version", but it’s good practice to provide additional information 
+
+- ```json
+  "author": "Jane Doe",
+  ```
+
+- ```json
+  "description": "A project that does something awesome",
+  ```
+
+  - a short, but informative description about your project 
+
+- ```json
+  "keywords": [ "descriptive", "related", "words" ],
+  ```
+
+- ```json
+  "license": "MIT",
+  ```
+
+  - ​	 common licenses for open source projects include MIT and BSD.
+
+- ```json
+  "version": "1.2.0",
+  ```
+
+  - required
+
+- ```json
+  "dependencies": {
+    "package-name": "version",
+    "express": "4.14.0"
+  }
+  ```
+
+  > **Note:** Moment is a handy library for working with time and dates.
+
+------
+
+##  `init`
 
 ```js
 npm init // -> (accept defaults).
@@ -65,6 +113,12 @@ npm install package-name
 
 > check for vulnerabilities... be careful!  check how many downloads per week!!
 
+##### remove dependency
+
+just remove the corresponding key-value pair for that package from your dependencies.
+
+
+
 ------
 
 ## Install package globally:
@@ -85,18 +139,37 @@ npm i -D package-name
 
 ------
 
-## Nodemon
+## Semantic Versioning
 
-```
-npm i -D nodemon
-```
+Semantic Versioning (SemVer), an industry standard for software versioning aiming to make it easier to manage dependencies. 
 
-then change the start-script in package.json:
+This is how Semantic Versioning works according to the official website:
 
-```
- "scripts": {
-    "start": "nodemon app.js",
+```json
+"package": "MAJOR.MINOR.PATCH"
 ```
 
-You could install `nodemon` globally if you wanted (this is NOT required though - because we can just run it locally)
+The MAJOR version should increment when you make incompatible API changes. The MINOR version should increment when you add functionality in a backwards-compatible manner. The PATCH version should increment when you make backwards-compatible bug fixes. This means that PATCHes are bug fixes and MINORs add new features but neither of them break what worked before. Finally, MAJORs add changes that won’t work with earlier versions.
+
+##### Use the Tilde-Character to Always Use the Latest Patch Version
+
+ in most use cases, you don’t want to miss bug fixes
+
+To allow an npm dependency to update to the latest PATCH version, you can prefix the dependency’s version with the tilde (`~`) character. 
+
+```
+"package": "~1.3.8"
+```
+
+-> any 1.3.x Version
+
+##### Use the Caret-Character to Use the Latest Minor Version
+
+the caret will allow both MINOR updates and PATCHes
+
+```json
+"package": "^1.3.8"
+```
+
+ any 1.x.x version
 
