@@ -327,6 +327,7 @@ module.exports = {
             'file path',
             'static files',
             'error handling',
+            'templating engines',
             'mvc',
             'env',
             'links',
