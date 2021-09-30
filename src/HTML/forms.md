@@ -204,15 +204,27 @@ Every form should define a form action with the `action=”...”` attribute. Th
 <form action="/sign-in.php">
 ```
 
+
+
+------
+
+## Add decimals to numbers in HTML-Form:
+
+```html
+<input type="number" name="price" id="price" step="0.01" />
+```
+
 ------
 
 ## Misc. Infos: Form & Input
 
-- `placeholder=` statt `value=` verschwindet dann beim Eintippen
+- `placeholder=` instead of  `value=` 
 - Bei **Client-Side-Verification** überprüft der Browser die eingegebenen Daten, bevor sie zum Server gesendet werden:
-- `required`-Attribut, verlangt zwingend ein Eingabe.
-- `min` und `max` begrenzen die mögliche Eingabe in ein Number-Feld
-- `minlengh` und `maxlength` machen das gleiche für ein Textfeld
-- Bei `method="POST"` erscheinen die eingegebenen Daten (im Gegensatz zu `method="GET"`) nicht in der Adresszeile der Browsers. Gut für Logins etc.
-- Mit `pattern=` kann man festlegen, dass die Eingabe einem bestimmten [Pattern](https://html.com/attributes/input-pattern/) entsprechen soll. Sogenannter [regex.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- `required`-Attribut, requres an input.
+- `min` and `max` limits a range in  a Number-Field
+- `minlengh` and `maxlength` : limit Textfeld
+-  `method="POST"` erscheinen die eingegebenen Daten (im Gegensatz zu `method="GET"`) nicht in der Adresszeile der Browsers. Gut für Logins etc.
+- With `pattern=` you can limit the input to a certain [Pattern](https://html.com/attributes/input-pattern/) : [regex.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+
+
 

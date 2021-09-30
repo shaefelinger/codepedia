@@ -189,17 +189,3 @@ server.listen(3000);
 ------
 
 
-
-------
-
-## `fs` FileSystem
-
-```js
-const fs = require('fs');
-
-fs.writeFileSync('hello.txt', 'Hello from node.js');
-// creates text-file with the content "Hello from node.js"
-```
-
-`fs.writeFileSync('')` writes a file to the filesystem
-

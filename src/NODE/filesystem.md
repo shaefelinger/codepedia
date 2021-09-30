@@ -4,6 +4,19 @@
 
 - The Node `fs` core module is an API for interacting with the **f**ile **s**ystem.
 
+
+
+```js
+const fs = require('fs');
+
+fs.writeFileSync('hello.txt', 'Hello from node.js');
+// creates text-file with the content "Hello from node.js"
+```
+
+`fs.writeFileSync('')` writes a file to the filesystem
+
+------
+
 The Node `fs` core module is an API for interacting with the **f**ile **s**ystem. It was modeled after the [POSIX](https://en.wikipedia.org/wiki/POSIX) standard for interacting with the filesystem.
 
 Each method available through the `fs` module has a synchronous version and an asynchronous version. 
@@ -31,6 +44,12 @@ fs.readFile('./file.txt', 'utf-8', readDataCallback);
 1. The first argument is a string that contains a path to the file **file.txt**.
 2. The second argument is a string specifying the file’s [character encoding](https://en.wikipedia.org/wiki/Character_encoding) (usually ‘utf-8’ for text files).
 3. The third argument is the callback function to be invoked when the asynchronous task of reading from the file system is complete. Node will pass the contents of **file.txt** into the provided callback as its second argument.
+
+------
+
+`fs.readFile()` - reads entire content of a file (for very big files there are better ways (readStream))
+
+put a callback in `fetchAll(cb)` -> this will run, when the fetch is done
 
 ------
 
