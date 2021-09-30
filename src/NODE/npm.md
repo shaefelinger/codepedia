@@ -72,7 +72,7 @@ In the section **dependencies **you see all the packages that are included for y
 
 ------
 
-#### Add Scripts
+## Add Scripts
 
 `start` is a special script name
 
@@ -87,6 +87,34 @@ In the section **dependencies **you see all the packages that are included for y
 if you use a non-reserverd name:
 
 `npm run script-name`
+
+
+
+### [Running tasks](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/development_environment#running_tasks)
+
+you can also define *named* scripts in your **package.json** files and call NPM to execute them with the [run-script](https://docs.npmjs.com/cli/run-script) command. 
+
+> **Note:** Task runners like [Gulp](http://gulpjs.com/) and [Grunt](http://gruntjs.com/) can also be used to run tests and other external tools.
+
+```
+"scripts": {
+  ...
+  "lint": "eslint src/js"
+  ...
+}
+```
+
+We would then be able to run *eslint* using NPM by calling:
+
+```
+npm run-script lint
+# OR (using the alias)
+npm run lint
+```
+
+
+
+
 
 ------
 
@@ -136,6 +164,16 @@ npm i -D package-name
 ```
 
 `--save-dev` od `-D`
+
+##### [Development dependencies](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/development_environment#development_dependencies)
+
+For example, to use the popular JavaScript Linting tool [eslint](http://eslint.org/) you would call NPM as shown:
+
+```
+npm install eslint --save-dev
+```
+
+
 
 ------
 

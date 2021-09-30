@@ -81,7 +81,7 @@ node
 
 ------
 
-### Running a Program with Node
+## Running a Program with Node
 
 We run JavaScript programs with Node in the terminal by typing `node` followed by the file name (if we’re in the same directory) or the absolute path of the file.
 

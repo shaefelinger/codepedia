@@ -61,6 +61,7 @@ module.exports = {
         ariaLabel: 'Backend',
 
         items: [
+          { text: 'Basics', link: '/BACKEND/' },
           { text: 'Node', link: '/NODE/' },
           { text: 'Express', link: '/EXPRESS/' },
         ],
@@ -284,6 +285,14 @@ module.exports = {
           children: ['', 'vuex vue mastery'],
         },
       ],
+      '/BACKEND/': [
+        {
+          title: 'Backend',
+          collapsable: false,
+          sidebarDepth: 2,
+          children: [''],
+        },
+      ],
       '/NODE/': [
         {
           title: 'Node',
@@ -318,6 +327,7 @@ module.exports = {
             'file path',
             'static files',
             'error handling',
+            'mvc',
             'env',
             'links',
           ],
