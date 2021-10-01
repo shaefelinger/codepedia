@@ -370,6 +370,113 @@ to add data: add an object
 <%- include('../includes/add-to-cart.ejs', {product: product}) %>
 ```
 
+------
+
+angela…:
+
+https://ejs.co/
+
+### Tags
+
+- `<%` 'Scriptlet' tag, for control-flow, no output
+- `<%_` ‘Whitespace Slurping’ Scriptlet tag, strips all whitespace before it
+- `<%=` Outputs the value into the template (HTML escaped)
+- `<%-` Outputs the unescaped value into the template
+- `<%#` Comment tag, no execution, no output
+- `<%%` Outputs a literal '<%'
+- `%>` Plain ending tag
+- `-%>` Trim-mode ('newline slurp') tag, trims following newline
+- `_%>` ‘Whitespace Slurping’ ending tag, removes all whitespace after it
+
+-> on a Line-by-Line-Basis!
+
+------
+
+### comments
+
+`<%# comment %>`
+
+```ejs
+<%# comment %>
+<%/* comment */%>
+<% /* %>
+  <div>
+      <span>This will not be rendered</span>
+      <% for(var i=0; i < data.length; i++) { %>
+        <span>These won't be rendered either.</span>
+      <% } %>
+  </div>
+<% */ %>
+```
+
+### Basic Setup
+
+```js
+let express = require('express');
+let app = express();
+
+app.set('view engine', 'ejs');
+
+app.get('/', (req, res) => {
+  res.render('index', {foo: 'FOO'});
+});
+
+app.listen(4000, () => console.log('Example app listening on port 4000!'));
+```
+
+(This assumes a `views` directory containing an `index.ejs` page.
+
+------
+
+```html
+<input autocomplete="off">
+```
+
+------
+
+###### css
+
+```
+  background-image: -webkit-linear-gradient(65deg, #A683E3 50%, #E4E9FD 50%);
+
+
+input:checked+p {
+  text-decoration: line-through;
+  text-decoration-color: #A683E3;
+}
+-> alle p, die direkt nach gecheckter checkbox kommen
+```
+
+```
+input[type="checkbox"] {
+  margin: 20px;
+}
+-> 
+```
+
+```
+::placeholder {
+  color: grey;
+  opacity: 1;
+}
+```
+
+------
+
+### Layouts/Partials
+
+Teile wiederverwenden
+
+```ejs
+<%- include('header') %>
+
+oder
+
+<%- include('./partials/header') %>
+```
+
+
+
 ---
 
 ## Useful resources
