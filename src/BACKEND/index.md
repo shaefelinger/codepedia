@@ -10,35 +10,29 @@ allways have a port! If you dont' enter a port, the browser uses a default port!
 
 3000 - ok for developement
 
-
-
 ##### Parts of a URL:
 
 A **URL(UniformResourceLocator)** or URI (UniformResourceIdentifier) is the web address that a client uses to request a document (or JSON data in the case of REST APIs).
 
-
-
-![image-20210930171436019](../EXPRESS/assets/image-20210930171436019.png)
+<img src="./assets/urls.png" alt="urls.png" style="zoom:50%;" />
 
 <img src="../BACKEND/assets/how urls work.png" alt="how urls work" style="zoom: 40%;" />
 
-------
+---
 
 ## localhost
 
 `127.0.0.1` oder `localhost` -> the computer itself !!
 
-------
+---
 
 ## Headers
 
-https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers
+[MDN Headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers)
 
-------
+---
 
 ## The HTTP Protocol
-
-
 
 ### Request and Response
 
@@ -54,7 +48,7 @@ Under the hood, HTTP uses only text. In the message body, there can be binary da
 
 The request head looks something like this:
 
-<img src="../../../../../../Library/Application Support/typora-user-images/image-20210930170949060.png" alt="image-20210930170949060" style="zoom:50%;" />
+<img src="./assets/request.png" alt="request.png" style="zoom:50%;" />
 
 ```
 GET / HTTP/1.1
@@ -71,7 +65,7 @@ Cookie: __gads=ID=b983721bda83d7ae:T=1487252257:S=ALNI_MYlth5Tx71QzpXnN3I0AoPWAu
 
 ### Response
 
-<img src="../EXPRESS/assets/image-20210930171036603.png" alt="image-20210930171036603" style="zoom:50%;" />
+<img src="./assets/response.png" alt="response" style="zoom:50%;" />
 
 ```
 HTTP/1.1 200 OK
@@ -99,4 +93,3 @@ Connection: keep-alive
 ```
 
 In this example, the body contains HTML, because a website was requested here. For REST APIs, the body would contain data in JSON format instead.
-
