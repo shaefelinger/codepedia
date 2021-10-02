@@ -18,7 +18,14 @@ console.log(...primes);
 
 > **Prints:** 2 3 5 7 11 13 17 19 23 29
 
-combine 2 Arrays with spread:
+```js
+const ninjas = ['shaun', 'yoshi', 'mario', 'peach'];
+console.log(...ninjas);
+
+// -> 4 seperate strings instead of an array
+```
+
+##### Combine 2 Arrays with spread:
 
 ```js
 const fruits = ["apples", "bananas", "pears"];
@@ -28,6 +35,13 @@ const produce = [...fruits, ...vegetables];
 ```
 
 [freecodecamp -spread](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/es6/use-the-spread-operator-to-evaluate-arrays-in-place	)
+
+##### Add property to an object:
+
+```js
+const blog = { title: 'new blog', author: 'bowser'}
+const idBlog = {...blog, id: 1}
+```
 
 ------
 
@@ -101,7 +115,7 @@ function sum() {
 console.log(sum(10, 36, 7, 84, 90, 110));
 ```
 
-ist working, but hard to read
+is working, but hard to read
 
 ### better: using the Rest parameter
 

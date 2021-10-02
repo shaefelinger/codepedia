@@ -357,3 +357,9 @@ var room = hotelRooms[1][2];
   console.log(room); // prints 14
 ```
 
+------
+
+## Links
+
+- [Practice Array Methods](https://www.youtube.com/watch?v=3LOEGS4qcRM&list=PLDlWc9AfQBfZGZXFb_1tcRKwtCavR7AfT)
+

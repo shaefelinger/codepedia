@@ -24,6 +24,8 @@ better:
 
 ## Promises
 
+[WebDev promises](https://web.dev/promises/)
+
 Promises are a better alternative to callbacks. They come with methods for the case that everything went well (**resolve**), and for the error case (**reject**).
 
 ```js
@@ -53,7 +55,20 @@ Use the function **then ** to execute code that should run in the case when ever
 
 special syntax:
 
-You can define a function as **a** **sync**, meaning that the result is returned at some later time.
+Create async function with the `async`-keyword! Instead of `.then()` use the await-keyword
+
+```js
+const gettodo = async () => {
+    const res = await fetch('https://jsonplaceholder.typicode.com/todos/3')
+    console.log(res);
+}
+
+gettodo()
+```
+
+
+
+You can define a function as **async**, meaning that the result is returned at some later time.
 
 ```js
 async function calculateResult() {
@@ -77,7 +92,36 @@ val result2 = await calculateResult(param2); // executed second
 val random = Math.random(); // executed third
 ```
 
+#### `Asyc`
 
+Add `async` before the function itself.
+
+-> gives access to the `await`, `try` and `catch`.
+
+##### `await`
+
+tells the script, not to go on, until the data is recieved. (only works, if it is a asyc-function using the async keyword).
+
+await for the fetch-call `const res = await fetch(url)`
+
+##### `try`
+
+...if everything goes well
+
+-> convert to json `const data = await res.json();`
+
+##### `catch`
+
+...if there is an error
+
+```js
+catch(error) {
+    console.log("error", error);
+    // appropriately handle the error
+  }	
+```
+
+------
 
 ### write async/await
 
@@ -160,29 +204,9 @@ you can use await outside of async functions on the top-level…
 
 ------
 
-## Helper function - to
+## Helper function - `to()`
 
-The 'to' function is a helper function that abstracts away the handling of promises. 
-It accepts a promise as an argument, i.e. returned from a call to the fetch api 
-and 'thens' down into the json and the data content.
-
-It returns a plain javascript object with two properties: data and error.
-
-use this pattern:
-
-```
-... some code ...
-const { data, error } = await to(fetch( -- arguments -- ))
-if (error) {
-    -- handle error, probably exit function
-}
-
-continue normally with data object extracted from backend response
-
-... some code ...
-```
-
-This is the function:
+Helper-Function:
 
 ```js
 function to(promise) {
@@ -192,7 +216,42 @@ function to(promise) {
 }
 ```
 
-example:
+The 'to' function is a helper function that abstracts away the handling of promises. 
+It accepts a promise as an argument, i.e. returned from a call to the fetch api 
+and 'thens' down into the json and the data content.
+
+It returns a plain javascript object with two properties: data and error.
+
+use this pattern:
+
+```js
+// ... some code ... inside async function
+
+const { data, error } = await to(fetch( /*arguments*/ ))
+
+if (error) {
+   // -- handle error, probably exit function
+}
+
+... some code - handle data...
+```
+
+##### Examples:
+
+```js
+const gettodo = async () => {
+  const { data, error } = await to(fetch('https://jsonplaceholder.typicode.com/todos/3'));
+  if (error) {
+    console.log('🤯', error);
+  } else {
+    console.log(data);
+  }
+};
+
+gettodo()
+```
+
+or
 
 ```js
 const { data, error } = await to(getCharacterList());

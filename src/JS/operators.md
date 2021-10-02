@@ -48,6 +48,8 @@ let res = 5 == 2 + 3;
 console.log(res);
 ```
 
+Comparing an object: checks, if they point to the same object in memory
+
 ------
 
 ## Truthy & Falsy

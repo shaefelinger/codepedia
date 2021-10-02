@@ -299,3 +299,7 @@ In Git, branches are usually a means to an end. You create them to work on a new
 
 ### Git stash
 
+------
+
+[Git for professionals](https://www.youtube.com/watch?v=Uszj_k0DGsg)
+

@@ -54,7 +54,6 @@ module.exports = {
           { text: 'Javascript', link: '/JS/' },
           { text: 'JS for Web', link: '/JS4web/' },
           { text: 'JQuery', link: '/jquery/' },
-          { text: 'JS Advanced', link: '/JS-ADVANCED/' },
         ],
       },
       {
@@ -156,6 +155,7 @@ module.exports = {
             'spread and rest',
             'modules',
             'play audio',
+            'async',
             'classes',
             'JS links',
           ],
@@ -177,14 +177,7 @@ module.exports = {
           children: [''],
         },
       ],
-      '/JS-ADVANCED/': [
-        {
-          title: 'Advanced Javascript',
-          collapsable: false,
-          sidebarDepth: 2,
-          children: [''],
-        },
-      ],
+
       '/GIT/': [
         {
           title: 'GIT',
