@@ -293,7 +293,14 @@ module.exports = {
           title: 'Nuxt',
           collapsable: false,
           sidebarDepth: 2,
-          children: [''],
+          children: [
+            '',
+            'create app',
+            'folder structure',
+            'universal mode',
+            'seo',
+            'routing',
+          ],
         },
       ],
       '/BACKEND/': [
