@@ -73,10 +73,9 @@ hid - makes sure that there will only be one description for each page
 
 vue meta documentation
 
-https://github.com/nuxt/vue-meta
+[https://github.com/nuxt/vue-meta](https://github.com/nuxt/vue-meta)
 
 > metaInfo in vue meta is called head() in nuxt
 
 ------
 
-# 

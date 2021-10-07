@@ -1,5 +1,3 @@
-
-
 # Nuxt Folder Structure
 
 > the newest version of nuxt doesn't create all of the folders

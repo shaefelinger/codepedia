@@ -24,7 +24,7 @@ Notice we’re not installing Axios itself, but rather the Nuxt Axios Module. ad
 - Integrated with Proxy Module
 - Auto retry requests with axios-retry
 
-https://github.com/nuxt-community/axios-module
+[https://github.com/nuxt-community/axios-module](https://github.com/nuxt-community/axios-module)
 
 ### Where to fetch data?
 
