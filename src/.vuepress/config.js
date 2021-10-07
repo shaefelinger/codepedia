@@ -300,6 +300,7 @@ module.exports = {
             'universal mode',
             'seo',
             'routing',
+            'axios',
           ],
         },
       ],
