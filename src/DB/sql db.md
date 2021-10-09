@@ -358,7 +358,9 @@ SELECT * FROM Customers;
 
 ### Alter Columns of a Table
 
-`ALTER`
+`ALTER TABLE`
+
+ [ALTER TABLE](https://mariadb.com/kb/en/alter-table/)
 
 You can also change the table’s columns. This is a complex topic, because you can change a lot of different things (e.g. the data type or default value of a column).
 
@@ -377,4 +379,36 @@ ALTER TABLE Students ADD COLUMN address VARCHAR(100);
 ```
 ALTER TABLE Students DROP COLUMN address;
 ```
+
+------
+
+### Delete Rows
+
+```
+DELETE FROM Customers WHERE name = 'Teresa';
+```
+
+------
+
+### Delete a Table
+
+**This cannot be reversed!**
+
+```
+DROP TABLE Customers;
+```
+
+------
+
+### Delete Database
+
+**This cannot be reversed!**
+
+```
+DROP DATABASE bufg;
+```
+
+------
+
+## Relations
 
