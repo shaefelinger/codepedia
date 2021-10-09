@@ -225,7 +225,14 @@ module.exports = {
           title: 'Databases',
           collapsable: false,
           sidebarDepth: 2,
-          children: ['', 'mariadb', 'mongodb', 'mongo and node'],
+          children: [
+            '',
+            'relational',
+            'sql db',
+            'mariadb',
+            'mongodb',
+            'mongo and node',
+          ],
         },
       ],
       '/VUE/': [
