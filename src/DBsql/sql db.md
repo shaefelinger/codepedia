@@ -54,13 +54,25 @@ Show which database is selected:
 SELECT database();
 ```
 
+### Delete Database
+
 ------
 
-### Tables
+**This cannot be reversed!**
+
+```
+DROP DATABASE bufg;
+```
+
+------
+
+## Tables
 
 In relational databases, data is organized in tables. This example shows a table called “Customers”:
 
 <img src="./assets/sql_table.png" />
+
+
 
 In such a table, a column is an **attribute**, and a row is a **dataentry**.
 
@@ -396,16 +408,6 @@ DELETE FROM Customers WHERE name = 'Teresa';
 
 ```
 DROP TABLE Customers;
-```
-
-------
-
-### Delete Database
-
-**This cannot be reversed!**
-
-```
-DROP DATABASE bufg;
 ```
 
 ------
