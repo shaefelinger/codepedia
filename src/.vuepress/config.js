@@ -59,7 +59,6 @@ module.exports = {
       {
         text: 'Backend',
         ariaLabel: 'Backend',
-
         items: [
           { text: 'Basics', link: '/BACKEND/' },
           { text: 'Node', link: '/NODE/' },
@@ -73,7 +72,11 @@ module.exports = {
 
       {
         text: 'Databases',
-        link: '/DB/',
+        ariaLabel: 'Databases',
+        items: [
+          { text: 'Basics', link: '/DB/' },
+          { text: 'SQL', link: '/DBsql/' },
+        ],
       },
       {
         text: 'Vue',
@@ -225,14 +228,15 @@ module.exports = {
           title: 'Databases',
           collapsable: false,
           sidebarDepth: 2,
-          children: [
-            '',
-            'relational',
-            'sql db',
-            'mariadb',
-            'mongodb',
-            'mongo and node',
-          ],
+          children: [''],
+        },
+      ],
+      '/DBsql/': [
+        {
+          title: 'SQL Databases',
+          collapsable: false,
+          sidebarDepth: 2,
+          children: ['', 'sql db', 'mariadb'],
         },
       ],
       '/VUE/': [

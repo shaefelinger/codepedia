@@ -211,7 +211,5 @@ the caret will allow both MINOR updates and PATCHes
 
  any 1.x.x version
 
-------
 
-## NPM vs YARN
 
