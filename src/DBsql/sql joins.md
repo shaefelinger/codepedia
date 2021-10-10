@@ -18,6 +18,10 @@ SELECT Courses.name, Teachers.name FROM Courses
 -> JOIN Teachers ON Courses.teacher = Teachers.id;
 ```
 
+
+
+
+
 [JoiningTables MariaDB](https://mariadb.com/kb/en/joining-tables-with-join-clauses/)
 
 [Advanced Jouns - MariaDB](https://mariadb.com/kb/en/more-advanced-joins/)
@@ -61,6 +65,36 @@ SELECT Courses.name, Teachers.name FROM Courses
 | Vue.js				 | Thomas Hedeler |
 +----------------+----------------+
 ```
+
+------
+
+## JOIN HCS
+
+```sql
+SELECT * 
+FROM people
+JOIN roles ON roles.id = people.role_id;
+```
+
+-> both must exist
+
+```sql
+SELECT * 
+FROM people
+LEFT JOIN roles ON roles.id = people.role_id;
+```
+
+-> show even if there is no match
+
+`LEFT JOIN` -> is most common
+
+> left/right - ist outer join (in other DBs). join - is inner join
+
+w3schools -> explains joins very well
+
+
+
+------
 
 ## Inner Joins, Outer Joins, and even more Joins
 

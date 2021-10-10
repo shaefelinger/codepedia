@@ -132,28 +132,13 @@ CREATE TABLE table_name(
 
 ---
 
-### Data Types
-
-All data stored in a relational database is of a certain data type.
-
-Some of the most common data types are:
-
-- `INTEGER`, a positive or negative whole number
-- `TEXT`, a text string
-- `DATE`, the date formatted as YYYY-MM-DD
-- `REAL`, a decimal value
-
-- no booleans
-
----
-
 ## Primary Key (PK)
 
-unique ID - für jeden Datensatz
+Unique ID - für jeden Datensatz
 
 ---
 
-### Sequel Pro / Sequel Ace
+# Sequel Pro / Sequel Ace
 
 -> graphical Interface. Creates the sql-code. No Undo!
 
@@ -176,11 +161,9 @@ unique ID - für jeden Datensatz
 
 ### new table
 
-convention: table-name is plural (lowercase, snake_case)
 
-#### type -
 
-viele sind die selben (bool, boolean -> gibts gar nicht)
+
 
 #### varchar
 
@@ -188,19 +171,7 @@ für bis zu 1000 zeichen oder so
 
 (char - only oldschool)
 
-#### Text
 
-Beliebige Länge
-
-#### allownull
-
-darf es empty sein, or is it mandatory?
-
-#### int
-
-length 11 ist 11 bytes ->
-
-unsinged: -vorzeichen -> negative zeichen möglich
 
 #### id
 
@@ -216,9 +187,7 @@ wird automatisch erzeugt
 
 (SQL) ('sequel')
 
-### List of SQL Commands
 
-https://www.codecademy.com/articles/sql-commands
 
 ---
 
@@ -236,22 +205,3 @@ https://www.codecademy.com/articles/sql-commands
 
 ---
 
-## Links
-
-- [Handout - Databases.pdf](files/Handout-Databases.pdf)
-
-- [https://www.sachsen.schule/~terra2014/sql_abfragen.php](https://www.sachsen.schule/~terra2014/sql_abfragen.php)
-
-- [SELEECT basics](https://sqlzoo.net/wiki/SELECT_basics)
-
-- [MariaDB Knowledge Base](https://mariadb.com/kb/en/)
-
-- [W3schoolSQLtutorial](https://www.w3schools.com/sql/)
-
-[MariaDB Foreign Key tutorial](https://www.mariadbtutorial.com/mariadb-basics/mariadb-foreign-key/)
-
-- [ERDiagramsYoutubetutorial](https://www.youtube.com/watch?v=QpdhBUYk7Kk)
-
-- [JoiningTables](https://mariadb.com/kb/en/joining-tables-with-join-clauses/)
-
-- [ModeAdvancedJoins](https://mariadb.com/kb/en/more-advanced-joins/)

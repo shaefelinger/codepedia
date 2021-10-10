@@ -4,6 +4,8 @@
 
 In relational databases, data is organized in tables. This example shows a table called “Customers”:
 
+> convention: table names sould be plural
+
 <img src="./assets/sql_table.png" style="max-width: 500px;" />
 
 
@@ -13,6 +15,8 @@ In such a table, a column is an **attribute**, and a row is a **dataentry**.
 ------
 
 ### Create a Table
+
+> convention: table-name is plural (lowercase, snake_case)
 
 ```
 SQL> CREATE TABLE Customers( 
@@ -45,14 +49,20 @@ CREATE TABLE table_name(
 For each column, you need to define the data type. Common data types are:
 
 ```
-INT
+INT			- length 11 means 11 bytes
 FLOAT
 DECIMAL - DECIMAL(#digits, #digits after floating point)
 BOOLEAN
 VARCHAR	- VARCHAR(length)
-TEXT
+TEXT    - any length
 ENUM
+DATE
+BLOB		- BINARY LARGE OBJECT. eg. (for images, but it's better to store a file-reference)
 ```
+
+> There is no boolean data type
+
+
 
 [https://mariadb.com/kb/en/library/data-types/](https://mariadb.com/kb/en/library/data-types/)
 
@@ -73,9 +83,11 @@ Some data types you can specify even further:
 
 ### Primary Key
 
-Every table needs one field that is unique. This is necessary for the database to uniquely identify each row in the table. This field (or column) is called the **primary key**.
+Every table needs one unique ID-field.  This field (or column) is called the **primary key**.
 
 You usually use integers for it. They need to be **NOT NULL**.
+
+> It is fine if IDs have "holes" - the just have to be unique
 
 ```
 CREATE TABLE Customers( 
@@ -119,228 +131,4 @@ DESCRIBE Students;
 <img src="./assets/sql_describe.png" />
 
 ------
-
-### Create a Data Entry
-
-`INSERT`
-
-To insert a row into a table:
-
-```
-INSERT INTO Students(name, email) VALUES ('John Doe', 'john@doe.com');
-```
-
-------
-
-### Create Multiple Data Entries
-
-```
-INSERT INTO Customers(name, age, address, salary) VALUES
-    -> ('Teresa', 33, 'Borselstr. 7, 22765 Hamburg', 30000),
-    -> ('John', 25, 'Hauptstr. 1, 22087 Hamburg', 45000),
-    -> ('Max', 35, 'Bernstorffstr. 118, 22796 Hamburg', 50000);
-```
-
-------
-
-### Show All Rows of a Table
-
-`SELECT`
-
-```
-SELECT * FROM Customers;
-```
-
-```
-+----+--------+-----+-----------------------------------+----------+
-| id | name   | age | address                           | salary   |
-+----+--------+-----+-----------------------------------+----------+
-|  1 | Teresa |  33 | Borselstr. 7, 22765 Hamburg       | 30000.00 |
-|  2 | John   |  25 | Hauptstr. 1, 22087 Hamburg        | 45000.00 |
-|  3 | Max    |  35 | Bernstorffstr. 118, 22796 Hamburg | 50000.00 |
-+----+--------+-----+-----------------------------------+----------+
-```
-
-------
-
-### Show a Certain Column
-
-```
-SELECT name FROM Customers;
-```
-
-```
-+--------+
-| name   |
-+--------+
-| Teresa |
-| John   |
-| Max    |
-+--------+
-3 rows in set (0.003 sec)
-```
-
-------
-
-### Queries: Show Specific Rows
-
-`WHERE`
-
-Queries are the most important feature of the SQL language. You use it to show only specific rows that match a certain search criteria – the query.
-
-```
-SELECT * FROM Customers WHERE salary > 40000;
-```
-
-```
-+----+------+-----+-----------------------------------+----------+
-| id | name | age | address                           | salary   |
-+----+------+-----+-----------------------------------+----------+
-|  2 | John |  25 | Hauptstr. 1, 22087 Hamburg        | 45000.00 |
-|  3 | Max  |  35 | Bernstorffstr. 118, 22796 Hamburg | 50000.00 |
-+----+------+-----+-----------------------------------+----------+
-2 rows in set (0.012 sec)
-```
-
-This follows a certain pattern:
-
-```
-SELECT <columns> 	# what to show in the result
-FROM <table>			# the table to search
-WHERE <query>;		# what we search for
-```
-
-Some more examples. You can test them out on the website:
-
-https://www.sachsen.schule/~terra2014/ergebnis.php
-
-```
-SELECT * FROM BERG
-WHERE B_NAME = "Chimborazo"
-
-SELECT * FROM BERG
-WHERE HOEHE >= 7001
-
-SELECT * FROM BERG
-WHERE HOEHE >= 7000 AND HOEHE <= 8000
-
-SELECT * FROM BERG
-WHERE HOEHE BETWEEN 7000 AND 8000
-```
-
-------
-
-### Sorting the Results
-
-`ORDER BY`
-
-```
-SELECT * FROM Customers WHERE salary > 40000 ORDER BY salary;
-```
-
-```
-+----+------+-----+-----------------------------------+----------+
-| id | name | age | address                           | salary   |
-+----+------+-----+-----------------------------------+----------+
-|  2 | John |  25 | Hauptstr. 1, 22087 Hamburg        | 45000.00 |
-|  3 | Max  |  35 | Bernstorffstr. 118, 22796 Hamburg | 50000.00 |
-+----+------+-----+-----------------------------------+----------+
-```
-
-In ascending order: `ASC`
-
-```
-SELECT * FROM Customers WHERE salary > 40000 ORDER BY salary ASC;
-```
-
-```
-+----+------+-----+-----------------------------------+----------+
-| id | name | age | address                           | salary   |
-+----+------+-----+-----------------------------------+----------+
-|  2 | John |  25 | Hauptstr. 1, 22087 Hamburg        | 45000.00 |
-|  3 | Max  |  35 | Bernstorffstr. 118, 22796 Hamburg | 50000.00 |
-+----+------+-----+-----------------------------------+----------+
-```
-
-In descending order: `DESC`
-
-```
-SELECT * FROM Customers WHERE salary > 40000 ORDER BY salary DESC;
-```
-
-```
-+----+------+-----+-----------------------------------+----------+
-| id | name | age | address                           | salary   |
-+----+------+-----+-----------------------------------+----------+
-|  3 | Max  |  35 | Bernstorffstr. 118, 22796 Hamburg | 50000.00 |
-|  2 | John |  25 | Hauptstr. 1, 22087 Hamburg        | 45000.00 |
-+----+------+-----+-----------------------------------+----------+
-```
-
-------
-
-### Update Certain Rows
-
-`UPDATE`
-
-To update a certain column, use a query statement as well:
-
-```
-UPDATE Customers SET salary = 45000 WHERE salary > 45000;
-```
-
-```
-SELECT * FROM Customers;
-+----+--------+-----+-----------------------------------+----------+
-| id | name   | age | address                           | salary   |
-+----+--------+-----+-----------------------------------+----------+
-|  1 | Teresa |  33 | Borselstr. 7, 22765 Hamburg       | 30000.00 |
-|  2 | John   |  25 | Hauptstr. 1, 22087 Hamburg        | 45000.00 |
-|  3 | Max    |  35 | Bernstorffstr. 118, 22796 Hamburg | 45000.00 |
-+----+--------+-----+-----------------------------------+----------+
-```
-
-------
-
-### Alter Columns of a Table
-
-`ALTER TABLE`
-
- [ALTER TABLE](https://mariadb.com/kb/en/alter-table/)
-
-You can also change the table’s columns. This is a complex topic, because you can change a lot of different things (e.g. the data type or default value of a column).
-
-#### Add a new column to a table:
-
-`ADD COLUMN`
-
-```
-ALTER TABLE Students ADD COLUMN address VARCHAR(100);
-```
-
-#### Remove a column:
-
-`DROP COLUMN`
-
-```
-ALTER TABLE Students DROP COLUMN address;
-```
-
-------
-
-### Delete Rows
-
-```
-DELETE FROM Customers WHERE name = 'Teresa';
-```
-
-------
-
-### Delete a Table
-
-**This cannot be reversed!**
-
-```
-DROP TABLE Customers;
-```
 

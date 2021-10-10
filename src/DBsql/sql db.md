@@ -6,6 +6,10 @@ Every **DBMS** (DataBase Management System, a fancy name for database software) 
 
 [MariaDBKnowledgeBase](https://mariadb.com/kb/en/)
 
+### List of SQL Commands
+
+[https://www.codecademy.com/articles/sql-commands](https://www.codecademy.com/articles/sql-commands)
+
 ## Basic Commands
 
 ### Create a Database
