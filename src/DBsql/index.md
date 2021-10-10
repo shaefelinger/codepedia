@@ -1,4 +1,4 @@
-# Databases
+# SQL Overview
 
 ## What is a Relational Database?
 
