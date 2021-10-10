@@ -58,3 +58,13 @@ A teacher can teach multiple courses, but a course can only have one teacher.
 
 ------
 
+## Many-to-Many Relationships
+
+For example, if you have a table “Courses” and a table “Students”, you want to connect these two tables in some way that a student can take many courses, and a course can have many students.
+
+This is done by creating a third table that represents the relationship.
+
+<img src="./assets/many2many.png" />
+
+------
+
