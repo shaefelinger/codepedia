@@ -331,6 +331,7 @@ module.exports = {
           children: [
             '',
             'npm',
+            'yarn',
             'nvm',
             'debugging',
             'process object',
