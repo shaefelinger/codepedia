@@ -236,7 +236,7 @@ module.exports = {
           title: 'SQL Databases',
           collapsable: false,
           sidebarDepth: 2,
-          children: ['', 'sql db', 'mariadb'],
+          children: ['', 'sql db', 'sql tables', 'sql relations', 'mariadb'],
         },
       ],
       '/VUE/': [
