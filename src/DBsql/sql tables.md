@@ -19,7 +19,7 @@ In such a table, a column is an **attribute**, and a row is a **dataentry**.
 > convention: table-name is plural (lowercase, snake_case)
 
 ```
-SQL> CREATE TABLE Customers( 
+CREATE TABLE Customers( 
 	id			INT						NOT NULL,
 	name		VARCHAR(20)		NOT NULL,
 	age 		INT						NOT NULL,
@@ -42,9 +42,24 @@ CREATE TABLE table_name(
 );
 ```
 
+#### other example:
+
+```sql
+CREATE TABLE products (
+	  id INT NOT NULL,
+  	name STRING,
+  	price MONEY,
+  	PRIMARY KEY (id)
+)
+```
+
+
+
 ------
 
 ### Data Types
+
+
 
 For each column, you need to define the data type. Common data types are:
 
@@ -62,7 +77,7 @@ BLOB		- BINARY LARGE OBJECT. eg. (for images, but it's better to store a file-re
 
 > There is no boolean data type
 
-
+[https://www.w3schools.com/sql/sql_datatypes.asp](https://www.w3schools.com/sql/sql_datatypes.asp)
 
 [https://mariadb.com/kb/en/library/data-types/](https://mariadb.com/kb/en/library/data-types/)
 
@@ -82,6 +97,12 @@ Some data types you can specify even further:
 ------
 
 ### Primary Key
+
+always needed - Primary keys must contain UNIQUE values, and cannot contain NULL values.
+
+https://www.w3schools.com/sql/sql_primarykey.asp
+
+-› assign a column
 
 Every table needs one unique ID-field.  This field (or column) is called the **primary key**.
 

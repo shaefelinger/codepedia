@@ -20,3 +20,12 @@
 
 - [https://www.codecademy.com/articles/sql-commands](https://www.codecademy.com/articles/sql-commands)
 
+
+
+[https://www.w3schools.com/sql/default.asp](https://www.w3schools.com/sql/default.asp) -> great ressource
+
+[SQLITE playground](https://sqliteonline.com/)
+
+
+
+### 

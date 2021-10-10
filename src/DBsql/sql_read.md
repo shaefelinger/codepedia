@@ -1,5 +1,51 @@
 # SQL Read
 
+## Overview
+
+#### SELECT
+
+https://www.w3schools.com/sql/sql_select.asp
+
+Specify the Colums to be shown
+
+```sql
+SELECT * FROM products 
+```
+
+```sql
+SELECT name, price FROM products 
+```
+
+#### WHERE
+
+https://www.w3schools.com/sql/sql_where.asp
+
+Specify the rows to be shown
+
+```sql
+SELECT * FROM products WHERE id=1	
+```
+
+## Operators in The WHERE Clause
+
+The following operators can be used in the WHERE clause:
+
+| Operator | Description                                                  | Example                                                      |
+| :------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
+| =        | Equal                                                        | [Try it](https://www.w3schools.com/sql/trysql.asp?filename=trysql_op_equal_to) |
+| >        | Greater than                                                 | [Try it](https://www.w3schools.com/sql/trysql.asp?filename=trysql_op_greater_than) |
+| <        | Less than                                                    | [Try it](https://www.w3schools.com/sql/trysql.asp?filename=trysql_op_less_than) |
+| >=       | Greater than or equal                                        | [Try it](https://www.w3schools.com/sql/trysql.asp?filename=trysql_op_greater_than2) |
+| <=       | Less than or equal                                           | [Try it](https://www.w3schools.com/sql/trysql.asp?filename=trysql_op_less_than2) |
+| <>       | Not equal. **Note:** In some versions of SQL this operator may be written as != | [Try it](https://www.w3schools.com/sql/trysql.asp?filename=trysql_op_not_equal_to) |
+| BETWEEN  | Between a certain range                                      | [Try it](https://www.w3schools.com/sql/trysql.asp?filename=trysql_op_between) |
+| LIKE     | Search for a pattern                                         | [Try it](https://www.w3schools.com/sql/trysql.asp?filename=trysql_op_like) |
+| IN       | To specify multiple possible values for a column             | [Try it](https://www.w3schools.com/sql/trysql.asp?filename=trysql_op_in) |
+
+------
+
+### 
+
 ## `SELECT`
 
 to retrieve Data

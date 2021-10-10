@@ -8,6 +8,24 @@ A table “Teachers” and a table “Courses”. In the table “Courses” you
 
 ## Foreign keys
 
+(point to other table)
+
+https://www.w3schools.com/sql/sql_foreignkey.asp)
+
+```sql
+CREATE TABLE orders (
+	id INT NOT NULL,
+    oder_number INT,
+    customer_id INT,
+    product_id INT,
+    PRIMARY KEY (id),
+    FOREIGN KEY (customer_id) REFERENCES customers(id),
+    FOREIGN KEY (product_id) REFERENCES products(id),
+ )
+```
+
+
+
 [Tutorial on foreign keys - MariaDB](https://www.mariadbtutorial.com/mariadb-basics/mariadb-foreign-key/)
 
 A foreign key refers to a column in a different table.
