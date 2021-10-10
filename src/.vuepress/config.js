@@ -76,6 +76,7 @@ module.exports = {
         items: [
           { text: 'Basics', link: '/DB/' },
           { text: 'SQL', link: '/DBsql/' },
+          { text: 'No SQL', link: '/DBnosql/' },
         ],
       },
       {
@@ -244,6 +245,24 @@ module.exports = {
             'db modelling',
             'sql joins',
             'mariadb',
+          ],
+        },
+      ],
+      '/DBnosql/': [
+        {
+          title: 'NoSQL Databases',
+          collapsable: false,
+          sidebarDepth: 2,
+          children: [
+            '',
+            'create_mongo',
+            'read_mongo',
+            'update_mongo',
+            'delete_mongo',
+            'relations_mongo',
+            'atlas',
+            'mongo and node',
+            'mongoose',
           ],
         },
       ],

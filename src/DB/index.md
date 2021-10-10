@@ -37,3 +37,23 @@ Regardless of the type of database we use, we will always have four types of ope
 
 > **CRUD **is not only used in databases, but also for REST APIs.
 
+------
+
+## Methodology for Finding the Right Query
+
+Finding the right query can be difficult, especially on the command line. To find the right query, you can follow the following steps:
+
+1. **1)**  **Browse the dataset and familiarize yourself with it.**
+
+2. **2)**  **Identify the field you are interested in.**
+
+3. **3)**  **Identify the query operator or the syntax you need.**
+
+   - Check the documentation
+   - Search the web for examples
+
+4. **4)**  **Try it out.**
+
+   (Trial and error)
+
+## 
