@@ -6,21 +6,34 @@ Join tables together temporarily - pull data from different tables
 
 Joins follow this pattern:
 
-```
+```sql
 SELECT <column_names>						# Can be * or Table.Column
 FROM <left_table>								
 JOIN <right_table> 
 ON <left_table.column> = <right_table.column>; #Columns to join on
 ```
 
-```
+```sql
 SELECT Courses.name, Teachers.name FROM Courses
 -> JOIN Teachers ON Courses.teacher = Teachers.id;
 ```
 
+------
 
+##### Inner Join (most common)
 
+[https://www.w3schools.com/sql/sql_join_inner.asp](https://www.w3schools.com/sql/sql_join_inner.asp)
 
+```sql
+SELECT orders.oder_number, customers.name, customers.adsress
+FROM orders
+INNER JOIN customers
+ON orders.customer_id = customers.id
+```
+
+-> joins the data from 2 seperate tables
+
+------
 
 [JoiningTables MariaDB](https://mariadb.com/kb/en/joining-tables-with-join-clauses/)
 
