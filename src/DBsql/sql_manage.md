@@ -1,8 +1,10 @@
-# MariaDB
+# Manage SQL-DB
 
-MariaDBKnowledgeBase:https://mariadb.com/kb/en/
+## MariaDB
 
-Install MariaDB: https://mariadb.com/kb/en/installing-mariadb-on-macos-using-homebrew/
+[MariaDBKnowledgeBase](https://mariadb.com/kb/en/)
+
+[Install MariaDB](https://mariadb.com/kb/en/installing-mariadb-on-macos-using-homebrew/)
 
 ```sql
 brew services start mariadb
@@ -23,6 +25,14 @@ control-c -> quit
 `mysql -u root -p` -> passwort
 
 `mysql -u [username]` (sh)
+
+------
+
+## MySQL
+
+- install community-server, workbench
+- legacy encryption
+- root-user-pw: 
 
 ---
 
@@ -178,30 +188,3 @@ für bis zu 1000 zeichen oder so
 wird automatisch erzeugt
 
 **create Syntax** in SequelPro -> zeigt den code an, um einen Clone zu erzeugen, nicht zwangsläufig das, was man im Terminal eingeben muss...
-
----
-
-## SQL
-
-### Structured Query Language
-
-(SQL) ('sequel')
-
-
-
----
-
-- Easy Language
-
-- not case sensitive
-
-- Convention: SQL-Comand in Uppercase
-
----
-
-### comment
-
-`# comment in SQL`
-
----
-

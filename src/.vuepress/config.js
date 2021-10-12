@@ -248,7 +248,7 @@ module.exports = {
             'sql relations',
             'db modelling',
             'sql joins',
-            'mariadb',
+            'sql_manage',
             'sql_links',
           ],
         },

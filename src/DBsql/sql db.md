@@ -8,9 +8,21 @@ Every **DBMS** (DataBase Management System, a fancy name for database software) 
 
 ### List of SQL Commands
 
+- Easy Language
+
+- not case sensitive
+
+- Convention: SQL-Comand in Uppercase
+
 [https://www.codecademy.com/articles/sql-commands](https://www.codecademy.com/articles/sql-commands)
 
+------
+
 ## Basic Commands
+
+### Comment
+
+`# comment in SQL`
 
 ### Create a Database
 

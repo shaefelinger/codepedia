@@ -14,6 +14,8 @@ SQL (**S**tructured **Q**uery **L**anguage) is a programming language used to co
 
 Many RDBMSs use SQL (and variations of SQL) to access the data in tables
 
+
+
 ## Popular Relational Database Management Systems
 
 **[MySQL](https://www.mysql.com/)**
