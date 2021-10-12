@@ -250,6 +250,7 @@ module.exports = {
             'sql joins',
             'sql_manage',
             'node_sql',
+            'sequelize',
             'sql_links',
           ],
         },
