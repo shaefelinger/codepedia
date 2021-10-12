@@ -243,3 +243,11 @@ function HouseKeeper(name, age, hasWorkPermit) {
   };
 }
 ```
+
+------
+
+## Links
+
+- [https://www.taniarascia.com/understanding-classes-in-javascript/](https://www.taniarascia.com/understanding-classes-in-javascript/)
+- [MDN Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
+
