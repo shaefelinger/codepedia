@@ -1,5 +1,9 @@
 # Sequelize
 
+- instead of writing SQL queries manually, you can use ORMs like Sequelize -> work with native JS object
+- allows to define models and interact with teh db through them
+- you can also easily setup relations ('Associations') and interact with the models through them ('magic methods')
+
 https://sequelize.org/master/
 
 ```
