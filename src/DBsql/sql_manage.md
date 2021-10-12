@@ -1,6 +1,8 @@
 # Manage SQL-DB
 
-## MariaDB
+## Terminal
+
+### MariaDB
 
 [MariaDBKnowledgeBase](https://mariadb.com/kb/en/)
 
@@ -16,7 +18,11 @@ brew services restart mariadb
 
 check, if running: acivity monitor
 
+
+
 start mariaDB: `brew services start mariadb`
+
+-› now mysql is alway running - uses little memory
 
 `mysql -u root` -> command line application
 
@@ -28,7 +34,7 @@ control-c -> quit
 
 ------
 
-## MySQL
+### MySQL
 
 - install community-server, workbench
 - legacy encryption
@@ -148,12 +154,15 @@ Unique ID - für jeden Datensatz
 
 ---
 
-# Sequel Pro / Sequel Ace
+# Sequel Ace
+
+(Sequel Pro is old version)
 
 -> graphical Interface. Creates the sql-code. No Undo!
 
 - use 127.0.0.1 as Host in SequelAce
-- sequel pro funktioniert mit socket connection
+
+  
 
 ### Names (fields, databases, tables)
 
@@ -165,15 +174,25 @@ Unique ID - für jeden Datensatz
 
 ### New database
 
-- database encoding -> utf8 (wie bei html). Immer darauf achten, dass Charset von HTML-Page gleich ist wie das die Database
+- database encoding -> utf8 (like html).Make sure, that Charset of HTML-Page gleich is the same as the Database
 - collation- ci (case insensitive)
-- -> default ist ok
+- -> default is ok
 
-### new table
+### backup database
+
+sequel pro: export
+
+### import
+
+in sequel pro-> select "run all queries "
+
+DropTable -> löscht alte und erzeugt eine neue table bein importieren? 
+
+### format sql
 
 
 
-
+------
 
 #### varchar
 
@@ -188,3 +207,4 @@ für bis zu 1000 zeichen oder so
 wird automatisch erzeugt
 
 **create Syntax** in SequelPro -> zeigt den code an, um einen Clone zu erzeugen, nicht zwangsläufig das, was man im Terminal eingeben muss...
+

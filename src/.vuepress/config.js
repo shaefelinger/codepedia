@@ -249,6 +249,7 @@ module.exports = {
             'db modelling',
             'sql joins',
             'sql_manage',
+            'node_sql',
             'sql_links',
           ],
         },
