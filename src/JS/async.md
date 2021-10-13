@@ -195,9 +195,81 @@ let orderPromise = orderSunglasses();
 console.log(orderPromise);
 ```
 
-### Consuming Promises
+```js
+//_ ES6: Full example_
 
-Promise objects come with an aptly named `.then()` method. 
+const isMomHappy = true;
+
+// Promise
+const willIGetNewPhone = new Promise(
+    (resolve, reject) => { 
+        if (isMomHappy) {
+            const phone = {
+                brand: 'Samsung',
+                color: 'black'
+            };
+            resolve(phone);
+        } else {
+            const reason = new Error('mom is not happy');
+            reject(reason);
+        }
+    }
+);
+
+// 2nd promise
+const showOff = function (phone) {
+    const message = 'Hey friend, I have a new ' +
+                phone.color + ' ' + phone.brand + ' phone';
+    return Promise.resolve(message);
+};
+
+// call our promise
+const askMom = function () {
+    willIGetNewPhone
+        .then(showOff)
+        .then(fulfilled => console.log(fulfilled)) // fat arrow
+        .catch(error => console.log(error.message)); // fat arrow
+};
+
+askMom();
+```
+
+
+
+```js
+// 2nd promise
+var showOff =  (phone) => {
+    return new Promise(
+        function (resolve, reject) {
+            var message = 'Hey friend, I have a new ' +
+                phone.color + ' ' + phone.brand + ' phone';
+
+            resolve(message);
+        }
+    );
+};
+```
+
+this can be shortened:
+
+```js
+// shorten it
+
+// 2nd promise
+var showOff = phone => {
+    var message = 'Hey friend, I have a new ' +
+                phone.color + ' ' + phone.brand + ' phone';
+    return Promise.resolve(message);
+};
+```
+
+
+
+### Consuming Promises `.then`
+
+The `.then()` method of a JavaScript `Promise` object can be used to get the eventual result (or error) of the asynchronous operation.
+
+`.then()` accepts two function arguments. The first handler supplied to it will be called if the promise is resolved. The second one will be called if the promise is rejected.
 
 It takes two callback functions as arguments. We refer to these callbacks as *handlers*. 
 
@@ -263,6 +335,31 @@ const handleFailure = (rejectionReason) => {
  
 prom.then(handleSuccess, handleFailure);
 ```
+
+#### Chaining `.then`
+
+```js
+const myPromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('foo');
+  }, 300);
+});
+
+myPromise
+  .then(handleResolvedA, handleRejectedA)
+  .then(handleResolvedB, handleRejectedB)
+  .then(handleResolvedC, handleRejectedC);
+```
+
+```js
+myPromise
+.then(handleResolvedA)
+.then(handleResolvedB)
+.then(handleResolvedC)
+.catch(handleRejectedAny);
+```
+
+
 
 ### Using catch() with Promises
 
@@ -341,9 +438,31 @@ Since forgetting to return our promise won’t throw an error, this can be a rea
 
 ### Promise.all()
 
-When done correctly, promise composition is a great way to handle situations <u>where asynchronous operations depend on each other or execution order matters</u>. 
-
 To maximize efficiency we should use ***concurrency***, multiple asynchronous operations happening together. With promises, we can do this with the function `Promise.all()`.
+
+```js
+const promise1 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve(3);
+  }, 300);
+});
+const promise2 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve(2);
+  }, 200);
+});
+ 
+Promise.all([promise1, promise2]).then((res) => {
+  console.log(res[0]);
+  console.log(res[1]);
+});
+```
+
+The JavaScript `Promise.all()` method can be used to execute multiple promises in parallel. The function accepts an array of promises as an argument. If all of the promises in the argument are resolved, the promise returned from `Promise.all()` will resolve to an array containing the resolved values of all the promises in the order of the initial array.
+
+
+
+
 
 For example, if you want to download multiple things at once.
 
@@ -405,8 +524,6 @@ const gettodo = async () => {
 
 gettodo()
 ```
-
-
 
 You can define a function as **async**, meaning that the result is returned at some later time.
 
