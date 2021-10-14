@@ -64,6 +64,7 @@ module.exports = {
           { text: 'Basics', link: '/BACKEND/' },
           { text: 'Node', link: '/NODE/' },
           { text: 'Express', link: '/EXPRESS/' },
+          { text: 'Connect DB to Node', link: '/NODE-DB/' },
         ],
       },
       {
@@ -264,8 +265,6 @@ module.exports = {
             'db modelling',
             'sql joins',
             'sql_manage',
-            'node_sql',
-            'sequelize',
             'sql_links',
           ],
         },
@@ -416,6 +415,14 @@ module.exports = {
             'env',
             'links',
           ],
+        },
+      ],
+      '/NODE-DB/': [
+        {
+          title: 'Node & Databases',
+          collapsable: false,
+          sidebarDepth: 2,
+          children: ['', 'sequelize'],
         },
       ],
       // '/ABOUT/': [
