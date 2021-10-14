@@ -97,6 +97,7 @@ module.exports = {
           { text: 'VS Code', link: '/vscode/' },
           { text: 'Markdown', link: '/markdown/' },
           { text: 'Design', link: '/design/' },
+          { text: 'Performance', link: '/performance/' },
         ],
       },
       {
