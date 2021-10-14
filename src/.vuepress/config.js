@@ -54,6 +54,7 @@ module.exports = {
           { text: 'Javascript', link: '/JS/' },
           { text: 'JS for Web', link: '/JS4web/' },
           { text: 'JQuery', link: '/jquery/' },
+          { text: 'Async JS', link: '/JSasync/' },
         ],
       },
       {
@@ -161,7 +162,6 @@ module.exports = {
             'spread and rest',
             'modules',
             'play audio',
-            'async',
             'classes',
             'JS links',
           ],
@@ -181,6 +181,20 @@ module.exports = {
           collapsable: false,
           sidebarDepth: 2,
           children: [''],
+        },
+      ],
+      '/JSasync/': [
+        {
+          title: 'Async JS',
+          collapsable: false,
+          sidebarDepth: 2,
+          children: [
+            '',
+            'nested callbacks',
+            'promises',
+            'async await',
+            'to_function',
+          ],
         },
       ],
 

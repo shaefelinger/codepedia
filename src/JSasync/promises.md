@@ -1,71 +1,6 @@
-# Async JS
+# Promises
 
-## Asynchronous?
-
-JavaScript is single threaded, meaning that two bits of script cannot run at the same time; they have to run one after another.This is called **blocking**; 
-
-
-
-## Threads
-
-JavaScript is traditionally single-threaded. Even with multiple cores, you could only get it to run tasks on a single thread, called the **main thread**.
-
-```html
-Task A --> Task B --> Task C
-```
-
-[Web workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API) allow you to send some of the JavaScript processing off to a separate thread, called a worker.
-
-```html
-  Main thread: Task A --> Task C
-Worker thread: Expensive task B
-```
-
-Web workers are pretty useful, but they do have their limitations. A major one is they are not able to access the [DOM](https://developer.mozilla.org/en-US/docs/Glossary/DOM) 
-
-------
-
-## Syntax to write async requests
-
-1. nested callbacks -› gets very unreadable
-2. `.then` - / Promises
-3. async-await
-
-## Async Callbacks
-
-JS can handle callbacks.
-
-When your application grows more complex, you can have callbacks in callbacks in callbacks...
-
-hard to read and hard to understand -›  callback hell
-
-> **Tip:** Using callbacks can be quite "messy"  This problem is commonly known as "callback hell". This problem can be reduced by good coding practices (see http://callbackhell.com/), using a module like [async](https://www.npmjs.com/package/async), or moving to ES6 features like [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise).
-
-> **Note:** A common convention for Node and Express is to use error-first callbacks: the first value in your *callback functions* is an error value, while subsequent arguments contain success data.  good explanation: [The Node.js Way - Understanding Error-First Callbacks](http://fredkschott.com/post/2014/03/understanding-error-first-callbacks-in-node-js) (fredkschott.com).
-
-[MDN Using asynchronous APIs](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/Introduction#using_asynchronous_apis)
-
-Using callbacks is slightly old-fashioned now, but you'll still see them in use in a number of older-but-still-commonly-used APIs.
-
-```js
-btn.addEventListener('click', () => {
-  alert('You clicked me!');
-
-  let pElem = document.createElement('p');
-  pElem.textContent = 'This is a newly-added paragraph.';
-  document.body.appendChild(pElem);
-});
-```
-
-Note that not all callbacks are async — some run synchronously. An example is when we use [`Array.prototype.forEach()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
-
-
-
-better:
-
-## Promises
-
-Promises are a better alternative to callbacks. 
+Promises are a better alternative to callbacks. They give you flexibility, intuitive syntax, and easy error handling.
 
 Promises allow you to set an operation running (e.g. the fetching of an image from the server), and then wait until the result has returned before running another operation:
 
@@ -75,6 +10,8 @@ Main thread: Task A                   Task B
 ```
 
 Since the operation is happening somewhere else, the main thread is not blocked while the async operation is being processed.
+
+Think of Promises as a special function that either satisfy (resolve) or fail (reject) to execute a task, and then executes the corresponding actions - usually another task with the returned data in the case of 'resolved' and usually throw an error in the case of 'reject'.
 
 They come with methods for the case that everything went well (**resolve**), and for the error case (**reject**).
 
@@ -133,13 +70,13 @@ Code blocks chained onto the end of the `fetch()`:
 - The `catch()` block at the end runs if any of the `.then()` blocks fail. an error object is made available inside the `catch()`, which can be used to report the kind of error that has occurred. 
 - synchronous `try...catch` won't work with promises, but it will work with [async/await](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await)
 
-### The event queue
+## The event queue
 
 Async operations like promises are put into an **event queue**, which runs after the main thread has finished processing so that they *do not block* subsequent JavaScript code from running.
 
 [What the heck is the event loop anyway? ](https://www.youtube.com/watch?v=8aGhZQkoFbQ)
 
-### Create Promises
+## Create Promises
 
 Promises are objects that represent the eventual outcome of an asynchronous operation. A `Promise` object can be in one of three states:
 
@@ -292,7 +229,7 @@ One important feature of `.then()` is that it always returns a promise!
 
 When you return something from a `then()` callback, it's a bit magic. If you return a value, the next `then()` is called with that value. However, if you return something promise-like, the next `then()` waits on it, and is only called when that promise settles (succeeds/fails)
 
-#### The onFulfilled and onRejected Functions
+## The onFulfilled and onRejected Functions
 
 To handle a “successful” promise, we invoke `.then()` on the promise, passing in a success handler callback function:
 
@@ -336,7 +273,7 @@ const handleFailure = (rejectionReason) => {
 prom.then(handleSuccess, handleFailure);
 ```
 
-#### Chaining `.then`
+## Chaining `.then`
 
 ```js
 const myPromise = new Promise((resolve, reject) => {
@@ -361,7 +298,7 @@ myPromise
 
 
 
-### Using catch() with Promises
+## Using catch() with Promises
 
 To create even more readable code, we can use a different promise function: `.catch()`.
 
@@ -381,7 +318,7 @@ prom
 
 There's nothing special about `catch()`, it's just sugar for `then(undefined, func)`, 
 
-#### Chaining Multiple Promises
+## Chaining Multiple Promises
 
 One common pattern we’ll see with asynchronous programming is multiple operations which depend on each other to execute or that must be executed in a certain order.	
 
@@ -401,7 +338,7 @@ In order for our chain to work properly, we had to `return` the promise `secondP
 
 This ensured that the return value of the first `.then()` was our second promise 
 
-### Avoiding Common Mistakes
+## Avoiding Common Mistakes
 
 **Mistake 1:** Nesting promises instead of chaining them.
 
@@ -436,7 +373,7 @@ Let’s break down what’s happening in the example:
 
 Since forgetting to return our promise won’t throw an error, this can be a really tricky thing to debug!
 
-### Promise.all()
+## Promise.all()
 
 To maximize efficiency we should use ***concurrency***, multiple asynchronous operations happening together. With promises, we can do this with the function `Promise.all()`.
 
@@ -482,7 +419,7 @@ Promise.all([img1.ready(), img2.ready()])
 
 
 
-### Review
+## Review
 
 Promises are a difficult concept even for experienced developers
 
@@ -497,7 +434,7 @@ Promises are a difficult concept even for experienced developers
 - We should chain multiple promises rather than nesting them.
 - To take advantage of concurrency, we can use `Promise.all()`.
 
-### Promises Links
+## Promises Links
 
 - [WebDev promises](https://web.dev/promises/)
 - [MDN Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) 
@@ -507,219 +444,4 @@ Promises are a difficult concept even for experienced developers
 - [Promises for Dummies](https://www.digitalocean.com/community/tutorials/javascript-promises-for-dummies)
 
 - [Codecademy Promises cheatsheet](https://www.codecademy.com/learn/paths/full-stack-engineer-career-path/tracks/fscp-async-javascript-and-http-requests/modules/fecp-learn-javascript-syntax-promises/cheatsheet)
-
-------
-
-## Async-Await
-
-special syntax:
-
-Create async function with the `async`-keyword! Instead of `.then()` use the await-keyword
-
-```js
-const gettodo = async () => {
-    const res = await fetch('https://jsonplaceholder.typicode.com/todos/3')
-    console.log(res);
-}
-
-gettodo()
-```
-
-You can define a function as **async**, meaning that the result is returned at some later time.
-
-```js
-async function calculateResult() {
-	var result = // stuff your function does 
-  return result;
-}
-```
-
-You can then use the function just like a promise:
-
-```js
- calculateResult()
-  .then(/* do something with it */);
-```
-
-To handle the response in a synchronous way, you can use the keyword **await**.
-
-```js
-val result1 = await calculateResult(param1); // executed first 
-val result2 = await calculateResult(param2); // executed second 
-val random = Math.random(); // executed third
-```
-
-#### `Asyc`
-
-Add `async` before the function itself.
-
--> gives access to the `await`, `try` and `catch`.
-
-##### `await`
-
-tells the script, not to go on, until the data is recieved. (only works, if it is a asyc-function using the async keyword).
-
-await for the fetch-call `const res = await fetch(url)`
-
-##### `try`
-
-...if everything goes well
-
--> convert to json `const data = await res.json();`
-
-##### `catch`
-
-...if there is an error
-
-```js
-catch(error) {
-    console.log("error", error);
-    // appropriately handle the error
-  }	
-```
-
-------
-
-### write async/await
-
-instead of:
-
-```js
-exports.getPosts = (req, res, next) => {
-  const currentPage = req.query.page || 1;
-  const perPage = 2;
-  let totalItems;
-  Post.find()
-    .countDocuments()
-    .then(count => {
-      totalItems = count;
-      return Post.find()
-        .skip((currentPage - 1) * perPage)
-        .limit(perPage);
-    })
-    .then(posts => {
-      res.status(200).json({
-        message: 'Fetched posts successfully.',
-        posts: posts,
-        totalItems: totalItems
-      });
-    })
-    .catch(err => {
-      if (!err.statusCode) {
-        err.statusCode = 500;
-      }
-      next(err);
-    });
-};
-```
-
-`async` in front of the function, then you can write simpler syntax
-
-```js
-exports.getPosts = async (req, res, next) => {
-  const currentPage = req.query.page || 1;
-  const perPage = 2;
-  let totalItems;
-  try {
-    const totalItems = await Post.find().countDocuments();
-
-    const posts = await Post.find()
-      .skip((currentPage - 1) * perPage)
-      .limit(perPage);
-
-    res.status(200).json({
-      message: 'Fetched posts successfully.',
-      posts: posts,
-      totalItems: totalItems,
-    });
-  } catch (err) {
-    if (!err.statusCode) {
-      err.statusCode = 500;
-    }
-    next(err);
-  }
-};
-```
-
-behind the szenes it gets converted to `.then`!
-
-### Handle Errors
-
-use try/catch
-
-
-
-[Async-await - More Details](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
-
-------
-
-#### top level await 
-
-(eg. with node 14.3)
-
-you can use await outside of async functions on the top-level…
-
-------
-
-## Helper function - `to()`
-
-Helper-Function:
-
-```js
-function to(promise) {
-  return promise.then(response => response.json())
-    .then(data => ({ data, error: null }))
-    .catch(error => ({ data: null, error }));
-}
-```
-
-The 'to' function is a helper function that abstracts away the handling of promises. 
-It accepts a promise as an argument, i.e. returned from a call to the fetch api 
-and 'thens' down into the json and the data content.
-
-It returns a plain javascript object with two properties: data and error.
-
-use this pattern:
-
-```js
-// ... some code ... inside async function
-
-const { data, error } = await to(fetch( /*arguments*/ ))
-
-if (error) {
-   // -- handle error, probably exit function
-}
-
-... some code - handle data...
-```
-
-##### Examples:
-
-```js
-const gettodo = async () => {
-  const { data, error } = await to(fetch('https://jsonplaceholder.typicode.com/todos/3'));
-  if (error) {
-    console.log('🤯', error);
-  } else {
-    console.log(data);
-  }
-};
-
-gettodo()
-```
-
-or
-
-```js
-const { data, error } = await to(getCharacterList());
-	if (error) {
-		return;
-	}
-	//..handle data…
-//
-
-function getCharacterList() {
-  return fetch(url + 'characters');
-}
-```
 
