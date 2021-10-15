@@ -4,7 +4,7 @@
 - allows to define models and interact with teh db through them
 - you can also easily setup relations ('Associations') and interact with the models through them ('magic methods')
 
-https://sequelize.org/master/
+[https://sequelize.org/master/](https://sequelize.org/master/)
 
 ```
 npm i sequelize
@@ -87,7 +87,7 @@ sequelize
 
 `sync()` creates/syns tables for all models
 
--> table name automatically gehts pluralized
+-› table name automatically gehts pluralized
 
 model: Product -> table: products 
 
@@ -167,7 +167,7 @@ exports.getProduct = (req, res, next) => {
 
 alternative using `findAll()`:
 
-https://sequelize.org/master/manual/model-querying-basics.html
+[https://sequelize.org/master/manual/model-querying-basics.html](https://sequelize.org/master/manual/model-querying-basics.html)
 
 ```js
 exports.getProduct = (req, res, next) => {
@@ -252,8 +252,6 @@ exports.postDeleteProduct = (req, res, next) => {
 };
 ```
 
-
-
 ------
 
 ## Associations / Relations
@@ -267,8 +265,6 @@ https://sequelize.org/master/manual/assocs.html
 
 
 ### One-to-many relationship
-
-
 
 in app.js
 
@@ -409,3 +405,4 @@ product.cartItem().destroy();
 ```
 
 ...
+
