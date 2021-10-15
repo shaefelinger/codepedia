@@ -4,6 +4,8 @@
 
 Every **DBMS** (DataBase Management System, a fancy name for database software) has slight differences in how they implement SQL. But there is a large set of standard commands that are the same in all SQL databases.
 
+
+
 [MariaDBKnowledgeBase](https://mariadb.com/kb/en/)
 
 ### List of SQL Commands

@@ -12,6 +12,18 @@ In relational databases, data is organized in tables. This example shows a table
 
 In such a table, a column is an **attribute**, and a row is a **dataentry**.
 
+Look at a selection from the Northwind "Customers" table:
+
+| CustomerID | CustomerName                       | ContactName        | Address                       | City        | PostalCode | Country |
+| :--------- | :--------------------------------- | :----------------- | :---------------------------- | :---------- | :--------- | :------ |
+| 1          | Alfreds Futterkiste                | Maria Anders       | Obere Str. 57                 | Berlin      | 12209      | Germany |
+| 2          | Ana Trujillo Emparedados y helados | Ana Trujillo       | Avda. de la Constitución 2222 | México D.F. | 05021      | Mexico  |
+| 3          | Antonio Moreno Taquería            | Antonio Moreno     | Mataderos 2312                | México D.F. | 05023      | Mexico  |
+| 4          | Around the Horn                    | Thomas Hardy       | 120 Hanover Sq.               | London      | WA1 1DP    | UK      |
+| 5          | Berglunds snabbköp                 | Christina Berglund | Berguvsvägen 8                | Luleå       | S-958 22   | Sweden  |
+
+The columns in the "Customers" table above are: CustomerID, CustomerName, ContactName, Address, City, PostalCode and Country. The table has 5 records (rows).
+
 ------
 
 ### Create a Table

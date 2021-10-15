@@ -14,7 +14,9 @@ SQL (**S**tructured **Q**uery **L**anguage) is a programming language used to co
 
 Many RDBMSs use SQL (and variations of SQL) to access the data in tables
 
+Since 1974 - became a standard of the American National Standards Institute (ANSI) in 1986, and of the International Organization for Standardization (ISO) in 1987
 
+> **Note:** Most of the SQL database programs also have their own proprietary extensions in addition to the SQL standard!
 
 ## Popular Relational Database Management Systems
 
