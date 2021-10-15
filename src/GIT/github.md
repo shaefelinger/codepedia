@@ -215,13 +215,15 @@ git remote -v
 
 ------
 
-### .gitignore
+## .gitignore
 
 [how-to-use-gitignore](https://www.pluralsight.com/guides/how-to-use-gitignore-file)
 
+[Github collection of .gitignore-templates](https://github.com/github/gitignore)
+
 ------
 
-### Change from Password to SSH
+## Change from Password to SSH
 
 check the current remote URL:
 
