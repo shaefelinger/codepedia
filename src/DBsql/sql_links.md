@@ -26,6 +26,8 @@
 
 [SQLITE playground](https://sqliteonline.com/)
 
+w3 schools
 
+- [MySQL Data Types](https://www.w3schools.com/mysql/mysql_datatypes.asp)
+- [MySQL Functions](https://www.w3schools.com/mysql/mysql_ref_functions.asp)
 
-### 

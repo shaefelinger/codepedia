@@ -112,7 +112,7 @@ Some data types you can specify even further:
 
 always needed - Primary keys must contain UNIQUE values, and cannot contain NULL values.
 
-https://www.w3schools.com/sql/sql_primarykey.asp
+[SQL primary key](https://www.w3schools.com/sql/sql_primarykey.asp)
 
 -› assign a column
 
