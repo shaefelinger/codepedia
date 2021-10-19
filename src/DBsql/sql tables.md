@@ -83,7 +83,7 @@ BOOLEAN
 VARCHAR	- VARCHAR(length)
 TEXT    - any length
 ENUM
-DATE
+DATE		- formatted as YYYY-MM-DD
 BLOB		- BINARY LARGE OBJECT. eg. (for images, but it's better to store a file-reference)
 ```
 

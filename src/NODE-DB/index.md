@@ -54,6 +54,42 @@ db.execute('SELECT * FROM products')
 
 `result` is an array with 2 nested arrays
 
+`result[0]` contains the data(rows), `result[1]` contains Meta-Data
+
+or use:
+
+```js
+[rows, fieldData] = result;
+```
+
+example:
+
+```js
+db.execute('SELECT * FROM transactions')
+    .then(([rows, fieldData]) => {
+      console.log('rows:', rows);
+      res.status(200).json({ message: 'OK', rows: rows });
+    })
+```
+
+in controller
+
+```js
+exports.getTransactions = async (req, res, next) => {
+  try {
+    const [rows, fieldData] = await db.execute('SELECT * FROM transactions');
+    console.log('rows:', rows);
+    res.status(200).json({ message: 'OK', rows: rows });
+  } catch (err) {
+    console.log(err);
+  }
+};
+```
+
+
+
+------
+
 
 
 ```js

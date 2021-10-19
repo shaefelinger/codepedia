@@ -63,6 +63,10 @@ SQLite is a popular choice for databases in cellphones, PDAs, MP3 players, set-t
 
 read [this](https://www.codecademy.com/courses/learn-sql/articles/what-is-sqlite) article.
 
-
+- database is stored in a single file
+-  poor choice when many different users are updating the table at the same time
+- SQLite does not offer the same exact functionality as many other database systems, limiting some advanced features other relational database systems offer. 
+-  SQLite will not reject values of the wrong type
+- SQLite is used worldwide for testing, development, and in any other scenario where it makes sense for the database to be on the same disk as the application code.
 
 ------
