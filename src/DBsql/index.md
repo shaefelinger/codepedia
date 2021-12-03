@@ -16,6 +16,8 @@ Many RDBMSs use SQL (and variations of SQL) to access the data in tables
 
 Since 1974 - became a standard of the American National Standards Institute (ANSI) in 1986, and of the International Organization for Standardization (ISO) in 1987
 
+Every **DBMS** (DataBase Management System, a fancy name for database software) has slight differences in how they implement SQL. But there is a large set of standard commands that are the same in all SQL databases.
+
 > **Note:** Most of the SQL database programs also have their own proprietary extensions in addition to the SQL standard!
 
 ## Popular Relational Database Management Systems

@@ -2,21 +2,23 @@
 
 **SQL - Structured Query Language**
 
-Every **DBMS** (DataBase Management System, a fancy name for database software) has slight differences in how they implement SQL. But there is a large set of standard commands that are the same in all SQL databases.
-
-
-
 [MariaDBKnowledgeBase](https://mariadb.com/kb/en/)
+
+------
 
 ### List of SQL Commands
 
 - Easy Language
-
 - not case sensitive
 
-- Convention: SQL-Comand in Uppercase
-
 [https://www.codecademy.com/articles/sql-commands](https://www.codecademy.com/articles/sql-commands)
+
+### Formatting convention
+
+- Capitalizing commands is  a convention that makes queries easier to read
+- columns are named in lower case, and use underscores instead of spaces.
+- The table name itself also uses underscores instead of spaces (it's annoying to deal with spaces in SQL - but it's posiible)
+- putting double quotes around a word or phrase will indicate that you are referring to that column name.
 
 ------
 
@@ -24,7 +26,8 @@ Every **DBMS** (DataBase Management System, a fancy name for database software) 
 
 ### Comment
 
-`# comment in SQL`
+- `# comment in SQL`
+- s multiple lines using `/*` to begin the comment and `*/` to close it
 
 ### Create a Database
 

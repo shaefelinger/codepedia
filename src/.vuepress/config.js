@@ -240,6 +240,14 @@ module.exports = {
           children: [''],
         },
       ],
+      '/PERFORMANCE/': [
+        {
+          title: 'Performance',
+          collapsable: false,
+          sidebarDepth: 2,
+          children: [''],
+        },
+      ],
       '/DB/': [
         {
           title: 'Databases',
@@ -261,6 +269,7 @@ module.exports = {
             'sql_read',
             'sql_update',
             'sql_delete',
+            'sql_operators',
             'sql relations',
             'db modelling',
             'sql joins',
@@ -427,6 +436,7 @@ module.exports = {
           children: ['', 'sequelize'],
         },
       ],
+
       // '/ABOUT/': [
       //   {
       //     title: 'About',
