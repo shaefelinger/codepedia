@@ -267,6 +267,8 @@ module.exports = {
             'sql tables',
             'sql_create',
             'sql_read',
+            'sql_aggregate_functions',
+            'sql_conditional_statements',
             'sql_update',
             'sql_delete',
             'sql_operators',

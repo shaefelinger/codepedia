@@ -4,6 +4,10 @@
 
 Join tables together temporarily - pull data from different tables
 
+
+
+
+
 Joins follow this pattern:
 
 ```sql
@@ -17,6 +21,30 @@ ON <left_table.column> = <right_table.column>; #Columns to join on
 SELECT Courses.name, Teachers.name FROM Courses
 -> JOIN Teachers ON Courses.teacher = Teachers.id;
 ```
+
+
+
+The real power of SQL, however, comes from working with data from multiple tables at once
+
+```sql
+SELECT teams.conference AS conference,
+       AVG(players.weight) AS average_weight
+  FROM benn.college_football_players players
+  JOIN benn.college_football_teams teams
+    ON teams.school_name = players.school_name
+ GROUP BY teams.conference
+ ORDER BY AVG(players.weight) DESC
+```
+
+#### table alias
+
+- When performing joins, it's easiest to give your table names aliases by adding a space after the table name and typing the intended name of the alias. 
+- Once you've given a table an alias, you can refer to columns in that table in the `SELECT` clause using the alias name. 
+- best practice here is to use all lowercase letters and underscores instead of spaces.
+
+
+
+
 
 ------
 

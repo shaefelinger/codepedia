@@ -44,8 +44,6 @@ The following operators can be used in the WHERE clause:
 
 ------
 
-### 
-
 ## `SELECT`
 
 to retrieve Data
@@ -244,7 +242,61 @@ SELECT * FROM Customers WHERE salary > 40000 ORDER BY salary DESC;
 +----+------+-----+-----------------------------------+----------+
 ```
 
+### Ordering data by multiple columns
+
+```sql
+SELECT *
+  FROM tutorial.billboard_top_100_year_end
+  WHERE year_rank <= 3
+ ORDER BY year DESC, year_rank
+```
+
+-  columns in the `ORDER BY` clause must be separated by commas. 
+-  the `DESC` operator is only applied to the column that precedes it. 
+
+you can make your life a little easier by substituting numbers for column names in the `ORDER BY` clause. The numbers will correspond to the order in which you list columns in the `SELECT` clause (*not supported by every flavor of SQL*)
+
+```sql
+SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE year_rank <= 3
+ ORDER BY 2, 1 DESC
+```
+
+When using `ORDER BY` with a row limitm the ordering clause is executed first. This means that the results are ordered **before** limiting to only a few rows
+
 ------
 
-`GROUP BY`
+## SQL DISTINCT for viewing unique values
 
+If you include two (or more) columns in a `SELECT DISTINCT` clause, your results will contain all of the unique pairs of those two columns:
+
+```
+SELECT DISTINCT year, month
+  FROM tutorial.aapl_historical_stock_price
+```
+
+> *Note: You only need to include* `DISTINCT` *once in your* `SELECT` *clause—you do not need to add it for each column name.*
+
+> `DISTINCT` can be particularly helpful when exploring a new data set.
+
+### DISTINCT in aggregations
+
+```sql
+SELECT COUNT(DISTINCT month) AS unique_months
+  FROM tutorial.aapl_historical_stock_price
+```
+
+notice that `DISTINCT` goes inside the [aggregate function](https://mode.com/sql-tutorial/sql-aggregate-functions) rather than at the beginning of the `SELECT` clause.
+
+> using `DISTINCT`, particularly in aggregations, can slow your queries down quite a bit.
+
+```sql
+SELECT COUNT(DISTINCT year) AS years_count,
+       COUNT(DISTINCT month) AS months_count
+  FROM tutorial.aapl_historical_stock_price
+```
+
+------
+
+# 
