@@ -196,7 +196,29 @@ ORDER BY
 
 
 
+### Case
 
+allows us to create different outputs (usually in the `SELECT` statement). 
+
+It is SQL’s way of handling [if-then](https://en.wikipedia.org/wiki/Conditional_(computer_programming)) logic.
+
+```sql
+SELECT name,
+ CASE
+  WHEN imdb_rating > 8 THEN 'Fantastic'
+  WHEN imdb_rating > 6 THEN 'Poorly Received'
+  ELSE 'Avoid at All Costs'
+ END AS 'Review'
+FROM movies;
+```
+
+- Each `WHEN` tests a condition and the following `THEN` gives us the string if the condition is true.
+- The `ELSE` gives us the string if *all* the above conditions are false.
+- The `CASE` statement must end with `END`.
+
+we can rename the column to ‘Review’ using `AS`
+
+- 
 
 ------
 

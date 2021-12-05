@@ -2,51 +2,9 @@
 
 ## Overview
 
-#### SELECT
+## SELECT
 
-https://www.w3schools.com/sql/sql_select.asp
-
-Specify the Colums to be shown
-
-```sql
-SELECT * FROM products 
-```
-
-```sql
-SELECT name, price FROM products 
-```
-
-#### WHERE
-
-https://www.w3schools.com/sql/sql_where.asp
-
-Specify the rows to be shown
-
-```sql
-SELECT * FROM products WHERE id=1	
-```
-
-## Operators in The WHERE Clause
-
-The following operators can be used in the WHERE clause:
-
-| Operator | Description                                                  | Example                                                      |
-| :------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
-| =        | Equal                                                        | [Try it](https://www.w3schools.com/sql/trysql.asp?filename=trysql_op_equal_to) |
-| >        | Greater than                                                 | [Try it](https://www.w3schools.com/sql/trysql.asp?filename=trysql_op_greater_than) |
-| <        | Less than                                                    | [Try it](https://www.w3schools.com/sql/trysql.asp?filename=trysql_op_less_than) |
-| >=       | Greater than or equal                                        | [Try it](https://www.w3schools.com/sql/trysql.asp?filename=trysql_op_greater_than2) |
-| <=       | Less than or equal                                           | [Try it](https://www.w3schools.com/sql/trysql.asp?filename=trysql_op_less_than2) |
-| <>       | Not equal. **Note:** In some versions of SQL this operator may be written as != | [Try it](https://www.w3schools.com/sql/trysql.asp?filename=trysql_op_not_equal_to) |
-| BETWEEN  | Between a certain range                                      | [Try it](https://www.w3schools.com/sql/trysql.asp?filename=trysql_op_between) |
-| LIKE     | Search for a pattern                                         | [Try it](https://www.w3schools.com/sql/trysql.asp?filename=trysql_op_like) |
-| IN       | To specify multiple possible values for a column             | [Try it](https://www.w3schools.com/sql/trysql.asp?filename=trysql_op_in) |
-
-------
-
-## `SELECT`
-
-to retrieve Data
+is used every time you want to query data from a database
 
 ```sql
 SELECT name, age FROM people;
@@ -76,6 +34,48 @@ FROM people
 WHERE id = 2;
 ```
 
+https://www.w3schools.com/sql/sql_select.asp
+
+#### Specify the Colums to be shown
+
+```sql
+SELECT * FROM products 
+```
+
+```sql
+SELECT name, price FROM products 
+```
+
+## WHERE
+
+https://www.w3schools.com/sql/sql_where.asp
+
+Specify the rows to be shown
+
+Restrict our query results using the `WHERE` 
+
+- `WHERE` clause filters the result set to only include rows where the following *condition* is true.
+
+```sql
+SELECT * FROM products WHERE id=1	
+```
+
+### Operators - WHERE
+
+The following operators can be used in the WHERE clause:
+
+| Operator | Description                                                  | Example                                                      |
+| :------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
+| =        | Equal                                                        | [Try it](https://www.w3schools.com/sql/trysql.asp?filename=trysql_op_equal_to) |
+| >        | Greater than                                                 | [Try it](https://www.w3schools.com/sql/trysql.asp?filename=trysql_op_greater_than) |
+| <        | Less than                                                    | [Try it](https://www.w3schools.com/sql/trysql.asp?filename=trysql_op_less_than) |
+| >=       | Greater than or equal                                        | [Try it](https://www.w3schools.com/sql/trysql.asp?filename=trysql_op_greater_than2) |
+| <=       | Less than or equal                                           | [Try it](https://www.w3schools.com/sql/trysql.asp?filename=trysql_op_less_than2) |
+| <>       | Not equal. **Note:** In some versions of SQL this operator may be written as != | [Try it](https://www.w3schools.com/sql/trysql.asp?filename=trysql_op_not_equal_to) |
+| BETWEEN  | Between a certain range                                      | [Try it](https://www.w3schools.com/sql/trysql.asp?filename=trysql_op_between) |
+| LIKE     | Search for a pattern                                         | [Try it](https://www.w3schools.com/sql/trysql.asp?filename=trysql_op_like) |
+| IN       | To specify multiple possible values for a column             | [Try it](https://www.w3schools.com/sql/trysql.asp?filename=trysql_op_in) |
+
 ------
 
 `BETWEEN`:  is inclusive
@@ -87,6 +87,97 @@ WHERE id = 2;
 `LIMIT` is called  `TOP` in other engines
 
 `LIKE` instead of `===`
+
+
+
+### Like
+
+when you want to compare similar values.
+
+- `LIKE` is a special operator used with the `WHERE` clause to search for a specific pattern in a column.
+
+```sql
+SELECT *
+FROM movies
+WHERE name LIKE 'Se_en';
+```
+
+`%` is a wildcard character that matches zero or more missing letters in the pattern. For example:
+
+```
+SELECT *
+FROM movies
+WHERE name LIKE '%man%';
+```
+
+### Is Null
+
+More often than not, the data you encounter will have missing values.
+
+Unknown values are indicated by `NULL`.
+
+It is not possible to test for `NULL` values with comparison operators, such as `=` and `!=`.
+
+Instead, we will have to use these operators:
+
+- `IS NULL`
+- `IS NOT NULL`
+
+### Between
+
+used in a `WHERE` clause to filter the result set within a certain *range*. It accepts two values that are either numbers, text or dates.
+
+```sql
+SELECT *
+FROM movies
+WHERE year BETWEEN 1990 AND 1999;
+```
+
+
+
+```sql
+SELECT *
+FROM movies
+WHERE name BETWEEN 'A' AND 'J';
+```
+
+In this statement, `BETWEEN` filters the result set to only include movies with `name`s that begin with the letter ‘A’ up to, *but not including* ones that begin with ‘J’.
+
+However, if a movie has a name of simply ‘J’, it would actually match. This is because `BETWEEN` goes *up to* the second value — up to ‘J’. 
+
+
+
+### And
+
+to *combine multiple conditions* in a `WHERE` clause 
+
+```sql
+SELECT *
+FROM movies
+WHERE year > 2014
+   AND genre = 'action';
+```
+
+
+
+### Or
+
+`OR` operator can also be used to combine multiple conditions in `WHERE`,
+
+```sql
+SELECT *
+FROM movies
+WHERE year > 2014
+   OR genre = 'action';
+```
+
+
+
+
+
+------
+
+
 
 ### Show All Rows of a Table
 
@@ -181,7 +272,48 @@ WHERE HOEHE BETWEEN 7000 AND 8000
 
 ------
 
+### `AS`
+
+`AS` is a keyword in SQL that allows you to *rename* a column or table using an alias.   The new name can be anything you want as long as you put it inside of single quotes.
+
+```sql
+SELECT name AS 'Titles'
+FROM movies;
+```
+
+- Although it’s not always necessary, it’s best practice to surround your aliases with single quotes.
+- the columns are not being renamed in the table. The aliases only appear in the result.
+
+
+
+------
+
+
+
 ## Sorting the Results
+
+### Order By
+
+to list the data in our result set in a particular order.
+
+```sql
+SELECT *
+FROM movies
+ORDER BY name;
+```
+
+```sql
+SELECT *
+FROM movies
+WHERE imdb_rating > 8
+ORDER BY year DESC;
+```
+
+The column that we `ORDER BY` doesn’t even have to be one of the columns that we’re displaying.
+
+Note: `ORDER BY` always goes after `WHERE` (if `WHERE` is present).
+
+### 
 
 ##### `ORDER BY` 
 
@@ -297,6 +429,63 @@ SELECT COUNT(DISTINCT year) AS years_count,
   FROM tutorial.aapl_historical_stock_price
 ```
 
+
+
+### Distinct
+
+ is used to return unique values in the output. It filters out all duplicate values in the specified column(s).
+
+For instance,
+
+```
+SELECT tools 
+FROM inventory;
+```
+
+might produce:
+
+| tools  |
+| ------ |
+| Hammer |
+| Nails  |
+| Nails  |
+| Nails  |
+
+
+
+By adding `DISTINCT` before the column name,
+
+```
+SELECT DISTINCT tools 
+FROM inventory;
+```
+
+the result would now be:
+
+| tools  |
+| ------ |
+| Hammer |
+| Nails  |
+
 ------
 
-# 
+### 
+
+### Limit
+
+most SQL tables contain hundreds of thousands of records. In those situations, it becomes important to cap the number of rows in the result.
+
+```sql
+SELECT *
+FROM movies
+LIMIT 10;
+```
+
+saves space on our screen and makes our queries run faster.
+
+`LIMIT` always goes at the very end of the query. Also, it is not supported in all SQL databases.
+
+
+
+------
+
