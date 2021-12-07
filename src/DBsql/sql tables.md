@@ -30,7 +30,7 @@ The columns in the "Customers" table above are: CustomerID, CustomerName, Contac
 
 > convention: table-name is plural (lowercase, snake_case)
 
-```
+```sql
 CREATE TABLE Customers( 
 	id			INT						NOT NULL,
 	name		VARCHAR(20)		NOT NULL,

@@ -313,8 +313,6 @@ The column that we `ORDER BY` doesn’t even have to be one of the columns that 
 
 Note: `ORDER BY` always goes after `WHERE` (if `WHERE` is present).
 
-### 
-
 ##### `ORDER BY` 
 
 always at the End (default: ASCending)
@@ -468,8 +466,6 @@ the result would now be:
 | Nails  |
 
 ------
-
-### 
 
 ### Limit
 

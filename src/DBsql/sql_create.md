@@ -12,11 +12,9 @@ INSERT INTO Students(name, email) VALUES ('John Doe', 'john@doe.com');
 
 
 
-
-
 ### Create Multiple Data Entries
 
-```
+```sql
 INSERT INTO Customers(name, age, address, salary) VALUES
     -> ('Teresa', 33, 'Borselstr. 7, 22765 Hamburg', 30000),
     -> ('John', 25, 'Hauptstr. 1, 22087 Hamburg', 45000),
