@@ -100,6 +100,7 @@ module.exports = {
           { text: 'Markdown', link: '/markdown/' },
           { text: 'Design', link: '/design/' },
           { text: 'Performance', link: '/performance/' },
+          { text: 'Clean Code', link: '/cleancode/' },
         ],
       },
       {
@@ -232,6 +233,14 @@ module.exports = {
           children: [''],
         },
       ],
+      '/CLEANCODE/': [
+        {
+          title: 'Clean Code',
+          collapsable: false,
+          sidebarDepth: 2,
+          children: ['', 'naming'],
+        },
+      ],
       '/MARKDOWN/': [
         {
           title: 'Markdown',
@@ -269,6 +278,7 @@ module.exports = {
             'sql_read',
             'sql_aggregate_functions',
             'sql_conditional_statements',
+            'sql_constraints',
             'sql_update',
             'sql_delete',
             'sql_operators',
