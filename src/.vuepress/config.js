@@ -284,6 +284,7 @@ module.exports = {
             'sql_operators',
             'sql relations',
             'db modelling',
+            'sql multiple_tables',
             'sql joins',
             'sql_manage',
             'sql_commands',
