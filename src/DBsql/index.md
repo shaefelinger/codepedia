@@ -72,3 +72,20 @@ read [this](https://www.codecademy.com/courses/learn-sql/articles/what-is-sqlite
 - SQLite is used worldwide for testing, development, and in any other scenario where it makes sense for the database to be on the same disk as the application code.
 
 ------
+
+##  Additional resources:
+
+- Article: [Pronouncing SQL: S-Q-L or Sequel?](http://patorjk.com/blog/2012/01/26/pronouncing-sql-s-q-l-or-sequel/)
+- Article: [Understanding SQL and NoSQL Databases and Different Database Models](https://www.digitalocean.com/community/tutorials/understanding-sql-and-nosql-databases-and-different-database-models)
+- Article: [PostgreSQL - CONSTRAINTS](https://www.tutorialspoint.com/postgresql/postgresql_constraints.htm)
+- Lesson: [Why Learn SQL?](https://www.codecademy.com/paths/web-development/tracks/sql-for-web-development/modules/webdev-sql-intro/lessons/why-sql) (from a data analysis perspective)
+- Video: [SQL and Databases are MORE IMPORTANT than you think in 2018](https://www.youtube.com/watch?v=D5HRYIxcYh8)
+- Resource: [SQL Fiddle](http://sqlfiddle.com/)
+- Resource: [Kickstarter SQL Style Guide](https://gist.github.com/fredbenenson/7bb92718e19138c20591)
+
+### Practice:
+
+https://dreamy-cabbage-87c3f6.netlify.app/
+
+https://sqlzoo.net/wiki/SQL_Tutorial
+
