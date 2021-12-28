@@ -83,3 +83,53 @@ const { name: userName, age: userAge } = user;
 ```
 
 [freecodecamp - use destructuring](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/es6/use-destructuring-assignment-to-assign-variables-from-nested-objects )
+
+------
+
+## Create partial Object and subset
+
+If you are using ES6 there is a very concise way to do this using destructuring. Destructuring allows you to easily add on to objects using a spread, but it also allows you to make subset objects in the same way.
+
+```js
+const object = {
+  a: 'a',
+  b: 'b',
+  c: 'c',
+  d: 'd',
+}
+
+// Remove "c" and "d" fields from original object:
+const {c, d, ...partialObject} = object;
+const subset = {c, d};
+
+console.log(partialObject) // => { a: 'a', b: 'b'}
+console.log(subset) // => { c: 'c', d: 'd'};
+```
+
+[https://stackoverflow.com/questions/17781472/how-to-get-a-subset-of-a-javascript-objects-properties](https://stackoverflow.com/questions/17781472/how-to-get-a-subset-of-a-javascript-objects-properties)
+
+but this might be the most readable version:
+
+```js
+var subset = {
+   color: elmo.color,
+   height: elmo.height 
+}
+```
+
+
+
+You could also write a utility function do it...
+
+```js
+const cloneAndPluck = function(sourceObject, keys) {
+    const newObject = {};
+    keys.forEach((obj, key) => { newObject[key] = sourceObject[key]; });
+    return newObject;
+};
+
+const subset = cloneAndPluck(elmo, ["color", "height"]);
+```
+
+
+

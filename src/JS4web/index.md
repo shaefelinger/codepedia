@@ -69,6 +69,12 @@ The old convention was to put scripts right before the `</body>` tag to prevent 
 
 https://www.digitalocean.com/community/tutorials/how-to-add-javascript-to-html
 
+
+
+Because of HTML parsing, the location of the script tags when you put `async` or `defer` attributes on them is important - see here:
+
+[https://stackoverflow.com/questions/10808109/script-tag-async-defer](https://stackoverflow.com/questions/10808109/script-tag-async-defer)
+
 ------
 
 ## `DOMContentLoaded` event

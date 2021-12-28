@@ -41,3 +41,52 @@ What is essential to a good database design?
 
 ------
 
+## Atomic Values
+
+[https://www.calebcurry.com/atomic-values/](https://www.calebcurry.com/atomic-values/)
+
+Everything we store in a database should be atomic. An **atomic** value can not be broken down into smaller pieces. You may also hear “rule-of-one.”
+
+Whenever you can break up attributes into multiple attributes, you know they are not atomic. Something is atomic when we can think of it and use it as a complete whole!  As long as a value can be thought of as “a single thing,” then it can be considered atomic. 
+
+We never want to store multiple values within a single column in a table. 
+
+#### Rule of One
+
+Each column should store only one indivisible (well…practically) fact. This also means that each table must only be for a single entity.
+
+Not only must attributes store one thing, but these values must be all of one data type. You must specify a data type for each column and the rows can never break these columns rules.
+
+-> column header-name sould be singular
+
+------
+
+## DATABASE SCHEMA
+
+A database schema gives an overview of the purpose of the database along with the data that makes up the database, how the data is organized into tables, how the tables are internally structured and how they relate to one another.
+
+<img src="./assets/schema.png" />
+
+
+
+- Define the purpose of your database
+- Find the information that make up the database
+- Organize your information into tables
+- Structure your tables into columns of information
+- Avoid redundant data that leads to inaccuracy and waste in space
+- Identify the relationships between your tables and implement them
+
+database design tools:
+
+- [DbDiagram.io](http://dbdiagram.io/) 
+- [SQLDBM](http://sqldbm.com/home) 
+- [DB Designer](http://dbdesigner.net/) 
+
+Your database schema should contain the following:
+
+- table names
+- column names per table
+- column types per table
+- constraints per table, if any
+- relationships between tables, if any
+
