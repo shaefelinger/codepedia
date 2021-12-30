@@ -379,7 +379,7 @@ module.exports = {
           title: 'VUE Animation',
           collapsable: false,
           sidebarDepth: 2,
-          children: [''],
+          children: ['', 'vue transition'],
         },
       ],
       '/NUXT/': [
