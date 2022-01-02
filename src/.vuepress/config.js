@@ -340,6 +340,7 @@ module.exports = {
 
             'vue axios',
             'vue options-api',
+            'vue composition-api',
             'vue links',
           ],
         },
@@ -379,7 +380,7 @@ module.exports = {
           title: 'VUE Animation',
           collapsable: false,
           sidebarDepth: 2,
-          children: ['', 'vue transition'],
+          children: ['', 'vue transition', 'vue velocity', 'vue gsap'],
         },
       ],
       '/NUXT/': [
