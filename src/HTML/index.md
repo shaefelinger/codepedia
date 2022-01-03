@@ -315,3 +315,33 @@ The `data-*` attribute is used to store custom data private to the page or appli
 <!-- (https://www.w3schools.com/tags/att_data-.asp) -->
 
 [w3-schools - data attribute](https://www.w3schools.com/tags/att_data-.asp)
+
+------
+
+## Meter
+
+[MDN Meter](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meter)
+
+```html
+<label for="fuel">Fuel level:</label>
+
+<meter id="fuel"
+       min="0" max="100"
+       low="33" high="66" optimum="80"
+       value="50">
+    at 50/100
+</meter>
+```
+
+------
+
+## Progress
+
+```html
+<label for="file">File progress:</label>
+
+<progress id="file" max="100" value="70"> 70% </progress>
+```
+
+[MDN progress](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress)
+

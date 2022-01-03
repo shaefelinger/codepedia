@@ -59,9 +59,56 @@ let defaultName = username || 'Stranger';
 
 ------
 
+## Double &&- Operator
+
+- if the first value is true, it returns the second value, 
+
+- if the first value is false, it returns the first value
+
+```js
+const shoppingCart = isLoggedIn && ['Books']
+```
+
+is the same as:
+
+```js
+if (isLoggedIn) { 
+shoppingCart = ['Books'] 
+} else {
+  shoppingCart = isLoggedIn
+}
+```
+
+------
+
 ## Ternary Operator
 
 to simplify an if...else statement.
+
+> if statements return no values- this does not work:
+>
+> ```js
+> // This does not work!
+> const userName = if (isLogin) {
+> 	return ‘Max’;
+> } else {
+> 	return null;
+> }
+> ```
+>
+> this works:
+>
+> ```js
+> const userName = isLogin ? ‘Max’ : null
+> ```
+
+
+
+```js
+isNightTime ? console.log('Lights On!') : console.log('Lights Off!');
+```
+
+is the same as:
 
 ```js
 condition ? expression-if-true : expression-if-false;
@@ -71,12 +118,6 @@ if (isNightTime) {
 } else {
   console.log('Lights Off!');
 }
-```
-
-Shorthand:
-
-```js
-isNightTime ? console.log('Lights On!') : console.log('Lights Off!');
 ```
 
 - The condition (true/false) is provided before the `?`.
@@ -103,9 +144,29 @@ isNightTime ? console.log('Lights On!') : console.log('Lights Off!');
 
 ------
 
+## Logical Operators Overview
+
+```js
+const userName = 'John';
+const altName = '';
+console.log(userName === 'John'); // generates and prints a boolean => true
+console.log(userName); // wasn't touched, still is a string => 'John'
+ 
+console.log(userName || null); // userName is truthy and therefore returned by || => 'John'
+console.log(altName || 'John'); // altName is falsy (empty string), hence 'John' is returned => 'John'
+console.log(altName || ''); // both altName and '' are falsy but if the first operand is falsy, the second one is always returned => ''
+console.log(altName || null || 'Jane'); // altName and null are falsy, 'Jane' is returned => 'Jane'
+ 
+console.log(userName && 'Jane'); // userName is truthy, hence second (!) value is returned => 'Jane'
+console.log(altName && 'Jane'); // altName is falsy, hence first value is returned => ''
+console.log(userName && ''); // userName is truthy, hence second value is returned => ''
+```
+
+------
+
 ## Switch
 
-A switch statement provides an alternative syntax if we need to check multiple conditions.
+A switch statement provides an alternative syntax if we need to check multiple conditions. Always checks for equallity.
 
 ```js
 let groceryItem = 'papaya';
@@ -144,6 +205,7 @@ switch(val) {
 ```
 
 - At the end of each switch statement, there is a default statement. If none of the cases are true, then the code in the default statement will run.
-- Note: Without break keywords, the first matching case will run, but so will every subsequent case regardless of whether or not it matches—including the default.
+- Note: Without **break** keywords, the first matching case will run, but so will every subsequent case regardless of whether or not it matches—including the default. ("fall-through")
 - make a habit of ending all your switch branches with a break (also the for default, even though it isn't nescessary.
 - case values are tested with strict equality (===)
+- [here](https://stackoverflow.com/questions/32576618/switch-statement-to-compare-values-greater-or-less-than-a-number/32576647) is a workaroud to check for `>`,`<=` etc. 

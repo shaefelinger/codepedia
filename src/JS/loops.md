@@ -102,7 +102,18 @@ console.log(countString);
 
 ## for...in loop
 
--> don´t use with arrays !!
+To use with objects -> don´t use with arrays !!
+
+Execute for every key in an object:
+
+```js
+for (const key in obj) {
+	console.log(key);
+	console.log(obj[key]);
+}  
+```
+
+
 
 ```js
 const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -113,18 +124,19 @@ for (const index in digits) {
 ```
 
 - you still have to deal with the issue of using an **index** to access the values of the array, 
-
 - Also, the `for...in` loop can get you into big trouble when you need to add an extra method to an array (or another object).
 
 ------
 
 ## for...of loop
 
-To loop over any type of data that is **iterable** (meaning it follows the [iterable protocol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols)).
+Generally used with arrays
+
+Loop over any type of data that is **iterable** (meaning it follows the [iterable protocol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols)).
 
 Almost exactly like you would write a **for...in** loop, except you swap out `in` with `of` and you can drop the **index**.
 
-The for...of loop will only loop over the values in the object.
+The for...of loop will only loop over the **values** in the object.
 
 ```js
 const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -134,13 +146,14 @@ for (const digit of digits) {
 }
 ```
 
- `for...in`  iterates over the names oft the object,  `for...of`  over the values
+-  `for...in`  iterates over the names oft the object,  `for...of`  over the values
 
-additional benefits: You can stop or break a for...of loop at anytime.
+- additional benefits: You can stop or break a for...of loop at anytime.
+- you dont have access to the index
 
 https://dmitripavlutin.com/javascript-for-of/
 
-> **TIP:** _It’s good practice to use plural names for objects that are collections of values. That way, when you loop over the collection, you can use the singular version of the name when referencing individual values in the collection. For example,_ `for (const button of buttons) {...}`_._
+> **TIP:** good practice to use plural names for objects that are collections of values. Then use the singular version of the name when referencing individual values in the collection. For example,_ `for (const button of buttons) {...}`_._
 
 ```js
 const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];

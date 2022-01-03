@@ -64,6 +64,8 @@ Theese values evaluate to false when checked as a condition (falsy):
 
 this is often used to check, if an object exsits.
 
+> `!!` converts truthy/falsy value into real boolean
+
 Difference when using comparison opreators:
 
 | Truthy & Falsy                         |                                                              |
@@ -83,12 +85,20 @@ Difference when using comparison opreators:
 | \|\| | logical OR (one side needs to be true)           |
 | !    | logical NOT (turns true to false and vice versa) |
 
-The ! not operator reverses, or negates, the value of a boolean:
+The `!` not operator reverses, or negates, the value of a boolean:
 
 ```js
 let excited = true;
-console.log(!excited); // Prints false
+console.log(!excited); // Prints false	
 ```
+
+
+
+
+
+
+
+
 
 ------
 
