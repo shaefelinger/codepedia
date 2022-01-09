@@ -103,6 +103,8 @@ In addition to using each option separately, like `ls -a` or `ls -l`, multiple o
 
 ls `-alt` lists all contents, including hidden files and directories, in long format, ordered by the date and time they were last modified.
 
+[ls command main options](https://www.rapidtables.com/code/linux/ls.html)
+
 ---
 
 ### Cat

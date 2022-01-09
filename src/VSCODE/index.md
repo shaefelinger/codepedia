@@ -33,7 +33,7 @@
 
 ## Emmet
 
-https://docs.emmet.io/  
+[https://docs.emmet.io/](https://docs.emmet.io/)
 
 Snippet then tab or enter
 
@@ -226,8 +226,6 @@ https://github.com/vuejs/eslint-plugin-vue
 
 ------
 
-
-
 # Links
 
 - [Debugging](https://code.visualstudio.com/docs/editor/debugging)
@@ -238,11 +236,15 @@ https://github.com/vuejs/eslint-plugin-vue
 - [James Quick - Visual Studio Code Cheatsheet](files/VS_Code_Cheat_Sheet.pdf)
 - [markdown to html converter](https://markdowntohtml.com/)
 
+------
 
+# Tipps
 
-## 15 VS Code Extensions For Front-End Developers in 2019
-
-https://www.youtube.com/watch?v=LdF2RcelRg0
+- [15 VS Code Extensions For Front-End Developers in 2019](https://www.youtube.com/watch?v=LdF2RcelRg0)
+- [https://www.better.dev/31-best-visual-studio-code-extensions-for-web-development](https://www.better.dev/31-best-visual-studio-code-extensions-for-web-development)
+- [awesome-vscode](https://github.com/viatsko/awesome-vscode)
+- check:
+  - [quokka](https://www.youtube.com/watch?v=f_sEWa5hA0Q)
 
 
 ------

@@ -1,11 +1,17 @@
 # NVM Node Version Manager
 
-https://github.com/nvm-sh/nvm#usage
+[github nvm -usage](https://github.com/nvm-sh/nvm#usage)
 
 To download, compile, and install the latest release of node, do this:
 
 ```bash
 nvm install node # "node" is an alias for the latest version
+```
+
+long-term support (LTS):
+
+```
+nvm install --lts
 ```
 
 To install a specific version of node:
@@ -50,4 +56,20 @@ If you want to see what versions are available to install:
 ```
 nvm ls-remote
 ```
+
+
+
+## Set Default Version
+
+```
+# Set 12.20.1 (or another version) as default
+nvm alias default 12.20.1
+```
+
+------
+
+## Links
+
+- [https://betterprogramming.pub/how-to-change-node-js-version-between-projects-using-nvm-3ad2416bda7e](https://betterprogramming.pub/how-to-change-node-js-version-between-projects-using-nvm-3ad2416bda7e)
+- [https://javascript.plainenglish.io/a-complete-guide-to-updating-your-node-js-version-via-nvm-4953d32df312](https://javascript.plainenglish.io/a-complete-guide-to-updating-your-node-js-version-via-nvm-4953d32df312)
 
