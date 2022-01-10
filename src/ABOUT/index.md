@@ -27,6 +27,7 @@ It is and will always be work in progress... 😉
   - [Quasar Framework](https://www.udemy.com/course/quasarframework)
   - [JavaScript - verstehe die seltsamen teile](https://www.udemy.com/course/javascript-verstehe-die-seltsamen-teile/)
 
+- [vuemastery.com](https://www.vuemastery.com/)
 - Udacity
   - [Udacity - Front end web developer](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd0011)
   - [Intermediate Javascript](https://www.udacity.com/course/intermediate-javascript-nanodegree--nd032)
@@ -38,7 +39,7 @@ It is and will always be work in progress... 😉
 
  [Steffen Häfelinger www.functionfactory.de](https://www.functionfactory.de)
 
-Steffen Häfelinger is a web developer located in Hamburg, Germany. He is a graduate of the Full Stack Web Developement at Hamburg Coding School. He is also working as a professional Musician, Songwriter & Audio Engineer.
+Steffen Häfelinger is a web developer located in Hamburg, Germany. He is a graduate of the Full Stack Web Developement Program at Hamburg Coding School. He is also working as a professional Musician, Songwriter & Audio Engineer.
 
 <!-- Web: www.steffen-haefelinger.com
 
