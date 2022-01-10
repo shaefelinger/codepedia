@@ -10,11 +10,11 @@ https://en.wikipedia.org/wiki/Bash_(Unix_shell)
 
 https://www.gnu.org/software/bash/
 
-MacOS version 10.15 (Catalina) and higher uses a similar, but slightly different default shell called **Z shell** or **Zsh**. In most ways Zsh is an exact replacement for Bash, so there is no need to switch over or install Bash instead.
+MacOS version 10.15 (Catalina) and higher uses a similar default shell called **Z shell** or **Zsh**. 
 
-In the terminal, the first thing you see is \$. This is called a _shell prompt_.
+ `$`is called a _shell prompt
 
-When a file, directory, or program is passed into a command, it is called an **\*argument** (\*the 2015 directory is an argument for the cd command.)
+A file, directory, or program is passed into a command, it is called an **\*argument** (the 2015 directory is an argument for the cd command.)
 
 ```
 $ cd 2015
@@ -45,6 +45,10 @@ $ cd 2015
 
 Space: `\`
 
+`/` root
+
+`~` User-directory
+
 ---
 
 ## Basic Command Stucture
@@ -69,6 +73,7 @@ Command [option] [parameter] [umleitung] [ziel der umleitung]
 | `rm <file>`         | delete File                                  |
 | `touch <file>`      | Create File                                  |
 | `open`              | Open File                                    |
+| `say`               | speech output                                |
 
 ---
 
@@ -85,25 +90,34 @@ $ ls -l
 
 drwxr-xr-x 5 cc eng 4096 Jun 24 16:51 action
 drwxr-xr-x 4 cc eng 4096 Jun 24 16:51 comedy
-drwxr-xr-x 6 cc eng 4096 Jun 24 16:51 drama
 -rw-r--r-- 1 cc eng   0 Jun 24 16:51 genres.txt
 ```
 
-The `-l` option lists files and directories as a table with seven columns separated by spaces:
+The `-l` option lists files and directories as a table with 7 columns:
 
 1. Access rights.
-2. Number of hard links. This number counts the number of child directories and files. This number includes the parent directory link (..) and current directory link (.).
-3. The username of the file’s owner. Here the username is cc.
-4. The name of the group that owns the file. Here the group name is eng.
-5. The size of the file in bytes.
-6. The date & time that the file was last modified.
-7. The name of the file or directory.
+2. Number of hard links. Counts child directories and files. Includes the parent directory link (..) and current directory link (.).
+3. Username of the file’s owner
+4. name of the group that owns the file
+5. size of the file in bytes.
+6. date & time that the file was last modified.
+7. name of the file or directory.
 
-In addition to using each option separately, like `ls -a` or `ls -l`, multiple options can be used together, like `ls -alt`
+multiple options can be used together, like `ls -alt`
 
 ls `-alt` lists all contents, including hidden files and directories, in long format, ordered by the date and time they were last modified.
 
 [ls command main options](https://www.rapidtables.com/code/linux/ls.html)
+
+------
+
+### Open
+
+`open. ` opens the current folder
+
+`open -a "Visual Studio Code"` open application
+
+` open -a "visual studio code" index.md` open file with application
 
 ---
 
@@ -164,6 +178,14 @@ mv file_origin.txt file_renamed.txt
 ```
 
 ->To rename a file, use mv with the old file as the first argument and the new file as the second argument
+
+trick: rename:
+
+```
+mv index.html about.html
+```
+
+
 
 ---
 
@@ -345,7 +367,9 @@ The _environment_ refers to the preferences and settings of the current user.
 
 ## The Nano-editor
 
-- If you are having trouble in nano and need to exit, use Ctrl + C.
+`nano` 
+
+- If you are having trouble in nano and need to exit, use Ctrl + C
 - Ctrl + O saves a file. O stands for output.
 - Ctrl + X exits the nano program. X stands for exit.
 - Ctrl + G opens a help menu.
@@ -418,6 +442,32 @@ store this in `~/.bash_profile`
 -  `env` returns a list of environment variables. You can redirect the output, using grep to select the variable you want to see.
 
 https://www.codecademy.com/courses/learn-the-command-line/articles/command-line-offline-project
+
+------
+
+## iTerm2
+
+[alternative Terminal](http://sourabhbajaj.com/mac-setup/iTerm/README.html)
+
+------
+
+## zsh
+
+- [Learn Zsh in 80 Minutes](https://www.youtube.com/watch?v=MSPu-lYF-A8)
+- reload: `source ~/.zshrc`
+- [getting started with oh-my-zsh](https://dienbui.medium.com/using-oh-my-zsh-f65be6460d3f)
+- [Use Zsh and Oh-my-zsh to Always Show Git Status in Your Terminal](https://www.youtube.com/watch?v=ktYqOVwnyTs)
+- [Top 12 Oh My Zsh Themes](https://travis.media/top-12-oh-my-zsh-themes-for-productive-developers/)
+- [powerline fonts](https://fmacedoo.medium.com/oh-my-zsh-with-powerline-fonts-pretty-simple-as-you-deserve-fbe7f6d23723)
+- [agnoster-theme in vs code](https://blog.zhaytam.com/2019/04/19/powerline-and-zshs-agnoster-theme-in-vs-code/)
+
+configuring the promt:
+
+`%d` , `%/` Current working directory. If an integer follows the ‘`%`’, it specifies a number of trailing components of the current working directory to show; zero means the whole path. A negative integer specifies leading components, i.e. `%-1d` specifies the first component.
+
+- [promt reference](https://zsh.sourceforge.io/Doc/Release/Prompt-Expansion.html#Prompt-Expansion)
+- [Add Git Branch Name to Terminal Prompt (bash) ](https://gist.github.com/joseluisq/1e96c54fa4e1e5647940)
+- [Add Git branch information to your ZSH prompt](https://www.themoderncoder.com/add-git-branch-information-to-your-zsh-prompt/)
 
 ---
 
