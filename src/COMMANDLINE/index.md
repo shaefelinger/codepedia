@@ -6,23 +6,35 @@
 
 Bash is the default shell for Linux and Mac
 
-https://en.wikipedia.org/wiki/Bash_(Unix_shell)
+[wiki Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell))
 
-https://www.gnu.org/software/bash/
+[https://www.gnu.org/software/bash/](https://www.gnu.org/software/bash/)
 
 MacOS version 10.15 (Catalina) and higher uses a similar default shell called **Z shell** or **Zsh**. 
 
- `$`is called a _shell prompt
+ 
 
-A file, directory, or program is passed into a command, it is called an **\*argument** (the 2015 directory is an argument for the cd command.)
+------
+
+## Basic Command Stucture
+
+`$`is called the _shell prompt
 
 ```
-$ cd 2015
+Command [options][arguments]  [redirect] [redirect destination]
 ```
+
+- Commands are case sensitive
+- **argument** indicates on what the command is to perform its action (file(s)/folder)
+- **Options** are generally preceded by a hyphen (**-**)
+- for most commands, options can be strung together: `ls -al` or seperated: `ls -a -l`
+- redirect: 
+  -  `>` is used for redirecting the output of a program to something other than stdout (standard output, which is the terminal by default). Overwrites the file if it exists or creates it if it doesn't exist
+  -  `>>` appends to a file or creates the file if it doesn't exist
+
+
 
 ---
-
-## Commands
 
 ## Helper Commands
 
@@ -51,29 +63,22 @@ Space: `\`
 
 ---
 
-## Basic Command Stucture
+## Commands Overview
 
-```
-Command [option] [parameter] [umleitung] [ziel der umleitung]
-```
-
----
-
-### Quick Overview
-
-| Commands            |                                              |
-| ------------------- | -------------------------------------------- |
-| `ls`                | List Files                                   |
-| `pwd`               | Arbeitsverzeichnis (print working directory) |
-| `cd <directory>`    | change directory                             |
-| `cd ..`             | one level up                                 |
-| `mkdir <directory>` | make directory - Verzeichnis erstellen       |
-| `rmdir <directory>` | Verzeichnis löschen                          |
-| `rm -r <folder>`    | Delete a folder and all contents             |
-| `rm <file>`         | delete File                                  |
-| `touch <file>`      | Create File                                  |
-| `open`              | Open File                                    |
-| `say`               | speech output                                |
+| Commands            |                                                              |
+| ------------------- | ------------------------------------------------------------ |
+| `ls`                | List Files                                                   |
+| `pwd`               | Arbeitsverzeichnis (print working directory)                 |
+| `cd <directory>`    | change directory                                             |
+| `cd ..`             | one level up                                                 |
+| `mkdir <directory>` | make directory - Verzeichnis erstellen                       |
+| `rmdir <directory>` | Verzeichnis löschen                                          |
+| `rm -r <folder>`    | Delete a folder and all contents                             |
+| `rm <file>`         | delete File                                                  |
+| `touch <file>`      | Create File                                                  |
+| `open`              | Open File                                                    |
+| `say`               | speech output                                                |
+| echo                | [display a line of text](https://www.howtogeek.com/446071/how-to-use-the-echo-command-on-linux/) |
 
 ---
 
@@ -111,7 +116,7 @@ ls `-alt` lists all contents, including hidden files and directories, in long fo
 
 ------
 
-### Open
+### open
 
 `open. ` opens the current folder
 
@@ -121,7 +126,7 @@ ls `-alt` lists all contents, including hidden files and directories, in long fo
 
 ---
 
-### Cat
+### cat
 
 `cat` command outputs the contents of a specified file.
 
@@ -185,8 +190,6 @@ trick: rename:
 mv index.html about.html
 ```
 
-
-
 ---
 
 ### rm - Delete
@@ -213,15 +216,15 @@ Be careful when you use `rm`! It deletes files and directories permanently. Ther
 
 ## (I/O) redirection.
 
-Through _redirection_ you can direct the input and output of a command to and from other files and programs, and chain commands together in a pipeline
+To direct the input and output of a command to and from other files and programs, and to chain commands together in a pipeline
 
-- _standard input_, abbreviated as **stdin**, is information inputted into the terminal through the keyboard or input device.
-- _standard output_, abbreviated as **stdout**, is the information outputted after a process is run.
-- _standard error_, abbreviated as **stderr**, is an error message outputted by a failed process.
+- **stdin** _standard input_: information inputted into the terminal through the keyboard or input device.
+- **stdout** _standard output_: information outputted after a process is run.
+- **stderr** _standard error_:  an error message outputted by a failed process.
 
 Redirection reroutes standard input, standard output, and standard error to or from a different location.
 
-redirects standard output of a command to a file, overwriting previous content.
+e.g. redirects standard output of a command to a file, overwriting previous content.
 
 redirects the standard output to a file
 
@@ -267,11 +270,7 @@ cat < deserts.txt
 
 ### `|`
 
-`|` is a “pipe.” redirects standard output of a command to another command.(checken...)
-
----
-
-### `wc` word count
+`|` is a “pipe.” redirects standard output of a command to another command.
 
 ---
 
@@ -289,37 +288,43 @@ $ sort continents.txt
 $ cat glaciers.txt | sort > sorted-glaciers.txt
 ```
 
-Here, the command takes the standard output from cat glaciers.txt and “pipes” it to sort. The standard output of sort is redirected to a new file named **sorted-glaciers.txt**.
+takes the standard output from cat glaciers.txt and “pipes” it to sort. The standard output of sort is redirected to a new file named **sorted-glaciers.txt**.
+
+---
+
+### `wc` word count
 
 ---
 
 ### `uniq`
 
-stands for “unique.” It filters out adjacent, duplicate lines in a file.
+ “unique.” 
 
-A more effective way to use `uniq` is to call `sort` to alphabetize a file, and “pipe” the standard output to uniq:
+- Filters out adjacent, duplicate lines in a file.
 
-```
-sort deserts.txt | uniq > uniq-deserts.txt
-```
+- An effective way to use `uniq` is to call `sort` to alphabetize a file, and “pipe” the standard output to uniq: Here we simply send filtered contents to **uniq-deserts.txt**,
 
-Here we simply send filtered contents to **uniq-deserts.txt**,
+  ```
+  sort deserts.txt | uniq > uniq-deserts.txt
+  ```
 
 ---
 
 ### `grep`
 
-grep stands for “global regular expression print.”
+ “global regular expression print”
 
-It searches files for lines that match a pattern and then returns the results. It is also case sensitive. searches for a text pattern and outputs it.
+- searches for a text pattern and outputs it.
+- searches files for lines that match a pattern and then returns the results. 
+- case sensitive.
 
 ```
-$ grep America continents.txt
+$ grep Europe continents.txt
 ```
 
-grep searched for anything that matched “America” in **continents.txt**.
+grep searched for anything that matched “Europe” in **continents.txt**.
 
-`grep -i` enables the command to be case insensitive
+`grep -i`  case insensitive
 
 `grep -R` searches all files in a directory and outputs filenames and lines containing matched results. -R stands for “recursive”.
 
@@ -331,39 +336,35 @@ grep -R Arctic /home/ccuser/workspace/geography
 
 `grep -R` searched the **/home/ccuser/workspace/geography** directory for the string “Arctic” and outputted **filenames and lines** with matching results.
 
-`grep -Rl` searches all files in a directory and outputs **only filenames** with matched results (so no lines)
+`grep -Rl` searches all files in a directory and outputs **only filenames** with matched results (no lines)
 
 ---
 
 ### `sed`
 
-stands for “stream editor.”
+ “stream editor.”
 
-searches for a text pattern, modifies it, and outputs it.
+- searches for a text pattern, modifies it, and outputs it.
 
-accepts standard input and modifies it based on an _expression_, before displaying it as output data. similar to “find and replace.”
+
+- accepts standard input and modifies it based on an _expression_, before displaying it as output data. similar to “find and replace.”
+
 
 ```
 sed 's/snow/rain/' forests.txt
 ```
 
 -  s: stands for “substitution.” It is _always_ used when using sed for substitution.
--  snow: the search string, or the text to find.
--  rain: the replacement string, or the text to add in place.
-
-searches **forests.txt** for the word “snow” and replaces it with “rain.” Importantly, the above command will only replace the first instance of “snow” on a line.
+-  searches **forests.txt** for the word “snow” and replaces it with “rain.” Will only replace the first instance of “snow” on a line.
 
 ```
 sed 's/snow/rain/g' forests.txt
 ```
 
-The above command uses the `g` expression, meaning “global. _all_ instances of “snow” on a line will be turned to “rain.”
+-  `g` expression, meaning “global. _all_ instances of “snow” on a line will be turned to “rain.”
 
----
 
-## The command line environment
-
-The _environment_ refers to the preferences and settings of the current user.
+------
 
 ## The Nano-editor
 
@@ -389,31 +390,49 @@ https://www.nano-editor.org/
 
 ---
 
-## Bash Profile
+## The command line environment
 
-is a file used to store environment settings for your terminal, and it’s accessible by the name `~/.bash_profile.`
+Preferences and settings of the current user.
+
+### Bash Profile
+
+is a file used to store environment settings for your terminal 
+
+`~/.bash_profile.`
 
 -  The ~ represents the user’s home directory.
 -  The . indicates a hidden file.
--  The name `~/.bash_profile` is important, since this is how the command line recognizes the bash profile.
+-  The name `~/.bash_profile` is important, this is how the command line recognizes the bash profile
 
-To open and edit the bash profile, you can use the command:
+To open and edit the bash profile, you can use
 
 ```
 nano ~/.bash_profile
 ```
 
-To activate the changes made in `~/.bash_profile` for the current session, use this following command:
+for zsh:
+
+```
+nano ~/.zshrc
+```
+
+To activate the changes made in `~/.bash_profile` for the current session, use this following command (without closing the terminal):
 
 ```
 source ~/.bash_profile
 ```
 
-This makes the changes in the bash profile available right away without closing the terminal and needing to start a new session.
+for zsh
+
+```
+source ~/.zshrc
+```
 
 ---
 
-## alias
+### alias
+
+create shortucts
 
 ```
 alias pd="pwd"
@@ -421,55 +440,7 @@ alias hy="history"
 alias ll="ls -la"
 ```
 
----
-
-## Environment Variables
-
-_Environment variables_ are variables that can be used across commands and programs and hold information about the environment.
-
-store this in `~/.bash_profile`
-
-`export VARIABLE="Value"` sets and exports an environment variable.
-
-`export` makes the variable to be available to all child sessions initiated from the session you are in
-
--  `USER` is the name of the current user.
-  - `export USER="Jane Doe"` sets the environment variable USER.
-  - the command `echo $USER` returns the value of the variable. Note that `$` is always used when returning a variable’s value.
--  `PS1` is the command prompt. `export PS1=">> "`
--  `HOME` is the home directory. It is usually not customized. `~` is short for HOME
--  `PATH` returns a colon `:` separated list of file paths. It is customized in advanced cases.
--  `env` returns a list of environment variables. You can redirect the output, using grep to select the variable you want to see.
-
-https://www.codecademy.com/courses/learn-the-command-line/articles/command-line-offline-project
-
-------
-
-## iTerm2
-
-[alternative Terminal](http://sourabhbajaj.com/mac-setup/iTerm/README.html)
-
-------
-
-## zsh
-
-- [Learn Zsh in 80 Minutes](https://www.youtube.com/watch?v=MSPu-lYF-A8)
-- reload: `source ~/.zshrc`
-- [getting started with oh-my-zsh](https://dienbui.medium.com/using-oh-my-zsh-f65be6460d3f)
-- [Use Zsh and Oh-my-zsh to Always Show Git Status in Your Terminal](https://www.youtube.com/watch?v=ktYqOVwnyTs)
-- [Top 12 Oh My Zsh Themes](https://travis.media/top-12-oh-my-zsh-themes-for-productive-developers/)
-- [powerline fonts](https://fmacedoo.medium.com/oh-my-zsh-with-powerline-fonts-pretty-simple-as-you-deserve-fbe7f6d23723)
-- [agnoster-theme in vs code](https://blog.zhaytam.com/2019/04/19/powerline-and-zshs-agnoster-theme-in-vs-code/)
-
-configuring the promt:
-
-`%d` , `%/` Current working directory. If an integer follows the ‘`%`’, it specifies a number of trailing components of the current working directory to show; zero means the whole path. A negative integer specifies leading components, i.e. `%-1d` specifies the first component.
-
-- [promt reference](https://zsh.sourceforge.io/Doc/Release/Prompt-Expansion.html#Prompt-Expansion)
-- [Add Git Branch Name to Terminal Prompt (bash) ](https://gist.github.com/joseluisq/1e96c54fa4e1e5647940)
-- [Add Git branch information to your ZSH prompt](https://www.themoderncoder.com/add-git-branch-information-to-your-zsh-prompt/)
-
-### My Personal Alias-Setup
+#### My Personal Alias-Setup
 
 ```
 alias zshrc="source ~/.zshrc"
@@ -494,11 +465,63 @@ alias ü="cd .."
 
 ---
 
-## Tips
+### Environment Variables
 
-cmd-shift-. zeigt versteckte File im Finder
+_Environment variables_  can be used across commands and programs and hold information about the environment.
 
----
+store this in `~/.bash_profile` (or `~/.zshrc` )
+
+set and export an environment variable:
+
+```
+export VARIABLE="Value"
+```
+
+
+
+`export` makes the variable to  available 
+
+-  `USER` is the name of the current user.
+  - `export USER="Jane Doe"` sets the environment variable USER.
+  - the command `echo $USER` returns the value of the variable. Note that `$` is always used when returning a variable’s value.
+-  `PS1` is the command prompt. `export PS1=">> "`
+-  `HOME` is the home directory. It is usually not customized. `~` is short for HOME
+-  `PATH` returns a colon `:` separated list of file paths. It is customized in advanced cases.
+-  `env` returns a list of environment variables. You can redirect the output, using grep to select the variable you want to see.
+
+### Excercise
+
+https://www.codecademy.com/courses/learn-the-command-line/articles/command-line-offline-project
+
+------
+
+### zsh
+
+- [Learn Zsh in 80 Minutes](https://www.youtube.com/watch?v=MSPu-lYF-A8)
+- reload: `source ~/.zshrc`
+- [getting started with oh-my-zsh](https://dienbui.medium.com/using-oh-my-zsh-f65be6460d3f)
+- [Use Zsh and Oh-my-zsh to Always Show Git Status in Your Terminal](https://www.youtube.com/watch?v=ktYqOVwnyTs)
+- [Top 12 Oh My Zsh Themes](https://travis.media/top-12-oh-my-zsh-themes-for-productive-developers/)
+- [powerline fonts](https://fmacedoo.medium.com/oh-my-zsh-with-powerline-fonts-pretty-simple-as-you-deserve-fbe7f6d23723)
+- [agnoster-theme in vs code](https://blog.zhaytam.com/2019/04/19/powerline-and-zshs-agnoster-theme-in-vs-code/)
+
+configuring the promt:
+
+`%d` , `%/` Current working directory. If an integer follows the ‘`%`’, it specifies a number of trailing components of the current working directory to show; zero means the whole path. A negative integer specifies leading components, i.e. `%-1d` specifies the first component.
+
+- [promt reference](https://zsh.sourceforge.io/Doc/Release/Prompt-Expansion.html#Prompt-Expansion)
+- [Add Git Branch Name to Terminal Prompt (bash) ](https://gist.github.com/joseluisq/1e96c54fa4e1e5647940)
+- [Add Git branch information to your ZSH prompt](https://www.themoderncoder.com/add-git-branch-information-to-your-zsh-prompt/)
+
+
+
+------
+
+## iTerm2
+
+[alternative Terminal](http://sourabhbajaj.com/mac-setup/iTerm/README.html)
+
+------
 
 ## Links
 
@@ -507,4 +530,10 @@ cmd-shift-. zeigt versteckte File im Finder
 - [OSX Bash profile
 - [https://www.learnenough.com/command-line-tutorial/basics ](https://natelandau.com/my-mac-osx-bash_profile/)
 - [commandlinepoweruser.com](https://commandlinepoweruser.com/)
--
+
+------
+
+## Tips
+
+cmd-shift-. shows hidden Files in Finder
+
