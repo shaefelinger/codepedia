@@ -1,18 +1,14 @@
-# The command line
+# Terminal
 
 ## Bash
 
-**Bash**, or the **B**ourne-**A**gain **SH**ell
-
-Bash is the default shell for Linux and Mac
+**Bash**, or the **B**ourne-**A**gain **SH**ell -  is the default shell for Linux and Mac
 
 [wiki Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell))
 
 [https://www.gnu.org/software/bash/](https://www.gnu.org/software/bash/)
 
 MacOS version 10.15 (Catalina) and higher uses a similar default shell called **Z shell** or **Zsh**. 
-
- 
 
 ------
 
@@ -31,8 +27,6 @@ Command [options][arguments]  [redirect] [redirect destination]
 - redirect: 
   -  `>` is used for redirecting the output of a program to something other than stdout (standard output, which is the terminal by default). Overwrites the file if it exists or creates it if it doesn't exist
   -  `>>` appends to a file or creates the file if it doesn't exist
-
-
 
 ---
 
@@ -394,11 +388,11 @@ https://www.nano-editor.org/
 
 Preferences and settings of the current user.
 
-### Bash Profile
+### Bash/zsh Profile
 
 is a file used to store environment settings for your terminal 
 
-`~/.bash_profile.`
+`~/.bash_profile` or `~/.zshrc`
 
 -  The ~ represents the user’s home directory.
 -  The . indicates a hidden file.
@@ -461,8 +455,6 @@ alias l="ls -F"
 alias ü="cd .."
 ```
 
-
-
 ---
 
 ### Environment Variables
@@ -477,8 +469,6 @@ set and export an environment variable:
 export VARIABLE="Value"
 ```
 
-
-
 `export` makes the variable to  available 
 
 -  `USER` is the name of the current user.
@@ -489,9 +479,7 @@ export VARIABLE="Value"
 -  `PATH` returns a colon `:` separated list of file paths. It is customized in advanced cases.
 -  `env` returns a list of environment variables. You can redirect the output, using grep to select the variable you want to see.
 
-### Excercise
-
-https://www.codecademy.com/courses/learn-the-command-line/articles/command-line-offline-project
+[Excercise](https://www.codecademy.com/courses/learn-the-command-line/articles/command-line-offline-project)
 
 ------
 
@@ -512,8 +500,6 @@ configuring the promt:
 - [promt reference](https://zsh.sourceforge.io/Doc/Release/Prompt-Expansion.html#Prompt-Expansion)
 - [Add Git Branch Name to Terminal Prompt (bash) ](https://gist.github.com/joseluisq/1e96c54fa4e1e5647940)
 - [Add Git branch information to your ZSH prompt](https://www.themoderncoder.com/add-git-branch-information-to-your-zsh-prompt/)
-
-
 
 ------
 
