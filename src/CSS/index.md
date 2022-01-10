@@ -4,7 +4,7 @@
 
 ------
 
-<img src="./assets/css isnt easy evans.jpeg" alt="assets/css isnt easy evans.jpeg" style="zoom: 50%;" />
+<!-- <img src="./assets/css isnt easy evans.jpeg" alt="assets/css isnt easy evans.jpeg" style="zoom: 50%;" /> -->
 
 
 ## CSS Syntax

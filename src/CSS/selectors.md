@@ -109,7 +109,7 @@
 
 ## Selector Links
 
-<img src="./assets/css selectors evans.jpeg" alt="css selectors evans" style="zoom: 50%;" />
+<!-- <img src="./assets/css selectors evans.jpeg" alt="css selectors evans" style="zoom: 50%;" /> -->
 
 - [CSS Selector Reference - w3schools](https://www.w3schools.com/cssref/css_selectors.asp)
 - [CSS Selector Tester - w3schools](https://www.w3schools.com/cssref/trysel.asp)

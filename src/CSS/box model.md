@@ -5,7 +5,7 @@
 
 The CSS box model is essentially a box that wraps around every HTML element. It consists of **margin**, **border**, **padding**, and the actual **content**.<br><img src="./assets/CSS boxmodel.png" alt="CSS boxmodel"  />
 
-<img src="./assets/css boxmodel evans.jpeg" alt="css boxmodel evans" style="zoom: 67%;" />
+<!-- <img src="./assets/css boxmodel evans.jpeg" alt="css boxmodel evans" style="zoom: 67%;" /> -->
 
 - [CSS Box Model - w3schools](https://www.w3schools.com/css/css_boxmodel.asp)
 - [The Box Model - MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model)

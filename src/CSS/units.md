@@ -1,7 +1,7 @@
 
 # Units
 
-<img src="./assets/css units evans.jpeg" alt="css units evans" style="zoom:50%;" />
+<!-- <img src="./assets/css units evans.jpeg" alt="css units evans" style="zoom:50%;" /> -->
 
 - [CSS Units - w3schools](https://www.w3schools.com/cssref/css_units.asp)
 - [CSS Values and Units - MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units)

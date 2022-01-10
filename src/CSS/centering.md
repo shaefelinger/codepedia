@@ -1,7 +1,7 @@
 
 # Centering
 
-<img src="./assets/css centering evans.jpeg" alt="css centering evans.jpeg" style="zoom:50%;" />
+<!-- <img src="./assets/css centering evans.jpeg" alt="css centering evans.jpeg" style="zoom:50%;" /> -->
 
 - [Centering Things - w3c](https://www.w3.org/Style/Examples/007/center.en.html)
 - [Centering in CSS: A Complete Guide - CSS Tricks](https://css-tricks.com/centering-css-complete-guide/)
