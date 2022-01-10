@@ -469,6 +469,29 @@ configuring the promt:
 - [Add Git Branch Name to Terminal Prompt (bash) ](https://gist.github.com/joseluisq/1e96c54fa4e1e5647940)
 - [Add Git branch information to your ZSH prompt](https://www.themoderncoder.com/add-git-branch-information-to-your-zsh-prompt/)
 
+### My Personal Alias-Setup
+
+```
+alias zshrc="source ~/.zshrc"
+alias zs="code ~/.zshrc"
+alias c="clear" 
+alias gs="git status"
+alias gc="git checkout"
+alias gb="git branch"
+alias gl="git lg"
+alias gp="git push"
+alias gcb="git checkout -b"
+alias gac="git add . && git commit -m"
+
+alias nrd="npm run dev"
+alias o="open"
+alias L="ls -lF"
+alias l="ls -F"
+alias ü="cd .."
+```
+
+
+
 ---
 
 ## Tips
