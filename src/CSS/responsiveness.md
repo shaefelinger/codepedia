@@ -59,7 +59,8 @@ CSS can detect the size of the current screen and apply different CSS styles
 
 ## Common device Sizes
 
-<img src="./assets/screen-sizes.png" alt="" style="zoom:50%;" />
+<img src="./assets/screen-sizes3.png" alt="screen sizes"  />
+
 
 
 The style without the media query is the smallest and the default style. The style inside the media query is the one for the larger screens and will overwrite the default style if the screen where the website is displayed is larger than specified.

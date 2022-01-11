@@ -2,7 +2,7 @@
 # Display Type 
 
 Inline, Block, Block-Inline
-<img src="./assets/HTML display-0743679.png" alt="img" style="zoom: 67%;" />
+<img src="./assets/HTML display.png" alt="img" style="zoom: 67%;" />
 
 [Block-Display-Elements:](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements)
 
@@ -18,7 +18,7 @@ Inline, Block, Block-Inline
 - block elements are containerts for other elements
 - Block elements are meant to structure the main parts of your page, by dividing your content in coherent blocks.
 
-Udemy #47 nochmal anschauen
+<!-- Udemy #47 nochmal anschauen, angela oder was? -->
 
 - [dev.to -lesser known Display Values](https://dev.to/ekaterinavu/lesser-known-css-display-values-448j#ruby)
 - [CSS Display Property - w3schools](https://www.w3schools.com/cssref/pr_class_display.asp)

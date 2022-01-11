@@ -33,8 +33,25 @@ An inline-element becomes a block-element if it's position is other than static.
 
 ## Z-Index
 
-The z-index property controls how far “back” or how far “forward” an element should appear on the web page when elements overlap<img src="assets/css%20stacking%20evans.jpeg" alt="css stacking evans" style="zoom:67%;" />
+The z-index property controls how far “back” or how far “forward” an element should appear on the web page when elements overlap
 
 - [Z-Index - w3schools](https://www.w3schools.com/cssref/pr_pos_z-index.asp)
 - [z-index - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index)
 
+### Stacking-Infos
+
+- you can use `position: absolute`  to overlap elements
+
+- by default: later in HTML = on top
+
+- z-index only works if the elements are in the same stacking context
+
+- new stacking context can be created in many different ways, e,g: this creates a stacking context
+
+  ```
+  p {
+  	opacity: 0.4;
+  }
+  ```
+
+  

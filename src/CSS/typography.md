@@ -1,4 +1,3 @@
-
 # Typography
 
 ## `font-family:`
@@ -7,7 +6,7 @@
 - It’s a good practice to limit the number of typefaces used on a web page to 2 or 3
 - When the name of a typeface consists of more than one word, it must be enclosed in double quotes. `font-family: "Courier New"`
 
-------
+---
 
 ## `font-weight:`
 
@@ -19,7 +18,7 @@
 - [CSS font-weight Property - w3schools](https://www.w3schools.com/cssref/pr_font_weight.asp)
 - [font-weight - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight)
 
-------
+---
 
 ## `font-style:`
 
@@ -28,7 +27,7 @@
 - [CSS font-style Property - w3schools](https://www.w3schools.com/cssref/pr_font_font-style.asp)
 - [font-style - MDN](https://developer.mozilla.org/de/docs/Web/CSS/font-style)
 
-------
+---
 
 ## `text-transform:`
 
@@ -38,7 +37,7 @@
 
 - [Text Transform - w3schools](https://www.w3schools.com/cssref/pr_text_text-transform.asp)
 
-------
+---
 
 ## `text-align:`
 
@@ -52,20 +51,21 @@ To move, or align text, we can use the text-align property.
 
 - [Text Align - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-align)
 
-------
+---
 
 ## `line-height:`
 
 The vertical spacing between lines of text can be modified with the line-height property. Line heights can take one of several values:
 
 - \* A unitless number, such as 1.2. This number is an absolute value that will compute the line height as a ratio of the font size. (prefered method)
+
 - \* A number specified by unit, such as 12px. This number can be any valid CSS unit, such as pixels, percents, ems, or rems.
 
-<img src="assets/css%20line%20height.png" alt="css line height" style="zoom:33%;" />
+  <img src="./assets/css%20line%20height2.png" alt="css line height" style="zoom:33%;" />
 
 - [Line Height - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/line-height)
 
-------
+---
 
 ## `word-spacing:`
 
@@ -75,7 +75,7 @@ The vertical spacing between lines of text can be modified with the line-height 
 
 - [Word Spacing - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/word-spacing)
 
-------
+---
 
 ## `letter-spacing:`
 
@@ -83,7 +83,7 @@ increase the spacing between letters, technically known as tracking. Can be adju
 
 - [Letter Spacing - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/letter-spacing)
 
-------
+---
 
 ## Fallback Fonts
 
@@ -91,7 +91,7 @@ when a stylesheet requires a font that is not installed on a user’s computer t
 
 ```css
 h1 {
-  font-family: "Garamond", "Times", serif;
+  font-family: 'Garamond', 'Times', serif;
 }
 ```
 
@@ -116,11 +116,11 @@ in HTML:
 To load Google fonts with the @font-face property:
 
 - Instead of using the font’s link in the HTML document, enter the link into the URL bar in the browser.
-- The browser will load the CSS rules. You will need to focus on the rules that are directly labeled as /* latin
+- The browser will load the CSS rules. You will need to focus on the rules that are directly labeled as /\* latin
 - Some of the latin rules are on separate lines. You will need each of these.
 - Copy each of the CSS rules labeled latin, and paste the rules from the browser to the top of style.css.
 
-------
+---
 
 ## `@font-face`
 
@@ -130,15 +130,14 @@ in CSS: (on the top of the CSS)
 
 ```css
 @font-face {
-  font-family: "Bitstream Vera Serif Bold";
-  src: url("https://mdn.mozillademos.org/files/2468/VeraSeBd.ttf");
+  font-family: 'Bitstream Vera Serif Bold';
+  src: url('https://mdn.mozillademos.org/files/2468/VeraSeBd.ttf');
 }
 @font-face {
-  font-family: "Roboto";
-  src: url(fonts/Roboto.woff2) format('woff2'),
-        url(fonts/Roboto.woff) format('woff'),
-        url(fonts/Roboto.tff) format('truetype');
-} 
+  font-family: 'Roboto';
+  src: url(fonts/Roboto.woff2) format('woff2'), url(fonts/Roboto.woff) format('woff'),
+    url(fonts/Roboto.tff) format('truetype');
+}
 ```
 
 Add a format for each file to specify which font to use.
@@ -151,7 +150,7 @@ Add a format for each file to specify which font to use.
 - [Font Face - w3schools](https://www.w3schools.com/cssref/css3_pr_font-face_rule.asp)
 - [Using @font-face: - CSS-Tricks](https://css-tricks.com/snippets/css/using-font-face/)
 
-------
+---
 
 ## `text-decoration:`
 

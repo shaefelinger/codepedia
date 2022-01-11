@@ -4,12 +4,9 @@
 
 ------
 
-<!-- <img src="./assets/css isnt easy evans.jpeg" alt="assets/css isnt easy evans.jpeg" style="zoom: 50%;" /> -->
-
-
 ## CSS Syntax
 
-<img src="./assets/CSS Syntax.png" alt="assets/CSS Syntax.png" style="zoom:33%;" /> <img src="assets/CSS Syntax 2.png" alt="assets/CSS Syntax2.png" style="zoom: 25%;" />
+<img src="./assets/CSS Syntax3.png" alt="CSS Syntax" style="zoom:50%;" />
 
 ------
 

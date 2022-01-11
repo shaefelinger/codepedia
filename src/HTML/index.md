@@ -6,7 +6,9 @@
 
 ## HTML Syntax
 
-<img src="./assets/HTML Syntax.png" alt="HTML Syntax.png" style="zoom: 33%;" />
+<!-- <img src="./assets/HTML Syntax.png" alt="HTML Syntax.png" style="zoom: 33%;" /> -->
+
+<img src="./assets/HTML Syntax2.png" alt="HTML Syntax2.png" style="zoom:50%;" />
 
 ---
 
@@ -316,7 +318,7 @@ The `data-*` attribute is used to store custom data private to the page or appli
 
 [w3-schools - data attribute](https://www.w3schools.com/tags/att_data-.asp)
 
-------
+---
 
 ## Meter
 
@@ -325,15 +327,12 @@ The `data-*` attribute is used to store custom data private to the page or appli
 ```html
 <label for="fuel">Fuel level:</label>
 
-<meter id="fuel"
-       min="0" max="100"
-       low="33" high="66" optimum="80"
-       value="50">
-    at 50/100
+<meter id="fuel" min="0" max="100" low="33" high="66" optimum="80" value="50">
+  at 50/100
 </meter>
 ```
 
-------
+---
 
 ## Progress
 
@@ -344,4 +343,3 @@ The `data-*` attribute is used to store custom data private to the page or appli
 ```
 
 [MDN progress](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress)
-

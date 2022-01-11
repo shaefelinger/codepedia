@@ -1,8 +1,6 @@
 
 # Centering
 
-<!-- <img src="./assets/css centering evans.jpeg" alt="css centering evans.jpeg" style="zoom:50%;" /> -->
-
 - [Centering Things - w3c](https://www.w3.org/Style/Examples/007/center.en.html)
 - [Centering in CSS: A Complete Guide - CSS Tricks](https://css-tricks.com/centering-css-complete-guide/)
 - [Center Anything with CSS - freecodecamp.org](https://www.freecodecamp.org/news/how-to-center-anything-with-css-align-a-div-text-and-more/)
@@ -35,7 +33,7 @@ Think of `text-align: center;`  as "content-align"
 
 ### b) margin: auto
 
-Center a block-level element by giving it margin-left and margin-right of auto (needs a set width, otherwise it would be full width and wouldn’t need centering).
+Center a **block-element** by giving it margin-left and margin-right of auto (**needs a set width**, otherwise it would be full width and wouldn’t need centering).
 
 ```css
 .center-me {
