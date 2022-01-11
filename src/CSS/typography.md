@@ -61,7 +61,7 @@ The vertical spacing between lines of text can be modified with the line-height 
 
 - \* A number specified by unit, such as 12px. This number can be any valid CSS unit, such as pixels, percents, ems, or rems.
 
-  <img src="./assets/css%20line%20height2.png" alt="css line height" style="zoom:33%;" />
+<img src="./assets/css lineheight2.png" alt="css line height"  />
 
 - [Line Height - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/line-height)
 
