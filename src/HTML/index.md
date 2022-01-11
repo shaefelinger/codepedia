@@ -6,8 +6,6 @@
 
 ## HTML Syntax
 
-<!-- <img src="./assets/HTML Syntax.png" alt="HTML Syntax.png" style="zoom: 33%;" /> -->
-
 <img src="./assets/HTML Syntax2.png" alt="HTML Syntax2.png" style="zoom:50%;" />
 
 ---
@@ -217,12 +215,12 @@ It is best practice to use relative file paths (if possible).
 
 Most retina displays use double the amount of pixels, so it is a good rule of thumb to make your images double the size of how you want them to include in your HTML document. In the example of the 500x500 pixels profile picture, you need to prepare the image so that it is 1000x1000 pixels wide
 
-|     |                                                                  |
-| --- | ---------------------------------------------------------------- |
-| jpg | compressed image                                                 |
-| png | background kann sich bewegen/verändern? -> braucht mehr Speicher |
-| gif | bewegen sich                                                     |
-| svg | Scalable Vector Graphics: Vector                                 |
+|      |                                                              |
+| ---- | ------------------------------------------------------------ |
+| jpg  | compressed image                                             |
+| png  | background kann sich bewegen/verändern? -> braucht mehr Speicher |
+| gif  | bewegen sich                                                 |
+| svg  | Scalable Vector Graphics: Vector                             |
 
 - [Images - w3schools](https://www.w3schools.com/html/html_images.asp)
 - [Image Element - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img)
@@ -287,7 +285,7 @@ Here’s what a typical webpage could include:
 - `<article>` as the main content of the page, like a blog post.
 - `<footer>` as the last element of the page, located at the bottom.
 
-<img src="./assets/html-sectioning-elements.png" alt="html-sectioning-elements" style="zoom:50%;" />
+<img src="./assets/HTML sectioning.png" alt="html-sectioning-elements" style="zoom:33%;" />
 
 ---
 
@@ -343,3 +341,4 @@ The `data-*` attribute is used to store custom data private to the page or appli
 ```
 
 [MDN progress](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress)
+
