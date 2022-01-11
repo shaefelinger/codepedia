@@ -7,6 +7,30 @@ IN PROGRESS:
 vue - bis components
 continue netninja vue ab emit
 
+JS functions
+check object todos
+JS classes
+likks remove hcs
+js4web
+
+- dom
+- browser events
+  git
+- status
+- revert
+- branches
+- best practice
+- github pr wf
+  sql
+- remove img
+- relations
+- db modeling
+- designing
+- schema
+- w3 join tables
+  vue
+- composition api
+
 ---
 
 DONE:

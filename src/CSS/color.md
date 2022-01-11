@@ -54,4 +54,5 @@ also: `color: hsla(34, 100%, 50%, 0.1);`
 - [Color Picker - w3schools](https://www.w3schools.com/colors/colors_picker.asp)
 - [Color - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value)
 - [Palettes - colorhunt.co](https://colorhunt.co/)
+- [paletton.com](https://paletton.com/#uid=15i0u0kllllaFw0g0qFqFg0w0aF)
 

@@ -25,6 +25,7 @@ composit selector usually has higher specificity
 - [Calculating a selector's specificity - w3.org](https://www.w3.org/TR/selectors-3/#specificity)
 - [Codecademy Forum - specificity](https://discuss.codecademy.com/t/how-can-i-calculate-specificity/363597)
 - [Hacks for dealing with specificity - csswizardry.com](https://csswizardry.com/2014/07/hacks-for-dealing-with-specificity/)
+- [Specifity calculator](https://specificity.keegan.st/)
 
 ------
 
