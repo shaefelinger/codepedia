@@ -1,4 +1,4 @@
-# JS Basics
+# JavaScript Basics
 
 ## Comments
 
@@ -10,7 +10,7 @@
 ## Basic Syntax and Logic
 
 - Add a semicolon at the end of each executable statement.
-- When you name a variable (or array, function etc.) the first character must be a letter, an underscore (_) or a dollar sign ($). Subsequent characters may be letters, numbers, underscores or dollar signs. Also:
+- When you name a variable (or array, function etc.) the first character must be a letter, an underscore (\_) or a dollar sign (\$). Subsequent characters may be letters, numbers, underscores or dollar signs. Also:
   - it can not be one of the [keywords](https://www.w3schools.com/js/js_reserved.asp) that are reserved for JavaScript (like var, if, else, for, break, etc)
   - JavaScript is case sensitive
   - By convention and for readability JavaScript uses **camelCase** and PascalCase. (kebap-case is not working)
@@ -25,20 +25,20 @@ Also Avoid:
 
 `Array, Date, eval, function hasOwnProperty, Infinity, isFinite, isNaN, isPrototypeOf, length, Math, NaN, name, Number, Object, prototype, String, toString, undefined, valueOf`
 
-------
+---
 
 ## Data Types
 
 JavaScript is a non-typed Language. When adding a number and a string, JavaScript will treat the number as a string.
 
-| Type        | Description                                                  |
-| :---------- | :----------------------------------------------------------- |
-| numbers     | JavaScript has only one type of numbers - it doesn't distinguish between integer and float |
-| strings     | Any series of characters like "John Doe". Written inside quotes: ‘...’ (preferred) or “...” |
-| Boolean     | **true** or **false**. Convention for Name: *isCondition*    |
-| arrays      | structure that allows you to store a list of values in one single reference. |
+| Type        | Description                                                                                             |
+| :---------- | :------------------------------------------------------------------------------------------------------ |
+| numbers     | JavaScript has only one type of numbers - it doesn't distinguish between integer and float              |
+| strings     | Any series of characters like "John Doe". Written inside quotes: ‘...’ (preferred) or “...”             |
+| Boolean     | **true** or **false**. Convention for Name: _isCondition_                                               |
+| arrays      | structure that allows you to store a list of values in one single reference.                            |
 | objects     | Constructs that have properties. Everything in JavaScript is an object, and can be stored in a variable |
-| *and also:* |                                                              |
-| Null        | represents the intentional absence of a value, and is represented by the keyword null |
-| Undefined   | also represents the absence of a value though it has a different use than null |
-| Symbol      | a newer feature to the language, symbols are unique identifiers, useful in more complex coding. |
+| _and also:_ |                                                                                                         |
+| Null        | represents the intentional absence of a value, and is represented by the keyword null                   |
+| Undefined   | also represents the absence of a value though it has a different use than null                          |
+| Symbol      | a newer feature to the language, symbols are unique identifiers, useful in more complex coding.         |

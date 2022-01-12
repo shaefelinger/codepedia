@@ -8,8 +8,8 @@ actionLink: /html/
 features:
   - title: null
     details: null
-  - title: under construction👷‍♂️
-    details: this site is - and will always be - work in progress...
+  - title: null
+    details: null
   - title: null
     details: null
     #   - title: null
