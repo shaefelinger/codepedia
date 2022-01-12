@@ -274,7 +274,7 @@ There are three different phases during the lifecycle of an event. They are:
 - the **at target** phase
 - and the **bubbling** phase
 
-<img src="https://video.udacity-data.com/topher/2017/December/5a2f0488_ud117-phases-of-event-flow/ud117-phases-of-event-flow.svg" alt="ud117-phases-of-event-flow" style="zoom: 25%;" />
+<!-- <img src="https://video.udacity-data.com/topher/2017/December/5a2f0488_ud117-phases-of-event-flow/ud117-phases-of-event-flow.svg" alt="ud117-phases-of-event-flow" style="zoom: 25%;" /> -->
 
 
 

@@ -10,9 +10,8 @@ continue netninja vue ab emit
 CLEANUP:
 
 js4web
+git
 
-- browser events
-  git
 - status
 - revert
 - branches
