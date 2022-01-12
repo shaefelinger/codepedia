@@ -18,33 +18,27 @@ Entity Relationship Diagrams
 - Entities - rows
 - Attributes -columns
 
-![image-20211011110518161](assets/erd1.png)
+<!-- ![image-20211011110518161](assets/erd1.png) -->
 
-
-
-![image-20211011110612176](assets/erd2.png)
+<!-- ![image-20211011110612176](assets/erd2.png) -->
 
 ## Relationships
 
 Describe, how the elements interact with each other
 
-
-
 ## Cardinality
 
-![image-20211011110854614](assets/erd3.png)
+<img src="assets/erd cardinality2.png" alt="Erd cardinality" style="zoom: 33%;"/>
 
 
+
+::: tip
 
 Think: what is the minimum and maximum:
 
-Zero or many:
+:::
 
-![image-20211011112435115](assets/erd4.png)
-
-![image-20211011112526269](assets/erd5.png)
-
-![image-20211011113408199](assets/erd6.png)
+<img src="assets/erd2_1.png" alt="Erd cardinality" style="zoom: 100%;"/>
 
 ## Primary Key
 
@@ -61,23 +55,25 @@ Rules
 - Foreign Key dont have to be uniqe, they can be repeated
 - There can be multiple Foreign Keys in one entity
 
-![image-20211011190514225](assets/erd7.png)
+<img src="assets/erd_keys.png" alt="Erd cardinality" style="zoom: 100%;"/>
 
 ### Composite Primary Key
 
-when 2 or more attributes are nescessary to uniquly idetify a record
+when 2 or more attributes are used to uniquly identify a record
 
 ##### Rules:
 
 1. Use the fewest amout of attributes possible
-2. Don't use attributes that are apt to change
-3. 
 
-![image-20211011190908384](assets/erd8.png)
+2. Don't use attributes that might change
+
+   <img src="assets/erd_composite.png" alt="Erd cardinality" style="zoom: 50%;"/>
+
+
 
 ## Bridge Table
 
-![image-20211011201811349](assets/erd9.png)
+<!-- ![image-20211011201811349](assets/erd9.png) -->
 
 Breaks up the many-to-many relationship
 
