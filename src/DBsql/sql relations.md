@@ -4,7 +4,7 @@ To refer from one table to the other. For Example:
 
 A table “Teachers” and a table “Courses”. In the table “Courses” you have a column called “Teacher” where you want to refer to an entry in the table “Teachers”.
 
-<img src="./assets/sql_relations.png" />
+<img src="./assets/sql_relations2.png" />
 
 ## Foreign keys
 
@@ -74,7 +74,7 @@ To enforce a strictly one-to-one relationship in PostgreSQL, we need another key
 license_id char(20) REFERENCES driver(license_id) UNIQUE
 ```
 
-<img src="./assets/onetoone.png" />
+<img src="./assets/onetoone2.png" />
 
 The full PostgreSQL script for creating these two tables is as follows:
 
@@ -94,10 +94,6 @@ CREATE TABLE license (
     license_id char(20) REFERENCES driver(license_id) UNIQUE
 ); 
 ```
-
-
-
-
 
 Select columns corresponding to `book` and `book_details` in the `SELECT` statement. Use the primary key of `book` and foreign key of `book_details` to write the `WHERE` clause of this query. For example:
 
@@ -127,11 +123,10 @@ ON table_one.primary_key = table_two.foreign_key
 For example, consider a table where we want one person to be able to have many email addresses. 
 
 - we need to represent a one-to-many relationship with two tables - a parent and a child table. 
-
 - a parent table will house a primary key and the child table will house both primary and foreign keys. 
 - The foreign key binds the child table to the parent table.
 
-<img src="./assets/onetomany.png" />
+<img src="./assets/onetomany2.png" />
 
 To write an `INNER JOIN` query of three tables, use the following syntax:
 
@@ -171,7 +166,7 @@ It will have these two constraints:
 - foreign keys referencing the primary keys of the two member tables.
 - a composite primary key made up of the two foreign keys.
 
-<img src="./assets/manytomany.png" />
+<img src="./assets/manytomany3.png" />
 
 Both `recipe_id` and `ingredient_id` also serve as a composite primary key for `recipes_ingredients`.
 
@@ -198,7 +193,7 @@ Both `recipe_id` and `ingredient_id` also serve as a composite primary key for `
 > ```
 >
 
-<img src="./assets/manytomany2.png" />
+<img src="./assets/manytomany4.png" />
 
 
 
@@ -211,15 +206,12 @@ Both `recipe_id` and `ingredient_id` also serve as a composite primary key for `
 
 ------
 
-
-
-
-
 For example, if you have a table “Courses” and a table “Students”, you want to connect these two tables in some way that a student can take many courses, and a course can have many students.
 
 This is done by creating a third table that represents the relationship.
 
-<img src="./assets/many2many.png" />
+<img src="./assets/many2many2.png" />
 
 ------
 
+​	
