@@ -157,5 +157,3 @@ or like this:
   	'test': require('components/Test.vue').default
 	}
 ```
-
-## 

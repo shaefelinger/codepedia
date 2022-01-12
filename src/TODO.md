@@ -15,6 +15,19 @@ sql
 
 - remove img
 
+EXPRESS
+
+- middleware
+- templating engines
+- MVC
+- sequelize
+-
+
+CSS
+
+- positioning codeblock
+- display-type
+
 OTHER:
 
 - backend basics - parts of a url
