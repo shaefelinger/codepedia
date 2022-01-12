@@ -108,7 +108,40 @@ The easiest way to create a Pull Request is to do so from the GitHub website
 
 Pull Requests are a good way to have your team mates look at your code before it is merged and do a code review.
 
-<img src="./assets/git pull request workflow.png" alt="git pull request workflow" style="zoom: 33%;" />
+#### Workflow:
+
+*On Github:*
+
+1. Click  "Create pull request"
+2. Check your changes below. Check for mistakes. If you find any, push them again
+3. Give the PR a meaningful title and a description if it is a larger change
+4. Create the pull request
+5. Choose someone to give you a code review
+6. If they request changes, change the code and push again
+7. If they approve, click "Squash and merge" (if there are conflicts, solve them directly in Github if possible)
+8. After merging, click "Delete branch" to delete the merged branch
+
+*Locally*
+
+1. Go to the master/main branch 
+
+   ```
+   git checkout main
+   ```
+
+2. Get the new commits of the merged branch
+
+   ```
+   git pull
+   ```
+
+3. Delete the old branch
+
+   ```
+   git branch -d *oldBranch*
+   ```
+
+   
 
 ------
 

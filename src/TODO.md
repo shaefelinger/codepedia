@@ -12,10 +12,6 @@ CLEANUP:
 js4web
 git
 
-- status
-- revert
-- branches
-- best practice
 - github pr wf
   sql
 - remove img
