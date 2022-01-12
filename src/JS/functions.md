@@ -28,7 +28,7 @@ greetWorld();  // -> calling the Function
 - it is common practice to use const as the keyword to declare the variable
 - Unlike function declarations, function expressions are not hoisted so they cannot be called before they are defined.
 
-<img src="./assets/js_function_expressions.png" alt="js_function_expressions.png" style="zoom:50%;" />
+<img src="./assets/js_function_expressions2.png" alt="js_function_expressions.png" style="zoom:50%;" />
 
 ```js
 const rectangleArea = function (width, height)  {
@@ -51,10 +51,6 @@ const rectangleArea = (width, height) => {
   return area;
 };
 ```
-
-
-
-
 
 ------
 
@@ -106,16 +102,14 @@ multiplier(5, 3); // returns 15
 
 **Parameters** allow functions to accept input(s) and perform a task using the input(s)
 
-<img src="./assets/js_parameters.png" alt="js_parameters.png" style="zoom: 67%;" />
+<img src="./assets/js_parameters2.png" alt="js_parameters.png" style="zoom: 50%;" />
 
 **Arguments** are the values that are passed to the function when it is called.
 
 - Functions should not be used for input/output -> recieves parameter - returns output
-
 - Function should be as simple as possible (ONE task)
 
-
-<img src="./assets/js_arguments.png" alt="js_arguments.png" style="zoom:67%;" />
+<img src="./assets/js_arguments2.png" alt="js_arguments.png" style="zoom:50%;" />
 
 ------
 
