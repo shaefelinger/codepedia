@@ -18,8 +18,6 @@ Git works by recording the changes you make to a project, storing those changes,
 | `git log`                 | show log                                                     |
 | `git --help`              | get help                                                     |
 
-
-
 ### `git init`
 
 Create repository (=Folder with superpower)
@@ -164,13 +162,9 @@ The difference is: if you reset a commit, you remove it; if you revert a commit,
 
 ## Backtracking
 
-
-
 #### head commit
 
 The commit you are currently on is known as the HEAD commit. In many cases, the most recently made commit is the HEAD commit.
-
-
 
 #### See the HEAD commit
 
@@ -178,7 +172,7 @@ The commit you are currently on is known as the HEAD commit. In many cases, the 
 
 ------
 
-#### Discards changes
+#### Discard changes
 
 `git checkout HEAD filename`
 or shorthand: `git checkout -- filename` 
@@ -207,6 +201,80 @@ Resets to a previous commit in your commit history. This command works by using 
 `git reset 5d69206`
 
 -> and then `git chekout *filename*`
+
+------
+
+### Temporarily switch to a different commit
+
+[stackoverflow-post](https://stackoverflow.com/questions/34519665/how-to-move-head-forward-checkout-revet-reflog-reset/34519716#34519716)
+
+If you want to temporarily go back to it, fool around, then come back to where you are, check out the desired commit:
+
+```sh
+# This will detach your HEAD, that is, leave you with no branch checked out:
+git checkout 0d1d7fc32
+```
+
+Or to make commits , make a new branch:
+
+```
+git checkout -b old-state 0d1d7fc32
+```
+
+To go back to where you were, just check out the branch you were on again. (If you've made changes, as always when switching branches, you'll have to deal with them as appropriate. You could reset to throw them away; you could stash, checkout, stash pop to take them with you; you could commit them to a branch there if you want a branch there.)
+
+#### Hard delete unpublished commits
+
+If you want to really get rid of everything you've done since then, there are two possibilities. One, if you haven't published any of these commits, simply reset:
+
+```sh
+# This will destroy any local modifications.
+# Don't do it if you have uncommitted work you want to keep.
+git reset --hard 0d1d7fc32
+
+# Alternatively, if there's work to keep:
+git stash
+git reset --hard 0d1d7fc32
+git stash pop
+# This saves the modifications, then reapplies that patch after resetting.
+# You could get merge conflicts, if you've modified things which were
+# changed since the commit you reset to.
+```
+
+If you mess up, you've already thrown away your local changes, but you can at least get back to where you were before by resetting again.
+
+#### Undo published commits with new commits
+
+On the other hand, if you've published the work, you probably don't want to reset the branch, since that's effectively rewriting history. In that case, you could indeed revert the commits. With Git, revert has a very specific meaning: create a commit with the reverse patch to cancel it out. This way you don't rewrite any history.
+
+```sh
+# This will create three separate revert commits:
+git revert a867b4af 25eee4ca 0766c053
+
+# It also takes ranges. This will revert the last two commits:
+git revert HEAD~2..HEAD
+
+#Similarly, you can revert a range of commits using commit hashes (non inclusive of first hash):
+git revert 0d1d7fc..a867b4a
+
+# Reverting a merge commit
+git revert -m 1 <merge_commit_sha>
+
+# To get just one, you could use `rebase -i` to squash them afterwards
+# Or, you could do it manually (be sure to do this at top level of the repo)
+# get your index and work tree into the desired state, without changing HEAD:
+git checkout 0d1d7fc32 .
+
+# Then commit. Be sure and write a good message describing what you just did
+git commit
+```
+
+The [`git-revert` manpage](https://git-scm.com/docs/git-revert) actually covers a lot of this in its description. Another useful link is [this git-scm.com section discussing git-revert](https://git-scm.com/book/en/v2/Git-Tools-Advanced-Merging#_undoing_merges).
+
+If you decide you didn't want to revert after all, you can revert the revert (as described here) or reset back to before the revert (see the previous section).
+
+You may also find this answer helpful in this case:
+[How can I move HEAD back to a previous location? (Detached head) & Undo commits](
 
 ------
 
@@ -255,14 +323,24 @@ Branch names can’t contain whitespaces
 
 ### Best Practice: 
 
-- Always delete branches that you don’t need anymore. The less branches you have, the better: it is much less confusing. 
+- Always delete branches that you don’t need anymore. The less branches you have, the better:  less confusing. 
 - Make it a habit to delete old branches before you create a new one.
 
-An example for a popular branching strategy for larger teams with continuous delivery: [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)
+- Give meaningful but short branch names. Describe the features or bugfix you are working on
+
+- usually use `-` between words: `user-login`, `fix-404-error`
+
+- a common naming strategy is, to use `feature/` or `bugfix/` as a prefix:
+
+  `feature/user-login`, `bugfix/404-error`
+
+- if the team uses a ticket system, e.g. Jira, you can use the project name and ticket number to identify the task you are working on
+
+  `feature/MYPROJECT-347-user-login`,`bugfix/MYPROJECT-347-404-error`
+
+- example for a popular branching strategy for larger teams with continuous delivery: [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)
 
 
-
-<img src="./assets/git branches best practice.png" alt="git branches best practice" style="zoom:33%;" />
 
 ------
 
@@ -290,9 +368,19 @@ In Git, branches are usually a means to an end. You create them to work on a new
 
 ------
 
-### Git stash
+## Git stash
 
 ------
 
-[Git for professionals](https://www.youtube.com/watch?v=Uszj_k0DGsg)
+## Git Setup
+
+### disable git pager
+
+disable full-screen display for branch (similar for other commands)
+
+```
+ git config --global pager.branch false
+```
+
+
 

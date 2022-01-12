@@ -32,6 +32,7 @@
 - [Mastering GIT - thoughtbot](https://thoughtbot.com/upcase/mastering-git)
 - [Video - Git Version Control in VS Code](https://code.visualstudio.com/docs/introvideos/versioncontrol)
 - https://academind.com/tutorials/git-the-basics/
+- [Git for professionals](https://www.youtube.com/watch?v=Uszj_k0DGsg)
 
 ---
 
