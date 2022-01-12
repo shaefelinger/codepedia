@@ -33,9 +33,7 @@ What is essential to a good database design?
 
    - **Many-to-Many**: In a many-to-many relationship, one or more rows of one table can link to 0, 1 or many rows in the other table. To implement this relationship, we must use a **mapping** or **intermediary** or **junction** table.
 
-     <img src="./assets/design1.png" alt="1*3ZOI8zSYPGs3d-kwAFDiTg" style="zoom:67%;" />
-
-   <img src="./assets/design2.png" alt="1*iIoWSlC0APU7UbGwJcR8Yw" style="zoom:67%;" />
+     <img src="./assets/design3.png" alt="1*3ZOI8zSYPGs3d-kwAFDiTg" style="zoom:67%;" />
 
 4. **Refine the Design —** Ask yourself these questions: do you have enough columns to represent your data? Could you derive a column from a combination of columns? Are you entering duplicate information? Do you have any empty fields in individual records? Can a large table be split into two? 
 
@@ -65,7 +63,7 @@ Not only must attributes store one thing, but these values must be all of one da
 
 A database schema gives an overview of the purpose of the database along with the data that makes up the database, how the data is organized into tables, how the tables are internally structured and how they relate to one another.
 
-<img src="./assets/schema.png" />
+<img src="./assets/schema2.png" />
 
 
 

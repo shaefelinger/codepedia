@@ -8,18 +8,16 @@ vue - bis components
 continue netninja vue ab emit
 
 check img -alt tags
+
 CLEANUP:
 
 sql
 
 - remove img
 
-- designing
-- schema
+OTHER:
 
-other
-
-- backend basics
+- backend basics - parts of a url
 
 ---
 
