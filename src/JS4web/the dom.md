@@ -5,14 +5,31 @@ The DOM stands for "Document Object Model"
 - tree-like structure that is a representation of the HTML document, the relationship between elements 
 - contains the content and properties of the elements.
 - Think of the DOM as the link between an HTML web page and scripting languages.
-
 - https://www.w3.org/standards/techs/dom#w3c_all The full list of DOM specs
 - [DOM Introduction](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
 - [Section 8.2 Parsing HTML documents](https://www.w3.org/TR/html5/syntax.html#parsing) from the W3C's HTML Documentation
 - [DOM Specification](https://www.w3.org/standards/techs/dom#w3c_all) on W3C
 - [HTML Document Object Model mentioned in the ECMAScript Specification](https://www.ecma-international.org/ecma-262/#sec-global-object) - the language specification used by JavaScript
 
-<img src="https://content.codecademy.com/courses/dom/dom_revision_2.svg" alt="dom_revision_2" style="zoom: 25%;" />
+## Example:
+
+<img src="./assets/dom.png" alt="dom_revision_2" style="zoom: 66%;" />
+
+```html
+<html>
+	<head>
+		<title>The Title</title>
+  </head>
+ 
+  <body>
+  	<h1>The heading</h1>
+  	<div>
+  		<p>Some text</p>
+  		<p>Some more text</P>
+  	</div>
+  </body>
+</html>
+```
 
 -  a **node** is the equivalent of each family member in a family tree. 
 -  the top-most node is called the ***root node*,** and it represents the HTML document. 
@@ -20,8 +37,6 @@ The DOM stands for "Document Object Model"
 -  A ***child node*** is the closest connected node to another node in the direction away from the root.
 
 There are nine different types of node objects in the DOM tree, eg  [*Element*](https://developer.mozilla.org/en-US/docs/Web/API/Element),  [*Text*](https://developer.mozilla.org/en-US/docs/Web/API/Text), etc.
-
-
 
 ## The document keyword
 

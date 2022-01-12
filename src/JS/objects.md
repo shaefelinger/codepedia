@@ -2,7 +2,7 @@
 
 ## Introduction
 
-- JavaScript objects are containers storing related data and functionality, extremely powerful in practice. 
+- JavaScript objects are containers storing related data and functionality -› extremely powerful in practice. 
 - variables in objects are called **properties**
 - functions in objects are called **methods**
 - properties and methods have a **key** and a **value**. The key must be unique. A key is like a variable name that points to a location in memory that holds a value.
@@ -550,12 +550,3 @@ are collections of methods and properties that JavaScript provides.
 - [Number Object - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) eg.: [Number.isInteger()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isInteger)
 - [String Object - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
 
-------
-
-> ## Object ToDos
->
-> - Find the value of this in a function inside of a method.
-> - Learn the outcome of using a property that has the exact same name as a setter/getter method.
-> - Create a new factory function that can create object instances of your choice.
-> - Read documentation on other destructuring techniques and apply it to your code.
-> - Try out other built-in object methods and learn what they do.

@@ -1,9 +1,9 @@
 # Links & Infos
 
-## div. Tipps und Infos
+## misc
 
-- Multiplizieren ist für Rechner einfache als dividieren: \*0.5 ist besser als /2
-- verschachtelte If-Statements möglichst vermeiden
+- multiply is easier for the computer than divide: \*0.5 is better than /2
+- avoid nested If-Statements
 - Convention für Boolean: `isCondition`
 - Convention for Names (From the Google Closure Library Style Guide):
 
@@ -18,16 +18,17 @@
 
 ---
 
-## Referenz-links
+## Reference-links
 
 - [MDN JS Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [w3schools JS Tutorial](https://www.w3schools.com/js/default.asp)
 - [devdocs](https://devdocs.io/html/)
 - [Handout Learn 2 Code - Hamburg Coding School](https://hamburgcodingschool.com/resources/handout-learn-to-code-hamburg-coding-school.pdf)
-- [Handout Javascript for Web - Hamburg Coding School](files/Handout - JavaScript for Web.pdf)
 - [Principles of Writing Consistent, Idiomatic JavaScript](https://github.com/rwaldron/idiomatic.js)
 
-## Diverse Links
+<!-- [Handout Javascript for Web - Hamburg Coding School](files/Handout - JavaScript for Web.pdf) -->
+
+## Misc Links
 
 - [codepen.io](https://codepen.io)
 - [repl.it](https://repl.it)

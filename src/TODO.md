@@ -7,13 +7,10 @@ IN PROGRESS:
 vue - bis components
 continue netninja vue ab emit
 
-cleanup:
-check object todos
-JS classes
-likks remove hcs
+CLEANUP:
+
 js4web
 
-- dom
 - browser events
   git
 - status
