@@ -38,7 +38,7 @@ Jekyll
 
 - simple reset:
 
-- ```
+- ```css
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -77,7 +77,7 @@ img {
 
 ## BEM Naming Convention
 
-```
+```css
 block__element--modifier
 ```
 
@@ -89,7 +89,7 @@ The block is the larger section that you want to display, e.g. a form. The eleme
 
 in CSS:
 
-```
+```css
 .form__button--highlighted {
 ...
 }

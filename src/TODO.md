@@ -12,16 +12,14 @@ CLEANUP:
 js4web
 git
 
-- github pr wf
-  sql
+sql
+
 - remove img
 - relations
 - db modeling
 - designing
 - schema
 - w3 join tables
-  vue
-- composition api
 
 ---
 

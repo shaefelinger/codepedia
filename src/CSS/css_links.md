@@ -16,7 +16,7 @@
   <!-- - [Handout HTML Hamburg Coding School](/files/Handout-HTML&CSS.pdf) -->
 - [Handout HTML/CSS Hamburg Coding School](https://hamburgcodingschool.com/resources/handout-html-css-hamburg-coding-school.pdf)
 
-## Diverse Links
+## Misc. Links
 
 - [codepen.io](https://codepen.io)
 - [caniuse.com - Browser Compatibility](https://caniuse.com/)

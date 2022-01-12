@@ -2,27 +2,42 @@
 
 Different Way of writing the Component Code - optional
 
-## OptionsAPI
-
-Limitations in bigger apps
-
-- code that belongs together is aplit up across multiple options (data, methods, computed)
-
-- resuing logic across components can be tricky or cumbersome
-
-- <img src="./assets/vue comp-api1.png" />
-
-  
-
-------
-
 ## Overview
 
-<img src="./assets/vue comp-api3.png" />
+##### Limitations of the OptionsAPI in bigger apps:
 
-<img src="./assets/vue comp-api4.png" />
+- code that belongs together is aplit up across multiple options (data, methods, computed)
+- resuing logic across components can be tricky or cumbersome
 
+##### What&why
 
+- alternative to the OptionsAPI
+- function-based solution, that allows you to keep logically related code together
+- uses `setup()` to expose logic/data to the template
+
+##### Methods, Computed, Watchers
+
+- Methods become regular funcions, defined in `setup()`
+- computed properties and watchers are defined with imported functions (from vue)
+
+##### Daty & Reactivity
+
+- Data can be managed as `ref()`(individual values or objects) or `reactive()`objects
+- refs and reactive objects are reactive - their nested values are not
+
+##### the `setup()-function`
+
+- called by Vue when the component is created
+- defines data + logic for the template
+- receives two arguments: reactive **props** and **context** (attrs, slots, emit())
+
+| Options API                     | Composition API                     |
+| ------------------------------- | ----------------------------------- |
+| `data() { … }`                  | `ref()`, `reactive()`               |
+| `methods: { doSmth() { … }}`    | `function doSomth() { … }`          |
+| `computed: { val() { … }}`      | `const val = computed()`            |
+| `watch: { … }`                  | `watch(dep, (val, oldV) => {})`     |
+| `provide: { … }` / `inject: []` | `provide(key, val)` / `inject(key)` |
 
 ------
 
@@ -352,13 +367,14 @@ only change the value in the place where you provide it!
 
 ## Lifecycle-Hooks
 
-you have functions, you can import to acces the hoks
+you have functions, that you can import to access the hooks
 
-
-
-`beforeCreate` and `created` is not needed -› `setup()` repeaces theese
-
-<img src="./assets/vue comp-api2.png" />
+| Options API                  | Composition API                         |
+| ---------------------------- | --------------------------------------- |
+| `berforeCreate`, `created`   | not needed -› `setup()` replaces theese |
+| `beforeMount`,`mounted`      | `onBeforeMout`, `onMounted`             |
+| `beforeUpdate`, `updated`    | `onBeforeUpdate`, `onUpdated`           |
+| `beforeUnmount`, `unmounted` | `onBeforeUnmount`, `onUnmounted`        |
 
 
 
@@ -383,10 +399,6 @@ pass a function to the hook-function:
       console.log('onBeforeMount');
     });
 ```
-
-------
-
-
 
 ------
 

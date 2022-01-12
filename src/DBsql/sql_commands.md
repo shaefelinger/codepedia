@@ -1,4 +1,4 @@
-# SQL w3 Commands
+# SQL Commands Reference
 
 - SQL keywords are NOT case sensitive: `select` is the same as `SELECT`
 - Semicolon is the standard way to separate each SQL statement in database systems that allow more than one SQL statement to be executed in the same call to the server.
@@ -25,7 +25,7 @@ The `SELECT` statement is used to select data from a database.
 
 The data returned is stored in a result table, called the result-set.
 
-### SELECT Syntax
+#### SELECT Syntax
 
 ```sql
 SELECT *column1*, *column2, ...*
@@ -38,7 +38,7 @@ Select all:
 SELECT * FROM table_name;
 ```
 
-## SQL SELECT DISTINCT
+### SQL SELECT DISTINCT
 
  is used to return only distinct (different) values
 
@@ -73,7 +73,7 @@ SELECT * FROM Customers
 WHERE Country='Germany';
 ```
 
-## Text Fields vs. Numeric Fields
+### Text Fields vs. Numeric Fields
 
 SQL requires single quotes around text values (most database systems will also allow double quotes).
 
@@ -114,11 +114,11 @@ WHERE City IN ('Paris','London','Berlin');
 
 ------
 
-## SQL AND, OR and NOT Operators
+### SQL AND, OR and NOT Operators
 
 `WHERE`  can be combined with `AND`, `OR`, and `NOT` operators.
 
-### AND Syntax
+#### AND Syntax
 
 ```
 SELECT *column1*, *column2, ...*
@@ -126,7 +126,7 @@ FROM *table_name*
 WHERE *condition1* AND *condition2* AND *condition3 ...*;
 ```
 
-### OR Syntax
+#### OR Syntax
 
 ```
 SELECT *column1*, *column2, ...*
@@ -146,7 +146,7 @@ SELECT * FROM Customers
 WHERE Country='Germany' OR Country='Spain';
 ```
 
-### NOT Syntax
+#### NOT Syntax
 
 ```
 SELECT *column1*, *column2, ...*
@@ -159,7 +159,7 @@ SELECT * FROM Customers
 WHERE NOT Country='Germany';
 ```
 
-### Combining AND, OR and NOT
+#### Combining AND, OR and NOT
 
 ```sql
 SELECT * FROM Customers
@@ -309,7 +309,7 @@ DELETE FROM table_name WHERE condition;
 DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste';
 ```
 
-## Delete All Records
+### Delete All Records
 
 >  Be careful when deleting records in a table! If you omit the `WHERE` clause, all records in the table will be deleted!
 
@@ -699,11 +699,7 @@ is used to combine rows from two or more tables, based on a related column betwe
 
 - `FULL (OUTER) JOIN`: Returns all records when there is a match in either left or right table
 
-
-
-
-
-## SQL INNER JOIN
+### SQL INNER JOIN
 
 Selects records that have matching values in both tables.
 
@@ -714,7 +710,7 @@ INNER JOIN table2
 ON table1.column_name = table2.column_name;
 ```
 
-![SQL INNER JOIN](https://www.w3schools.com/sql/img_innerjoin.gif)
+<img src="./assets/sql_innerjoin.png" alt="inner join" style="zoom:50%;"/>
 
 ```sql
 SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
@@ -747,7 +743,7 @@ FROM (
 
 ------
 
-## SQL LEFT JOIN
+### SQL LEFT JOIN
 
 returns all records from the left table (table1), and the matching records from the right table (table2).
 
@@ -760,7 +756,7 @@ ON table1.column_name = table2.column_name;
 
 > **Note:** In some databases LEFT JOIN is called LEFT OUTER JOIN.
 
-![SQL LEFT JOIN](https://www.w3schools.com/sql/img_leftjoin.gif)
+<img src="./assets/sql_leftjoin.png" alt="left join" style="zoom:50%;"/>
 
 This will select all customers, and any orders they might have:
 
@@ -775,7 +771,7 @@ ORDER BY Customers.CustomerName;
 
 ------
 
-## SQL RIGHT JOIN
+### SQL RIGHT JOIN
 
 returns all records from the right table (table2), and the matching records from the left table (table1). 
 
@@ -788,7 +784,9 @@ ON table1.column_name = table2.column_name;
 
 > **Note:** In some databases `RIGHT JOIN` is called `RIGHT OUTER JOIN`.
 
-![SQL RIGHT JOIN](https://www.w3schools.com/sql/img_rightjoin.gif)
+<img src="./assets/sql_rightjoin.png" alt="right join" style="zoom:50%;"/>
+
+
 
 ```sql
 SELECT Orders.OrderID, Employees.LastName, Employees.FirstName
@@ -799,11 +797,11 @@ ORDER BY Orders.OrderID;
 
 ------
 
-## SQL CROSS JOIN (MySQL)
+### SQL CROSS JOIN (MySQL)
 
 Returns all records from both tables (table1 and table2).
 
-![MySQL CROSS JOIN](https://www.w3schools.com/mysql/img_crossjoin.png)
+<img src="./assets/sql_crossjoin.png" alt="cross join" style="zoom:50%;"/>
 
 ```
 SELECT column_name(s)
@@ -830,7 +828,7 @@ WHERE Customers.CustomerID=Orders.CustomerID;
 
 ------
 
-## SQL Self Join
+### SQL Self Join
 
 the table is joined with itself.
 
