@@ -9,17 +9,16 @@ continue netninja vue ab emit
 
 CLEANUP:
 
-js4web
-git
-
 sql
 
 - remove img
-- relations
 - db modeling
 - designing
 - schema
-- w3 join tables
+
+other
+
+- backend basics
 
 ---
 
