@@ -7,12 +7,13 @@ IN PROGRESS:
 vue - bis components
 continue netninja vue ab emit
 
+check img -alt tags
 CLEANUP:
 
 sql
 
 - remove img
-- db modeling
+
 - designing
 - schema
 

@@ -28,7 +28,7 @@ Describe, how the elements interact with each other
 
 ## Cardinality
 
-<img src="assets/erd cardinality2.png" alt="Erd cardinality" style="zoom: 33%;"/>
+<img src="./assets/erd cardinality2.png" alt="Erd cardinality" style="zoom: 33%;"/>
 
 
 
@@ -38,7 +38,7 @@ Think: what is the minimum and maximum:
 
 :::
 
-<img src="assets/erd2_1.png" alt="Erd cardinality" style="zoom: 100%;"/>
+<img src="./assets/erd2_1.png" alt="Erd cardinality" style="zoom: 100%;"/>
 
 ## Primary Key
 
@@ -55,7 +55,7 @@ Rules
 - Foreign Key dont have to be uniqe, they can be repeated
 - There can be multiple Foreign Keys in one entity
 
-<img src="assets/erd_keys.png" alt="Erd cardinality" style="zoom: 100%;"/>
+<img src="./assets/erd_keys.png" alt="Erd cardinality" style="zoom: 100%;"/>
 
 ### Composite Primary Key
 
@@ -67,7 +67,7 @@ when 2 or more attributes are used to uniquly identify a record
 
 2. Don't use attributes that might change
 
-   <img src="assets/erd_composite.png" alt="Erd cardinality" style="zoom: 50%;"/>
+   <img src="./assets/erd_composite.png" alt="Erd cardinality" style="zoom: 33%;"/>
 
 
 
