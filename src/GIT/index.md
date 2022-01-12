@@ -17,7 +17,6 @@ Git works by recording the changes you make to a project, storing those changes,
 | `git commit -m "message"` | commit with message                                          |
 | `git log`                 | show log                                                     |
 | `git --help`              | get help                                                     |
-|                           |                                                              |
 
 
 
@@ -43,12 +42,12 @@ Show Status
 
  git knows 4 States of files:
 
-1. Untracked - If you create a new file locally, it is firstuntracked. Git knows that it is there, but it won’t do anything with it.
+1. Untracked - If you create a new file locally, it is first untracked. Git knows that it is there, but it won’t do anything with it.
 2. Unmodified - All changes that you committed now have the status unmodified.
 3. Modified - If you now change a file that has been added or committed before it is modified
-4. Staged - If you add a file with the git add command, the file gets staged. git knows the file, has collected all changes and willinclude them in the next commit
+4. Staged - If you add a file with the git add command, the file gets staged. git knows the file, has collected all changes and will include them in the next commit
 
-<img src="./assets/git_lifecycle.png" alt="git_lifecycle" style="zoom:67%;" />
+<img src="./assets/git_lifecycle2.png" alt="git_lifecycle" style="zoom:67%;" />
 
 ------
 
@@ -157,15 +156,9 @@ Undo last commit by resetting it.
 
 The difference is: if you reset a commit, you remove it; if you revert a commit, you add an additional commit to the history that undoes the changes.
 
-- Use **Reset** when: You want to undo the lastcommit(s).
+- Use **Reset** when: You want to undo the last commit(s).
 
-- Use **Revert** when: You want to undo a commit that is some commits back in the commithistory and it is important that you see in the point in the commit history when the revert has been done (may be important in large projects with many developers).
-
-
-
-<img src="./assets/git revert vs reset.png" alt="git revert vs reset" style="zoom:50%;" />
-
-
+- Use **Revert** when: You want to undo a commit that is some commits back in the commit history and it is important that you see in the point in the commit history when the revert has been done (might be important in large projects with many developers).
 
 ------
 
@@ -219,11 +212,11 @@ Resets to a previous commit in your commit history. This command works by using 
 
 ## GIT Branches
 
-<img src="./assets/git branches.png" alt="git branches" style="zoom: 33%;" />
+<img src="./assets/git branches2.png" alt="git branches" style="zoom: 50%;" />
 
 A branch is a string of commits that is independent of the other commits.
 
-- The master branch is usually the default branch.
+- The master/main branch is usually the default branch.
 - If you want to make changes independently from the other developers, you create a branch. When you are done, these can be merged back to the master branch.
 
 ------
