@@ -1,25 +1,25 @@
 # Classes - JS
 
-Classes are a tool that developers use to quickly produce similar objects.
+Used to quickly produce similar objects: 
 
-Create a template of an object -› reduce duplicate code and debugging time.
+create a template of an object -› reduce duplicate code and debugging time.
 
 ```js
 class Dog {
   constructor(name) {
     this._name = name;
-    this._behavior = 0;
+    this._age = 3;
   }
 
   get name() {
     return this._name;
   }
-  get behavior() {
-    return this._behavior;
+  get age() {
+    return this._age;
   }
 
-  incrementBehavior() {
-    this._behavior++;
+  incrementAge() {
+    this._age++;
   }
 }
 ```
@@ -32,31 +32,32 @@ JavaScript calls the `constructor()` method every time it creates a new _instanc
 class Dog {
   constructor(name) {
     this.name = name;
-    this.behavior = 0;
+    this.age = 3;
   }
 }
 ```
 
-- `Dog` is the name of our class. By convention, we capitalize and CamelCase class names.
-- Inside of the `constructor()` method, we use the `this` keyword -› refers to an instance of that class.
+- `Dog` is the name of the class. 
+- Convention, capitalize and CamelCase class names.
+- Inside of the `constructor()` method,  the `this` keyword refers to an instance of that class.
 
 ## Instance
 
 An _instance_ is an object that contains the property names and methods of a class, but with unique property values.
 
-Use `new` - Javascript calls a _constructor_ method when we create a new instance of a class.
+ `new` - Javascript calls a _constructor_ method to create a new instance
 
 ```js
 class Dog {
   constructor(name) {
     this.name = name;
-    this.behavior = 0;
+    this.age = 0;
   }
 }
 
-const halley = new Dog('Halley'); // Create new Dog instance
-console.log(halley.name); // Log the name value saved to halley
-// Output: 'Halley'
+const charlie = new Dog('Charlie'); // Create new Dog instance
+console.log(charlie.name); // Log the name value saved to charlie
+// Output: 'Charlie'
 ```
 
 ## Methods
@@ -67,25 +68,25 @@ console.log(halley.name); // Log the name value saved to halley
 class Dog {
   constructor(name) {
     this._name = name;
-    this._behavior = 0;
+    this._age = 3;
   }
 
   get name() {
     return this._name;
   }
 
-  get behavior() {
-    return this._behavior;
+  get age() {
+    return this._age;
   }
 
-  incrementBehavior() {
-    this._behavior++;
+  incrementAge() {
+    this._age++;
   }
 }
 ```
 
-- use getter methods for `name` and `behavior`
-- prepended the property names with underscores (`_name` and `_behavior`), which indicate these properties should not be accessed directly.
+- use getter methods for `name` and `age`
+- prepended the property names with underscores (`_name` and `_age`) -› indicates that these properties should not be accessed directly
 
 ---
 
@@ -93,47 +94,49 @@ class Dog {
 
 Create a parent class with properties and methods that we can extend to child classes.
 
-<img src="./assets/inheritance.png" alt="inheritance.png" style="zoom: 33%;" />
+When multiple classes share properties or methods, they become candidates for _inheritance_
 
-When multiple classes share properties or methods, they become candidates for _inheritance_ —
+<img src="./assets/inheritance3.png" alt="inheritance.png" style="zoom: 40%;" />
+
+
 
 ### Parent Class
 
-With inheritance, you can create a **_parent_** class (also known as a **_superclass_**) with properties and methods that multiple **_child_** classes (also known as **_subclasses_**) share.
+Create a **_parent_** class (also known as a **_superclass_**) with properties and methods that multiple **_child_** classes (***subclasses***) share.
 
 ```js
 class Animal {
   constructor(name) {
     this._name = name;
-    this._behavior = 0;
+    this._age = 3;
   }
 
   get name() {
     return this._name;
   }
 
-  get behavior() {
-    return this._behavior;
+  get age() {
+    return this._age;
   }
 
-  incrementBehavior() {
-    this._behavior++;
+  incrementAge() {
+    this._age++;
   }
 }
 ```
 
-In the example above, the `Animal` class contains the properties and methods that the `Cat` and `Dog` classes share (`name`, `behavior`, `.incrementBehavior()`).
+ `Animal` class contains the properties and methods that the `Cat` and `Dog` classes share (`name`, `age`, `.incrementAge()`).
 
-#### Subclass
+### Subclass
 
-- Use the `extends` keyword to create a subclass.
-- The `super` keyword calls the `constructor()` of a parent class.
+-  `extends`  creates a subclass
+-  `super` calls the `constructor()` of a parent class
 
 ```js
 class Cat extends Animal {
-  constructor(name, usesLitter) {
+  constructor(name, likesDogs) {
     super(name);
-    this._usesLitter = usesLitter;
+    this._likesDogs = likesDogs;
   }
 }
 ```
@@ -144,14 +147,20 @@ Create a new `Cat` instance:
 const luluCat = new Cat('Lulu', false);
 ```
 
-- The `extends` keyword makes the methods of the animal class available inside the cat class.
-- The constructor, called when you create a new `Cat` object, accepts two arguments, `name` and `usesLitter`.
-- The `super` keyword calls the constructor of the parent class.
-- `_usesLitter` is a new property that is unique to the `Cat` class, so we set it in the `Cat` constructor.
+-  `extends` makes the methods of the animal class available inside the cat class
+- The constructor, called when you create a new `Cat` object, accepts two arguments, `name` and `likesDogs`.
+- `super`  calls the constructor of the parent class
+- `_likesDogs` is a new property that is unique to the `Cat` class -› set it in the `Cat` constructor
 
-In a `constructor()`, you must always call the `super` method before you can use the `this` keyword - otherwise, JavaScript will throw a reference error.
+::: warning
 
-Best practice: call `super` on the first line of subclass constructors.
+In a `constructor()`, always call  `super()`  before you can use  `this` - otherwise, JavaScript will throw a reference error.
+
+Best practice: call `super` on the first line of subclass constructors!
+
+::: 
+
+
 
 ### Subclass Methods:
 
@@ -159,7 +168,7 @@ All of the parent methods are available to the child class.
 
 Because `luluCat` has access to the `name` getter, the code below logs `'Lulu'` to the console.
 
-```
+```js
 console.log(luluCat.name);
 ```
 
@@ -167,13 +176,13 @@ Additionally, child classes can contain their own properties, getters, setters, 
 
 ```js
 class Cat extends Animal {
-  constructor(name, usesLitter) {
+  constructor(name, likesDogs) {
     super(name);
-    this._usesLitter = usesLitter;
+    this._likesDogs = likesDogs;
   }
 
-  get usesLitter() {
-    return this._usesLitter;
+  get likesDogs() {
+    return this._likesDogs;
   }
 }
 ```
@@ -182,38 +191,39 @@ class Cat extends Animal {
 
 ## Static Methods
 
-Static methods are called on the class, but not on instances of the class.
+Static methods are called on the class, but not on instances of the class
 
-> Take the `Date` class, for example — you can both create `Date` instances to represent whatever date you want, and call _static_ methods, like `Date.now()` which returns the current date. The `.now()` method is static, so you can call it directly from the class, but not from an instance of the class.
+> Example: the `Date` class:  
+>
+> - can both create `Date` instances to represent whatever date, and call _static_ methods, like `Date.now()` which returns the current date. 
+> - The `.now()` method is static -› can be called directly from the class, but not from an instance of the class
 
-Use the `static` keyword to create a static method called `generateName`
+ `static` creates a static method called `generateName` (returns a random name when it’s called)
 
 ```js
 class Animal {
   constructor(name) {
     this._name = name;
-    this._behavior = 0;
+    this._age = 3;
   }
 
   static generateName() {
-    const names = ['Angel', 'Spike', 'Buffy', 'Willow', 'Tara'];
+    const names = ['Abby', 'Candy', 'Buffy', 'Emmy', 'Honey'];
     const randomNumber = Math.floor(Math.random() * 5);
     return names[randomNumber];
   }
 }
 ```
 
-In the example above, the `static` method called `.generateName()` returns a random name when it’s called.
-
-Call the `.generateName()` method with the following syntax:
+Call with the following syntax:
 
 ```js
 console.log(Animal.generateName()); // returns a name
 ```
 
-You cannot access the `.generateName()` method from instances of the `Animal` class or instances of its subclasses.
+> You cannot access the `.generateName()` method from instances of the `Animal` class or instances of its subclasses
 
----
+------
 
 ## Simple constructor function
 
@@ -228,7 +238,7 @@ function HouseKeeper(name, age, hasWorkPermit) {
 ```
 
 ```js
-const houseKeeper1 = new HouseKeeper('Tom', 29, true);
+const houseKeeper1 = new HouseKeeper('Carla', 33, true);
 ```
 
 ### methods
