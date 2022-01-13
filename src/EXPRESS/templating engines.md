@@ -38,7 +38,7 @@ For more information see [Using template engines with Express](http://expressjs.
 
 Dynamically genetated HTML-File. 
 
-Uses a HTMLish template with Placeholders/Snippets -› gets gendered as real HTML content
+Uses a HTMLish template with Placeholders/Snippets -› gets gendered as real HTML content. For Example:
 
 - EJS
 - Pug(Jade)

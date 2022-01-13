@@ -48,7 +48,7 @@ The z-index property controls how far “back” or how far “forward” an ele
 
 - new stacking context can be created in many different ways, e,g: this creates a stacking context
 
-  ```
+  ```css
   p {
   	opacity: 0.4;
   }

@@ -260,7 +260,7 @@ https://sequelize.org/master/manual/assocs.html
 
 
 
-<img src="./assets/sequelize_associations.png" />
+<!-- <img src="./assets/sequelize_associations.png" /> -->
 
 
 

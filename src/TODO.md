@@ -17,16 +17,14 @@ sql
 
 EXPRESS
 
-- middleware
-- templating engines
 - MVC
 - sequelize
 -
 
 CSS
 
-- positioning codeblock
 - display-type
+- flex?
 
 OTHER:
 

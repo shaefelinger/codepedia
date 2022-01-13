@@ -10,7 +10,7 @@ create folders
 
 => model and view usually never interact with each other -> presentaion and logic of data is totally seperated
 
-![mvc](./assets/mvc.png)
+<!-- ![mvc](./assets/mvc.png) -->
 
 put all the logic in seperate files, eg.
 
