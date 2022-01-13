@@ -4,7 +4,14 @@ A middleware is a part of your node.js software that gets executed for every inc
 
 middleware needs to be mounted using the method `app.use(path, middlewareFunction)`. The first `path` argument is optional. If you don’t pass it, the middleware will be executed for all requests.
 
-<img src="./assets/middleware.png" alt="middleware" style="zoom: 33%;" />
+```
+REQUEST 
+-> Middleware (req, res, next) => { ... next() }  
+-> Middleware (req, res, next) => { ... res.send() }  
+-> Response
+```
+
+
 
 `app.use();` -> adds a new middleware
 
