@@ -34,15 +34,20 @@ For more information see [Using template engines with Express](http://expressjs.
 
 ## Templating Engines
 
-![templating_engines](./assets/templating_engines.png)
 
-Dynamically genetated HTML-File
+
+Dynamically genetated HTML-File. 
+
+Uses a HTMLish template with Placeholders/Snippets -› gets gendered as real HTML content
 
 - EJS
 - Pug(Jade)
 - Handlebars
 
-![templ_overview](./assets/templ_overview.png)
+| EJS                              | Pug (Jade)                               | Handlebars                               |
+| -------------------------------- | ---------------------------------------- | ---------------------------------------- |
+| `<p><%= name %></p`              | `p #{name}`                              | `<p>{{ name }}</p>`                      |
+| Normal HTML and plain JavaScript | Minimal HTML and custom temlate language | normal HTML and custom template language |
 
 ---
 
