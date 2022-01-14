@@ -10,6 +10,8 @@ continue netninja vue ab emit
 check img -alt tags
 
 CLEANUP:
+VUEX
+NUXT
 
 sql
 
@@ -17,9 +19,7 @@ sql
 
 EXPRESS
 
-- MVC
 - sequelize
--
 
 CSS
 

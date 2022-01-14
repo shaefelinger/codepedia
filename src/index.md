@@ -4,7 +4,7 @@ home: true
 
 tagline: My little personal coding reference...
 actionText: Start →
-actionLink: /html/
+actionLink: /JS/
 features:
   - title: null
     details: null
