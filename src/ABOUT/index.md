@@ -43,7 +43,8 @@ It is and will always be work in progress... 😉
 
 Steffen Häfelinger / [www.functionfactory.de](https://www.functionfactory.de)
 
-Steffen Häfelinger is a web developer located in Hamburg, Germany. He is a graduate of the Full Stack Web Developement Program at Hamburg Coding School. He is also working as a professional Musician, Songwriter & Audio Engineer.
+Steffen Häfelinger is a software developer located in Hamburg, Germany.
+He is also working as a professional Musician, Songwriter & Producer.
 
 <!-- Web: [www.functionfactory.de](https://www.functionfactory.de) -->
 
