@@ -434,9 +434,74 @@ Promises are a difficult concept even for experienced developers
 - We should chain multiple promises rather than nesting them.
 - To take advantage of concurrency, we can use `Promise.all()`.
 
+------
+
+## Overview
+
+```js
+const doSomething = (value1, value2) => {
+  const myAwesomePromise = new Promise((resolve, reject) => {
+    if (value1 > value2) {
+      resolve('Success!!'); // similar to return  'Success!!'
+    } else {
+      reject('Failure!!'); // similar to return  new Error('Failure!!');
+    }
+  });
+  return myAwesomePromise;
+};
+
+// .then
+doSomething(1, 2)
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+
+// async await
+const asyncTest = async () => {
+  try {
+    const result = await doSomething(3, 2);
+    console.log(result);
+  } catch (err) {
+    console.log(err);
+  }
+};
+asyncTest();
+
+```
+
+simplified
+
+```js
+const doSomething = (value1, value2) => {
+  return new Promise((resolve, reject) => {
+    if (value1 > value2) {
+      resolve('Success!!'); // similar to return  'Success!!'
+    } else {
+      reject('Failure!!'); // similar to return  new Error('Failure!!');
+    }
+  });
+};
+```
+
+
+
+------
+
+## Convert Callback to Promise
+
+[Converting callbacks into promises](https://zellwk.com/blog/converting-callbacks-to-promises/)
+
+
+
+------
+
 ## Promises Links
 
 - [WebDev promises](https://web.dev/promises/)
+
 - [MDN Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) 
 
 - [MDN Graceful asynchronous programming with Promises](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Promises)
@@ -444,4 +509,6 @@ Promises are a difficult concept even for experienced developers
 - [Promises for Dummies](https://www.digitalocean.com/community/tutorials/javascript-promises-for-dummies)
 
 - [Codecademy Promises cheatsheet](https://www.codecademy.com/learn/paths/full-stack-engineer-career-path/tracks/fscp-async-javascript-and-http-requests/modules/fecp-learn-javascript-syntax-promises/cheatsheet)
+
+  
 
