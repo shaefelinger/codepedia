@@ -66,7 +66,7 @@ replace one substring inside a string with another substring.
 
 ------
 
-### [`.split()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split)
+### [`.split()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) -› create array
 
 divides a String into an array
 
