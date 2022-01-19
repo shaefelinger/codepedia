@@ -41,6 +41,8 @@ const rectangleArea = function (width, height)  {
 
 ### C) Arrow Functions
 
+[MDN Arrow Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+
 - ES6 introduced. 
 - removes the need to type out the keyword `function`
 - Instead, you first include the parameters inside the ( ) and then add an arrow => that points to the function body surrounded in { } like this:
@@ -84,6 +86,14 @@ The most condensed form to refactor arrow function syntax is **concise body**.
    ```
 
 Examples:
+
+```js
+const getFive = () => 5
+const addFive = a => a + 5
+const divide = (a, b) => a / b
+```
+
+
 
 ```js
 const dayIsWednesday = day => day === 'Wednesday' ? true : false;
@@ -131,6 +141,8 @@ console.log(greetWorld()); // Output: Hello, World!
 
 ## Default Parameters
 
+[MDN: Default parameters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters)
+
 To have a default/fallback value if no argument passed or if the argument is undefined.
 
 ```js
@@ -148,6 +160,25 @@ Old Syntax:
 name = name || "Default Value"
 //But 0 is also undefined -> new Syntax is better!!
 ```
+
+
+
+```js
+function add(a, b = 0) {
+  return a + b
+}
+
+// is the same as
+const add = (a, b = 0) => a + b
+
+// is the same as
+function add(a, b) {
+  b = b === undefined ? 0 : b
+  return a + b
+}
+```
+
+
 
 ------
 

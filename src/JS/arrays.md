@@ -175,6 +175,12 @@ to **merge** two or more **arrays**. This does not change the existing arrays, b
 
 executes a reducer function on each element of the array, **resulting in single output value**
 
+```js
+dogs.reduce((allTemperaments, dog) => {
+  return [...allTemperaments, ...dog.temperament]
+}, [])
+```
+
 ------
 
 ## [Array Iterators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
@@ -231,6 +237,11 @@ console.log(numbers); // Output: [1, 2, 3, 4, 5]
 console.log(bigNumbers); // Output: [10, 20, 30, 40, 50]
 ```
 
+```
+dogs.map(dog => dog.name)
+// ['Name 1', 'Name 2', 'Name 3']
+```
+
 ------
 
 ### [`.filter()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
@@ -245,11 +256,23 @@ returns an array of elements after filtering out certain elements from the origi
   const shortWords = words.filter(word => word.length < 6);
   ```
 
+```js
+dogs.filter(dog => dog.temperament.includes('Faithful'))
+```
+
+
+
 ------
 
 ### [`.find`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
 
  returns the value of the first element that satisfies the  testing function
+
+```js
+dogs.find(dog => dog.name === 'Bernese Mountain Dog')
+```
+
+
 
 ------
 
@@ -298,13 +321,21 @@ console.log(summedNums); // Output: 117
 
 ### [`.some()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
 
-tests whether at least one element in the array passes the test 
+tests whether at least one element in the array passes the test. Returns boolean 
+
+```js
+dogs.some(dog => dog.temperament.includes('Aggressive'))
+```
 
 ------
 
 ### [`.every()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every)
 
-tests whether all elements in the array pass the test
+tests whether all elements in the array pass the test. Returns boolean 
+
+```js
+dogs.every(dog => dog.temperament.includes('Intelligent'))
+```
 
 ------
 

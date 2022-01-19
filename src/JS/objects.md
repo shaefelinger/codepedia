@@ -177,6 +177,8 @@ returnAnyProp(spaceship, 'homePlanet'); // Returns 'Earth'
 
 new in ES6: new shortcuts for assigning properties to variables known as **destructuring**.
 
+[MDN: Object initializer *New notations in ECMAScript 2015*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#New_notations_in_ECMAScript_2015)
+
 ```js
 const monsterFactory = (name, age) => {
     return { 
@@ -194,6 +196,18 @@ const monsterFactory = (name, age) => {
     }
   };
 ```
+
+```js
+const a = 'Hi there'
+const b = 23
+const c = {d: [true, false]}
+console.log({a, b, c})
+
+// this is the same as:
+console.log({a: a, b: b, c: c})
+```
+
+
 
 ------
 
@@ -497,6 +511,10 @@ ghost.scare(); // 'BOO!'
 
 ## Object Destructured Assignment
 
+[MDN: Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+
+
+
 - to extract key-value pairs from objects and save them as variables. 
 
 - create a variable with the name of an object’s key that is wrapped in curly braces { } and assign to it the object.
@@ -526,6 +544,28 @@ ghost.scare(); // 'BOO!'
   const { day } = vampire.preferences; 
   console.log(day); // Prints 'stay inside'
   ```
+  
+- ```js
+  function makeCalculation({x, y: d, z = 4}) {
+    return Math.floor((x + d + z) / 3)
+  }
+  
+  // this is the same as
+  function makeCalculation(obj) {
+    const {x, y: d, z = 4} = obj
+    return Math.floor((x + d + z) / 3)
+  }
+  
+  // which is the same as
+  function makeCalculation(obj) {
+    const x = obj.x
+    const d = obj.y
+    const z = obj.z === undefined ? 4 : obj.z
+    return Math.floor((x + d + z) / 3)
+  }
+  ```
+  
+  
 
 ------
 

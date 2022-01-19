@@ -94,9 +94,44 @@ console.log(!excited); // Prints false
 
 
 
+## “Boolean Tricks” with Logical Operators
 
+|                                                              |      | Example                             | Result                                                 |
+| ------------------------------------------------------------ | ---- | ----------------------------------- | ------------------------------------------------------ |
+| Boolean Coercion via double NOT (double bang) operator       | `!!` | `!!““`, `!!1`                       | false, true                                            |
+| Default value assignment via OR operator                     | `||` | `const name = someInput || 'Jane'`  | someInput if not falsy, ‘Jane’ otherwise               |
+| [Nullish coalescing operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator): Use value if condition is true via AND operator | `&&` | `const name = isLoggedIn && ‘Jane’` | ‘Jane’ is set if `isLoggedIn` is true, false otherwise |
 
+## [Nullish coalescing operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator) 
 
+```js
+// here's what we often did for this:
+x = x || 'some default'
+
+// but this was problematic for numbers or booleans where "0" or "false" are valid values
+
+// So, if we wanted to support this:
+add(null, 3)
+
+// here's what we had to do before:
+function add(a, b) {
+  a = a == null ? 0 : a
+  b = b == null ? 0 : b
+  return a + b
+}
+
+// here's what we can do now
+function add(a, b) {
+  a = a ?? 0
+  b = b ?? 0
+  return a + b
+}
+
+// in React:
+function DisplayContactName({contact}) {
+  return <div>{contact.name ?? 'Unknown'}</div>
+}Example
+```
 
 
 
@@ -118,4 +153,51 @@ console.log(typeof unknown2); // Output: number
 const unknown3 = true; 
 console.log(typeof unknown3); // Output: boolean
 ```
+
+------
+
+## Optional Chaining
+
+[MDN: Optional chaining](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
+
+Also known as the "Elvis Operator," this allows you to safely access properties and call functions that may or may not exist. Before optional chaining, we used a hacky-workaround that relied on falsy/truthy-ness.
+
+If you find yourself doing `?.` a lot in your code, you might want to consider the place where those values originate and make sure they consistently return the values they should.
+
+```js
+// what we did before optional chaining:
+const streetName = user && user.address && user.address.street.name
+
+// what we can do now:
+const streetName = user?.address?.street?.name
+
+// this will run even if options is undefined (in which case, onSuccess would be undefined as well)
+// however, it will still fail if options was never declared,
+// since optional chaining cannot be used on a non-existent root object.
+// optional chaining does not replace checks like if (typeof options == "undefined")
+const onSuccess = options?.onSuccess
+
+// this will run without error even if onSuccess is undefined (in which case, no function will be called)
+onSuccess?.({data: 'yay'})
+
+// and we can combine those things into a single line:
+options?.onSuccess?.({data: 'yay'})
+
+// and if you are 100% certain that onSuccess is a function if options exists
+// then you don't need the extra ?. before calling it. Only use ?. in situations
+// where the thing on the left might not exist.
+options?.onSuccess({data: 'yay'})
+
+// in React:
+function UserProfile({user}) {
+  return (
+    <div>
+      <h1>{user.name}</h1>
+      <strong>{user.bio?.short ?? 'No bio provided'}</strong>
+    </div>
+  )
+}
+```
+
+------
 

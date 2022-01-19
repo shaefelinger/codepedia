@@ -83,6 +83,8 @@ shoppingCart = ['Books']
 
 ## Ternary Operator
 
+[MDN: Conditional (ternary) operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)
+
 to simplify an if...else statement.
 
 > if statements return no values- this does not work:
@@ -141,6 +143,41 @@ if (isNightTime) {
   ```js
   console.log(a % 2 === 0 ? `${a} is even.` : `${a} is odd.`);
   ```
+
+```react
+const message = bottle.fullOfSoda
+  ? 'The bottle has soda!'
+  : 'The bottle may not have soda :-('
+
+// is the same as
+let message
+if (bottle.fullOfSoda) {
+  message = 'The bottle has soda!'
+} else {
+  message = 'The bottle may not have soda :-('
+}
+
+// in React:
+function TeddyBearList({teddyBears}) {
+  return (
+    <React.Fragment>
+      {teddyBears.length ? (
+        <ul>
+          {teddyBears.map(teddyBear => (
+            <li key={teddyBear.id}>
+              <span>{teddyBear.name}</span>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <div>There are no teddy bears. The sadness.</div>
+      )}
+    </React.Fragment>
+  )
+}
+```
+
+
 
 ------
 

@@ -2,6 +2,8 @@
 
 ## Spread... operator
 
+[MDN: Spread syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
+
 written with three consecutive dots ( `...` ) gives you the ability to expand, or *spread*, [iterable objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators#Iterators) into multiple elements.
 
 ```js
@@ -46,6 +48,8 @@ const idBlog = {...blog, id: 1}
 ------
 
 ## ...Rest parameter
+
+[MDN: Rest parameters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters)
 
 The **rest parameter**, also written with three consecutive dots ( `...` ), allows you to represent an indefinite number of elements as an array. 
 
@@ -93,6 +97,57 @@ console.log(howMany("string", null, [1, 2, 3], { })); // You have passed 4 argum
 The rest parameter eliminates the need to check the args array and allows us to apply map(), filter() and reduce() on the parameters array.
 
 [freecodecamp - rest](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/es6/use-the-rest-parameter-with-function-parameters	)
+
+
+
+## Example Spread & Rest
+
+```js
+const arr = [5, 6, 8, 4, 9]
+Math.max(...arr)
+// is the same as
+Math.max.apply(null, arr)
+
+const obj1 = {
+  a: 'a from obj1',
+  b: 'b from obj1',
+  c: 'c from obj1',
+  d: {
+    e: 'e from obj1',
+    f: 'f from obj1',
+  },
+}
+const obj2 = {
+  b: 'b from obj2',
+  c: 'c from obj2',
+  d: {
+    g: 'g from obj2',
+    h: 'g from obj2',
+  },
+}
+console.log({...obj1, ...obj2})
+// is the same as
+console.log(Object.assign({}, obj1, obj2))
+
+function add(first, ...rest) {
+  return rest.reduce((sum, next) => sum + next, first)
+}
+// is the same as
+function add() {
+  const first = arguments[0]
+  const rest = Array.from(arguments).slice(1)
+  return rest.reduce((sum, next) => sum + next, first)
+}
+
+// in React:
+function Box({className, ...restOfTheProps}) {
+  const defaultProps = {
+    className: `box ${className}`,
+    children: 'Empty box',
+  }
+  return <div {...defaultProps} {...restOfTheProps} />
+}
+```
 
 ------
 ## Variadic functions

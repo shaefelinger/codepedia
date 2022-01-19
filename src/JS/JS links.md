@@ -28,6 +28,11 @@
 
 <!-- [Handout Javascript for Web - Hamburg Coding School](files/Handout - JavaScript for Web.pdf) -->
 
+- [ES6 and Beyond Workshop at PayPal](https://www.youtube.com/playlist?list=PLV5CVI1eNcJgUA2ziIML3-7sMbS7utie5)
+- [javascript-to-know-for-react](https://kentcdodds.com/blog/javascript-to-know-for-react)
+
+
+
 ## Misc Links
 
 - [codepen.io](https://codepen.io)
