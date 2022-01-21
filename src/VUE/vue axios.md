@@ -19,37 +19,35 @@ npm install axios
 - Properly serialize and deserialize requests & responses
 - And more…
 
-
-
-use created-hook to fetch data  
-
-```js
-<script>
-
-import axios from 'axios'
-
-export default {
-   data() {
-    return {
-      events: null
-    }
-  },
-  created() {
-    axios.get('https://my-json-server.typicode.com/Code-Pop/Real-World_Vue-3/events')
-      .then(response => {
-        this.events = response.data
-      })
-      .catch(error => {
-        console.log(error)
-      })
-  }
-}
-</script>
-```
-
-we could’ve used the alternative `[async` / `await`] syntax instead of `.then`.
-
--> better not to import axios in the components (creates a new axios-instance every time)
+> use created-hook to fetch data  
+>
+> ```js
+> <script>
+> 
+> import axios from 'axios'
+> 
+> export default {
+>    data() {
+>     return {
+>       events: null
+>     }
+>   },
+>   created() {
+>     axios.get('https://my-json-server.typicode.com/Code-Pop/Real-World_Vue-3/events')
+>       .then(response => {
+>         this.events = response.data
+>       })
+>       .catch(error => {
+>         console.log(error)
+>       })
+>   }
+> }
+> </script>
+> ```
+>
+> we could’ve used the alternative `[async` / `await`] syntax instead of `.then`.
+>
+> -> better not to import axios in the components (creates a new axios-instance every time)
 
 -> better:
 
@@ -75,14 +73,16 @@ export default {
 }
 ```
 
-At the top, we’re importing Axios. Below that, we’ve
-
--  added an `apiClient` constant, which holds our singular Axios instance. As you can see, we’ve set up a `baseURL` and some other configurations for Axios to use as it communicates with our server.
-
-- we still have access to the Axios `get` method, and we’re passing in `'/events'` as the argument when making this call. This string will be added to our `baseURL`, so the request will be made to: `'https://my-json-server.typicode.com/.../events'`
+- importi Axios
 
 
-Next up, we just need to make use of this new **EventService** within our **EventList.vue** component,  importing the EventService, and running its `getEvents()` call.
+-   `apiClient` constant,  holds a singule Axios instance. 
+   -  set up a `baseURL` and some other configurations for Axios to use as it communicates with our server.
+
+-  we still have access to the Axios `get` method, and we’re passing in `'/events'` as the argument when making this call. This string will be added to our `baseURL`, so the request will be made to: `'https://my-json-server.typicode.com/.../events'`
+
+
+Next up,  use this new **EventService** within the **EventList.vue** component,  importing the EventService, and running its `getEvents()` call.
 
 ```js
 import EventService from '@/services/EventService.js'
