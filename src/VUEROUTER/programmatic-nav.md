@@ -12,10 +12,15 @@ methods:
 
 - `push()` -> add new route to the browser history
 - `back()` / `forward()`
+- `replace()` -› you can't go back...
 - ...
 
 ```js
 this.$router.push({ name: 'Profile', params: { char_id } });
+```
+
+```js
+this.$router.replace('/coaches');
 ```
 
 

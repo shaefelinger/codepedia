@@ -102,6 +102,7 @@ module.exports = {
           { text: 'Design', link: '/design/' },
           { text: 'Performance', link: '/performance/' },
           { text: 'Clean Code', link: '/cleancode/' },
+          { text: 'Fake API', link: '/fakeapi/' },
         ],
       },
       {
@@ -242,6 +243,14 @@ module.exports = {
           children: ['', 'naming'],
         },
       ],
+      '/FAKEAPI/': [
+        {
+          title: 'Fake API',
+          collapsable: false,
+          sidebarDepth: 2,
+          children: [''],
+        },
+      ],
       '/MARKDOWN/': [
         {
           title: 'Markdown',
@@ -342,6 +351,8 @@ module.exports = {
             'vue options-api',
             'vue composition-api',
             'vue script-setup',
+            'vue composables',
+            'vue mixins',
             'vue links',
           ],
         },

@@ -120,7 +120,17 @@ filters: {
 
 ## Directives
 
-```js
+you can create your own: add `v-` bevore the name
+
+```vue
+  <input
+      v-model="message"
+      @keyup.enter="alertMessage"
+      @keyup.esc="clearMessage"
+      v-autofocus
+    />
+...
+      
 directives: {
     autofocus: {
       inserted(el) {

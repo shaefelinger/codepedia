@@ -29,3 +29,8 @@ tailwind ui
 [https://v3.vuejs.org/style-guide/](https://v3.vuejs.org/style-guide/)
 
 eg. if a component is only used once, the name shpould be "The..." `TheHeader`
+
+## Install tailwind.css
+
+- [https://javascript.plainenglish.io/how-to-setup-tailwind-css-in-vue-3-405c889842d9](https://javascript.plainenglish.io/how-to-setup-tailwind-css-in-vue-3-405c889842d9)
+- [https://stackoverflow.com/questions/69109763/postcss-8-error-when-installing-tailwind-css-in-vue-3-v3-2-10-without-vite-po](https://stackoverflow.com/questions/69109763/postcss-8-error-when-installing-tailwind-css-in-vue-3-v3-2-10-without-vite-po)

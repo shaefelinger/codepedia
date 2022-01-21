@@ -1,27 +1,5 @@
 # VUE Axios
 
-## Mock Database
-
-### JSON-Server
-
-[https://my-json-server.typicode.com/](https://my-json-server.typicode.com/)
-
-1. Create a repository on GitHub  (`<your-username>/<your-repo>`)
-2. Create a **`db.json`** file
-3. Visit [https://my-json-server.typicode.com/**/**](https://my-json-server.typicode.com/typicode/demo) to access your server
-
-
-
-> Example
->
-> [https://my-json-server.typicode.com/shaefelinger/vuemastery_realworld_vue3](https://my-json-server.typicode.com/shaefelinger/vuemastery_realworld_vue3)
->
-> bzw.
->
-> [https://my-json-server.typicode.com/shaefelinger/vuemastery_realworld_vue3/events](https://my-json-server.typicode.com/shaefelinger/vuemastery_realworld_vue3/events)
-
-------
-
 ## HTTP Requests
 
 Backend - Firebase - RealtimeDB

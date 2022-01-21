@@ -88,6 +88,16 @@ Use Pug, TypeScript and SCSS instead by adding the appropriate `lang` attributes
 
 ------
 
+or import directly:
+
+```js
+  components: {
+    'task' : require('components/Task.vue').default
+  }
+```
+
+------
+
 or
 
 #### Register Component in `main.js`

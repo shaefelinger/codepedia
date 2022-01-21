@@ -92,3 +92,8 @@ return props.firstName + ' ' + props.lastName;
 </script>
 ```
 
+------
+
+## Async
+
+[async script setup](https://stackoverflow.com/questions/69183835/vue-script-setup-top-level-await-causing-template-not-to-render)

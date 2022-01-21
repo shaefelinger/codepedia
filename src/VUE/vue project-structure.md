@@ -3,23 +3,19 @@
 ## Structure of the Vue Project
 
 - **node_modules** directory - all the libraries
-
 - **public** directory - any static assets you don’t want to be run through Webpack
-
 - **src** directory - all the application code
 - put the majority of your assets, such as images and fonts, in the **assets** directory so they can be optimized by Webpack.
-  
 - **components** directory is where we store the components
-  
 - **Views** holds the different views/pages
-  
 - **App.vue** is the root component
-  
 - **router** handles router
-  
 - **store** - vuex
-  
 - **main.js** renders app and mounts it to the dom
+
+in bigger Projects:
+
+- use Subfolders for Components, eg `UI`,`layout`, etc
 
 ---
 
@@ -69,3 +65,10 @@ createApp(App)
   .use(router)
   .mount('#app');
 ```
+
+------
+
+## Approach for building the App
+
+1. create basic routes
+2. create basic pages
