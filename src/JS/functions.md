@@ -54,6 +54,10 @@ const rectangleArea = (width, height) => {
 };
 ```
 
+- difference between arrow function and regular function:
+
+  `this` refers to the same content inside of them as outside of them
+
 ------
 
 ### D) Concise Body Arrow Functions
