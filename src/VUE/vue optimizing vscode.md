@@ -1,4 +1,4 @@
-# VS Code Vue
+# VS Code Settings Vue
 
 [Vuemastery optimizing VScode](https://www.vuemastery.com/blog/vs-code-for-vuejs-developers/)
 

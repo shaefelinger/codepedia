@@ -1,6 +1,6 @@
 # VUE Passing Data
 
-single source of truth…
+Use a single source of truth…
 
 **props** -› pass data from parent to child: downwards
 
@@ -18,7 +18,7 @@ Props should be defined in advance. (also define type, required etc.)
 
 simplest form: an Array (props as strings) (more for prototyping)
 
-- (camelCase): vue altomatically converts camelCase to kebap-case. (HTML-template should use kebap)
+- (camelCase): vue automatically converts camelCase to kebap-case. (HTML-template should use kebap)
 - props are available just like data: use in template and in script with `.this`
 - make sure to have no name clashes with data- and computed-properties
 
@@ -84,17 +84,11 @@ export default {
 };
 ```
 
-
-
-
-
-
-
-
-
-
+::: danger
 
 #### Props should not be mutated!
+
+:::
 
 -> unidirectional Data-flow.
 
@@ -163,7 +157,7 @@ default() {
 
 ```
 
-åadd a validator check:
+add a validator check:
 
 ```
 validator(value) {
@@ -172,7 +166,7 @@ validator(value) {
 },
 ```
 
-https://v3.vuejs.org/guide/component-props.html#prop-types
+[https://v3.vuejs.org/guide/component-props.html#prop-types](https://v3.vuejs.org/guide/component-props.html#prop-types)
 
 Specifically, the following value types (`type` property) are supported:
 
@@ -191,7 +185,7 @@ But `type` can also be any constructor function (built-in ones like `Date` or cu
 
 If the prop needs a Non-String-Value, you have to v-bind it:
 
-```
+```js
 :isFavorite="true"
 ```
 
@@ -211,7 +205,7 @@ but also to make the content dynamic, to use `v-for`, `v-if`
 
 child => parent
 
-Custom_event: fired from a component, can be listened from the parent-component 
+Custom-event: fired from a component, can be listened from the parent-component 
 
 - **up:** emit an event, telling the parent that it happened.
 - Give the component the ability to let its parent know an event happened within it.
@@ -326,27 +320,19 @@ Vue has built-in support for **prop (and event) "fallthrough"**.
 
 You can get access to these fallthrough props on a built-in `$attrs` property (e.g. `this.$attrs`).
 
-https://v3.vuejs.org/guide/component-attrs.html
+[https://v3.vuejs.org/guide/component-attrs.html](https://v3.vuejs.org/guide/component-attrs.html)
 
 ---
 
 ## Provide & Inject
 
-If data has to travel though a lot of "pass-through-components", you can use Provide-inject.
+If data has to travel though a lot of "pass-through-components", you can use Provide-inject:
 
-Provide data in the parent component and pass it directly to any child-component, no matter how deeply nested it is.
-
-use provide & inject only when nescessary. to avoid pass-through-components. It makes the code less understandable. props & custom rvrnts should be the default communication
+- Provide data in the parent component (not in a neighbour) and pass it directly to any child-component, no matter how deeply nested it is.
 
 
-
-If you have to pass date or "grandchild" etc."
-
-Provide in one place and use it in another place -> avoid pass-through-components
-
-Provide in a parent or higher component (not in a neighbour)
-
-
+- to avoid pass-through-components. 
+- use only when nescessary. it makes the code less understandable. props & custom events should be the default communication
 
 ```js
 provide: {
@@ -361,8 +347,6 @@ provide: {
     ]
   },
 ```
-
-
 
 Better: use a method, that returns an object -> you can access data from the data-property
 
@@ -382,7 +366,7 @@ inject: ['topics'],
 
 you can also provide methods:
 
-## inject Function
+### inject Function
 
 ```js
 // child
@@ -407,4 +391,3 @@ export default {
     }
   }
 ```
-

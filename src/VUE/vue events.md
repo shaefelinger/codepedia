@@ -2,17 +2,16 @@
 
 ## `v-on` directive 
 
-- By adding `v-on` to an element, we’re essentially giving it an ear that can listen for events. 
+- By adding `v-on` to an element, we’re essentially giving it a listener that can listen for events. 
 
-- Attaches event-handler to event -> for all all browser events. 
+- Attaches event-handler to event -> for all all browser events 
 
 - Run javascript Inside the string.
 
-  ```
+  ```js
   v-on:click="javascript inside"
   ```
 
-  
 
 ```vue
 <button class="button" v-on:click="logic to run">Add to Cart</button>
@@ -22,13 +21,11 @@
 <button v-on:click="age++">Increase age</button>
 ```
 
-
-
 We are telling `v-on` what type of event to listen for: a `click`. Inside the quotes,  place the logic (or method name)  to run when that event happens.
 
-If we write `v-on:click="cart += 1"`, we’ll increment the value of cart by `1`, when a click event happens. 
+e.g. `v-on:click="cart += 1"`, will increment the value of cart by `1`, when a click event happens
 
-### shorthand @
+## shorthand @
 
 ```vue
 <button class="button" @click="addToCart">Add to Cart</button>
@@ -116,7 +113,7 @@ methods: {
 }
 ```
 
-if you have to pass an argument: and still need access to the Event-Object: use `$event`
+if you have to pass an argument and still need access to the Event-Object: use `$event`
 
 ```vue
  <input type="text" @input="setName($event, 'Mustermann')" />
@@ -152,8 +149,6 @@ handleMousemove(e) {
 ```
 
 
-
-
 ------
 
 ## Toggle Status
@@ -172,8 +167,6 @@ handleMousemove(e) {
 <div @dblclick="handleEvent">double click</div>
 ```
 
-
-
 ### Mouseover
 
 ```vue
@@ -188,12 +181,6 @@ methods: {
   }
 }
 ```
-
-
-
-------
-
-
 
 
 
@@ -229,7 +216,7 @@ other event modifiers:
 - `.once`
 - `.passive`
 
-https://vuejs.org/v2/guide/events.html
+[https://vuejs.org/v2/guide/events.html](https://vuejs.org/v2/guide/events.html)
 
 ### mouse-modifiers
 
@@ -271,4 +258,3 @@ Also: modify the click on certain conditions. eg shift, alt
 ```
 
 value gets evaluated once, then it doesn't change
-

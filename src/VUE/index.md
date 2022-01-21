@@ -5,7 +5,7 @@
 1. script-tag
 2. npm i
 3. vue cli
-4. vite -> alternative. new approach https://vitejs.dev/guide/
+4. vite -> alternative. new approach [https://vitejs.dev/guide/](https://vitejs.dev/guide/)
 
 ---
 
@@ -70,7 +70,7 @@ const app = new Vue({
 
 ### vue3
 
-https://github.com/Code-Pop/Intro-to-Vue-3
+[https://github.com/Code-Pop/Intro-to-Vue-3](https://github.com/Code-Pop/Intro-to-Vue-3)
 
 `index.html`
 
@@ -158,7 +158,7 @@ app.mount('#app');
 
 ## Vue CLI
 
-https://cli.vuejs.org/
+[https://cli.vuejs.org/](https://cli.vuejs.org/)
 
 CLI stands for Command Line Interface
 
@@ -212,8 +212,7 @@ vue ui
 
 ## Virtual Dom
 
-Behind the scenes, Vue uses a really cool data structure called a **virtual DOM** to vastly improve speed and responsiveness of Vue apps.
+Behind the scenes, Vue uses a data structure called a **virtual DOM** to vastly improve speed and responsiveness of Vue apps -> representation of the dom as a javascript object
 
-it speeds up app performance. 
+speeds up app performance. 
 
--> representation of the dom as a javascript object

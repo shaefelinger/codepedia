@@ -1,11 +1,5 @@
 # Vue Dynamic Styling
 
-
-
-------
-
-
-
 ## Special Syntax
 
 `:style` and `:class` use a **special syntax** for binding: feed an Object.
@@ -53,8 +47,8 @@ we can bind to an entire style object that lives within our data.
 data() { 
 	return { 
 		styles: { 
-		color: 'red', 
-		fontSize: '14px' }
+			color: 'red', 
+			fontSize: '14px' }
 	} 
 }
 ```
@@ -124,4 +118,3 @@ Alternative: pass an Array. esp for multiple classes
 ```js
 :class="['demo', {active: boxSelected}]"
 ```
-

@@ -132,8 +132,6 @@ When the data on our webpages is changing often, universal mode works great sinc
 
 When the data doesn’t change as often, Universal Mode can be overkill when we’re pulling from the API and rendering our pages on every request.
 
-
-
 ------
 
 ```

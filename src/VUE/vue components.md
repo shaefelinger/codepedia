@@ -2,9 +2,7 @@
 
 ## Components 
 
-Components are the building blocks It’s common for components to be “parents” that have child components nested within them.
-
-A component is like a custom HTML-element. -> reuseable Pieces of HTML with connected Data and logic
+Components are the building blocks. A component is like a custom HTML-element. -> reuseable Pieces of HTML with connected Data and logic:
 
 - Components are used to build UIs by combining them
 - reuse
@@ -76,7 +74,7 @@ Use Pug, TypeScript and SCSS instead by adding the appropriate `lang` attributes
    >
    > ```js
    > components: {
-   > 	EventCard: Eventcard
+   > 	EventCard: EventCard
    > }
    > ```
 
@@ -144,15 +142,13 @@ You can also write:
  components: { TheHeader: TheHeader },
 ```
 
-`TheHeader` can be used in the template as: `the-header`
-
-or as `<TheHeader />` (this can also be self-closing)
-
 Simpler Syntax: (modern JS-Syntax)
 
 ```
 components: { TheHeader }
 ```
+
+`TheHeader` can be used in the template as: `the-header`or as `<TheHeader />` (this can also be self-closing)
 
 ------
 
@@ -164,7 +160,7 @@ CSS is always global  - is applied to all components! (Usually you define global
 
 -> To just use it in the component add `scoped`-attribute to the style-tag
 
-*scope* and isolate the styles to just this component. This way, these styles are specific to this component and won’t affect any other part of our application.
+This way, these styles are specific to this component and won’t affect any other part of our application.
 
 ```vue
 <style scoped >
@@ -193,8 +189,6 @@ header {
 >   ```
 >
 
-
-
 ### Global Styles
 
 - Several different ways to handle this. The simplest way is to add styles to the **App.vue** file - the root component of our app.  
@@ -207,4 +201,3 @@ Don't scope the root-component. Use global Stylesheet `global.css` in assets fol
 ```js
 import './assets/global.css'
 ```
-

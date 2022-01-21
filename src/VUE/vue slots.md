@@ -46,16 +46,6 @@ or:
 <script>
 export default {};
 </script>
-
-<style scoped>
-div {
-  margin: 2rem auto;
-  max-width: 30rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  padding: 1rem;
-}
-</style>
 ```
 
 ```vue
@@ -84,8 +74,6 @@ Example- Modal:
 </div>
 ```
 
-
-
 ------
 
 ## Named Slots
@@ -104,7 +92,7 @@ child:
     <header>
       <slot name="header"></slot>  
     </header>
-    <slot></slot>
+    	<slot></slot>
   </div>
 </template>
 ```
@@ -142,7 +130,7 @@ to make this clear, you can also use `v-slot:default`: (reserved name)
 </BaseCard>
 ```
 
-### v-slot shorthand ###
+### v-slot shorthand `#` ###
 
 `<template #header>` is equal to:
 

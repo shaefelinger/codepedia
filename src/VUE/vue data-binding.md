@@ -2,9 +2,12 @@
 
 ## Reactivity
 
-Vue is **reactive**. The instance’s data is linked to every place that data is being referenced. 
+Vue is **reactive**. 
 
-HTML will be updated to display new values any time that referenced data changes.
+- The instance’s data is linked to every place that data is being referenced. 
+
+- HTML will be updated to display new values any time that referenced data changes.
+
 
 ------
 
@@ -18,9 +21,13 @@ also called **Interpolation Syntax**
 
 -> bound to data-object "product"
 
+::: tip
+
 Inside the double curly braces  JavaScript expressions are used
 
-### Other ways to use expressions
+:::
+
+### some other ways to use expressions
 
 ```js
 {{ product + '?'}}
@@ -34,13 +41,17 @@ or call a method, that is defined under methods:
 {{ myMethod() }}
 ```
 
+::: warning
+
 you can use ternary expression, but no complex code eg. if-statements
+
+::: 
 
 ------
 
 ## Attribute Binding
 
-{{}} is only availyble between html-tags -> to output content. to dynamically change attributes use the `v-bind`-directive
+`{{}}` is only availyble between html-tags -> to output content. To dynamically change attributes use the `v-bind`-directive
 
 ### v-bind-directive
 
@@ -66,9 +77,10 @@ you can use ternary expression, but no complex code eg. if-statements
 
 Dynamically bind an attribute to an expression. 
 
-In this case, the attribute is `src` and the expression is whatever is in that attribute’s quotes: `"image"`
+In this case, the attribute is `src` and the expression is whatever is in that attribute’s quotes: `"image-path"`
 
-Imagine it looking like this: `v-bind:src="{{ image }}"`. 
+> Imagine it looking like this: `v-bind:src="{{ image }}"`. 
+>
 
 
 

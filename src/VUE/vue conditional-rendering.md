@@ -7,9 +7,13 @@
 <p v-else>Out of Stock</p>
 ```
 
-This element will **render** only if `inStock` is truthy.
+This element will render only if `inStock` is truthy.
 
-in the condition you can use Javascript, computed properties, methods that reurn a boolean-value,...
+::: tip
+
+in the condition you can use Javascript, computed properties, methods that return a boolean-value,...
+
+:::
 
 ## `v-else` /`v-else-if`
 
@@ -29,10 +33,7 @@ chained:
 
 Is used for **toggling** an element’s **visibility** instead of adding and removing the element from the DOM  (like `v-if` does).
 
-The element is still present in the DOM, but it’s now hidden with an inline style of `display: none;` added to it.
+- The element is still present in the DOM, but it’s now hidden with an inline style of `display: none;` added to it
 
-This is a **more performant** option if something is toggling off and on the screen often.
 
-------
-
-#### 
+- This is a **more performant** option if something is toggling off and on the screen often.

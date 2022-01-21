@@ -64,8 +64,6 @@ books: [
 <li v-for="num in 10">{{num}}</li>
 ```
 
-
-
 ------
 
 ## Key Attribute

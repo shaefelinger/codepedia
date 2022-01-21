@@ -1,12 +1,10 @@
 # VUE Forms
 
-## Forms Vue mastery
+## Forms Vue 
 
 - -> encapsulate all forms into components.
 - buld reusable components
 - default for input is `text` if nothing is declared
-
-
 
 ------
 
@@ -28,10 +26,6 @@ v-model is a combination of `:value` and `@input`
 ```js
 <input type="text" :value="name" @input="setName"/>
 ```
-
-
-
-
 
 - two-way data binding
 
@@ -93,33 +87,32 @@ methods: {
 },
 ```
 
-
-
 ------
 
 ## v-model-Modifiers
 
 ### `.number`
 
-
+-> forces a number
 
 `v-model.number`  is a modifier that typecasts the value as a number.
 
-```vue
-<input id="age" name="age" type="number" />
-```
 
-even with `type="number"`, the value of HTML input elements always returns a string.
 
-if you use a ref, no automaric type-conversion takes place
+- even with `type="number"`, the value of HTML input elements always returns a string.
+
+- ```js
+  <input id="age" name="age" type="number" />
+  ```
+
+- if you use a ref, no automaric type-conversion takes place
+
 
 But with vue, this returns a number - with vue3:
 
 ```vue
 <input v-model.number="age" type="number" />
 ```
-
--> forces a number
 
 other modifiers:
 
@@ -215,7 +208,7 @@ validate on
 - every keystroke
 - wehenever an element looses focus ('blur') `@blur="validateInput"`
 
-```js
+```vue
  <div class="form-control">
       <label for="user-name">Your Name</label>
       <input
@@ -226,7 +219,7 @@ validate on
         @blur="validateInput"
       />
       <p v-if="usernameValidity === 'invalid'">Please enter a valid name!</p>
-    </div>
+</div>
       
 ...
 
@@ -241,7 +234,7 @@ validateInput() {
 
 ------
 
-## Build Custom Element - 
+## Build Custom Element 
 
 ### Binding to the value
 
@@ -310,7 +303,7 @@ export default {
 
 All components that are capable of being `v-modeled` have to emit an event in order for the parent to be able to catch the updates to that component’s data.
 
-In Vue 3, by default all `v-model` contracts expect for your component to emit an `update:modelValue` event,
+In Vue 3, by default all `v-model` contracts expect for your component to emit an `update:modelValue` event
 
 ```vue
  <input

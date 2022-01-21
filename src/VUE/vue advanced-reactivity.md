@@ -1,6 +1,6 @@
 # Vue Advanced reactivity
 
-##### Problem with calling methods inside {{}}:
+## Problem with calling methods inside `{{}}`:
 
 it gets called everytime anything on the page changes. -> bad performance
 
@@ -23,7 +23,7 @@ computed: {
 }
 ```
 
-- naming: the computed property is  used like a data-property, not like a method. so name it as you would name  a data-property
+- naming: the computed property is used like a data-property, not like a method. so name it as you would name a data-property
 - important: don't call the computed property, just point at it -> write without `()` !
 - computed properties are used to output data, not like a function
 - always return a value
@@ -84,8 +84,6 @@ Watcher uses a name used in a data- or computed-property.
 - Watchers can only watch **ONE Property**
 
 
-
-
 Watchers are used  for example to check if a value exeeds a certain Number:
 
 ```js
@@ -102,7 +100,7 @@ or to send HTTP_requests, if certain data changes, or set a timer...
 
 ## Methods vs. Computed vs. Watchers
 
-**Methods:** for event- or data-binding. Data-binding: re-executed for every re-render. Use for events or data that needs to be re-evalueted every time
+**Methods:** for event- or data-binding. Data-binding: re-executed for every re-render. Use for events or data that needs to be re-evaluated every time
 
 **Computed:** data-binding. only re-evaluated if one of their used values changed. Use for data that depends on other data
 
