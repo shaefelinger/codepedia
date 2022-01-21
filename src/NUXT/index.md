@@ -7,7 +7,7 @@
 
 
 
-### Problems Nuxt is sloving
+### Problems Nuxt is solving
 
 1. Easy Pjoject Setup
    Nuxt comes preconfigured with Vuex, Vue Router, and Vue-Meta, sets the project up with intelligent defaults based on best practices

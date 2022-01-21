@@ -2,6 +2,11 @@
 
 ## Creating an Event Service
 
+a vuex module for handling event data
+
+- actions make API-calls
+- result commits a mutation -› updates the state
+
 /services/EventService.js
 
 ```js
@@ -28,11 +33,17 @@ export default {
 
 use folder `store`
 
-<img src="./assets/vuex.png" />
+
+
+------
+
+<!-- <img src="./assets/vuex.png" /> -->
 
 use fetch-hook
 
-<img src="./assets/fetch_hook.png" />
+Hook, that works on client & server-side to fill the store *before* rendering the page
+
+<!-- <img src="./assets/fetch_hook.png" /> -->
 
 ---
 

@@ -88,21 +88,28 @@ create a new `/event/index.vue` component.
 
 ## Root Dynamic Routes
 
-tocreate a root dynamic route like twitter `twitter.com/vuemastery`:
-
-
+to create a root dynamic route like twitter `twitter.com/john`:
 
 simply create a **Root Dynamic Route** by creating a `/pages/_username.vue` component. We’d then access the username parameter through: `{{ this.$route.params.username }}`.
 
-
-
 **child routes under a dynamic route**
 
-example: `twitter.com/vuemastery/following`.
+example: `twitter.com/john/following`.
 
 In this case, the folder gets the underscore: 
 
-<img src="./assets/childroutes.png" />
+```
+/pages
+	/_username
+		index.vue  		// twitter.com/john
+		following.vue // twitter.com/john/following
+```
+
+username is accesed using:
+
+```
+{{this.$route.params.username}}
+```
 
 ------
 

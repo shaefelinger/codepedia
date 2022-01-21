@@ -118,13 +118,19 @@ To learn more about the [build](https://nuxtjs.org/api/configuration-build/) and
 
 ## Static Site Deployment
 
+##### Universal Deployment
+
+- HTML is generated on every request
+
+##### Static Deployment
+
+- HTML is generated once and deplyed to server
+
 ### What Universal Mode is Great For
 
 When the data on our webpages is changing often, universal mode works great since our pages are pre-rendered on the server every time a request comes in.
 
 When the data doesn’t change as often, Universal Mode can be overkill when we’re pulling from the API and rendering our pages on every request.
-
-<img src="./assets/static_vs_universal.png" />
 
 
 
