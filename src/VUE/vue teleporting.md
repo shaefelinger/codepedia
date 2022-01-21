@@ -2,7 +2,7 @@
 
 Push content of a component to a totally different location (not in the #app)
 
-Render directly in the body element (good mostly for semantic reasons)
+E.g. Render directly in the body element (good mostly for semantic reasons)
 
 - `<teleport>` instead of `<div>`
 - -> use a  `to=css-selector` 
@@ -47,7 +47,3 @@ index-html
     <div class="modals"></div>
   </body>
 ```
-
-------
-
-### 

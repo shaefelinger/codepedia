@@ -1,7 +1,5 @@
 # VUE Forms
 
-## Forms Vue 
-
 - -> encapsulate all forms into components.
 - buld reusable components
 - default for input is `text` if nothing is declared
