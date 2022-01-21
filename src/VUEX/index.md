@@ -72,11 +72,22 @@ global state = affects multiple components or entire app (eg. auth status etc.)
 
 is working, but has problems
 
+
+
 ------
 
-![max_vuex](../assets/max_vuex.png)
+## Why Vuex?
 
+Managing app-wide/global state can be difficult
 
+- Unpredictable - not always obvious where data (state) gets changed in which way
+- Error-prone -  accidental or missed stat-updates are possible
+
+With Vuex
+
+- state-management is outsourced
+- predictible management/flow
+- clearly defined data flow: less errors
 
 ------
 

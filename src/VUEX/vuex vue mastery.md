@@ -1,4 +1,4 @@
-# VUEX Vue mastery
+# VUEX - sort me
 
 Managing state in an application full of components can be difficult. Facebook discovered this the hard way and created the Flux pattern, which is what Vuex is based upon.
 
@@ -12,7 +12,36 @@ Just like the Vue instance’s data, this State is reactive. When one component 
 
 ### Vuex is similar to the vue instance
 
-![vuex_app](../assets/vuex_app.png)
+```js
+const app = new Vue({
+	data: {
+		...
+	},
+	methods: {
+		...
+	},
+	computed: {
+		...
+	}
+})
+```
+
+```js
+const store = new Vuex.store({
+	state: {
+		...
+	},
+	mutations: {
+		...
+	},
+	actions: {
+		...
+	},
+	getters: {
+		...
+	}
+})
+```
 
 While the Vue instance has a `data` property, the Vuex store has `state`. Both are _reactive_.
 
@@ -111,7 +140,15 @@ methods: {
 
 add payload: (-> dynamic mutations)
 
-![image-20210712121908059](../assets/image-20210712121908059.png)
+```js
+methods: {
+	incrementCount() {
+		this.$store.commit('INCREMENT_COUNT', 2)
+	}
+}
+```
+
+<!-- ![image-20210712121908059](../assets/image-20210712121908059.png) -->
 
 but best practice:
 
@@ -226,8 +263,6 @@ Overall, these helper functions abbreviate our code, and can make it more readab
 
 https://www.vuemastery.com/blog/refactoring-vuex-with-map-helpers-and-modules/
 
-
-
 ------
 
 #### Check if data already exists in vuex ((performance enhancement))
@@ -249,6 +284,3 @@ fetchEvent({ commit, state }, id) {
 }
 ```
 
-------
-
-# 

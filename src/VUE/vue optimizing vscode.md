@@ -5,37 +5,14 @@
 - #### Vetur
 
 - Syntax Highlighting
+
 - Snippets
+
 - Emmet
 
 - #### ES Lint
 
 - #### Prettier
-
-
-
-#### Configuring ESLint
-
-Create an **.eslintrc.js** file as a dedicated configuration file,  instead of the `eslintConfig` option from **package.json**.
-
-> One of the benefits of having an individual config file is that it can be written in JavaScript, and JavaScript syntax is more flexible than JSON.
-
-```
-// .eslintrc.js
-```
-
-
-
-```
-quotes: ['error', 'single']
-// semi: ['error', 'always']
-```
-
-> ??? So, in our .eslintrc.js file, we’ll add:
-
-> ```
-> 'plugin:prettier/recommended'
-> ```
 
 #### Configuring Prettier
 
@@ -48,19 +25,64 @@ Prettier configuration file, to add some special settings
 
 module.exports = {
 	singleQuote: true,
-	semi: false
+	semi: true
 }
 ```
 
+
+
+ #### Configuring ESLint
+
+Create an **.eslintrc.js** file as a dedicated configuration file,  instead of the `eslintConfig` option from **package.json**. Can be written in JavaScript syntax -› more flexible than JSON.
+
+
+
+`.eslintrc.js`
+
+add
+
+```js
+"extends": [
+  "plugin:vue/vue3-essential",
+  "@vue/prettier", // ADD
+  "eslint:recommended"
+],
+```
+
+maybe add to rules:
+
+```
+  rules: {
+    ...
+    'no-unused-vars': ['warn'],
+  },
+```
+
+
+
+<!-- > ``` -->
+<!-- > quotes: ['error', 'single'] -->
+<!-- > // semi: ['error', 'always'] -->
+<!-- > ``` -->
+
+
+
+
+<!--  > ??? So, in our .eslintrc.js file, we’ll add: -->
+
+<!-- > ``` -->
+<!-- > 'plugin:prettier/recommended' -->
+<!-- > ``` -->
+
+
+
 ### VS Code User Settings
 
-- Turn off Vetur’s linting feature.Iinstead rely on ESLint + Prettier 
+- Turn off Vetur’s linting feature. Instead rely on ESLint + Prettier 
 
   ```js
   "vetur.validation.template": false
   ```
-
-  
 
 - Tell ESLint what languages  to validate (vue, html, and javascript) and set `autoFix` to `true` on each:
 
@@ -87,4 +109,21 @@ module.exports = {
 
 ### Extensions
 
-- Vue VSCode Snippets
+Vue VSCode Snippets *Sarah Drasner*
+
+- `vif` :  `v-if` statement
+- `von` :  full event handler
+-  `vdata` :  data property
+- `vprops`
+- `vimport-lib`
+
+
+
+>  if you’re using this Snippets extension,  disable Vetur’s scaffold feature: 
+>
+> vs code `settings.json`:
+>
+> ```
+> "vetur.completion.useScaffoldSnippets": false,
+> ```
+

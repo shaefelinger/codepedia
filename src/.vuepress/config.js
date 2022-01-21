@@ -86,7 +86,7 @@ module.exports = {
         items: [
           { text: 'Vue', link: '/VUE/' },
           { text: 'Vue Router', link: '/VUEROUTER/' },
-          // { text: 'Vuex', link: '/VUEX/' },
+          { text: 'Vuex', link: '/VUEX/' },
           // { text: 'Nuxt', link: '/NUXT/' },
           { text: 'Vue Animation', link: '/VUEANIMATION/' },
           { text: 'VuePress', link: 'https://v1.vuepress.vuejs.org/' },
