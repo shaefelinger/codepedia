@@ -341,6 +341,7 @@ module.exports = {
             'vue axios',
             'vue options-api',
             'vue composition-api',
+            'vue script-setup',
             'vue links',
           ],
         },

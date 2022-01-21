@@ -132,13 +132,15 @@ export default {
 };
 ```
 
+::: tip
 
+ `reactive` is for objects, `ref` for all kind of data, but you have to use the additional `.value`
 
-so: `reactive` is for objects, `ref` for all kind of data, but you have to use the additional `.value`
+:::
 
 ### Helper-Function:
 
-`iSReactive`, `isRef`
+`isReactive`, `isRef`
 
 to check, if something it is reactive
 
@@ -171,8 +173,6 @@ setup() is run, when vue creates the component. Only once!
     return { user, setNewData };
 ```
 
-
-
 > or script setup:
 >
 > ```vue
@@ -196,8 +196,6 @@ access value of ref with `.value`
 
 ## Replace Computed
 
-
-
 ```js
 <script>
 import { ref, computed } from 'vue';
@@ -207,8 +205,6 @@ import { ref, computed } from 'vue';
       return firstName.value + ' ' + lastName.value;
     });
 ```
-
-
 
 - computed is (like a ref) an object with a value property
 - but computed is read-only!
@@ -220,8 +216,6 @@ import { ref, computed } from 'vue';
 ```
 watch(dependency, function)
 ```
-
-
 
 ```js
 import { ref, computed, watch } from 'vue';
@@ -252,11 +246,7 @@ you can also pass an array of dependencies: whenever any of theese values change
     });
 ```
 
-
-
 ------
-
-
 
 ## Template Refs
 
@@ -321,8 +311,6 @@ either use the whole props-object in the watcher or make the values reactive wit
     });
 ```
 
-
-
 ------
 
 ## Emitting Custom Events
@@ -336,8 +324,6 @@ setup always gets a second argument: the context
 ------
 
 ## Provide-Inject
-
-
 
 provide with the options-api:
 
@@ -468,29 +454,5 @@ store.dispatch('increment');
  const counter = computed(() => {
       return store.getters.counter;
     });
-```
-
-------
-
-## Script Setup
-
-[learn vue script setup](https://learnvue.co/2021/05/explaining-the-new-script-setup-type-in-vue-3-major-takeaways-from-the-rfc/)
-
-
-
-```vue
-<template>
-  <button @click="$emit('change')">Click Me</button>
-</template>
-<script setup>
-  import { defineProps, defineEmit, useContext } from 'vue'
-
-  const props = defineProps({
-    foo: String
-  })
-  const emit = defineEmit(['change', 'delete'])
-
-  const { slots, attrs } = useContext()
-</script>
 ```
 
