@@ -211,3 +211,24 @@ Don't scope the root-component. Use global Stylesheet `global.css` in assets fol
 ```js
 import './assets/global.css'
 ```
+
+------
+
+## Boolean props
+
+common practice when creating components to set props that are meant to toggle on and off (also known as “flags”) to a default of `false`. 
+
+-› allows to set them to “on” with a very clean syntax on the instance of the component. 
+
+For example, with the `vertical` prop, if the user wants to have their group laid out vertically, they would simply add the keyword to the instance like so:
+
+```html
+<BaseRadioGroup
+  v-model="event.pets"
+  vertical
+/>
+```
+
+Boolean props in Vue that are not specifically bound are assumed to be **true**. So in the above example, `vertical` is the same as `:vertical="true"`.
+
+`vertical` is the same as: `:vertical = "true"`

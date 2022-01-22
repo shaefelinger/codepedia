@@ -87,9 +87,9 @@ methods: {
 
 ------
 
-## v-model-Modifiers
+### v-model-Modifiers
 
-### `.number`
+#### `.number`
 
 -> forces a number
 
@@ -114,17 +114,19 @@ But with vue, this returns a number - with vue3:
 
 other modifiers:
 
-### `.lazy` 
+#### `.lazy` 
 
 - don't update immedialtely
 
-### `.trim` 
+#### `.trim` 
 
 trims extra whitespace on beginning/end  (like using the `trim()` -function)
 
 ------
 
-## Dropdowns
+## Form-Elements
+
+### Dropdowns
 
 `v-model` works on `<select>`
 
@@ -141,7 +143,11 @@ trims extra whitespace on beginning/end  (like using the `trim()` -function)
 
 ------
 
-## Radio and Checkboxes
+### Checkboxes
+
+
+
+
 
 for a single checkbox
 
@@ -195,6 +201,124 @@ for a single checkbox
       </div>
     </div>
 ```
+
+------
+
+Checkboxes have a few quirks.
+
+- checkbox inputs bind their state to a `checked` property,  not directly to `value`.
+- The property `value` of checkboxes is  usually not used on the frontend - its main purpose is to provide a value when submitted to the backend via a submit button. If omitted, this `value` defaults to `on`
+- inputs with type `checkbox` don’t trigger `input` events, but `change` events whenever they are selected and unselected.
+
+- For checkboxes we are not emitting the target’s value through `$event.target.value`, but instead the checked status through `$event.target.checked`.
+
+```vue
+ <input
+    type="checkbox"
+    :checked="modelvalue"
+    class="field"
+    @change="$emit('update:modelValue', $event.target.checked)"
+  />
+  <label v-if="label">{{ label }}</label>
+```
+
+------
+
+### Radio Buttons
+
+#### BaseRadio
+
+Radio buttons in HTML have a unique feature that we need to be aware of.
+
+- they do not work as a single input, like a checkbox would. They are part of a group of radio buttons that have a single state. 
+- Depending on the group’s state, a radio button may be *active* or *inactive* in relation to those in its own group.
+
+- the `BaseRadio` component will also have another component to group them, the `BaseRadioGroup`.
+
+- Similarly to checkboxes, radio buttons don’t bind to the `value` property, but use the `checked` property instead.
+
+```js
+<template>
+  <input
+    type="radio"
+    :checked="modelValue === value"
+    :value="value"
+    @change="$emit('update:modelValue', value)"
+    v-bind="$attrs"
+  />
+  <label v-if="label">{{ label }}</label>
+</template>
+
+<script>
+export default {
+  props: {
+    label: {
+      type: String,
+      default: '',
+    },
+    modelValue: {
+      type: [String, Number],
+      default: '',
+    },
+    value: {
+      type: [String, Number],
+      required: true,
+    },
+  },
+}
+</script>
+```
+
+#### BaseRadioGroup
+
+you almost always want to provide at *least* two radios per each group
+
+- we always want to have our `BaseRadio` elements grouped, it makes sense to create a component that contains the logic for this grouping: the `BaseRadioGroup`.
+
+```vue
+ <component
+    v-for="option in options"
+    :key="option.value"
+    :is="vertical ? 'div' : 'span'"
+  >
+    <BaseRadio
+      :label="option.label"
+      :value="option.value"
+      :name="name"
+      :modelValue="modelValue"
+      @update:modelValue="$emit('update:modelValue', $event)"
+    />
+  </component>
+```
+
+------
+
+### Select
+
+- Select elements fire a `change` event whenever the user makes a new selection
+
+> Since `$attrs` is an object, we can use the JavaScript spread operator to combine our binds into a single object. We will first spread the `$attrs` into our v-bind, and then bind the `change` event into our `v-bind`.
+
+```vue
+<select
+    :value="modelValue"
+    class="field"
+    v-bind="{
+      ...$attrs,
+      onChange: ($event) => {
+        $emit('update:modelValue'), $event.target.value
+      },
+    }"
+  >
+```
+
+- In Vue 3: remember that if we choose not to use the `@` sign syntax, the event will be prefixed by the keyword `on`, in this case `onChange` since were listening to the `change` event.
+
+- All event listeners that are received in `$attrs` from the parent are prefixed with the `on` keyword, and the first letter is capitalized.
+
+  > @change = onChange
+  >
+  > @input = onInput
 
 ------
 
