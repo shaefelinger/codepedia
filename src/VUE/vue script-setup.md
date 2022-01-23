@@ -65,8 +65,25 @@ import { computed, defineProps } from 'vue';
 
 const props = defineProps(['firstName', 'lastName']);
 const uName = computed(() => {
-return props.firstName + ' ' + props.lastName;
+	return props.firstName + ' ' + props.lastName;
 });
+</script>
+```
+
+------
+
+## Emit
+
+```vue
+<script setup>
+import { ref, defineEmits } from 'vue';
+
+const name = ref('');
+const emit = defineEmits(['formSubmitted']);
+
+function onSubmit() {
+  emit('formSubmitted', { name: name.value });
+}
 </script>
 ```
 
