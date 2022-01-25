@@ -79,22 +79,37 @@ Every element in the DOM is a **node**. This is represented by a **Node** object
   ```js
   const divs = document.querySelectorAll('div')
   divs.forEach(div => {
-  /* ... */
+  	/* ... */
   }) // this works
-  divs.map(div => { /* ... */ }) // throws exception (an error)
+  
+  divs.map(div => { /* ... */ }) // throws error
+  
   // turn NodeList into array first:
   [...divs].map(div => { /* ... */ })
   ```
 
 ## Node Types
 
+[https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType](https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType)
+
 There are 12 node types. In practice we usually work with 4 of them:
 
 - **document** - the whole document is formally a DOM node as well
 
-- **element nodes** - HTML-tags, the tree building blocks
+- **element nodes** - ("Elements") HTML-tags, the tree building blocks -> most important
 
-- **text nodes** - represents textual content in an element or attribute
+- **text nodes** - represents text content in an element or attribute 
+
+  (whitespace in the HTML-file is also added as text-nodes but not rendered to screen)
+
+- **attribute nodes** - atteribute of an element
 
 - **comments** - won’t be shown, but JS can still read it
 
+> DOM Nores are JavaScript objects
+
+## Elements
+
+- have specials properties and methods (depending on the kind of element)
+- can be selected vie JavaScript
+- can be created and removed via JavaScript
