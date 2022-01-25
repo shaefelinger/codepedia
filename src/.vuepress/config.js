@@ -176,7 +176,13 @@ module.exports = {
           title: 'JS for web',
           collapsable: true,
           sidebarDepth: 2,
-          children: ['', 'the dom', 'dom manipulation', 'browser events'],
+          children: [
+            '',
+            'the dom',
+            'dom selecting',
+            'dom manipulation',
+            'browser events',
+          ],
         },
       ],
       '/JQUERY/': [

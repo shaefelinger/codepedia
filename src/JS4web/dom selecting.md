@@ -164,11 +164,15 @@ you can always check with `console.dir()`
 
 Example:
 
+```html
 <div>
 	<p> 
 		This is a <em>test!<em>
 	</p>
 </div>
+```
+
+
 
 | Child                                    | Descendant                                 | Parent                                         | Ancestor                                   |
 | ---------------------------------------- | ------------------------------------------ | ---------------------------------------------- | ------------------------------------------ |
@@ -181,8 +185,10 @@ Example:
 
 Every Node object has special accessors. These are properties of DOM elements and ***read-only***.
 
-- `element.childNodes` - returns a collection of a node's child nodes, as a NodeList object
-- `element.firstChild` 
+- `element.children` -› list of the child-element-nodes
+- `element.childNodes` - returns a NodeList of all all child-nodes incl. text-nodes
+- `element.firstChild`  includes the (whitespace)-text-node
+- `element.firstElementChild` - this is what you usually want! 
 - `element.lastChild`
 - `element.parentNode`
 - `element.closest('p')` -Traverses all children of the parent in search for a match
@@ -190,5 +196,5 @@ Every Node object has special accessors. These are properties of DOM elements an
 - `previousSibling/nextSibling`
 
 ------
-
-## 
+> if you add in CSS: `white-space: pre;` the whitespace of the text-nodes will also be rendered
+------
