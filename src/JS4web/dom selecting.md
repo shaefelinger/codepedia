@@ -160,6 +160,11 @@ you can always check with `console.dir()`
 
 ## Traversing the DOM
 
+if you already have one element selected and wont to work with its siblings or parents/ancestors.
+
+- can be quicker
+- but use with care - could break if you change the HTML
+
 ## Children, Descendants, Parents & Ancestors
 
 Example:
@@ -191,10 +196,13 @@ Every Node object has special accessors. These are properties of DOM elements an
 - `element.firstElementChild` - this is what you usually want! 
 - `element.lastChild`
 - `element.parentNode`
-- `element.closest('p')` -Traverses all children of the parent in search for a match
+- `element.closest('p')` -Traverses all ancestors in search for a match
 - `.children` - return a list of the element’s children and return `null` if the element has no children.
-- `previousSibling/nextSibling`
+- `previousSibling/nextSibling` - (might give you a Text-Node)
+- `previousElemenSibling/nextElementSibling`
 
 ------
 > if you add in CSS: `white-space: pre;` the whitespace of the text-nodes will also be rendered
+
 ------
+
