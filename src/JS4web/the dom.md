@@ -5,7 +5,6 @@ The DOM stands for "Document Object Model"
 - tree-like structure that is a representation of the HTML document, the relationship between elements 
 - contains the content and properties of the elements.
 - Think of the DOM as the link between an HTML web page and scripting languages.
-- https://www.w3.org/standards/techs/dom#w3c_all The full list of DOM specs
 - [DOM Introduction](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
 - [Section 8.2 Parsing HTML documents](https://www.w3.org/TR/html5/syntax.html#parsing) from the W3C's HTML Documentation
 - [DOM Specification](https://www.w3.org/standards/techs/dom#w3c_all) on W3C
@@ -40,16 +39,30 @@ There are nine different types of node objects in the DOM tree, eg  [*Element*](
 
 ## The document keyword
 
-- The `document` object is provided by the browser and is a representation of the HTML document. This object is *not* provided by the JavaScript language.
+- The `document` object is provided by the browser and is a representation of the HTML document. This is *not* provided by the JavaScript language.
 
-- The `document` keyword grants access to the root of the DOM in JavaScript
+- The `document` keyword gives access to the root of the DOM in JavaScript
 
 
 https://developer.mozilla.org/en-US/docs/Web/API/Document
 
 ------
 
-### Nodes and NodeList
+## The window Keyword
+
+Global top-element -> the active Browser Window/Tab
+
+- Acts as global storage for script. Also provides access to window-specific properties and methods. E.g.:
+
+  -  you have direct access to `alert()` correct would be: `windows.alert()`
+
+    > the browser always adds `windows.` in front of a function if that funct can't be found anywhere else
+
+- also contains the Document-object, events, methods, outerHeight, outerWidth, etc
+
+------
+
+## Nodes and NodeList
 
 Every element in the DOM is a **node**. This is represented by a **Node** object.
 
@@ -57,7 +70,7 @@ Every element in the DOM is a **node**. This is represented by a **Node** object
 
 - has a **length** property and an **index**(0, 1, 2, 3, ...) to access each item,
 
-- You can loop over a NodeList with either its `.forEach()` method, or a `for` loop
+- You can loop over a NodeList with either its `.forEach()` method, or a `for` loop (also `for...of`)
 
 - You cannot use Array methods, like `map()`, `filter()`,`reduce()`,`push()`, `pop()`, or `join()`
 
@@ -72,8 +85,6 @@ Every element in the DOM is a **node**. This is represented by a **Node** object
   // turn NodeList into array first:
   [...divs].map(div => { /* ... */ })
   ```
-
-
 
 ## Node Types
 
