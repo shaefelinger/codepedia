@@ -62,8 +62,6 @@ Passing any text that *looks* like HTML to the `.textContent` property will stil
 
 ------
 
-
-
 ## Creating new elements
 
 ### `.createElement`
