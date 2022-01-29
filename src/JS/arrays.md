@@ -21,7 +21,29 @@ JavaScript arrays are written with square brackets. Array items are separated by
 var arrayName = [ “a”, “b”, “c” ];
 ```
 
+#### Other ways to create an Array (rarely used)
+
 *`new Array()` is old Version*
+
+```js
+const myArray = new Array('hi', 'there')
+```
+
+you can also omit the `new` keyword
+
+```js
+const myArray = Array('hi', 'there')
+```
+
+> beware: this creates an empty array with a length of 5
+>
+> ```js
+> const myArray = new Array(5)
+> const myArray = Array(5)
+> ```
+>
+
+
 
 ------
 
