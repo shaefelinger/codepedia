@@ -68,6 +68,7 @@ property - returns the number of items in the array
 **add** items to the **end** of an array
 
 - can take a single argument or multiple arguments separated by commas
+- returns the new length of the array
 
 ```js
 const items = ['item 0', 'item 1', 'item 2'];
@@ -113,6 +114,8 @@ console.log(removed);
 
 **Add** an item to the **beginning** of an Array
 
+- returns the new length of the array
+
 ------
 
 ### [`.splice(pos, n)`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
@@ -120,8 +123,28 @@ console.log(removed);
 changes the contents of an array by **removing or replacing** existing elements and/or **adding new** elements in place
 also: Remove an item by index position
 
-- starting at the index position specified by pos
+- starting at the index position specified by pos (negative index counts from the end)
 - n defines the number of items to be removed
+- returns the removed element(s)
+
+```
+splice(start)
+splice(start, deleteCount)
+splice(start, deleteCount, item1)
+splice(start, deleteCount, item1, item2, itemN)
+```
+
+
+
+| Splice                          | `.splice(start, deleteCount, items)` |
+| ------------------------------- | ------------------------------------ |
+| insert an element               | `.splice(1, 0 'Good Food')`          |
+| remove an element               | `.splice(1, 1)`                      |
+| remove all item                 | `.splice(0)`                         |
+| remove everything after index 3 | `.splice(3)`                         |
+| remove last  item               | `.splice(-1, 1)`                     |
+
+
 
 ------
 

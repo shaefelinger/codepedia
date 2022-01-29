@@ -31,14 +31,18 @@ Also Avoid:
 
 JavaScript is a non-typed Language. When adding a number and a string, JavaScript will treat the number as a string.
 
-| Type        | Description                                                                                             |
-| :---------- | :------------------------------------------------------------------------------------------------------ |
-| numbers     | JavaScript has only one type of numbers - it doesn't distinguish between integer and float              |
-| strings     | Any series of characters like "John Doe". Written inside quotes: ‘...’ (preferred) or “...”             |
-| Boolean     | **true** or **false**. Convention for Name: _isCondition_                                               |
-| arrays      | structure that allows you to store a list of values in one single reference.                            |
+| Type        | Description                                                  |
+| :---------- | :----------------------------------------------------------- |
+| numbers     | JavaScript has only one type of numbers - it doesn't distinguish between integer and float |
+| strings     | Any series of characters like "John Doe". Written inside quotes: ‘...’ (preferred) or “...” |
+| Boolean     | **true** or **false**. Convention for Name: _isCondition_    |
+| arrays      | structure that allows you to store a list of values in one single reference. |
 | objects     | Constructs that have properties. Everything in JavaScript is an object, and can be stored in a variable |
-| _and also:_ |                                                                                                         |
-| Null        | represents the intentional absence of a value, and is represented by the keyword null                   |
-| Undefined   | also represents the absence of a value though it has a different use than null                          |
-| Symbol      | a newer feature to the language, symbols are unique identifiers, useful in more complex coding.         |
+| _and also:_ |                                                              |
+| Null        | represents the intentional absence of a value, and is represented by the keyword `null`. You can assign `null` to "reset"/"clear" a variable |
+| Undefined   | also represents the absence of a value. Default value of unitialized variables. Convention: never assign `undefined` |
+| Symbol      | a newer feature to the language, symbols are unique identifiers, useful in more complex coding. |
+
+`NaN` - is of Type "Number" - result of invalid calculations (eg `3 * 'Hello'`)
+
+`typeof` can be used to return the type
