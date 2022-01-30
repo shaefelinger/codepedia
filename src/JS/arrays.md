@@ -180,11 +180,29 @@ splice(start, deleteCount, item1, item2, itemN)
 
 `arr.slice([start[, end]])`
 
-Returns a **copy of a portion** of an array into a new array object.
+Returns a **copy of a portion** of an array into a new array.
 
 - slice(-2) extracts the last two elements in the sequence
+
+- you can also use only one element
+
+  ```js
+  .slice(2) // from index 2 to the end
+  ```
+
 - If start is undefined, slice starts from the index 0.
-- slice extracts up to but not including end. slice(1,4) -> elements indexed 1, 2, and 3
+
+- startIndex is included, endIndex is not
+
+  ```js
+  .slice(0, 2) // item[0] and item[1]
+  ```
+
+- It is also an easy method to copy&and create a new array:
+
+  - ```js
+    const newArray = myArray.slice()
+    ```
 
 ------
 
