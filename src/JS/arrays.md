@@ -233,7 +233,7 @@ to **merge** two or more **arrays**.
 
 ### [`.includes()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
 
-Checks **if item exists** -> returns booleaneturned.
+Checks **if item exists** -> returns boolean
 
 ------
 
@@ -346,19 +346,32 @@ dogs.filter(dog => dog.temperament.includes('Faithful'))
 
 ### [`.find`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
 
- returns the value of the first element that satisfies the  testing function
+```
+find((element) => { /* ... */ } )
+find((element, index) => { /* ... */ } )
+find((element, index, array) => { /* ... */ } )
+```
+
+returns the value of the first element that evaluates to `true` in the callback function (the same reference-value, not a copy)
 
 ```js
 dogs.find(dog => dog.name === 'Lilly')
 ```
 
+```js
+const manuel = personData.find((person, index, persons) => {
+	return person.name === 'Manuel';
+}
+```
+
+- especially useful, if you have an array of objects.
 
 
 ------
 
 ### [`.findIndex()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)
 
-returns the index of the first element that evaluates to true in the callback function
+returns the index of the first element that evaluates to `true` in the callback function
 
 - If there is no element in the array that satisfies the condition, it will return -1.
 
