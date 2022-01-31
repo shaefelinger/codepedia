@@ -206,17 +206,34 @@ Returns a **copy of a portion** of an array into a new array.
 
 ------
 
-### [`.includes()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
+### [`.concat()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat)
 
-Checks **if item exists** -> returns boolean
+to **merge** two or more **arrays**. 
+
+- does not change the existing arrays -> returns a new array.
 
 ------
 
 ### [`.indexOf(...)`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf)
 
+`indexOf(searchElement, [fromIndex])`
+
 **Find** the **index** of an item in the Array
 
-- If there isn’t an element whose value matches that of the argument, -1 is returned.
+- If there isn’t an element whose value matches the argument, -1 is returned
+- If there are multiple results, the first index will be returned
+- to find the last result, use [.lastIndexOf()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf)
+- does not work for reference values (eg objects)
+
+------
+
+
+
+------
+
+### [`.includes()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
+
+Checks **if item exists** -> returns booleaneturned.
 
 ------
 
@@ -231,12 +248,6 @@ Checks **if item exists** -> returns boolean
 creates and returns a **new string** by concatenating all of the elements 
 
 - more options than `.toString()`
-
-------
-
-### [`.concat()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat)
-
-to **merge** two or more **arrays**. This does not change the existing arrays, but instead returns a new array.
 
 ------
 
@@ -338,7 +349,7 @@ dogs.filter(dog => dog.temperament.includes('Faithful'))
  returns the value of the first element that satisfies the  testing function
 
 ```js
-dogs.find(dog => dog.name === 'Bernese Mountain Dog')
+dogs.find(dog => dog.name === 'Lilly')
 ```
 
 
