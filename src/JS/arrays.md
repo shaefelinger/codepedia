@@ -306,7 +306,7 @@ loops through the array and executes the callback function for each element. The
 
 ### [`.map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
 
-takes an argument of a callback function and returns a new array
+takes an argument of a callback function and returns a new array with a transformed element for every element
 
 ```js
 const numbers = [1, 2, 3, 4, 5]; 
@@ -317,9 +317,16 @@ console.log(numbers); // Output: [1, 2, 3, 4, 5]
 console.log(bigNumbers); // Output: [10, 20, 30, 40, 50]
 ```
 
-```
+```js
 dogs.map(dog => dog.name)
 // ['Name 1', 'Name 2', 'Name 3']
+```
+
+```js
+prices.map((price, index, prices) => {
+	const  priceObj = { index , taxAdjPrice: proce * (1 + tax) };
+	return priceObj;
+})
 ```
 
 ------
