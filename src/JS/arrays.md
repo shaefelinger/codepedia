@@ -172,8 +172,6 @@ splice(start, deleteCount, item1, item2, itemN)
 | remove everything after index 3 | `.splice(3)`                         |
 | remove last  item               | `.splice(-1, 1)`                     |
 
-
-
 ------
 
 ### [`.slice()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
@@ -227,10 +225,6 @@ to **merge** two or more **arrays**.
 
 ------
 
-
-
-------
-
 ### [`.includes()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
 
 Checks **if item exists** -> returns boolean
@@ -255,11 +249,29 @@ creates and returns a **new string** by concatenating all of the elements
 
 executes a reducer function on each element of the array, **resulting in single output value**
 
+```
+.reduce(prevValue, CurValue, curIndex, originalArray) => {}, initialValue)
+```
+
 ```js
 dogs.reduce((allTemperaments, dog) => {
   return [...allTemperaments, ...dog.temperament]
 }, [])
 ```
+
+- combine the values of the array to a single value
+- eg to reduce an array of numbers to the sum of the numbers
+- in the first iteration, prevValue = initialValue
+
+```js
+const sum = prices.reduce((prevValue, curValue) => prevValue + curValue, 0);
+```
+
+------
+
+### [`reverse()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse)
+
+reverts the order
 
 ------
 
@@ -270,6 +282,8 @@ All iterator methods take a callback function that can be pre-defined, or a func
 ### [`.forEach()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
 
 loops through the array and executes the callback function for each element. The return value is always `undefined`
+
+
 
 - `array.forEach(callackFunction)`
 
@@ -300,6 +314,14 @@ loops through the array and executes the callback function for each element. The
   }
   // this is the same:
   namesArray.forEach(name =>  console.log('Welcome, ' + name + '!'));
+  ```
+
+- an Alternative fo `for...of` with easy access to the index
+
+  ```js
+  prices.forEach((price, index, prices) => {
+  	taxAdjustedPrices.push(price * (1 + tax ));
+  })
   ```
 
 ------
@@ -335,7 +357,7 @@ prices.map((price, index, prices) => {
 
 returns an array of elements after filtering out certain elements from the original array
 
-- The callback function should return true or false depending on the element that is passed to it. if true -> element is added to the new array
+- The callback function should return `true` or `false` depending on the element that is passed to it. if `true` -> element is added to the new array
 
 - ```js
   const words = ['house', 'music', 'pillow', 'cat', 'pen', 'door']; 
@@ -347,7 +369,9 @@ returns an array of elements after filtering out certain elements from the origi
 dogs.filter(dog => dog.temperament.includes('Faithful'))
 ```
 
-
+```js
+const filteredArray = prices.filter(p => p > 6);
+```
 
 ------
 
@@ -450,6 +474,18 @@ sorts the elements of an array in place and returns the sorted array.
 let numbers = [4, 2, 5, 1, 3];
 numbers.sort((a, b) => a - b);
 console.log(numbers);
+```
+
+```js
+const sortedPrices = prices.sort((a, b) => {
+  if (a > b) {
+    return 1;
+  } else if (a === b) {
+    return 0;
+  } else {
+    return -1;
+  }
+});
 ```
 
 ------
