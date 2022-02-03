@@ -90,7 +90,9 @@ let gemstone = {
 
 ## Accessing Properties
 
-There are two ways to access an object’s property. If we try to access a property that does not exist, `undefined` will be returned.
+- There are two ways to access an object’s property. 
+
+- If we try to access a property that does not exist, `undefined` will be returned.
 
 ### A) Dot Notation
 
