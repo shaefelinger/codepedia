@@ -138,6 +138,33 @@ returnAnyProp(spaceship, 'homePlanet'); // Returns 'Earth'
 
 ------
 
+## Property-names
+
+- one word
+
+- strings - with square-bracket-notation: any string
+
+- any key alwas gets coerced into a string
+
+- dotNotation or squareBracket-Notation
+
+
+- ```js
+  console.log(person['first name'])	
+  ```
+
+  - eg dom: 
+
+
+  ```js
+  movieList.style.backgroundColor
+  movieList.style['background-color']
+  movieList.style['backgroundColor']
+  ```
+
+
+------
+
 ## Modifying properties
 
 - Use either **dot notation .** or **bracket notation []** and the assignment operator `=` to add new key-value pairs to an object or change an existing property.
