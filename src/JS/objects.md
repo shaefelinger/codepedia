@@ -518,34 +518,6 @@ const person2 = Object.assign(myObject, person)
 
 ------
 
-## The this-Keyword
-
-- The object that a method belongs to is called the **calling object**. The `this` keyword references the calling object and can be used to access properties of the calling object.
-- Methods do not automatically have access to other internal properties of the calling object.
-- The value of `this` depends on where it is being accessed from.
-- avoid using arrow functions when using `this` in a method!!
-  - We cannot use arrow functions as methods if we want to access other internal properties	
-  - Arrow functions inherently bind an already defined `this` value to the function itself that is NOT the calling object. -> the value of `this` is the global object, 
-- [MDN - Global Object](https://developer.mozilla.org/en-US/docs/Glossary/Global_object)
-- [MDN - Arrow Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
-
-```js
-const goat = {
-  dietType: 'herbivore',
-  makeSound() {
-    console.log('baaa');
-  },
-  diet() {
-    console.log(this.dietType);
-  }
-};
- 
-goat.diet(); 
-// Output: herbivore
-```
-
-------
-
 ## Object privacy
 
 - defines the idea that only certain properties should be mutable or able to change in value.

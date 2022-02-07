@@ -162,6 +162,7 @@ module.exports = {
             'functions',
             'loops',
             'objects',
+            'this',
             'maps_sets',
             'destructuring',
             'spread and rest',
