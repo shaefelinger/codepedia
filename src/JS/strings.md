@@ -2,6 +2,8 @@
 
 ##  [Properties & Methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
 
+everything in JS has a `toString()` method
+
 ------
 
 ### [`.length`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)	

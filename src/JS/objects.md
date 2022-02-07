@@ -2,9 +2,11 @@
 
 ## Introduction
 
-- JavaScript objects are containers storing related data and functionality -› extremely powerful in practice. 
+JavaScript objects are containers storing related data and functionality -› extremely powerful in practice. 
+
 - variables in objects are called **properties**
 - functions in objects are called **methods**
+
 - properties and methods have a **key** and a **value**. The key must be unique. A key is like a variable name that points to a location in memory that holds a value.
 - value of a property can be anything: string, number, boolean, array, another object, value of a method is always a function
 - JavaScript objects are written with curly braces: {}
@@ -25,7 +27,7 @@ const myObject = {};
 const myObject = new Object();
 ```
 
-#### Object literal notation:
+### Object literal notation:
 
 ```js
 var objectName {
@@ -37,18 +39,10 @@ var objectName {
 }
 ```
 
-- key’s name (identifier) followed by a colon (:) and then the value.
+- key’s name (identifier) followed by a colon `:` and then the value.
 - separate each key-value pair in an object literal with a comma (,). No comma after the last value
 - Keys are strings, but the quotation marks are usually omitted - unless the key does have any special characters in it, or if it is a reserved word  (e.g., for, if, let, true, etc.).
-- the same Syntax as JSON. But in JSON the key needs tne quoation
-
-```js
-// An object literal with two key-value pairs
-let car = {
-  'Fuel Type': 'diesel',
-  color: 'silver'
-};
-```
+- the same Syntax as JSON. But in JSON the key needs the quoation
 
 ------
 
@@ -57,26 +51,20 @@ let car = {
 Instead of:
 
 ```js
-let type = 'quartz';
-let color = 'rose';
-let carat = 21.29;
-
 const gemstone = {
   type: type,
   color: color,
   carat: carat,
   calculateWorth: function() {
-    // will calculate worth based on type, color, and carat
+    // ...
   }
 };
-
-console.log(gemstone);
 ```
 
 ...you can write:
 
 ```js
-let gemstone = {
+const gemstone = {
   type,
   color,
   carat,
@@ -95,12 +83,6 @@ let gemstone = {
 - If we try to access a property that does not exist, `undefined` will be returned.
 
 ### A) Dot Notation
-
-##### add or change a property
-
-```js
-person.age = 44;
-```
 
 For properties & methods. object’s name, followed by the dot operator and then the property name (key). Like in `'hello'.length;`
 
@@ -154,8 +136,6 @@ const person = {
 };
 ```
 
-
-
 ------
 
 ### Property-names
@@ -182,14 +162,6 @@ const person = {
   movieList.style['backgroundColor']
   ```
 
-
-------
-
-### Delete property
-
-```js
-delete person.age
-```
 
 ------
 
@@ -220,84 +192,45 @@ const object = { 5: 'Hi', 1: 'true' } ;
 // { 1: 'true', 5: 'hi' }
 ```
 
-
-
 ------
 
 ## Modifying properties
 
-- Use either **dot notation .** or **bracket notation []** and the assignment operator `=` to add new key-value pairs to an object or change an existing property.
+Use either **dot notation .** or **bracket notation []** and the assignment operator `=` to add new key-value pairs to an object or change an existing property.
 
-- ```js
-  objectName['Property Name'] = 'New Value'
-  
-  objectName.propertyName = 'New Value'
-  ```
+```js
+objectName['Property Name'] = 'New Value'
 
-- If the property already exists tha value will be replaced with the new value.
+objectName.propertyName = 'New Value'
+```
+
+- If the property already exists, the value will be replaced with the new value.
 
 - If there was no property with that name, a new property will be added to the object.
 
-- although we can’t reassign an object declared with const, we can still mutate it.
 
-- **Delete** a property with the [delete operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete).
+although we can’t reassign an object declared with const, we can still mutate it.
 
-- ```js
-  // delete property: 
-  delete objectName.propertyName // actually it sets the value to undefined and returns a boolean indicating successful deletion.
-  // delete value:
-  objectName.propertyName=''
-  ```
+### **Delete** a property 
 
-- ```js
-  const spaceship = {
-    'Fuel Type': 'Turbo Fuel',
-    homePlanet: 'Earth',
-    mission: 'Explore the universe' 
-  };
-   
-  delete spaceship.mission;  // Removes the mission property
-  ```
-
-------
-
-## Object Property Value Shorthand
-
-new in ES6: new shortcuts for assigning properties to variables known as **destructuring**.
-
-[MDN: Object initializer *New notations in ECMAScript 2015*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#New_notations_in_ECMAScript_2015)
+with the [delete operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete).
 
 ```js
-const monsterFactory = (name, age) => {
-    return { 
-      name,
-      age 
-    }
-  };
-  
-  instead of:
-  
-  const monsterFactory = (name, age) => {
-    return { 
-      name: name,
-      age: age
-    }
-  };
+// delete property: 
+delete objectName.propertyName // sets the value to undefined and returns a boolean indicating successful deletion
+// delete value:
+objectName.propertyName=''
 ```
 
 ```js
-const a = 'Hi there'
-const b = 23
-const c = {d: [true, false]}
-console.log({a, b, c})
-
-// this is the same as:
-console.log({a: a, b: b, c: c})
+const spaceship = {
+  'Fuel Type': 'Turbo Fuel',
+  homePlanet: 'Earth',
+  mission: 'Explore the universe' 
+};
+ 
+delete spaceship.mission;  // Removes the mission property
 ```
-
-
-
-------
 
 ## Methods
 
@@ -412,11 +345,9 @@ Chain operators to access nested properties.
 spaceship.nanoelectronics['back-up'].battery; // Returns 'Lithium'
 ```
 
-
-
 ------
 
-#### Object - Looping trough Objects - For...in
+### Object - Looping trough Objects - For...in
 
 - for...in will execute a given block of code for each property in an object.
 - the key-value pairs in objects aren’t ordered!
@@ -518,15 +449,17 @@ const person2 = Object.assign(myObject, person)
 
 ------
 
-## Object privacy
+## Object Getters & setters
+
+### Privacy
 
 - defines the idea that only certain properties should be mutable or able to change in value.
 - Certain languages have privacy built-in for objects, but JavaScript does not have this feature. 
-- JavaScript developers follow naming conventions: place an **underscore _ before the name** of a property to mean that the property should not be altered.
+- JavaScript naming convention: place an **underscore _ before the name** of a property to mean that the property should not be altered
 
 ------
 
-## Object Getters
+### Object Getters
 
 Setters and getter methods allow for more detailed ways of accessing and assigning properties.
 
@@ -542,8 +475,6 @@ Getters are methods that get and return the internal properties of an object. Ad
 - -> We use the **`get` keyword** followed by a function.
 - when using getter (and setter) methods,  properties cannot share the same name as the getter/setter function. If we do so, then calling the method will result in an infinite call stack error. 
 - if you omit the setter, you have a readonly property
-
-
 
 ```js
 const person = {
@@ -583,7 +514,7 @@ const newMovie = {
 
 ------
 
-## Object Setters
+### Object Setters
 
 reassign values of existing properties within an object
 
@@ -634,7 +565,7 @@ ghost.scare(); // 'BOO!'
 
 ------
 
-## Object Destructured Assignment
+## Object Destructuring
 
 [MDN: Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
 
@@ -707,9 +638,41 @@ const { info: movieInfo } = movie;
   ```
   
 
+
+
+Another example: [MDN: Object initializer *New notations in ECMAScript 2015*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#New_notations_in_ECMAScript_2015)
+
+```js
+const monsterFactory = (name, age) => {
+    return { 
+      name,
+      age 
+    }
+  };
+  
+  instead of:
+  
+  const monsterFactory = (name, age) => {
+    return { 
+      name: name,
+      age: age
+    }
+  };
+```
+
+```js
+const a = 'Hi there'
+const b = 23
+const c = {d: [true, false]}
+console.log({a, b, c})
+
+// this is the same as:
+console.log({a: a, b: b, c: c})
+```
+
 ------
 
-## Checking Property Existence:
+## Checking Object Property Existence:
 
 ```js
 if ('info' in movie) {
