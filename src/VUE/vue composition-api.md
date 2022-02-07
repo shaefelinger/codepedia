@@ -163,7 +163,9 @@ return { userName: userRefs.name, userAge: userRefs.age };
 
 setup() is run, when vue creates the component. Only once!
 
--> you can write regular functions -> return the function
+- just write a regular function and return it
+- access the value of a reactive reference with `.value`
+- in the template the value of a ref gets exposed automatically . no need to use `.value` in the template
 
 ```js
    function setNewData() {
