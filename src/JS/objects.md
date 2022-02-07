@@ -96,6 +96,12 @@ let gemstone = {
 
 ### A) Dot Notation
 
+##### add or change a property
+
+```js
+person.age = 44;
+```
+
 For properties & methods. object’s name, followed by the dot operator and then the property name (key). Like in `'hello'.length;`
 
 ```js
@@ -136,9 +142,23 @@ let returnAnyProp = (objectName, propName) => objectName[propName];
 returnAnyProp(spaceship, 'homePlanet'); // Returns 'Earth'
 ```
 
+#### Dynamic property access
+
+```js
+const userChosenKeyName = 'level';
+
+const person = {
+  [userChosenKeyName]: '...',
+  name: 'John',
+  age: 30,
+};
+```
+
+
+
 ------
 
-## Property-names
+### Property-names
 
 - one word
 
@@ -161,6 +181,45 @@ returnAnyProp(spaceship, 'homePlanet'); // Returns 'Earth'
   movieList.style['background-color']
   movieList.style['backgroundColor']
   ```
+
+
+------
+
+### Delete property
+
+```js
+delete person.age
+```
+
+------
+
+### Property-Types
+
+you can also use a (positive ) numbers as the key:
+
+```
+ 1.5: 'hello',
+ 
+ ...
+ person[1.5]
+ person['1.5']
+```
+
+------
+
+### Property Order
+
+the keys are stored in the order they are added. 
+
+Exception:
+
+- if you only have numbers as keys, they are sorted by number (behaves like an array. After all, an array is just an Object with number-keys)
+
+```js
+const object = { 5: 'Hi', 1: 'true' } ;
+// { 1: 'true', 5: 'hi' }
+```
+
 
 
 ------

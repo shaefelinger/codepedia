@@ -529,4 +529,5 @@ var room = hotelRooms[1][2];
 ## Links
 
 - [Practice Array Methods](https://www.youtube.com/watch?v=3LOEGS4qcRM&list=PLDlWc9AfQBfZGZXFb_1tcRKwtCavR7AfT)
+- Array on MDN (also check the linked methods on the left on that page): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
 
