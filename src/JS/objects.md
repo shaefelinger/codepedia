@@ -315,15 +315,17 @@ const objectName = {
 };
 ```
 
-New Syntax in ES6:
+New Syntax in ES6: method Shorthand Syntax. name directely followed by `()`
 
 ```js
 const objectName = {
-    sayHello () { 
+    sayHello() { 
       console.log('Hello!')
     }
   };
 ```
+
+> behind the scenes it is not exactly the same…
 
 Object methods are invoked by appending the object’s name with the dot operator followed by the method name and parentheses:
 
@@ -478,6 +480,44 @@ console.log(phoneticLookup("foxtrot"));
 
 ------
 
+## Copy Object
+
+### Spread Operator
+
+```js
+const person2 = { ...person }
+```
+
+creates a copy
+
+not a deep copy, only top level:
+
+- -> to also create a copy of an array:
+
+  ```js
+  const person3 = {...person, hobbies: [...person.hobbies]}
+  ```
+
+------
+
+### Object.assign()
+
+another (older) way to create a copy:
+
+```js
+const person2 = Object.assign({}, person)
+```
+
+or merge into an existing object:
+
+```js
+const person2 = Object.assign(myObject, person)
+```
+
+
+
+------
+
 ## The this-Keyword
 
 - The object that a method belongs to is called the **calling object**. The `this` keyword references the calling object and can be used to access properties of the calling object.
@@ -518,14 +558,20 @@ goat.diet();
 
 Setters and getter methods allow for more detailed ways of accessing and assigning properties.
 
+- adds a method that can be treated like a property (not called like a method)
+
 Getters are methods that get and return the internal properties of an object. Advantages:
 
-- Getters can perform an action on the data when getting a property.
+- Getters can perform an action on the data when getting a property. (eg set a default value or throw an error)
 - Getters can return different values using conditionals.
 - In a getter, we can access the properties of the calling object using `this`
 - The functionality of our code is easier for other developers to understand
+- convention eg, use an underscore to name the internal value
 - -> We use the **`get` keyword** followed by a function.
 - when using getter (and setter) methods,  properties cannot share the same name as the getter/setter function. If we do so, then calling the method will result in an infinite call stack error. 
+- if you omit the setter, you have a readonly property
+
+
 
 ```js
 const person = {
@@ -541,7 +587,26 @@ const person = {
   }
    
   // To call the getter method: 
-  person.fullName; // 'John Doe'
+person.fullName; // 'John Doe'
+```
+
+
+
+```js
+const newMovie = {
+    info: {
+      set title(val) {
+        if (val.trim() === '') {
+          this._title = 'DEFAULT';
+          return;
+        }
+        this._title = val;
+      },
+		  get title() {
+        return this._title.toUpperCase();
+      },
+    },
+  };
 ```
 
 ------
@@ -601,7 +666,23 @@ ghost.scare(); // 'BOO!'
 
 [MDN: Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
 
+```js
+const { info } = movie;
+```
 
+> you have to use a key-name, that exists
+
+rest parameter
+
+```js
+const { info, ...otherProps } = movie;
+```
+
+give the pulled out property a new name:
+
+```js
+const { info: movieInfo } = movie;
+```
 
 - to extract key-value pairs from objects and save them as variables. 
 
@@ -653,7 +734,24 @@ ghost.scare(); // 'BOO!'
   }
   ```
   
-  
+
+------
+
+## Checking Property Existence:
+
+```js
+if ('info' in movie) {
+	//
+} 
+```
+
+```js
+if (movie.info) { ... } // will be undefined if key doesn`t exist
+```
+
+```js
+if (movie.info === undefined) { ... } 
+```
 
 ------
 
