@@ -248,7 +248,7 @@ module.exports = {
           title: 'Clean Code',
           collapsable: false,
           sidebarDepth: 2,
-          children: ['', 'naming', 'comments_formatting'],
+          children: ['', 'naming', 'comments_formatting', 'functions'],
         },
       ],
       '/FAKEAPI/': [

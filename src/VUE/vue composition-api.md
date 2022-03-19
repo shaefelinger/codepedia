@@ -199,13 +199,27 @@ access value of ref with `.value`
 ## Replace Computed
 
 ```js
+import { computed } from "vue"
+```
+
+inside `setup()` ( use `.value` !)
+
+```js
+const spacesLeft = computed(() => { 
+	return capacity.value - attending.value.length;
+});
+```
+
+
+
+```js
 <script>
 import { ref, computed } from 'vue';
 ....
 
-		const uName = computed(function() {
-      return firstName.value + ' ' + lastName.value;
-    });
+const uName = computed(function() {
+	return firstName.value + ' ' + lastName.value;
+});
 ```
 
 - computed is (like a ref) an object with a value property
@@ -364,20 +378,52 @@ you have functions, that you can import to access the hooks
 | `beforeUpdate`, `updated`    | `onBeforeUpdate`, `onUpdated`           |
 | `beforeUnmount`, `unmounted` | `onBeforeUnmount`, `onUnmounted`        |
 
-
+create callback hooks inside `setup()` by adding **on** to the LifeCycle method name:
 
 ```js
 import {
-...
-	onBeforeMount,
-  onMounted, 
+ 	onBeforeMount,
+  onMounted,
   onBeforeUpdate,
   onUpdated,
   onBeforeUnmount,
-  onUnmounted
+  onUnmounted,
+  onActivated,
+  onDeactivated,
+  onErrorCaptured
 } from 'vue';
 
-
+export default {
+  setup() {
+    onBeforeMount(() => {
+      console.log("Before Mount!");
+    });
+    onMounted(() => {
+      console.log("Mounted!");
+    });
+    onBeforeUpdate(() => {
+      console.log("Before Update!");
+    });
+    onUpdated(() => {
+      console.log("Updated!");
+    });
+    onBeforeUnmount(() => {
+      console.log("Before Unmount!");
+    });
+    onUnmounted(() => {
+      console.log("Unmounted!");
+    });
+    onActivated(() => {
+      console.log("Activated!");
+    });
+    onDeactivated(() => {
+      console.log("Deactivated!");
+    });
+    onErrorCaptured(() => {
+      console.log("Error Captured!");
+    });
+  }
+};
 ```
 
 pass a function to the hook-function:
@@ -387,6 +433,8 @@ pass a function to the hook-function:
       console.log('onBeforeMount');
     });
 ```
+
+- `beforeCreate()` and `created()` are not needed in the composition-API ->  `beforeCreate()` is called right before `setup()` and `created()` is called right after `setup()`. Thus, we simply put code inside `setup()` that would normally be in these hooks, such as API calls.
 
 ------
 

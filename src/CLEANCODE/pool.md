@@ -1,361 +1,8 @@
 # Clean Code
 
+#
 
-
-# 
-
-# Functions (& Methods)
-
-Functions and methods (I don't differentiate here) are the meat of any code we write. All our code is part of some function or method after all. And we use functions to call other functions, build re-usable functionalities and more.
-
-That's why it's extremely important to write clean functions. Functions are made up of three main parts:
-
-Their name
- Their parameters (if any) Their body
-
-The naming of functions and methods is covered in the "Naming" section already. This section cheat sheet focuses on the parameters and body therefore.
-
-### Minimize The Number Of Parameters
-
-The **fewer parameters a function has, the easier it is to read and call** (and the easier it is to read and understand statements where a function is called).
-
-See this example:
-
-**Calling this function is no fun**. We have to remember **which parameters** are required and in **which order** they have to be provided.
-
-Reading this code is no fun either - for example, it's not immediately clear why we have two 'Max' values in the list.
-
-How Many Parameters Are Okay?
-
-Generally, **fewer is better**.
- Functions **without paramters are of course very easy to read** and digest. For example:
-
-```
-createUser('Max', 'Max', 'test@test.com', 'testers', 31, ['Sports',
-'Cooking']);
-createSession();
-user.save();
-```
-
-But "no parameters" is **not always an option** - after all it is the capability to take parameters that makes functions dynamic and flexible.
-
-Thankfully, functions with **one parameter** are also straightforward:
-
-Functions with **two parameters can be okay** - it really depends on the context and the kind of function.
-
-For example, **this code should be straightforward** and easy to use and understand:
-
-On the other hand, you can encounter functions where two parameters can **already be confusing** and it's not obvious / common sense which value should go where:
-
-Of course modern IDEs help you with understanding the expected values and order but having to hover over these functions is an extra step which definitely **hurts code readability**.
-
-**More than two parameters should mostly be avoided** - such functions can be hard to call and read:
-
-Reducing The Number Of Parameters
-
-What can you do if a function takes too many paramters but needs all that data?
-
-**You can replace multiple parameters with a map or an array!**
-
-createRectangle({x: 10, y: 9, width: 30, height: 12}); This is much more readable!
-
-```
-isValid(email);
-file.write(data);
-login('test@test.com', 'testers');
-createProduct('Carpet', 12.99);
-createSession('abc', 'temp');
-sortUsers('email', 'asc');
-createRectangle(10, 9, 30, 12);
-createUser('test@test.com', 31, 'max');
-```
-
-Keep Functions Small
-
-Keep Functions Small
-
-Besides the number of paramters, the **function body should also be kept small**.
-
-Because a smaller body means **less code to read and understand**. But in addition, it also forces you (ideally) to write highly readable code - for example by extracting other functions which use good naming.
-
-Consider this example:
-
-```
-function login(email, password) {
-  if (!email.includes('@') || password.length < 7) {
-    throw new Error('Invalid input!');
-  }
-  const existingUser = database.find('users', 'email', '==', email);
-  if (!existingUser) {
-    throw new Error('Could not find a user for the provided email.');
-```
-
-}
-
-```
-  if (existingUser.password === password) {
-    // create a session
-  } else {
-    throw new Error('Invalid credentials!');
-```
-
-} }
-
-If you read this snippet, you will probably understand pretty quickly what it's doing. Because it's a short, simple snippet.
-
-Nonetheless, it'll definitely take you a few moments. Now consider this snippet which does the same thing:
-
-```
-function login(email, password) {
-  validateUserInput(email, password);
-  const existingUser = findUserByEmail(email);
-  existingUser.validatePassword(password);
-```
-
-}
-
-This is way shorter and way easier to digest, right?
- And that's the goal! Having short, focused functions which are **easy to read, to**
-
-**understand and to maintain**! Do One Thing
-
-Do One Thing
-
-In order to be small, **functions should just do one thing**. Exactly one thing. This ensures that a function doesn't do too much.
- But what is "one thing"?
-
-What is "One Thing"?
-
-The concept of functions doing "just one thing" can be confusing. Have a look at this function:
-
-Is this function doing one thing? You could argue it does three things:
-
-Validate the user input Verify the credentials Create a session
-
-And of course you would be right - it does all these things.
- The idea of a function doing "one thing" is linked to another concept: The **levels of**
-
-**abstraction** the various operations in a function have.
- A function is considered to do just one thing if all operations in the function body are **on**
-
-**the same level of abstraction** and **one level below** the function name.
-
-Levels of Abstraction
-
-Levels of abstraction can be confusing but in the end, it's quite straightforward concept. There **high-level and low-level operations in programming** - and then a **huge**
-
-**bandwidth between** these two extremes. Consider this example:
-
-```
-function login(email, password) {
-  validateUserInput(email, password);
-  verifyCredentials(email, password);
-  createSession();
-```
-
-}
-
-```
-function connectToDatabase(uri) {
-  if (uri === '') {
-    console.log('Invalid URI!');
-```
-
-return; }
-
-```
-  const db = new Database(uri);
-  db.connect();
-}
-```
-
-Calling db.connect() is a high level operation - we're not dealing with the internals of the programming language here, we're not establish any network connections in great detail. We just call a function which then does a bunch of things under the hood.
-
-console.log(...) on the other hand, just like making that uri === '' comparison is a lower level operation. A higher level equivalent would be code like this:
-
-Now the implementation details are "**abstracted away**".
- **Low levels of abstraction aren't bad though**! You just should **not mix them with higher**
-
-**level** operations since that can cause confusion and make code harder to read.
-
-And you should try to write functions where **all operations are on the same level** of abstraction which then in turn should be exactly **one level below the function name** (i.e. the level ob abstraction implied by the function name).
-
-Of course getting this right can be tricky and requires experience (and you'll still not always get it right). But knowing these concepts is an important step towards writing clean functions.
-
-Operations Should Be One Level Below The Function Name
-
-In one of the above examples, we can see a couple of operations which are on the same level of abstraction - which then is one level below the level implied by the function name:
-
-```
-if (uriIsValid(uri)) {
-  showError('Invalid URI!');
-  return;
-```
-
-}
-
-```
-function login(email, password) {
-  validateUserInput(email, password);
-  verifyCredentials(email, password);
-  createSession();
-```
-
-}
-
-The login function clearly wants to do all the steps that are required to log a user in. That definitely includes input validation, credential verification and then the creation of some session, token or anything like that.
-
-And our function does exactly that!
-
-All three operations are on the same level of abstraction (pretty high levels in this case) and one level below the function name.
-
-Of course, the line is blurry though.
- What about this slightly altered example?
-
-```
-function login(email, password) {
-  if (inputInvalid(email, password)) {
-    showError(email, password);
-```
-
-return; }
-
-```
-  verifyCredentials(email, password);
-  createSession();
-}
-```
-
-Here, we still got relatively high levels of abstraction but we can definitely argue whether all operations are on the same level. verifyCredentials(...) seems to be more high- level than doing the if check and caring about the error message manually.
-
-In addition, whilst validation belongs to the tasks kicked of by login(), we can question whether showError(...) should be called directly inside of login(). It seems to be more than one level below the login() instruction.
-
-Obviously, this always leaves **room for discussion and interpretation**.
- And more granularity also isn't always better (see further down below, "Split Functions
-
-Reasonably").
-
-Avoid Mixing Levels Of Abstraction
-
-As mentioned above, levels of abstractions shouldn't be mixed, since that decreases readability and can cause confusion.
-
-Consider this example:
-
-```
-function printDocument(documentPath) {
-  const fsConfig = { mode: 'read', onError: 'retry' };
-  const document = fileSystem.readFile(documentPath, fsConfig);
-  const printer = new Printer('pdf');
-  printer.print(document);
-```
-
-}
-
-It's not a lot of code but it mixes levels of abstractions. Configuring the readFile() operation and executing all these individual steps side-by-side with the pretty high- level printing operations adds unnecessary complexity to this function.
-
-This version is cleaner:
-
-Here, readFromFile() can take care about the exact steps that need to be performed in order to read the document.
-
-Of course, you could argue, that this could be split up even more:
-
-But this new printFile() function almost just rephrases the printDocument function. So this split could be done but it might not always be a great decision to make it (see below, "Split Functions Reasonably").
-
-Rules Of Thumb
-
-The concept of "levels of abstraction" can be scary and you absolutely should **NOT spend hours** on your code, just to analzye which levels you migth have there.
-
-Instead, there are **two easy rules of thumb** I came up with, which help you decide when to split:
-
-1. **Extract code that works on the same functionality / is closely related**
-2. **Extract code that requires more interpretation than the surrounding code**
-
-Here's an **example for rule #1:**
-
-```
-function printDocument(documentPath) {
-  const document = readFromFile(documentPath);
-  const printer = new Printer('pdf');
-  printer.print(document);
-```
-
-}
-
-```
-function printDocument(documentPath) {
-  const document = readFromFile(documentPath);
-  printFile(document);
-```
-
-}
-
-```
-function updateUser(userData) {
-  validateUserData(userData);
-  const user = findUserById(userData.id);
-  user.setAge(userData.age);
-  user.setName(userData.name);
-  user.save();
-```
-
-}
-
-setAge() andsetName() have the same goal / functionality: They update data in the user object. save() then confirms these changes.
-
-You could therefore split the function:
-
-```
-function updateUser(userData) {
-  validateUserData(userData);
-  applyUpdate(userData);
-```
-
-}
-
-```
-function applyUpdate(userData) {
-  const user = findUserById(userData.id);
-  user.setAge(userData.age);
-  user.setName(userData.name);
-  user.save();
-```
-
-}
-
-Just by following that rule of thumb, you implictly removed another problem: Mixed levels of abstraction in the original function.
-
-Here's an **example for rule #2:**
-
-```
-function processTransaction(transaction) {
-  if (transaction.type === 'UNKNOWN') {
-    throw new Error('Invalid transaction type.');
-  }
-  if (transaction.type === 'PAYMENT') {
-    processPayment(transaction);
-```
-
-} }
-
-The validation for whether the transaction type is 'UNKNOWN' is of course not difficult to read but it definitely needs more interpretation from your side than just reading processPayment(...).
-
-Hence, you could refactor this to:
-
-```
-function processTransaction(transaction) {
-  validateTransaction(transaction);
-  if (isPayment(transaction)) {
-    processPayment(transaction);
-  }
-```
-
-}
-
-This is now all very readable and no step requires extra interpretation from the reader's side.
-
-Again, "behind the scenes", we got rid of mixed levels of abstraction and a too big distance between the level implied by the function name and some code in that function.
-
-Split Functions Reasonably
+## Split Functions Reasonably
 
 With all these rules, and because you of course definitely don't want to write bad code, you can get into a habit of extracting everything into new functions.
 
@@ -416,10 +63,10 @@ And now compare it to this version:
 }
 
 Which version is easier to understand?
- I would argue, the second version is. Even though (or actually: because) we have **less**
+I would argue, the second version is. Even though (or actually: because) we have **less**
 
 **function extractions** there.
- Splitting functions and keeping them short is important! But pointless extractions lead
+Splitting functions and keeping them short is important! But pointless extractions lead
 
 nowhere - you shouldn't extract just for the extraction's sake. How do you know that an extraction doesn't make sense? There are **three main signals:**
 
@@ -434,6 +81,14 @@ nowhere - you shouldn't extract just for the extraction's sake. How do you know 
    **already been taken**
 
 In the example above, both the throwError() and the buildUser() functions in the end just renamed the operation they contained. For buildUser(), coming up with a good name was hard because createUser() was already taken - and does more than just create a single user object.
+
+
+
+
+
+
+
+
 
 Avoid Unexpected Side Effects
 
@@ -467,10 +122,10 @@ function validateUserInput(email, password) {
 ```
 
 This function has an **unexpected side-effect**: createSession().
- Creating a session (which has an impact on data in memory, maybe even on data in a
+Creating a session (which has an impact on data in memory, maybe even on data in a
 
 database or files) is definitely a side-effect.
- We might expect this kind of side-effect in a function named login(), but in
+We might expect this kind of side-effect in a function named login(), but in
 
 validateUserInput(), it's definite **not expected**. And that's a problem.
 
@@ -490,7 +145,7 @@ There are three main areas of improvement, you should be aware of:
 2. **Avoid deep nesting**
 3. **Embrace errors**
 
-*Side-note: "Avoid deep nesting" is heavily related to clean code practices you already know from writing* **clean functions** *in general. Still, there are some control-structure specific concepts, that are covered in this document and course section.*
+_Side-note: "Avoid deep nesting" is heavily related to clean code practices you already know from writing_ **clean functions** _in general. Still, there are some control-structure specific concepts, that are covered in this document and course section._
 
 Prefer Positive Checks
 
@@ -519,7 +174,7 @@ The first snippet is quite readable and requires zero thinking.
 The second snippet uses the ! operator to check for the opposite - slightly more thinking and interpretation is required from the reader.
 
 Hence option #1 is preferrable.
- However, sometimes, I do prefer the negative version:
+However, sometimes, I do prefer the negative version:
 
 ```
 if (!isOpen(transaction)) {
@@ -568,8 +223,8 @@ There are a couple of techniques that can help you with getting rid of deeply ne
 1. **Use guards and fail fast**
 2. **Extract control structures and logic into separate functions**
 
-1. **Polymorphism & Factory Functions**
-2. **Replace** **if** **checks with errors**
+3. **Polymorphism & Factory Functions**
+4. **Replace** **if** **checks with errors**
 
 Use Guards & Fail Fast
 
@@ -745,7 +400,7 @@ The getProcessors() function returns an object with two functions stored inside 
 
 The object returned by getProcessors() is **polymorphic** because we always **use it in the same way** (we can call processPayment() and processRefund()) but the **logic that will be executed is not always the same**.
 
-*Side-note: The same problem can also be solved by using classes and inheritance - this will be* **covered in the "Classes" course section***!*
+_Side-note: The same problem can also be solved by using classes and inheritance - this will be_ **covered in the "Classes" course section\***!\*
 
 Embrace Errors
 
@@ -812,13 +467,13 @@ Here's a better version - embracing built-in error support which pretty much all
 ```
 
 }
- throw is a keyword in JavaScript (and many other languages) which can be used to
+throw is a keyword in JavaScript (and many other languages) which can be used to
 
 generate an error.
- Once an error is "on its way", it'll bubble up through the entire call stack and **cancel any**
+Once an error is "on its way", it'll bubble up through the entire call stack and **cancel any**
 
 **function execution until it's handled** (via try-catch).
- This removes the need for extra if checks and return statements.
+This removes the need for extra if checks and return statements.
 
 And we could even move the entire error handling logic out of the createUser() function.
 
@@ -906,7 +561,7 @@ userData.age = 31;
 ```
 
 This class has no methods and both properties are exposed publicly.
- An **object on the other hand hides it's data from the public and instead exposes a public**
+An **object on the other hand hides it's data from the public and instead exposes a public**
 
 **API** in the form of methods:
 
@@ -1077,7 +732,7 @@ refund() sounds more like a payment-related method so it would make more sense i
 
 Hence a User class which also handles payments would be too big - even if it would only be made up of a couple of lines of code.
 
-The **size of a class is therefore defined by its number of responsibilities**. And clean classes should **only have one responsibility** (*also see "Single Responsibility Principle", further down below*).
+The **size of a class is therefore defined by its number of responsibilities**. And clean classes should **only have one responsibility** (_also see "Single Responsibility Principle", further down below_).
 
 ```
 const expressDelivery = createDelivery({deliveryType: 'express', ...});
@@ -1111,11 +766,11 @@ The Law Of Demeter
 When working with objects, the following code is considered to be bad / not clean:
 
 this.customer.lastPurchase.date;
- This code violates the **Law of Demeter** which states that you shouldn't access the
+This code violates the **Law of Demeter** which states that you shouldn't access the
 
 internals of another object through another object.
- This is also called the "**principle of least knowledge**".
- **Code in a method** may only access direct internals (properties and methods) of:
+This is also called the "**principle of least knowledge**".
+**Code in a method** may only access direct internals (properties and methods) of:
 
 the object it **belongs to
 ** objects that are **stored in properties of that object** objects which are **received as method parameters**
@@ -1124,10 +779,10 @@ objects which are **created in the method**
 
 In this case, lastPurchase is a property (an attribute) of the customer object, which in turn is a property of the class the executing method belongs to. It's a different object, maybe based on some Purchase class. And that class then has a date property.
 
-*Side-note: Here I directly access properties - it's the same if you would be using getters (**customer.getLastPurchase().getDate()**).*
+_Side-note: Here I directly access properties - it's the same if you would be using getters (**customer.getLastPurchase().getDate()**)._
 
 Accessing this date property through lastPurchase violates the Law of Demeter.
- The problem with code like this is that you can end up with very long statements, full of
+The problem with code like this is that you can end up with very long statements, full of
 
 "chaining" (.something.somethingElse.more() is called "chaining").
 
@@ -1136,7 +791,7 @@ This creates strong dependencies and whenever the Purchase class would change (e
 The above code would better be implemented like this:
 
 this.customer.getLastPurchaseDate();
- Now the extra dependency on lastPurchase.date was removed.
+Now the extra dependency on lastPurchase.date was removed.
 
 **Even this solution is not optimal though** - it would be better to "**tell, not ask**". That means, it depends on what you actually needed to do with that date.
 
@@ -1145,12 +800,12 @@ Let's say you needed the date to send the purchased products to the customer.
 Instead of getting the date and then checking for the products, the following code would've been a better way of avoiding the "Law of Demeter" violation:
 
 this.warehouse.deliverPurchase(customer.lastPurchase);
- As you can see, it's not just about moving some code around - sometimes a different
+As you can see, it's not just about moving some code around - sometimes a different
 
 solution (working with different objects) is the cleanest way of getting something done. It's also important to note that the "Law of Demeter" really only applies to **property /**
 
 **attribute chaining**.
- The following code would be fine (as long as these **methods are real methods and not**
+The following code would be fine (as long as these **methods are real methods and not**
 
 **just getters** wrapped around properties): this.customer.sendMessage(message).retry(2);
 
@@ -1173,7 +828,7 @@ Below, all five principles are explained and put into the context of writing cle
 
 S: Single-Responsibility Principle (SRP)
 
-*A class should only have a single responsibility - it should only change for this one responsibility.*
+_A class should only have a single responsibility - it should only change for this one responsibility._
 
 The SRP simply states that a class should be focused on one core responsibility. Only if that responsibility requires changes to the class code, such changes are acceptable.
 
@@ -1195,7 +850,7 @@ class ReportDocument {
 ```
 
 If anything related to how a report is generated changes
- If anything related to how a report is printed as a PDF changes
+If anything related to how a report is printed as a PDF changes
 
 It should be fair to assume that in most applications, these two features are probably not directly connected. The people deciding on how the PDF should look like are not necessarily the same people who decide how the report should be generated.
 
@@ -1205,7 +860,7 @@ The SRP is an **important principle when it comes to writing clean code**. Becau
 
 O: Open-Closed Principle (OCP)
 
-*A class should be open for extension but closed for modification.*
+_A class should be open for extension but closed for modification._
 
 Whilst the above sentence might sound cryptic, this is actually a straightforward principle.
 
@@ -1303,7 +958,7 @@ The OCP is an **important principle when it comes to writing clean code**. Becau
 
 L: Liskov Substitution Principle (LSP)
 
-*Objects in a program should be replaceable with instances of their subtypes.*
+_Objects in a program should be replaceable with instances of their subtypes._
 
 The above sentence should be quite clear. Here's an example of a baseclass being replaced with a subclass of it:
 
@@ -1381,7 +1036,7 @@ class Penguin extends Bird {
 Now we added a new FlyingBird class which is based on Bird. And we can now choose whether we have other birds which are "just birds" (like Penguin) or "flying birds" (like Eagle).
 
 Now we follow the LSP.
- Hence, it's fair to say that the LSP in the end has the goal of **forcing us to model our data**
+Hence, it's fair to say that the LSP in the end has the goal of **forcing us to model our data**
 
 **correctly** and think carefully about our models and the entities we work with in our code. The LSP is definitely an important and popular principle, but it doesn't have that big of
 
@@ -1391,7 +1046,7 @@ Yes, it could lead to smaller classes but it's really mostly focused on forcing 
 
 I: Interface Seggragation Principle (ISP)
 
-*Many client-specific interfaces are better than one general-purpose interface.*
+_Many client-specific interfaces are better than one general-purpose interface._
 
 Reading sentences like the one above can always be confusing, but the ISP is actually also quite straightforward.
 
@@ -1487,7 +1142,7 @@ The ISP is definitely an important and popular principle, but it doesn't have th
 
 D: Dependecy Inversion Principle (DIP)
 
-*One should depend upon abstractions, not concretions.*
+_One should depend upon abstractions, not concretions._
 
 This last principle is a principle which you will often already follow, if you follow the other SOLID principles.
 
@@ -1572,37 +1227,37 @@ Instead, consider the various concepts and rules explained here. Apply them as g
 Clean Code - Checklist Naming
 
 Use **descriptive** and meaningful names
- **Variables & Properties**: Nouns or short phrases with adjectives **Functions and Methods**: Verbs or short phrases with adjectives **Classes**: Nouns
+**Variables & Properties**: Nouns or short phrases with adjectives **Functions and Methods**: Verbs or short phrases with adjectives **Classes**: Nouns
 
 Be as **specific** as necessary and possible
- Use **yes/ no** "questions" for booleans (e.g. isValid)
- **Avoid misleading** names
- Be **consistent** with your names (e.g. stick to get... instead of fetch...)
+Use **yes/ no** "questions" for booleans (e.g. isValid)
+**Avoid misleading** names
+Be **consistent** with your names (e.g. stick to get... instead of fetch...)
 
 Comments & Formatting
 
 **Most comments are bad** - avoid them! Some good comments are **acceptable**
 
 **Legal** comments
- **Warnings
- Helpful explanations** (e.g. for Regex) **Todos** (don't overdo it though)
+**Warnings
+Helpful explanations** (e.g. for Regex) **Todos** (don't overdo it though)
 
 Use vertical formatting:
- Keep related concepts close to each other (**vertical density**)
+Keep related concepts close to each other (**vertical density**)
 
 Add spacing / distance (e.g. blank linkes) between concepts that are not directly related (**vertical distance**)
 
 Write code **top to bottom**: Called functions should come below calling functions (if possible)
 
 Use **horizontal** formatting:
- **Avoid long lines** - break them into multiple lines instead Use **indentation** to express scope
+**Avoid long lines** - break them into multiple lines instead Use **indentation** to express scope
 
 Functions
 
 Functions
 
 **Limit the number of parameters** your functions use - less is better!
- Consider using objects, dictionaries or arrays to **group multiple parameters into**
+Consider using objects, dictionaries or arrays to **group multiple parameters into**
 
 **one parameter
 ** Functions should be **small and do one thing**
@@ -1618,19 +1273,19 @@ Control Structures & Errors
 Prefer **positive checks** Avoid **deep nesting**
 
 Consider using "**Guard**" statements
- Consider using **polymorphism** and **factory functions Extract control structures** into separate functions
+Consider using **polymorphism** and **factory functions Extract control structures** into separate functions
 
 Consider using **"real" errors** (with error handling) instead of "synthetic errors" built with if statements
 
 Objects & Classes
 
 Focus on building "real objects" **or** data containers / structures
- Build **small classes** - focus on a **single responsibility** (which does **not** mean "single
+Build **small classes** - focus on a **single responsibility** (which does **not** mean "single
 
 method"!)
- Build classes with **high cohesion**
+Build classes with **high cohesion**
 
 Follow the "**Law of Demeter**" for "real objects" (avoid this.customer.lastPurchase.date)
 
 Especially when doing OOP: Follow the SOLID principles
- Especially **SRP and OCP** will help a lot with writing clean code (= readable code)
+Especially **SRP and OCP** will help a lot with writing clean code (= readable code)
