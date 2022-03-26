@@ -87,6 +87,7 @@ module.exports = {
           { text: 'Vue', link: '/VUE/' },
           { text: 'Vue Router', link: '/VUEROUTER/' },
           { text: 'Vuex', link: '/VUEX/' },
+          { text: 'Vite', link: '/VITE/' },
           { text: 'Nuxt', link: '/NUXT/' },
           { text: 'Vue Animation', link: '/VUEANIMATION/' },
           { text: 'VuePress', link: 'https://v1.vuepress.vuejs.org/' },
@@ -393,6 +394,14 @@ module.exports = {
           collapsable: false,
           sidebarDepth: 2,
           children: ['', 'vuex vue mastery'],
+        },
+      ],
+      '/VITE/': [
+        {
+          title: 'VUEX',
+          collapsable: false,
+          sidebarDepth: 2,
+          children: [''],
         },
       ],
       '/VUEANIMATION/': [
