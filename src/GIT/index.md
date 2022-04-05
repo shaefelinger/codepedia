@@ -303,11 +303,12 @@ Keep in mind:
 | :---------------------------- | :--------------------------------------------------------- |
 | `git branch`                  | **Shows** all existing branches, marks the one you are on. |
 | `git branch <newbranch>`      | **Creates** a new branch                                   |
+| `git checkout <name>`         | **switch** branch                                          |
 | `git checkout -b <newbranch>` | **Shorthand:** Create new branch and switch                |
 | `git branch -d <oldbranch>`   | Delete branch                                              |
 | `git branch -D <oldbranch>`   | Delete unmerged branch                                     |
 | `git merge <name>`            | Merge branch into the active branch                        |
-|                               |                                                            |
+| `git branch -m <new_name>`    | rename branch                                              |
 
 Branch names can’t contain whitespaces
 
