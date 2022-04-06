@@ -104,6 +104,7 @@ module.exports = {
           { text: 'Performance', link: '/performance/' },
           { text: 'Clean Code', link: '/cleancode/' },
           { text: 'Fake API', link: '/fakeapi/' },
+          { text: 'SSH', link: '/ssh/' },
         ],
       },
       {
@@ -255,6 +256,14 @@ module.exports = {
       '/FAKEAPI/': [
         {
           title: 'Fake API',
+          collapsable: false,
+          sidebarDepth: 2,
+          children: [''],
+        },
+      ],
+      '/SSH/': [
+        {
+          title: 'SSH',
           collapsable: false,
           sidebarDepth: 2,
           children: [''],
