@@ -145,6 +145,7 @@ module.exports = {
             'transition',
             'animation',
             'css_div',
+            'scss_sass',
             'css_links',
           ],
         },
