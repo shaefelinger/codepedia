@@ -88,6 +88,7 @@ module.exports = {
           { text: 'Vue Router', link: '/VUEROUTER/' },
           { text: 'Vuex', link: '/VUEX/' },
           { text: 'Vite', link: '/VITE/' },
+          { text: 'Quasar', link: '/QUASAR/' },
           { text: 'Nuxt', link: '/NUXT/' },
           { text: 'Vue Animation', link: '/VUEANIMATION/' },
           { text: 'VuePress', link: 'https://v1.vuepress.vuejs.org/' },
@@ -419,6 +420,14 @@ module.exports = {
           collapsable: false,
           sidebarDepth: 2,
           children: ['', 'vue transition', 'vue velocity', 'vue gsap3'],
+        },
+      ],
+      '/QUASAR/': [
+        {
+          title: 'Quasar',
+          collapsable: false,
+          sidebarDepth: 2,
+          children: ['', 'q_components'],
         },
       ],
       '/NUXT/': [
