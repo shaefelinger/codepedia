@@ -521,5 +521,13 @@ configuring the promt:
 
 ## Tips
 
-cmd-shift-. shows hidden Files in Finder
+- cmd-shift-. shows hidden Files in Finder
+
+- check network speed:
+
+  ```
+  networkQuality -v
+  ```
+
+  
 
