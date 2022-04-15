@@ -100,6 +100,7 @@ module.exports = {
         items: [
           { text: 'Command Line', link: '/commandline/' },
           { text: 'VS Code', link: '/vscode/' },
+          { text: 'Jetbrains IntelliJ', link: '/jetbrains/' },
           { text: 'Markdown', link: '/markdown/' },
           { text: 'Design', link: '/design/' },
           { text: 'Performance', link: '/performance/' },
@@ -237,6 +238,14 @@ module.exports = {
           collapsable: false,
           sidebarDepth: 3,
           children: ['', 'chrome devtools'],
+        },
+      ],
+      '/JETBRAINS/': [
+        {
+          title: 'Intelli J/Webstorm',
+          collapsable: false,
+          sidebarDepth: 3,
+          children: [''],
         },
       ],
       '/DESIGN/': [

@@ -369,7 +369,7 @@ sed 's/snow/rain/g' forests.txt
 - Ctrl + X exits the nano program. X stands for exit.
 - Ctrl + G opens a help menu.
 
-https://www.nano-editor.org/
+[https://www.nano-editor.org/](https://www.nano-editor.org/)
 
 ---
 
@@ -509,6 +509,14 @@ configuring the promt:
 
 ------
 
+## check network speed
+
+```
+networkQuality -v
+```
+
+------
+
 ## Links
 
 - [Explainshell](https://explainshell.com/)
@@ -522,12 +530,4 @@ configuring the promt:
 ## Tips
 
 - cmd-shift-. shows hidden Files in Finder
-
-- check network speed:
-
-  ```
-  networkQuality -v
-  ```
-
-  
-
+- 
