@@ -47,7 +47,7 @@ understand the structure of a project
 
 | Action Search        | Windows          | Mac       | Description                                                  |
 | -------------------- | ---------------- | --------- | ------------------------------------------------------------ |
-|                      |                  | ⌘ + F12   | File Structure                                               |
+| File Structure       |                  | ⌘ + F12   | File Structure                                               |
 | Go To Implementation | CTRL + ALT + B   | ⌘ + ⌥ + B | Navigates to the implementation of the method                |
 | back                 |                  |           |                                                              |
 | Recent Locations     | CTRL + SHIFT     | ⌘ + ⇧ + E | recent locations menu                                        |
@@ -58,4 +58,40 @@ understand the structure of a project
 | Quick Definition     | CTRL + SHIFT + I | ⌥ + SPACE | Quick Definition window:  peek at the implementation of a method without navigating away from current location |
 | Parameter Info       | CTRL + P         | ⌘+P       | Display method parameters                                    |
 | Quick Documentation  | CTRL + Q         | F1        | documentation for method at caret                            |
+
+------
+
+## Bookmarks
+
+mark specific lines, add notes
+
+> - Do an action search for bookmarks to bring up all options
+> - "Toggle Bookmark with Mnemonic" lets you assign a character to a specific bookmark
+
+
+
+| Action Search                 | Windows      | Mac    | Description                                                  |
+| ----------------------------- | ------------ | ------ | ------------------------------------------------------------ |
+| Toggle Bookmark               | F11          | F3     | Add/Remove bookmark at current caret location                |
+| Show Bookmarks                | SHIFT + F11  | ⌘ + F3 | Open Bookmarks menu                                          |
+| Edit Bookmark Description     | CTRL + ENTER | F2     | While cursor is on a bookmark, this action   opens the Bookmark Description menu to add/edit a description |
+| Toggle Bookmark with Mnemonic | CTRL + F11   | ⌥ + F3 | Assign a letter or a number to a specific bookmark           |
+
+------
+
+## Editor Tabs
+
+- Run an action search for "split" to bring up different options to split your editor:
+  - Split and Move Down/Right: splits the editor and sends current file to the new section Split Horizontally/Vertically: splits the editor and duplicates current file in the new section
+  - Run an action search for "unsplit" to remove one or multiple split sections
+
+| Action Search             | Windows    | Mac     | Description                  |
+| ------------------------- | ---------- | ------- | ---------------------------- |
+| Switcher                  | CTRL + TAB | ⌃ + TAB | Switches between recent tabs |
+| Recent Files              | CTRL + E   | ⌘ + E   | Recent Files menu            |
+| split/unsplit             |            |         |                              |
+| split and move right/down |            |         |                              |
+| unsplit all               |            |         |                              |
+
+------
 
