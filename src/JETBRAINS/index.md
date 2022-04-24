@@ -95,3 +95,53 @@ mark specific lines, add notes
 
 ------
 
+## **Text Selection**
+
+IntelliJ provides all common editor functions to select text plus a couple of enhanced versions.
+
+| Action Search    | Windows                   | Mac                | Description                                                  |
+| ---------------- | ------------------------- | ------------------ | ------------------------------------------------------------ |
+|                  | SHIFT + up/down           | ⇧ + up/down        | Select text line by line                                     |
+|                  | SHIFT + left/right        | ⇧ + left/right     | Select character by character                                |
+|                  | CTRL + SHIFT + left/right | ⇧ + ⌥ + left/right | Select word by word                                          |
+|                  | CTRL + A                  | ⌘+ A               | Select all text in file                                      |
+|                  | SHIFT + HOME              | FN + ⇧ + left      | Select all text from current caret position to the beginning of a line |
+|                  | SHIFT + END               | FN + ⇧ + right     | Select all text from current caret position to the end of a line |
+| Extend Selection | CTRL + W                  | ⌥ + up             | Smart code block selection                                   |
+| Shrink Selection | CTRL + SHIFT + W          | ⌥ + down           | Smart code block de-selection                                |
+
+## **Cursor Management**
+
+| Action Search                      | Windows               | Mac             | Description                                             |
+| ---------------------------------- | --------------------- | --------------- | ------------------------------------------------------- |
+|                                    | HOME / END            | FN + left/right | Navigate to the beginning/end of  the line              |
+|                                    | PG UP / PG DN         | FN + up/down    | Paged navigation                                        |
+|                                    | CTRL + PG UP/PG DN    | FN +⌘+ up/down  | Place cursor at the top or bottom of the visible editor |
+|                                    | CTRL + up/down        | -               | Scroll with keyboard without moving                     |
+|                                    | ALT + up/down         | -               | Jump to next or previous method in a file               |
+|                                    | CTRL + CTRL + up/down | ⌥ + ⌥ + up/down | Duplicate cursor                                        |
+| Go to Line/Column                  | CTRL + G              | ⌘ + L           | Go to Line/Column menu                                  |
+| Edit: Column Selection Mode        | ALT + SHIFT + Insert  | ⇧ + ⌘ + 8       | Toggle virtual spaces on and off                        |
+| Replace                            | CTRL + R              | ⌘+ R            | Search & Replace menu                                   |
+| Add Selection For  Next Occurrence | ALT + J               | ⌃ + G           | Selects next occurrence and duplicates caret            |
+|                                    | SHIFT + ALT + click   | ⇧ +⌥+ click     | Duplicate cursor with mouse                             |
+|                                    | SHIFT + ALT + drag    | ⇧ +⌥+ drag      | multiple selections                                     |
+
+## **Basic Editing**
+
+| Action Search              | Windows               | Mac             | Description                               |
+| -------------------------- | --------------------- | --------------- | ----------------------------------------- |
+|                            | SHIFT + ENTER         | ⇧ + ENTER       | Add a newline from anywhere               |
+| Duplicate Line             | CTRL + D              | ⌘ + D           | Duplicate current line                    |
+| Delete Line                | CTRL + Y              | ⌘ + Backspace   | Delete current line                       |
+| Paste from History         | CTRL + SHIFT + V      | ⌘ + ⇧ + V       | Paste text from clipboard                 |
+| Undo                       | CTRL + Z              | ⌘ + Z           | Undo latest action                        |
+| Rollback                   | CTRL + ALT + Z        | ⌘ + ⌥ + Z       | Rollback change at caret                  |
+|                            | SHIFT + ALT + up/down | ⇧ + ⌥ + up/down | Move selected code block                  |
+| Toggle Case                | CTRL + SHIFT + U      | ⌘ + ⇧ + U       | Make selection upper case or lower case   |
+| Comment With Line Comment  | CTRL + /              | ⌘ + /           | Comment out selection with line comments  |
+| Comment With Block Comment | CTRL + SHIFT + /      | ⌘ + ⌥ + /       | Comment out selection with block comments |
+
+------
+
+## **Code Auto-generation**
