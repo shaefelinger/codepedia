@@ -124,6 +124,7 @@ IntelliJ provides all common editor functions to select text plus a couple of en
 | Edit: Column Selection Mode        | ALT + SHIFT + Insert  | ⇧ + ⌘ + 8       | Toggle virtual spaces on and off                        |
 | Replace                            | CTRL + R              | ⌘+ R            | Search & Replace menu                                   |
 | Add Selection For  Next Occurrence | ALT + J               | ⌃ + G           | Selects next occurrence and duplicates caret            |
+| Select All Occurences              |                       | ⌃ + ⌘ + G       | Selects all occurrences and duplicates caret            |
 |                                    | SHIFT + ALT + click   | ⇧ +⌥+ click     | Duplicate cursor with mouse                             |
 |                                    | SHIFT + ALT + drag    | ⇧ +⌥+ drag      | multiple selections                                     |
 
