@@ -86,7 +86,7 @@ module.exports = {
         items: [
           { text: 'Vue', link: '/VUE/' },
           { text: 'Vue Router', link: '/VUEROUTER/' },
-          { text: 'Vuex', link: '/VUEX/' },
+          { text: 'Vue-State-Management', link: '/VUESTATE/' },
           { text: 'Vite', link: '/VITE/' },
           { text: 'Quasar', link: '/QUASAR/' },
           { text: 'Nuxt', link: '/NUXT/' },
@@ -408,12 +408,12 @@ module.exports = {
           // children: ['',  'navigation-guards'],
         },
       ],
-      '/VUEX/': [
+      '/VUESTATE/': [
         {
-          title: 'VUEX',
+          title: 'VUESTATE',
           collapsable: false,
           sidebarDepth: 2,
-          children: ['', 'vuex vue mastery'],
+          children: ['', 'vuex', 'vuex vue mastery'],
         },
       ],
       '/VITE/': [
