@@ -413,7 +413,7 @@ module.exports = {
           title: 'VUESTATE',
           collapsable: false,
           sidebarDepth: 2,
-          children: ['', 'vuex', 'vuex vue mastery'],
+          children: ['', 'pinia', 'vuex', 'vuex vue mastery'],
         },
       ],
       '/VITE/': [

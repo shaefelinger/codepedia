@@ -93,7 +93,7 @@ getters: {
 
 ---
 
-> merke:
+> remember:
 >
 > actions: `this.$store.dispatch`
 >

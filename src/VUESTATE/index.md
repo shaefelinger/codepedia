@@ -5,6 +5,17 @@
 - make readonly
 - then use computed property with get and set method
 
+pro:
+
+- flexible
+- no need to use mutation & actions
+
+cons:
+
+- no dev-tools support
+- no vuex-plugins (like vuex-persist)
+- store has to be injected in every component
+
 store/index.js
 
 ```js
@@ -16,14 +27,14 @@ const state = reactive({
 });
 
 const methods = {
+  setColorCode(val) {
+    state.colorCode = val;
+  },
   decreaseCounter() {
     state.counter--;
   },
   increaseCounter() {
     state.counter++;
-  },
-  setColorCode(val) {
-    state.colorCode = val;
   },
 };
 
@@ -64,32 +75,20 @@ Home.vue
   </div>
 </template>
 
-<script>
-// @ is an alias to /src
+<script setup>
+import { inject, computed } from "vue";
 
-import { inject, computed } from 'vue';
+const store = inject("store");
 
-export default {
-  name: 'Home',
-  setup() {
-    const store = inject('store');
-
-    const colorCode = computed({
-      get() {
-        return store.state.colorCode;
-      },
-      set(val) {
-        console.log('val', val);
-        store.methods.setColorCode(val);
-      },
-    });
-
-    return {
-      store,
-      colorCode,
-    };
+const colorCode = computed({
+  get() {
+    return store.state.colorCode;
   },
-};
+  set(val) {
+    console.log("val", val);
+    store.methods.setColorCode(val);
+  },
+});
 </script>
 ```
 
@@ -108,13 +107,3 @@ export default {
 </script>
 ```
 
-pro:
-
-- flexible
-- no need to use mutation & actions
-
-cons:
-
-- no dev-tools support
-- no vuex-plugins (like vuex-persist)
-- store has to be injected in every component

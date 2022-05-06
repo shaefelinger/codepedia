@@ -58,7 +58,7 @@ export default {
 
 
 
-## VUEX max
+## VUEX
 
 1 store per app -> Predictable State-Management
 
@@ -100,6 +100,12 @@ npm i vuex@next
 ------
 
 
+
+
+
+
+
+------
 
 ## Create store
 
