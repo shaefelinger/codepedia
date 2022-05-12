@@ -56,6 +56,29 @@ space: `%20`
 
 
 
+------
+
+## Javascript `new URL()`
+
+[https://developer.mozilla.org/en-US/docs/Web/API/URL/URL](https://developer.mozilla.org/en-US/docs/Web/API/URL/URL)
+
+instead of
+
+```js
+const url = 'https://myurl.io/api'
++'?height=' + encodeURIComponent(height)
++'?width=' + encodeURIComponent(width)
+```
+
+use:
+
+```js
+const url = new URL('https://myurl.io/api')
+url.searchParams.set('width', width)
+url.searchParams.set('height', height)
+url.toString
+```
+
 
 
 ---
