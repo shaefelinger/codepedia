@@ -84,42 +84,72 @@ Vuex is not as TypeScript friendly. Pinia has first-class TypeScript support.
 ## Install
 
 ```
- npm i pinia
+yarn add pinia
+# or with npm
+npm install pinia
 ```
 
-main.js - add `.use(createPinia())`
+register in main.js - add `.use(createPinia())`
 
 ```js
-import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-import App from './App.vue'
-import router from './router'
-import store from './stores'
 
-createApp(App).use(store).use(createPinia()).use(router).mount('#app')
+createApp(App)
+    .use(createPinia())
+    ...
 ```
 
 ------
 
-## Defining a Store
+[Add to Quasar ](https://quasar.dev/quasar-cli-vite/state-management-with-pinia)
 
-store file, eg. `/stores/EventStore.js`
+```
+quasar new store <store_name>
+```
+
+> quasar cli might need update:
+>
+> ```
+> npm i -d @quasar/cli@latest
+> # or: 
+> yarn global add @quasar/cli
+> 
+> quasar upgrade -i
+> ```
+
+------
+
+## Defining a Store`
 
 ```
 defineStore('<StoreName>', { <config> })
 ```
 
+Pinia is modular by default
 
+convention:
+
+- `stores`-folder
+
+- defineStore - good practice to name the ID the same as the filename
+- prefix export name woth `use`
+- eg `/stores/ProductStore.js`:
 
 ```js
-import { defineStore } from 'pinia';
+import { defineStore} from "pinia";
 
-export const useEventStore = defineStore('EventStore', {})
+export const useProductStore = defineStore('ProductStore', {
+    // state
+    // actions
+    // getters
+})
 ```
 
-That’s all there is to it - store is ready to go - Stores are modular by default!
 
-`store()` (function that returns an object)
+
+### `state()` 
+
+function that returns an object
 
 ```js
 import { defineStore } from "pinia";
@@ -133,7 +163,9 @@ export const useUserStore = defineStore('UserStore', {
 })
 ```
 
-> shorthand: 
+
+
+> alternative syntax: 
 >
 > ```js
 > export const useUserStore = defineStore('UserStore', {
@@ -143,21 +175,72 @@ export const useUserStore = defineStore('UserStore', {
 > })
 > ```
 
+That’s all: store is ready to go 
 
+------
 
-use in Component
+## Access state
+
+[https://pinia.vuejs.org/core-concepts/state.html](https://pinia.vuejs.org/core-concepts/state.html)
+
+in the Component:
 
 ```vue
 <script setup>
+	import {useProductStore} from "./stores/ProductStore";
+	const productStore = useProductStore() // invoke Function!!
+</script>
+```
+
+> or destructure (use `storeToRefs()`)
+>
+> ```js
+> import {storeToRefs} from 'pinia'
+> const {products} = storeToRefs(useProductStore())
+> ```
+
+Or inside Options-API-Syntax:
+
+```vue
+<script>
 import {useUserStore} from "./stores/UserStore";
 
-const userStore = useUserStore();
-</script>
-
+export default {
 ...
-<template>
-	 <p>Logged in as {{userStore.user}}</p>
+setup() {
+  const userStore = useUserStore();  
+  return {
+  	userStore
+	}
+}
+...
+}
+</script>
 ```
+
+### Read/Write
+
+you can directly read and write to the state by accessing it through the `store` instance:
+
+```js
+const store = useStore() 
+
+store.counter++
+```
+
+### [Resetting the state](https://pinia.vuejs.org/core-concepts/state.html#resetting-the-state)
+
+You can *reset* the state to its initial value by calling the `$reset()` method on the store:
+
+```js
+const store = useStore()
+
+store.$reset()
+```
+
+
+
+------
 
 ## Managing Getters
 
