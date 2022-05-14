@@ -53,3 +53,18 @@ He is also working as a professional Musician, Songwriter & Producer.
 <!-- GitHub: [https://github.com/shaefelinger](https://github.com/shaefelinger) -->
 
 <!-- Facebook: [https://www.facebook.com/steffen.hafelinger/ ](https://www.facebook.com/steffen.hafelinger/ ) -->
+
+## Impressum
+
+Inhaltlich verantwortlich gemäß § 5 TMG:
+
+Steffen Häfelinger - Ekhofstr. 41 - 22087 Hamburg
+
+Telefon: +49 (0) 176 244 70 150 - E-Mail: mail@functionfactory.de
+
+#### Haftungshinweis:
+
+Trotz sorgfältiger inhaltlicher Kontrolle übernehme ich keine Haftung für die Inhalte externer Links.
+Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.
+
+Note: This page is in German to conform with the imprint requirements of German law.

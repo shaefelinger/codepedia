@@ -110,7 +110,7 @@ module.exports = {
         ],
       },
       {
-        text: 'About',
+        text: 'About/Imprint',
         link: '/ABOUT/',
       },
     ],
