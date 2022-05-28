@@ -490,6 +490,12 @@ const sortedPrices = prices.sort((a, b) => {
 
 ------
 
+### for..of-loop
+
+------
+
+
+
 ## Matrix/Nested Arrays
 
 ```
@@ -531,3 +537,25 @@ var room = hotelRooms[1][2];
 - [Practice Array Methods](https://www.youtube.com/watch?v=3LOEGS4qcRM&list=PLDlWc9AfQBfZGZXFb_1tcRKwtCavR7AfT)
 - Array on MDN (also check the linked methods on the left on that page): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
 
+------
+
+## Iterabeles
+
+Objects, that implement the iterable-protocol and have an @@iterator-method (you can use a `for...of`-loop)
+
+not every Iterable is an array. For example:
+
+- NoteList, String, Map, Set
+
+### Array-like-Object
+
+Objects, that:
+
+- have a length-property
+- use index to access items 
+
+not every Array-like-Object is an array. For Example
+
+- NodeList, String
+
+Arrays have a lot of methods, that iterables and array-like objects don't have
