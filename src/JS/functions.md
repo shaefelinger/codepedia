@@ -1,5 +1,7 @@
 # Functions
 
+[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions)
+
 ## Function Declaration
 
 ### A) Function Statement
@@ -23,10 +25,11 @@ greetWorld();  // -> calling the Function
 ### B) Function Expressions - Anonymus 
 
 - Another way to define a function - (anonymous function) 
+- often stored in a variable in order to refer to it
 - name is usually omitted
-- often stored in a variable in order to refer to it.
 - it is common practice to use const as the keyword to declare the variable
 - Unlike function declarations, function expressions are not hoisted so they cannot be called before they are defined.
+- for debugging: you don't see the function-name in the console as part of the error message if it is an anonomys function
 
 <img src="./assets/js_function_expressions3.png" alt="js_function_expressions.png" style="zoom:50%;" />
 
@@ -97,8 +100,6 @@ const addFive = a => a + 5
 const divide = (a, b) => a / b
 ```
 
-
-
 ```js
 const dayIsWednesday = day => day === 'Wednesday' ? true : false;
 
@@ -109,6 +110,68 @@ const doubler = item => item * 2;
 const multiplier = (item, multi) => item * multi;
 multiplier(5, 3); // returns 15
 ```
+
+also with more complex teranry expressions:
+
+```js
+const getWinner = (cChoice, pChoice) =>
+  cChoice === pChoice
+    ? RESULT_DRAW
+    : (cChoice === ROCK && pChoice === PAPER) ||
+      (cChoice === PAPER && pChoice === SCISSORS) ||
+      (cChoice === SCISSORS && pChoice === ROCK)
+    ? RESULT_PLAYER_WINS
+    : RESULT_COMPUTER_WINS;
+```
+
+### Arrow Functions Overview
+
+
+
+**1) Default syntax:**
+
+```js
+const add = (a, b) => { 
+  const result = a + b;    
+  return result; 
+}
+// like in "normal" functions, parameters and return statement are OPTIONAL!};
+```
+
+*No function keyword, parentheses around parameters/ arguments*
+
+**2) Shorter parameter syntax, if exactly one parameter is received:**
+
+```js
+const log = message => { console.log(message) }; 
+// could also return something of course - this example just doesn't};
+```
+
+*Parentheses around parameter list can be omitted (for exactly one argument).*
+
+**3) Empty parameter parentheses if NO arguments are received:**
+
+```js
+const greet = () => {console.log('Hi there!')};
+```
+
+*Noteworthy: Parentheses have to be added (can't be omitted)*
+
+**4) Shorter function body, if exactly one expression is used:**
+
+```js
+const add = (a, b) => a + b;
+```
+
+*Curly braces and return statement can be omitted, expression result is always returned automatically*
+
+**5) Function returns an object:**
+
+```js
+const loadPerson = pName => ({name: pName });
+```
+
+*Extra parentheses are required around the object, the curly braces would otherwise be interpreted as the function body!*
 
 ------
 
@@ -182,7 +245,13 @@ function add(a, b) {
 }
 ```
 
+- good practice to put them last -› if you dont pass an argument, the default value will be applied
 
+- you can also refer to one of the arguments that came before:
+
+  ```js
+  const winner = (cChoice, pChoice = cChoice === 'ROCK' ? PAPER : DEFAULT_USER_CHOICE) => {...}
+  ```
 
 ------
 
@@ -209,3 +278,133 @@ if (a === b) { return true } else { return false };
 return a === b;  
 ```
 
+------
+
+- g else, eg the browser event-listener
+- you can use any name, ofthe `cb` is used
+
+```js
+const sumUp = (resultHandler, ...numbers) => { // resultHandler is the callback
+  let sum = 0;
+  for (const num of numbers) {
+    sum += validateNumber(num);
+  }
+  
+  resultHandler(sum);
+};
+
+const showResult = (result) => {
+  alert('The result after adding all numbers is: ' + result);
+};
+
+sumUp(showResult, 1, 5, -3, 6, 10);
+```
+
+------
+
+## Callback Functions
+
+pass a function as the parameter to another function -› a pointer to a function
+
+- a lot of the build-in functions use theese
+
+- either in-place or stored in a variable
+- you never call the function, called by somthing else, eg the browser event-listener
+- you can use any name, ofthe `cb` is used
+
+```js
+const sumUp = (resultHandler, ...numbers) => { // resultHandler is the callback
+  let sum = 0;
+  for (const num of numbers) {
+    sum += validateNumber(num);
+  }
+  
+  resultHandler(sum);
+};
+
+const showResult = (result) => {
+  alert('The result after adding all numbers is: ' + result);
+};
+
+sumUp(showResult, 1, 5, -3, 6, 10);
+```
+
+------
+
+## `bind()`
+
+[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind)
+
+functions are objects, and the have special methods attached
+
+```js
+const combine = (resultHandler, operation, ...numbers) => {
+  let sum = 0;
+  for (const num of numbers) {
+    if (operation === 'ADD') {
+      sum += validateNumber(num);
+    } else {
+      sum -= validateNumber(num);
+    }
+  }
+  resultHandler(sum);
+};
+
+const showResult = (messageText, result) => {
+  alert(messageText + ' ' + result);
+};
+
+combine(
+  showResult.bind(this, 'The result after adding is:'),
+  'ADD',
+  1,
+  5
+);
+
+combine(
+  showResult.bind(this, 'The result after subtracting is:'),
+  'SUBTRACT',
+  1,
+  5
+);
+```
+
+bind will create a new function-reference, that has the provided arguments
+
+-› prepared for a future execution
+
+takes two arguments - first `this` and then the arguments
+
+```js
+function calculate(operation) {
+  const enteredNumber = getUserNumberInput();
+  const initialResult = currentResult;
+  let operator;
+  if (operation === 'ADD') {
+    currentResult += enteredNumber;
+    operator = '+';
+  } else if (operation === 'SUBTRACT') {
+    currentResult -= enteredNumber;
+    operator = '-';
+  } else if (operation === 'MULTIPLY') {
+    currentResult *= enteredNumber;
+    operator = '*';
+  } else {
+    currentResult /= enteredNumber;
+    operator = '/';
+  }
+  createAndWriteOutput(operator, initialResult, enteredNumber);
+  writeToLog(operation, initialResult, enteredNumber, currentResult);
+}
+
+addBtn.addEventListener('click', calculate.bind(this, 'ADD'));
+subtractBtn.addEventListener('click', calculate.bind(this, 'SUBTRACT'));
+multiplyBtn.addEventListener('click', calculate.bind(this, 'MULTIPLY'));
+divideBtn.addEventListener('click', calculate.bind(this, 'DIVIDE'));
+```
+
+------
+
+## `call()` / `apply()`
+
+immediatly execute the function 

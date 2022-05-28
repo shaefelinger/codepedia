@@ -51,19 +51,9 @@ const idBlog = {...blog, id: 1}
 
 [MDN: Rest parameters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters)
 
-The **rest parameter**, also written with three consecutive dots ( `...` ), allows you to represent an indefinite number of elements as an array. 
+The **rest parameter**, written with three consecutive dots ( `...` ), allows you to represent an indefinite number of elements as an array. 
 
-```js
-const order = [20.17, 18.67, 1.50, "cheese", "eggs", "milk", "bread"];
-const [total, subtotal, tax, ...items] = order;
-console.log(total, subtotal, tax, items);
-```
-
-> **Prints:** 20.17 18.67 1.5 ["cheese", "eggs", "milk", "bread"]
->
-> `total`, `subtotal`, and `tax` are assigned the first three values in the array,`items` is assigned the *rest* of the values in the array (as an array).
-
-
+Takes out all the arguments and creates an array -> if you need a flexible amout of arguments
 
 ```js
 function printContent(...items) {
@@ -74,6 +64,35 @@ function printContent(...items) {
 
 printContent("cheese", "bread", "butter", "milk");
 ```
+
+
+
+```js
+const order = [20.17, 18.67, 1.50, "cheese", "eggs", "milk", "bread"];
+const [total, subtotal, tax, ...items] = order;
+console.log(total, subtotal, tax, items);
+// Prints: 20.17 18.67 1.5 ["cheese", "eggs", "milk", "bread"]
+```
+
+> `total`, `subtotal`, and `tax` are assigned the first three values in the array,`items` is assigned the *rest* of the values in the array (as an array).
+
+
+
+```js
+const sumUp = (a, b, ...numbers) => {
+  let sum = 0;
+  for (const num of numbers) {
+    sum += num;
+  }
+  return sum;
+};
+
+console.log(sumUp(1, 5, 10, -3, 6, 10));
+```
+
+> must be the last parameter. you can only have one
+
+
 
 The result is similar to `Array.prototype.slice()`:
 
@@ -98,7 +117,21 @@ The rest parameter eliminates the need to check the args array and allows us to 
 
 [freecodecamp - rest](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/es6/use-the-rest-parameter-with-function-parameters	)
 
-
+> if you define the function with the the `function`-keyword, you can always acces the parameters with the `arguments`-keyword. an array-like object
+>
+> ```js
+> const subtract = function () {
+>   let sum = 0;
+>   for (const num of arguments) {
+>     sum -= num;
+>   }
+>   return sum;
+> };
+> 
+> console.log(subtract(1, 5, 10, -3, 6, 10));
+> ```
+>
+> > was used before ES6 - don't use it!
 
 ## Example Spread & Rest
 
