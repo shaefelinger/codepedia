@@ -42,7 +42,7 @@ Command [options][arguments]  [redirect] [redirect destination]
 
 `~` is User-Home Directroy
 
-- alt-click -> textstelle auswählen
+- alt-click -> select text
 - `ctrl-a` -> to start of line
 - `ctrl-e`-> to end of line
 - `ctrl-u`-> clear line
@@ -72,7 +72,8 @@ Space: `\`
 | `touch <file>`      | Create File                                                  |
 | `open`              | Open File                                                    |
 | `say`               | speech output                                                |
-| echo                | [display a line of text](https://www.howtogeek.com/446071/how-to-use-the-echo-command-on-linux/) |
+| `echo`              | [display a line of text](https://www.howtogeek.com/446071/how-to-use-the-echo-command-on-linux/) |
+| `cat`               | show content of file                                         |
 
 ---
 
@@ -178,7 +179,7 @@ mv file_origin.txt file_renamed.txt
 
 ->To rename a file, use mv with the old file as the first argument and the new file as the second argument
 
-trick: rename:
+### rename (using `mv`)
 
 ```
 mv index.html about.html
@@ -362,7 +363,9 @@ sed 's/snow/rain/g' forests.txt
 
 ## The Nano-editor
 
-`nano` 
+`nano <filename>` 
+
+creates the file, if it doesn't exist
 
 - If you are having trouble in nano and need to exit, use Ctrl + C
 - Ctrl + O saves a file. O stands for output.
@@ -513,6 +516,14 @@ configuring the promt:
 
 ```
 networkQuality -v
+```
+
+------
+
+## Zip complete folder
+
+```
+zip website-archive.zip -r website/
 ```
 
 ------
