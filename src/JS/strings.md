@@ -74,6 +74,23 @@ divides a String into an array
 
 - `let digits = number.toString().split('');` converts number into an array of strings for each digit
 
+- ```
+  string.split(seperator)
+  ```
+
+  ```js
+  const data = 'new york;10.99;2000';
+  
+  const transformedData = data.split(';');
+  ```
+
+  > ->  all elements are strings. You could eg convert it to a number:
+  >
+  > ```
+  > transformedData[1] = +transformedData[1];
+  > ```
+  >
+
 ------
 
 ### [`.repeat()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat)

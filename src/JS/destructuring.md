@@ -6,6 +6,14 @@ is special syntax introduced in ES6, for neatly assigning values taken directly 
 
 ## Destructuring values from an array
 
+Syntax for splitting arrays into values. the rest-operator provides all other elements
+
+```js
+const [ firstName, lastName, ...otherInformation ] = nameData;
+```
+
+
+
 ```js
 const point = [10, 25, -34];
 const [x, y, z] = point;

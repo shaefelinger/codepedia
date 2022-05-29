@@ -45,6 +45,44 @@ const blog = { title: 'new blog', author: 'bowser'}
 const idBlog = {...blog, id: 1}
 ```
 
+##### A list of values:
+
+```js
+const prices = [10.99, 5.99, 3.99, 6.59];
+Math.min(...prices)
+```
+
+##### Create a real copy of an array:
+
+```js
+const copiedNameFragments = [...nameFragments];	
+```
+
+> if you copy an array of objecs, the objects are still reference-values!
+>
+> To copy an array of objects and also create copies of the objects:
+>
+> ```js
+> const persons = [{ name: 'Max', age: 30 }, { name: 'Manuel', age: 31 }];
+> 
+> const copiedPersons = persons.map(person => ({
+>   name: person.name,
+>   age: person.age
+> }));
+> ```
+>
+> or:
+>
+> ```js
+> const copiedPersons = persons.map(({ name, age }) => ({
+>   name,
+>   age,
+> }));
+> ```
+>
+
+
+
 ------
 
 ## ...Rest parameter

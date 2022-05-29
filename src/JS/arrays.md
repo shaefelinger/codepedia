@@ -243,6 +243,13 @@ creates and returns a **new string** by concatenating all of the elements
 
 - more options than `.toString()`
 
+  ```js
+  const nameFragments = ['John', 'Doe'];
+  const name = nameFragments.join(' ');
+  ```
+
+  if you dont provide a seperator, by default `,` will be used
+
 ------
 
 ### [`.reduce()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
@@ -487,6 +494,10 @@ const sortedPrices = prices.sort((a, b) => {
   }
 });
 ```
+
+------
+
+### `.reverse()`
 
 ------
 
