@@ -408,3 +408,38 @@ divideBtn.addEventListener('click', calculate.bind(this, 'DIVIDE'));
 ## `call()` / `apply()`
 
 immediatly execute the function 
+
+------
+
+## Chaining Methods in JavaScript
+
+Combine methods. For example array-methods:  `map()` and `reduce()` :
+
+```js
+const originalArray = [{price: 10.99}, {price: 5.99}, {price: 29.99}];
+
+const transformedArray = originalArray.map(obj => obj.price); 
+// produces [10.99, 5.99, 29.99]
+
+const sum = transformedArray.reduce((sumVal, curVal) => sumVal + curVal, 0); // => 46.97
+```
+
+> You could skip the map step and just add the extraction logic to `reduce()`:
+>
+> ```js
+> const originalArray = [{price: 10.99}, {price: 5.99}, {price: 29.99}];
+> 
+> const sum = originalArray.reduce((sumVal, curVal) => sumVal + curVal.price, 0); // => 46.97
+> ```
+
+**method chaining**:
+
+```js
+const originalArray = [{price: 10.99}, {price: 5.99}, {price: 29.99}];
+
+const sum = originalArray.map(obj => obj.price).reduce((sumVal, curVal) => sumVal + curVal, 0); // => 46.97
+```
+
+We call `.reduce()` directly on the result of `map()` (produces an array, that's why this is possible). 
+
+-> we can avoid storing the mapped array in a separate constant or variable
