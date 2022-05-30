@@ -174,6 +174,7 @@ module.exports = {
             'modules',
             'play audio',
             'classes',
+            'dates',
             'JS links',
           ],
         },
