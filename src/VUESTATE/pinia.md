@@ -355,3 +355,17 @@ in Pinia: no Mutations!
     }
 ```
 
+------
+
+## Hot Module Replacement
+
+[https://pinia.vuejs.org/cookbook/hot-module-replacement.html](https://pinia.vuejs.org/cookbook/hot-module-replacement.html)
+
+import `acceptHMRUpdate`  from pinia und am Ende des Stores hinzufügen:
+
+```js
+if (import.meta.hot) {
+  import.meta.hot.accept(acceptHMRUpdate(<StoreName>, import.meta.hot))
+}
+```
+

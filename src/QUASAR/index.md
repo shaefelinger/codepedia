@@ -67,3 +67,19 @@ child: `class="full-width" style="max-width: 450px"`
 -> change colors
 
 recommendation: just have a primary, secondary and accent-color
+
+------
+
+## Set Dev-Browser
+
+on quasar.config.js
+
+```js
+    devServer: {
+			...
+      open: {
+        app: { name: "google chrome" },
+      },
+    },
+```
+
