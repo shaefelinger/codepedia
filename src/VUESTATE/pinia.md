@@ -6,6 +6,11 @@ A new state management library for the Vue ecosystem - officially supported
 
 [https://pinia.vuejs.org/](https://pinia.vuejs.org/)
 
+- [Pinia Docs](https://pinia.vuejs.org/)
+- [Pinia Repo](https://github.com/vuejs/pinia)
+
+
+
 ## Benefits of Pinia
 
 ### Simpler API
@@ -242,7 +247,9 @@ store.$reset()
 
 ------
 
-## Managing Getters
+## Getters
+
+synonymous to a `computed` prop in a component -> return a computed value based on the state
 
 > in vuex:  you need to pass in the `state` i
 >
@@ -272,7 +279,7 @@ access the state by using `this`
 ```js
 defineStore('UserStore', {
   state: () => ({
-    user: 'Ben Hong'
+    user: 'John Doe'
   }),
   getters: {
     firstName() {
@@ -357,6 +364,33 @@ in Pinia: no Mutations!
 
 ------
 
+## Reset the State
+
+reset to original values: `$reset()`
+
+```
+@click="cartStore.$reset()"
+```
+
+------
+
+## Access Stores from other stores
+
+import it and use it (but inside the actions?)
+
+```js
+import {useAuthUserStore} from "./AuthUserStore";
+
+
+actions: {
+	checkout() {
+		const authUserStore = useAuthUserStore()
+		alert(`${authUserStore.username} just bought ${this.count} items`)
+	},
+```
+
+------
+
 ## Hot Module Replacement
 
 [https://pinia.vuejs.org/cookbook/hot-module-replacement.html](https://pinia.vuejs.org/cookbook/hot-module-replacement.html)
@@ -369,3 +403,111 @@ if (import.meta.hot) {
 }
 ```
 
+------
+
+## Persistent State
+
+VueUse - Collection of composables
+
+[https://vueuse.org/](https://vueuse.org/)
+
+install:
+
+```
+npm i @vueuse/core
+```
+
+In Store:
+
+```js
+import {useLocalStorage} from '@vueuse/core';
+...
+  state() {
+    return {
+      counter: useLocalStorage("counter", 1),
+    };
+  },
+```
+
+------
+
+## Subscribing to Actions
+
+- [Pinia Docs: Subscribing to Actions](https://pinia.vuejs.org/core-concepts/actions.html#subscribing-to-actions)
+
+to trigger something every time an action gets called
+
+call `$onAction()` on the store  in App.vue
+
+```js
+cartStore.$onAction(({
+                       name,
+                       store,
+                       args,
+                       after,
+                       onError
+                     }) => {
+  if(name==='addItems') {
+    after(()=> {
+      console.log(args[0])
+    })
+    onError((error)=> {
+      console.log('tstsst', error)
+    })
+  }
+})
+```
+
+## Subscribe to the State
+
+`$subscribe`
+
+- [Pinia Docs: Subscribing to the State](https://pinia.vuejs.org/core-concepts/state.html#subscribing-to-the-state)
+
+perform sideeffects, whenever state changes
+
+takes a callback, that receives 2 arguments
+
+`$state` accesses the entire store
+
+
+
+example: undo/redo
+
+```js
+const history = reactive([])
+const future = reactive([])
+const doingHistory = ref(false)
+history.push(JSON.stringify(cartStore.$state))
+
+const redo = () => {
+  const latestState = future.pop()
+  if(!latestState) return
+  doingHistory.value = true
+  history.push(latestState)
+  cartStore.$state = JSON.parse(latestState)
+  doingHistory.value = false
+
+}
+const undo = () => {
+  if (history.length === 1) return
+  doingHistory.value = true
+  future.push(history.pop())
+  cartStore.$state = JSON.parse(history.at(-1))
+  doingHistory.value = false
+}
+
+cartStore.$subscribe((mutation, state) => {
+  if (!doingHistory.value) {
+    history.push(JSON.stringify(state))
+    future.splice(0, future.length) // empty the reactive array
+  }
+})
+```
+
+------
+
+## Plugins
+
+- [Pinia Docs: Plugins](https://pinia.vuejs.org/core-concepts/plugins.html)
+- [NPM Search: Pinia](https://www.npmjs.com/search?q=pinia)

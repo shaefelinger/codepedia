@@ -1,12 +1,14 @@
 # VUEX - sort me
 
-Managing state in an application full of components can be difficult. Facebook discovered this the hard way and created the Flux pattern, which is what Vuex is based upon.
+- Managing state in an application full of components can be difficult. Facebook discovered this the hard way and created the Flux pattern, which is what Vuex is based upon.
 
-Communicating events up and passing props down to share data, can become overly complicated.
+- Communicating events up and passing props down to share data, can become overly complicated.
 
-Instead, we can consolidate all of our state into one place. One location that contains the current state of our entire application.
 
-**One Single Source of Truth**. This is what Vuex provides, and every component has direct access to this global State.
+- Instead, we can consolidate all of our state into one place. One location that contains the current state of our entire application.
+
+
+- **One Single Source of Truth**.  every component has direct access to this global State.
 
 Just like the Vue instance’s data, this State is reactive. When one component updates the State, other components that are using that data get notified, automatically receiving the new value.
 

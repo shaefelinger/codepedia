@@ -1,35 +1,31 @@
 # Composition-API-Store
 
-- to make store available in all components: import in Root App.vue and provide
-- you can directly v-model the state
-- make readonly
+- to make store available in all components: import in `Root App.vue` and `provide`
+- you can directly `v-model` the state
 - then use computed property with get and set method
+- optional: make readonly
 
-pro:
+**pro:**
 
 - flexible
 - no need to use mutation & actions
 
-cons:
+**cons:**
 
 - no dev-tools support
-- no vuex-plugins (like vuex-persist)
+- no plugins (like eg vuex-persist)
 - store has to be injected in every component
 
-store/index.js
+`store/index.js`
 
 ```js
 import { reactive, readonly } from 'vue';
 
 const state = reactive({
   counter: 0,
-  colorCode: 'blue',
 });
 
 const methods = {
-  setColorCode(val) {
-    state.colorCode = val;
-  },
   decreaseCounter() {
     state.counter--;
   },
@@ -39,13 +35,13 @@ const methods = {
 };
 
 const getters = {
-  counterSquared() {
-    return state.counter * state.counter;
+  doubleCounter() {
+    return state.counter * 2
   },
 };
 
 export default {
-  state: readonly(state),
+  state,
   methods,
   getters,
 };
@@ -53,24 +49,26 @@ export default {
 
 > you don't have to put the methods in the methods-object. also possible on root-level & export
 
-Home.vue
+> it might be good to use a readonly state. But then you also have to define a set-method and there's no direct  `v-model`	
+>
+> ```js
+> export default {
+>   state: readonly(state),
+>   methods,
+>   getters,
+> };
+> ```
+
+`Home.vue`
 
 ```vue
 <template>
-  <div class="home">
-    <div class="counter" :style="{ color: store.state.colorCode }">
-      {{ store.state.counter }}
-    </div>
-    <div class="counter-squared">
-      {{ store.state.counter }}
-      <sup>2</sup> = {{ store.getters.counterSquared() }}
-    </div>
-    <div class="buttons">
+  <div >
+    <div class="counter">{{ store.state.counter }}</div>
+    <div>Double Counter: {{ store.getters.doubleCounter() }}</div>
+    <div >
       <button @click="store.methods.decreaseCounter">-</button>
       <button @click="store.methods.increaseCounter">+</button>
-    </div>
-    <div>
-      <input type="text" placeholder="Enter color code" v-model="colorCode" />
     </div>
   </div>
 </template>
@@ -79,20 +77,10 @@ Home.vue
 import { inject, computed } from "vue";
 
 const store = inject("store");
-
-const colorCode = computed({
-  get() {
-    return store.state.colorCode;
-  },
-  set(val) {
-    console.log("val", val);
-    store.methods.setColorCode(val);
-  },
-});
 </script>
 ```
 
-App.vue
+`App.vue`
 
 ```vue
 <script>
@@ -107,3 +95,4 @@ export default {
 </script>
 ```
 
+[Video: Composition API for State Management ](https://www.youtube.com/watch?v=_k4GM5cmm68)

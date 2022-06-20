@@ -27,5 +27,5 @@ features:
     #       misc. Online-Tutorials and ressources
 #   - title: null
 #     details: under construction…
-footer: Made by Steffen Häfelinger / functionfactory.de
+footer: Made by Steffen Häfelinger
 ---
