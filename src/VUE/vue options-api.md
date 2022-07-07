@@ -90,7 +90,7 @@ computed: {
 
 ---
 
-## Watcher
+## Watch
 
 watch if values change.
 
@@ -102,19 +102,57 @@ watch: {
 },
 ```
 
----
+- Anything that is reactive can be watched: (Composition API: anything that is a ref or reactive object.)
 
-## Filters
+- ```js
+  export default { 
+     computed: {
+  		someComputedProperty() {
+  			// Update the computed prop
+  		}, 
+    },
+  	watch: { someComputedProperty() {
+  		// Do something when the computed prop is updated }
+  	} 
+  };
+  ```
 
-> only Vue2
+- nested values by using quotes:
 
-```js
-filters: {
-    messageLowercase(value) {
-      return value.toLowerCase()
+  ```js
+  watch: {
+    '$route.query.id'() {
+      // ...
     }
-  },
-```
+  }
+  ```
+
+[https://vuejs.org/guide/essentials/watchers.html](https://vuejs.org/guide/essentials/watchers.html)
+
+Options:
+
+- [Deep Watchers](https://vuejs.org/guide/essentials/watchers.html#deep-watchers)
+
+- [Eager Watchers](https://vuejs.org/guide/essentials/watchers.html#eager-watchers)
+  Force a watcher's callback to be executed immediately by declaring it using an object with a `handler` function and the `immediate: true` option:
+
+  ```js
+  export default {
+    // ...
+    watch: {
+      question: {
+        handler(newQuestion) {
+          // this will be run immediately on component creation.
+        },
+        // force eager callback execution
+        immediate: true
+      }
+    }
+    // ...
+  }
+  ```
+
+  
 
 ---
 
@@ -167,3 +205,26 @@ or like this:
   	'test': require('components/Test.vue').default
 	}
 ```
+
+
+
+
+
+---
+
+## Filters
+
+> only Vue2
+
+```js
+filters: {
+    messageLowercase(value) {
+      return value.toLowerCase()
+    }
+  },
+```
+
+
+
+
+
