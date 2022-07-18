@@ -124,6 +124,89 @@ trims extra whitespace on beginning/end  (like using the `trim()` -function)
 
 ------
 
+## v-model in Depth
+
+##### v-model
+
+```vue
+<RegisterUserForm
+	v-model=form
+/>
+```
+
+is the same as:
+
+```vue
+<RegisterUserForm
+	:model-value="form"
+	@update:model-value="(newForm) => (form = newForm)"
+/>
+```
+
+### useVModel - vueUse
+
+```vue
+<script setup>
+import { useVModel } from '@vueuse/core'
+
+const props = defineProps({
+  modelValue: {
+    type: Object,
+    required: true,
+  },
+})
+
+const emit = defineEmits(['update:model-value'])
+
+const form = useVModel(props, 'modelValue', emit)
+</script>
+
+<template>
+  <q-form class="q-gutter-y-md">
+    <q-input v-model="form.name" filled label="Name" />
+    <q-input v-model="form.email" filled label="Email" />
+    <q-select
+      v-model="form.fav_potato"
+      filled
+      :options="['Yukon Gold', 'Russet', 'Laura', 'Vitelotte', 'Kennebec']"
+      label="Favourite Type Of Potato"
+    />
+  </q-form>
+</template>
+
+<style lang="scss" scoped></style>
+
+```
+
+parent:
+
+```vue
+<script setup>
+import { ref } from 'vue'
+import RegisterUserForm from './RegisterUserForm.vue'
+
+const form = ref({
+  name: '',
+  email: '',
+  fav_potato: '',
+})
+</script>
+
+<template>
+  <q-page padding>
+    <q-card style="max-width: 550px">
+      <q-card-section>
+        <RegisterUserForm
+          v-model="form"
+        />
+      </q-card-section>
+    </q-card>
+  </q-page>
+</template>
+```
+
+------
+
 ## Form-Elements
 
 ### Dropdowns
