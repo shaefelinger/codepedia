@@ -85,48 +85,9 @@ methods: {
 },
 ```
 
-------
+### v-model in Depth
 
-### v-model-Modifiers
-
-#### `.number`
-
--> forces a number
-
-`v-model.number`  is a modifier that typecasts the value as a number.
-
-
-
-- even with `type="number"`, the value of HTML input elements always returns a string.
-
-- ```js
-  <input id="age" name="age" type="number" />
-  ```
-
-- if you use a ref, no automaric type-conversion takes place
-
-
-But with vue, this returns a number - with vue3:
-
-```vue
-<input v-model.number="age" type="number" />
-```
-
-other modifiers:
-
-#### `.lazy` 
-
-- don't update immedialtely
-
-#### `.trim` 
-
-trims extra whitespace on beginning/end  (like using the `trim()` -function)
-
-------
-
-## v-model in Depth
-
-##### v-model
+this
 
 ```vue
 <RegisterUserForm
@@ -144,6 +105,77 @@ is the same as:
 ```
 
 ### useVModel - vueUse
+
+gets rid of a bunch of boiler-plate code:
+
+```vue
+<script setup>
+import { useVModel } from '@vueuse/core'
+
+const props = defineProps({
+  count: Number,
+})
+const emit = defineEmits(['update:count'])
+
+const count = useVModel(props, 'count', emit)
+</script>
+
+<template>
+  <div>
+    <button @click="count = count - 1">-</button>
+    <button @click="count = 0">Reset to 0</button>
+    <button @click="count = count + 1">+</button>
+  </div>
+</template>
+```
+
+first define the prop we want to attach to the `v-model`:
+
+```jsx
+const props = defineProps({
+  count: Number,
+})
+```
+
+Then we emit an event that uses the `v-model` naming convention of `update:<propName>`:
+
+```jsx
+const emit = defineEmits(['update:count'])
+```
+
+Now we can use the `useVModel` composable to bind the prop and event to a ref:
+
+```jsx
+const count = useVModel(props, 'count', emit)
+```
+
+This `count` ref will change whenever the prop changes. But whenever it’s changed from this component, it will emit the `update:count` event to trigger the update through the `v-model` directive.
+
+We can use this `Input` component like this:
+
+```html
+<script setup>
+import { ref } from 'vue'
+import Input from './components/Input.vue'
+
+const count = ref(50)
+</script>
+
+<template>
+  <div>
+    <Input v-model:count="count" />
+    {{ count }}
+  </div>
+</template>
+```
+
+The `count` ref here is synced to the `count` ref inside of the `Input` component through the `v-model` binding.
+
+[Check out the docs for `useVModel` here.](https://vueuse.org/core/usevmodel/#usevmodel)
+
+
+
+##### another example:
 
 ```vue
 <script setup>
@@ -204,6 +236,43 @@ const form = ref({
   </q-page>
 </template>
 ```
+
+------
+
+### v-model-Modifiers
+
+#### `.number`
+
+-> forces a number
+
+`v-model.number`  is a modifier that typecasts the value as a number.
+
+
+
+- even with `type="number"`, the value of HTML input elements always returns a string.
+
+- ```js
+  <input id="age" name="age" type="number" />
+  ```
+
+- if you use a ref, no automaric type-conversion takes place
+
+
+But with vue, this returns a number - with vue3:
+
+```vue
+<input v-model.number="age" type="number" />
+```
+
+other modifiers:
+
+#### `.lazy` 
+
+- don't update immedialtely
+
+#### `.trim` 
+
+trims extra whitespace on beginning/end  (like using the `trim()` -function)
 
 ------
 
