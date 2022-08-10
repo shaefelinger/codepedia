@@ -254,6 +254,64 @@ in template:
 v-autofocus
 ```
 
+Example
+
+```vue
+<template>
+ <h1 v-bg-colour="'skyblue'">This background is blue</h1>
+</template>
+```
+
+```js
+import { createApp } from "vue"; 
+const app = createApp({});
+
+app.directive("bg-colour", { 
+  mounted(el, { value }) {
+		// Update the background colour
+		el.style.background = value; 
+  }
+});
+```
+
+You can also specify a single argument:
+
+```vue
+<template>
+	<h1 v-bg-colour:colour="'skyblue'">
+		This background is blue
+	</h1>
+</template>
+```
+
+```js
+app.directive("bg-colour", { 
+	mounted(el, { value, arg }) {
+		// Update the background colour 
+		el.style.background = value; 
+		console.log(arg); // "colour"
+	} 
+});
+```
+
+if you want multiple arguments pass in an options object:
+
+```vue
+<template>
+	<!-- Two directives will be mounted --> 
+	<h1
+		v-bg-colour="{ 
+    	colour: 'skyblue', 
+      animate: true,
+		}" 
+  >
+		This background is blue
+	</h1> 
+</template>
+```
+
+[docs - custom directives](https://vuejs.org/guide/reusability/custom-directives.html%23custom-directives)
+
 ---
 
 ## Components

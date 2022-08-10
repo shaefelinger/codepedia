@@ -64,6 +64,44 @@ books: [
 <li v-for="num in 10">{{num}}</li>
 ```
 
+### Destructuring
+
+```vue
+<li
+	v-for="{ name, id } in users" 
+    :key="id"
+	>
+		{{ name }}
+</li>
+```
+
+### Object / grab the key
+
+```vue
+<li v-for="(value, key) in { 
+  name: 'Lion King', 
+  released: 2019,
+	director: 'Jon Favreau',
+}">
+	{{ key }}: {{ value }}
+</li>
+
+```
+
+with index:
+
+```vue
+ <li v-for="(value, key, index) in { 
+ 	name: 'Lion King',
+	released: 2019,
+	director: 'Jon Favreau',
+}">
+	#{{ index + 1 }}. {{ key }}: {{ value }}
+</li>
+```
+
+
+
 ------
 
 ## Key Attribute

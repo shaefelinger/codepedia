@@ -114,3 +114,54 @@ function onSubmit() {
 ## Async
 
 [async script setup](https://stackoverflow.com/questions/69183835/vue-script-setup-top-level-await-causing-template-not-to-render)
+
+------
+
+## Private properties with script setup
+
+ You can limit what properties are available when a component is accessed by $ref :
+
+```js
+export default {
+ expose: ['makeItPublic'],
+
+data() { 
+  return {
+		privateData: 'Keep me a secret!', 
+  };
+},
+
+computed: 
+  { 
+    makeItPublic() {
+			return this.privateData.toUpperCase(); 
+    },
+	}, 
+};
+```
+
+With only makeItPublic exposed, you can't access the privateData property through a $ref anymore:
+
+```js
+this.$refs.component.privateData // Will always be undefined
+```
+
+If you're using <script setup> , everything is locked down by default. If you want to expose a value you have to do so explicitly:
+
+```vue
+<script setup>
+  import { ref, computed } from 'vue';
+  const privateData = ref('Keep me a secret!'); 
+	const makeItPublic = computed(
+  	() => privateData.value.toUpperCase() 
+  );
+  	// We don't need to import this because it's a compiler macro 
+	defineExpose({
+  	makeItPublic
+  }); 
+</script>
+
+```
+
+`defineExpose` is a compiler macro, not an actual function, so we don't have to import anything.
+(You can find more info on this in the docs)[https://vuejs.org/api/options-state.html%23expose]
