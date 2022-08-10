@@ -35,6 +35,26 @@ Array
 props: ['prop1', 'prop2'];
 ```
 
+Object
+
+```js
+export default { 
+...
+  props: {
+    src: {
+      type: String,
+      required: true
+    }, 
+    style: {
+      type: String,
+      validator: s => ['square', 'rounded'].includes(s) 
+    }
+  } 
+};
+```
+
+
+
 ---
 
 ## Data
@@ -129,7 +149,23 @@ watch: {
 
 [https://vuejs.org/guide/essentials/watchers.html](https://vuejs.org/guide/essentials/watchers.html)
 
-Options:
+##### Options:
+
+```js
+watch: {
+	// Use the object syntax instead of just a method 
+	colours: {
+		// This will let Vue know to look inside the array 
+		deep: true,
+	
+		// We have to move our method to a handler field 	
+		handler()
+			console.log('The list of colours has changed!'); }
+		} 
+}
+```
+
+
 
 - [Deep Watchers](https://vuejs.org/guide/essentials/watchers.html#deep-watchers)
 
@@ -152,7 +188,41 @@ Options:
   }
   ```
 
-  
+
+Anything in your component that is reactive can be watched, eg::
+
+- computed props 
+- props
+- nested values
+- Any value can be watched if you're using the composition API, as long as it's a ref or reactive object.
+
+```js
+xport default { 
+	computed: {
+		someComputedProperty() {
+			// Update the computed prop
+		}, 
+	},
+	watch: { 
+		someComputedProperty() {
+			// Do something when the computed prop is updated }
+		} 
+	};
+```
+
+##### Watch nested Values:
+
+use Quotes:
+
+```js
+
+watch: { 
+	'$route.query.id'() {
+		// ... }
+	}
+```
+
+
 
 ---
 

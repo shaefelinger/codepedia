@@ -1,4 +1,4 @@
-# VUE Components
+# 		VUE Components
 
 ## Components 
 
@@ -116,13 +116,31 @@ registering Components
 
 ### 1. Global Components:
 
+Vue3:
+
 ```js
-//main.js
+// Vue 3
+import { createApp } from 'vue';
+import GlobalComponent from './GlobalComponent.vue';
+const app = createApp({}) 
+app.component('GlobalComponent', GlobalComponent);
+```
 
+Vue 2:
+
+```js
+// Vue 2
+import Vue from 'vue';
+import GlobalComponent from './GlobalComponent.vue'; 
+Vue.component('GlobalComponent', GlobalComponent);
+```
+
+or:
+
+```js
+//main.js - vue2
 const app = createApp(App);
-
 app.component('user-info', UserInfo);
-
 app.mount('#app');
 ```
 
@@ -132,6 +150,7 @@ Downside:
 
 - they all have to be loaded initially. Problem in bigger apps
 - list can get very long
+- use this sparingly!
 
 ### 2. Local Components
 

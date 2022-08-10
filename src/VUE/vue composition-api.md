@@ -262,6 +262,25 @@ you can also pass an array of dependencies: whenever any of theese values change
     });
 ```
 
+Deep Watcher:
+
+```js
+watch( 
+  colours, 
+  () => {
+		console.log('The list of colours has changed!'); 
+  },
+	{
+		deep: true,
+	} 
+);
+```
+
+Here are the docs for Vue 3 and Vue 2 if you want to read more on this
+
+- [vue3](https://vuejs.org/api/reactivity-core.html%23watcheffect)
+- [vue2](https://vuejs.org/api/options-state.html%23watch)
+
 ------
 
 ## Template Refs

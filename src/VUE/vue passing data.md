@@ -52,7 +52,7 @@ use in child:
 props: ['header', 'text'],
 ```
 
-#### Data-Bind
+#### Data-Bind	
 
 to pass data that is not a string - eg an Array, variables, etc.
 
@@ -70,7 +70,7 @@ parent:
 <Modal :header="header" :text="text" theme="sale"/>
 ```
 
-child
+child	
 
 if condition is true, apply 'sale'
 
@@ -198,6 +198,26 @@ but also to make the content dynamic, to use `v-for`, `v-if`
 	:name="friend.name"
 </friend-contact>
 ```
+
+#### Passing Multiple Props
+
+Instead of:
+
+```js
+<User
+	:name="user.name" 
+	:profile="user.profile" 
+	:twitter="user.twitter"
+/>
+```
+
+just `v-bind` an Object:
+
+```js
+<User v-bind="user"/>
+```
+
+
 
 ---
 
