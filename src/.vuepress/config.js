@@ -383,6 +383,7 @@ module.exports = {
             'vue script-setup',
             'vue composables',
             'vue mixins',
+            'vue styleguide',
             'vue links',
           ],
         },
