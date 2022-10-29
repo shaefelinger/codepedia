@@ -22,23 +22,25 @@ Git works by recording the changes you make to a project, storing those changes,
 
 Create repository (=Folder with superpower)
 
+Creates hidden folder `.git`
+
 ------
 
  Git project can be thought of as having three parts:
 
-- A *Working Directory*: where you’ll be doing all the work: creating, editing, deleting and organizing files
-- A *Staging Area*: where you’ll list changes you make to the working directory
-- A *Repository*: where Git permanently stores those changes as different *versions* of the project
+- ***Working Directory***: where you’ll be doing all the work: creating, editing, deleting and organizing files
+- ***Staging Area***: where you’ll list changes you make to the working directory
+- ***Repository***: where Git permanently stores those changes as different *versions* of the project
 
-In Git, we save changes with a *commit*,
+We save changes with a ***commit*** (a "version" of the project)
 
 ------
 
 ### `git status`
 
-Show Status
+Show Status - what has been changed
 
- git knows 4 States of files:
+ git knows **4 States** of files:
 
 1. Untracked - If you create a new file locally, it is first untracked. Git knows that it is there, but it won’t do anything with it.
 2. Unmodified - All changes that you committed now have the status unmodified.
@@ -51,9 +53,9 @@ Show Status
 
 ### `git add`
 
-Before doing a commit, you have to collect all your changes -> stage them. 
+Changes are not automatically added to the stagin area, you have to collect all your changes -> add them to the **Stagin Area**
 
-`git add <Filename>` - Add File
+`git add <Filename>` - Add File/Folder
 
 `git add .`- Add everything
 
@@ -63,13 +65,7 @@ Before doing a commit, you have to collect all your changes -> stage them.
 
 ------
 
-### `git diff`
 
- check the differences between the working directory and the staging area with:
-
-`git diff *filename*`
-
-- ​		Changes to the file are marked with a `+` and are indicated in green.
 
 ------
 
@@ -77,19 +73,38 @@ Before doing a commit, you have to collect all your changes -> stage them.
 
 A *commit* is the last step in our Git workflow. A commit permanently stores changes from the staging area inside the repository.
 
-`git commit -m "Complete first line of dialogue"`
+```
+git commit -m "<message>"
+```
 
 Standard Conventions for Commit Messages:
 
-- ​		Must be in quotation marks
-- ​		Written in the present tense
-- ​		Should be brief (50 characters or less) when using -m
+- Must be in quotation marks
+- Written in the present tense
+- Should be brief (50 characters or less) when using -m
+- root-commit = first commit of the project
 
-`git commit` - will open vim. Write the commit message and close with :x
+> `git commit` - will open vim. Write the commit message and close with :x
+
+> best practice: keep commits small - eg one feature per commit
+
+> instertations = lines changed
+
+Each commit is has a commit-id
+
+```
+[master (root-commit) 6c61ecb] Creating the initial index.html
+ 1 file changed, 5 insertions(+)
+ create mode 100644 index.html
+```
+
+
 
 ------
 
 ### `git log`
+
+shows commit-history
 
  Commits are stored chronologically in the repository and can be viewed with:
 
@@ -101,16 +116,79 @@ Standard Conventions for Commit Messages:
 If the log is getting too long, git will show a colon :at the end. This means: you are in scroll mode. You can scroll down or up with your arrow keys. Exit the scroll mode by typing q
 
 - `$ git log --pretty=oneline`
-- `git lg`
+- `-p` more Info
+- `--oneline` short version
+
+> `git lg`
+
+`HEAD` is the active commit
+
+<img src="./assets/git_log.png" alt="git_log" style="zoom:50%;" />
 
 ------
 
-### `git reset --soft HEAD~1`
+### `git amend`
 
-Undo last commit by resetting it.
+Change a commit - overwrite the last comit. rewrites the history
 
-- The `--soft` flag has the effect that all changes of your last commit are not deleted, but they are now uncommitted modified files.
-- The tilde ~ sign followed by a 1 means: take the HEAD (your current position in the git history) and reset one commit from there
+```
+git commit --amend
+```
+
+> !careful - better only use it for lokal changes
+
+------
+
+### `git diff`
+
+ check the differences between the working directory and the staging area with:
+
+```
+`git diff <filename>
+```
+
+- ​		Changes to the file are marked with a `+` and are indicated in green.
+
+```
+diff --git a/index.html b/index.html
+index 0827234..ae7b97d 100644
+--- a/index.html
++++ b/index.html
+@@ -1,7 +1,8 @@
+ <head>
+   <title>Hallo erste Version…</title>
+ Coole Urlaubswebseite
+-ich muss etwas Ändern - eine Überschrift
++ich muss etwas Ändern - eine Überschrift.
+ und noch eine Änderung
++...und noch eine.
+ </head>
+ 
+(END)
+```
+
+- `git diff --cached` shows staged changes
+- `git diff <hash1> <hash2>` shows changes between two commits - order goes backwords! 
+
+------
+
+### Restrict commands to one or a few files
+
+```
+git diff <hash1> <hash2> -- index.html
+```
+
+```
+git log -- index.html
+```
+
+also with wildcards:
+
+```
+git log -- index.*
+```
+
+
 
 ------
 
@@ -136,6 +214,24 @@ Undo last commit by resetting it.
 ------
 
 ### `git reset`
+
+Remove all changes from the staging area:
+
+```
+git reset	
+```
+
+```
+git reset <filename>
+```
+
+<img src="./assets/git_reset.png" alt="git_reset.png" style="zoom:50%;" />
+
+
+
+
+
+
 
 `git reset HEAD` - Removing files from the stage - If you have staged files, but you don’t want to commit them
 
