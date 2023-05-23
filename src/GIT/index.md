@@ -18,7 +18,7 @@ Git works by recording the changes you make to a project, storing those changes,
 | `git log`                 | show log                                                     |
 | `git --help`              | get help                                                     |
 
-### `git init`
+### git init
 
 Create repository (=Folder with superpower)
 
@@ -36,7 +36,7 @@ We save changes with a ***commit*** (a "version" of the project)
 
 ------
 
-### `git status`
+### git status
 
 Show Status - what has been changed
 
@@ -51,7 +51,7 @@ Show Status - what has been changed
 
 ------
 
-### `git add`
+### git add
 
 Changes are not automatically added to the stagin area, you have to collect all your changes -> add them to the **Stagin Area**
 
@@ -63,19 +63,15 @@ Changes are not automatically added to the stagin area, you have to collect all 
 
 `git add <filename_1> <filename_2>` - add multiple files at once
 
+
+
 ------
 
-
-
-------
-
-### `git commit`
+### git commit
 
 A *commit* is the last step in our Git workflow. A commit permanently stores changes from the staging area inside the repository.
 
-```
-git commit -m "<message>"
-```
+`git commit -m "<message>"`
 
 Standard Conventions for Commit Messages:
 
@@ -98,11 +94,9 @@ Each commit is has a commit-id
  create mode 100644 index.html
 ```
 
-
-
 ------
 
-### `git log`
+### git log
 
 shows commit-history
 
@@ -131,9 +125,7 @@ If the log is getting too long, git will show a colon :at the end. This means: y
 
 Change a commit - overwrite the last comit. rewrites the history
 
-```
-git commit --amend
-```
+`git commit --amend`
 
 > !careful - better only use it for lokal changes
 
@@ -141,11 +133,7 @@ git commit --amend
 
 ### `git diff`
 
- check the differences between the working directory and the staging area with:
-
-```
-`git diff <filename>
-```
+`git diff <filename>` - check the differences between the working directory and the staging area with
 
 - ​		Changes to the file are marked with a `+` and are indicated in green.
 
@@ -174,38 +162,38 @@ index 0827234..ae7b97d 100644
 
 ### Restrict commands to one or a few files
 
-```
-git diff <hash1> <hash2> -- index.html
-```
-
-```
-git log -- index.html
-```
-
-also with wildcards:
-
-```
-git log -- index.*
-```
-
-
+- `git diff <hash1> <hash2> -- index.html`
+- `git log -- index.html`
+- also with wildcards: `git log -- index.*`
 
 ------
 
 ## Undoing Changes
 
-| Command                   | Description                                       |
-| ------------------------- | ------------------------------------------------- |
-| `git checkout -- .`       | discard all changes in all modified files         |
-| `git checkout -- <file>`  | reset file                                        |
-| `git reset --soft HEAD~1` | undo the last commit by resetting it              |
-| `git reset --hard HEAD~1` | delete all changes of the last commit permanently |
-| `git reset HEAD .`        | remove all files from the stage                   |
-| `git reset HEAD`          |                                                   |
+| Command                                 | Description                                                  |
+| --------------------------------------- | ------------------------------------------------------------ |
+| `git checkout -- .`                     | discard all changes in all modified files                    |
+| `git checkout -- <file>`                | Resetting Modified Files: undo local changes                 |
+| `git reset	`, `git reset <filename>` | Remove all changes from the staging area                     |
+| `git reset <commit hash>`               | Delete all commits after `<commit hash>` . Changes are still in working directory |
+| `git reset --hard <commit hash>`        | delete all changes after `<commit hash>` All changes are removed. |
+| `git reset HEAD .`                      | remove all files from the stage                              |
+| `git reset HEAD`                        | Remove files from the stage - If you have staged files, but you don’t want to commit them |
+| `git reset --soft HEAD~1`               | undo the last commit by resetting it *)                      |
+| `git reset --hard HEAD~1`               | delete all changes of the last commit permanently            |
+| `git reset --hard` (without hash)       | reset all changes in the working directory to the last commits |
+
+> careful with **reset**!! history is rewrittten! don't use with remote-repositories
+
+> *) 
+>
+> - The --soft flag has the effect that all changes of your last commit are not deleted, but they are now uncommitted modified files.
+>
+> - The tilde ~ sign followed by a 1 means: take the HEAD (your current position in the githistory) and reset one commit from there
 
 ------
 
-### `git checkout --`
+### git checkout --
 
 `git checkout -- .` - discard all changes in all modified files (The dot is a shortcut for all files)
 
@@ -215,34 +203,9 @@ git log -- index.*
 
 ### `git reset`
 
-Remove all changes from the staging area:
-
-```
-git reset	
-```
-
-```
-git reset <filename>
-```
-
 <img src="./assets/git_reset.png" alt="git_reset.png" style="zoom:50%;" />
 
 
-
-
-
-
-
-`git reset HEAD` - Removing files from the stage - If you have staged files, but you don’t want to commit them
-
-`git reset HEAD .` - remove all files from the stage
-
-`git reset --soft HEAD~1` - undo the last commit by resetting it. 
-
-- The --soft flag has the effect that all changes of your last commit are not deleted, but they are now uncommitted modified files.
-- The tilde ~ sign followed by a 1 means: take the HEAD (your current position in the githistory) and reset one commit from there
-
-`git reset --hard HEAD~1` - delete all changes of the last commit and never see them again.
 
 ------
 

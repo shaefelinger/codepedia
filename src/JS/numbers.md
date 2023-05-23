@@ -26,6 +26,7 @@
   - Turns String to Float
 - `a = a * 1;`
 - [`Number()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/Number)
+- `a = +a`
 
 ------
 

@@ -1,4 +1,4 @@
-const { description } = require('../../package');
+const {description} = require('../../package');
 
 module.exports = {
   /**
@@ -16,11 +16,11 @@ module.exports = {
    * ref：https://v1.vuepress.vuejs.org/config/#head
    */
   head: [
-    ['meta', { name: 'theme-color', content: '#3eaf7c' }],
-    ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
+    ['meta', {name: 'theme-color', content: '#3eaf7c'}],
+    ['meta', {name: 'apple-mobile-web-app-capable', content: 'yes'}],
     [
       'meta',
-      { name: 'apple-mobile-web-app-status-bar-style', content: 'black' },
+      {name: 'apple-mobile-web-app-status-bar-style', content: 'black'},
     ],
   ],
 
@@ -51,20 +51,24 @@ module.exports = {
         text: 'Javascript',
         ariaLabel: 'JS Menu',
         items: [
-          { text: 'Javascript', link: '/JS/' },
-          { text: 'JS for Web', link: '/JS4web/' },
-          { text: 'JQuery', link: '/jquery/' },
-          { text: 'Async JS', link: '/JSasync/' },
+          {text: 'Javascript', link: '/JS/'},
+          {text: 'JS for Web', link: '/JS4web/'},
+          {text: 'JQuery', link: '/jquery/'},
+          {text: 'Async JS', link: '/JSasync/'},
         ],
+      },
+      {
+        text: 'Typescript',
+        link: '/TYPESCRIPT/',
       },
       {
         text: 'Backend',
         ariaLabel: 'Backend',
         items: [
-          { text: 'Basics', link: '/BACKEND/' },
-          { text: 'Node', link: '/NODE/' },
-          { text: 'Express', link: '/EXPRESS/' },
-          { text: 'Connect DB to Node', link: '/NODE-DB/' },
+          {text: 'Basics', link: '/BACKEND/'},
+          {text: 'Node', link: '/NODE/'},
+          {text: 'Express', link: '/EXPRESS/'},
+          {text: 'Connect DB to Node', link: '/NODE-DB/'},
         ],
       },
       {
@@ -76,37 +80,37 @@ module.exports = {
         text: 'Databases',
         ariaLabel: 'Databases',
         items: [
-          { text: 'Basics', link: '/DB/' },
-          { text: 'SQL', link: '/DBsql/' },
-          { text: 'No SQL', link: '/DBnosql/' },
+          {text: 'Basics', link: '/DB/'},
+          {text: 'SQL', link: '/DBsql/'},
+          {text: 'No SQL', link: '/DBnosql/'},
         ],
       },
       {
         text: 'Vue',
         items: [
-          { text: 'Vue', link: '/VUE/' },
-          { text: 'Vue Router', link: '/VUEROUTER/' },
-          { text: 'Vue-State-Management', link: '/VUESTATE/' },
-          { text: 'Vite', link: '/VITE/' },
-          { text: 'Quasar', link: '/QUASAR/' },
-          { text: 'Nuxt', link: '/NUXT/' },
-          { text: 'Vue Animation', link: '/VUEANIMATION/' },
-          { text: 'VuePress', link: 'https://v1.vuepress.vuejs.org/' },
+          {text: 'Vue', link: '/VUE/'},
+          {text: 'Vue Router', link: '/VUEROUTER/'},
+          {text: 'Vue-State-Management', link: '/VUESTATE/'},
+          {text: 'Vite', link: '/VITE/'},
+          {text: 'Quasar', link: '/QUASAR/'},
+          {text: 'Nuxt', link: '/NUXT/'},
+          {text: 'Vue Animation', link: '/VUEANIMATION/'},
+          {text: 'VuePress', link: 'https://v1.vuepress.vuejs.org/'},
         ],
       },
       {
         text: 'Misc.',
         ariaLabel: 'misc',
         items: [
-          { text: 'Command Line', link: '/commandline/' },
-          { text: 'VS Code', link: '/vscode/' },
-          { text: 'Jetbrains IntelliJ', link: '/jetbrains/' },
-          { text: 'Markdown', link: '/markdown/' },
-          { text: 'Design', link: '/design/' },
-          { text: 'Performance', link: '/performance/' },
-          { text: 'Clean Code', link: '/cleancode/' },
-          { text: 'Fake API', link: '/fakeapi/' },
-          { text: 'SSH', link: '/ssh/' },
+          {text: 'Command Line', link: '/commandline/'},
+          {text: 'VS Code', link: '/vscode/'},
+          {text: 'Jetbrains IntelliJ', link: '/jetbrains/'},
+          {text: 'Markdown', link: '/markdown/'},
+          {text: 'Design', link: '/design/'},
+          {text: 'Performance', link: '/performance/'},
+          {text: 'Clean Code', link: '/cleancode/'},
+          {text: 'Fake API', link: '/fakeapi/'},
+          {text: 'SSH', link: '/ssh/'},
         ],
       },
       {
@@ -176,6 +180,17 @@ module.exports = {
             'classes',
             'dates',
             'JS links',
+          ],
+        },
+      ],
+      '/TYPESCRIPT/': [
+        {
+          title: 'Javascript',
+          collapsable: false,
+          sidebarDepth: 2,
+          children: [
+            '',
+            'compiler-settings'
           ],
         },
       ],
