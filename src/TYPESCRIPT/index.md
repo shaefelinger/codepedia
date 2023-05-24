@@ -24,8 +24,6 @@ tsc
 - path intellisense
 - prettier
 
-
-
 # Type Fundamentals
 
 One of TypeScript’s fundamental concepts is the ability to define static types that can be used to enhance development
