@@ -1,6 +1,6 @@
 # Typescript
 
-
+v2
 
 [https://www.typescriptlang.org/](https://www.typescriptlang.org/)
 
